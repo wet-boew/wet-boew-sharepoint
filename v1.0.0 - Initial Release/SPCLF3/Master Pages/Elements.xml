@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="MasterPages" Url ="_catalogs/masterpage" RootWebOnly ="TRUE">
+    <File Path="Master Pages\CLF3Publishing.master" Url="CLF3Publishing.master" Type="GhostableInLibrary"  />
+    <File Path="Master Pages\CLF3Splash.master" Url="CLF3Splash.master" Type="GhostableInLibrary" />
+    <File Path="Master Pages\CLF3System.master" Url="CLF3System.master" Type="GhostableInLibrary" />
+</Module>
+</Elements>

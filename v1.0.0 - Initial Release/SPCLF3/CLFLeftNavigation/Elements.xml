@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <Module Name="CLFLeftNavigation" List="113" Url="_catalogs/wp">
+    <File Path="CLFLeftNavigation\CLFLeftNavigation.webpart" Url="CLFLeftNavigation.webpart" Type="GhostableInLibrary" >
+      <Property Name="Group" Value="CLF 3 Group" />
+    </File>
+  </Module>
+</Elements>

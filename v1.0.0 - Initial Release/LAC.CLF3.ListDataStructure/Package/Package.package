@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="de700153-1a6b-4be3-9620-f8c9629b4442" solutionId="de700153-1a6b-4be3-9620-f8c9629b4442" resetWebServer="false" name="LAC.CLF3.ListDataStructure" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="8893659e-695a-49c9-a94b-f7d39974aed9" />
+  </features>
+</package>

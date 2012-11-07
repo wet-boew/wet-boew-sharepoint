@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="CLF3FooterNavigation" FolderCreation="TRUE" Direction="$Resources:Direction;" Url="Lists/CLF3FooterNavigation" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+      <ContentType ID="0x0100fe332e23d33847dea71991113b94dfb2" Name="CLF3 Footer Navigation Item" Group="CLF3" Description="CLF3 Footer" Inherits="TRUE" Version="0">
+        <FieldRefs>
+          <FieldRef ID="{ABFE0260-A6DE-4B61-ABDC-7B2A2B9A330F}" Name="Title" Required="TRUE"/>
+          <FieldRef ID="{329FCEC7-08A7-4498-8BB8-457FBDC15148}" Name="NavUrl" Required="FALSE" />
+          <FieldRef ID="{39376658-6CA7-46FA-A3D8-2AEA38F8998E}" Name="RowOrder" Required="FALSE" />
+        </FieldRefs>
+      </ContentType>
+      <ContentType ID="0x0120eefcb6ad0eae4e5a9dc21ed57f488f1f" Name="CLF3 Footer Navigation Folder" Group="CLF3" Description="CLF3 Footer" Inherits="TRUE" Version="0">
+        <FieldRefs>
+          <FieldRef ID="{ABFE0260-A6DE-4B61-ABDC-7B2A2B9A330F}" DisplayName="Name" Name="Title" Required="TRUE"/>
+        </FieldRefs>
+      </ContentType>
+    </ContentTypes>
+    <Fields>
+      <Field ID="{ABFE0260-A6DE-4B61-ABDC-7B2A2B9A330F}"  Name="Title" Type="Text" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" FromBaseType="TRUE" />
+      <Field ID="{329FCEC7-08A7-4498-8BB8-457FBDC15148}" Name="NavUrl" Type="Text" DisplayName="Nav Url" Description="" StaticName="NavUrl" Required="FALSE" />
+      <Field ID="{39376658-6CA7-46FA-A3D8-2AEA38F8998E}"  Name="RowOrder" Type="Number" DisplayName="Row Order" StaticName="RowOrder"  Required="FALSE" />
+      <Field ID="{FEFDBEAA-0731-461C-ABDF-7C73E60094B1}" Name="Name" Type="Text" DisplayName="Name" StaticName="Name"  Required="TRUE" FromBaseType="TRUE" />
+      <Field ID="{762C534D-5144-4C77-A95F-ED41893B283A}" Name="DocIcon" Type="Text" DisplayName="Type" StaticName="Type"  Required="TRUE" FromBaseType="TRUE" />
+    </Fields>
+    <Views>
+      <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="LinkTitleNoMenu"></FieldRef>
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="Modified" Ascending="FALSE"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View>
+      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="DocIcon"></FieldRef>
+          <FieldRef Name="LinkTitle"></FieldRef>
+          <FieldRef Name="NavUrl"></FieldRef>
+          <FieldRef Name="RowOrder"></FieldRef>
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="ID"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View>
+    </Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>
