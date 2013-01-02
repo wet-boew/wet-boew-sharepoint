@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="SPCLF3.CLFLeftNavigation.CLFLeftNavigation, SPCLF3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=04a860f987069351" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">CLF3LeftNavigation</property>
+        <property name="Description" type="string">CLF3 Left Navigation</property>
+        <property name="ChromeType" type="chrometype">None</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

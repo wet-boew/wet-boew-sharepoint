@@ -72,7 +72,7 @@ namespace SPCLF3.WebControls
                         // iterate through the variation urls and find the lable from the other language
                         foreach (PublishingWeb aPubWeb in topPubWeb.GetPublishingWebs())
                         {
-                            if ((aPubWeb.Label.Title != publishingPage.PublishingWeb.Label.Title) &&
+                            if (aPubWeb.Label != null && (aPubWeb.Label.Title != publishingPage.PublishingWeb.Label.Title) &&
                                 ((aPubWeb.Label.Title.ToLower() == "eng") || (aPubWeb.Label.Title.ToLower() == "fra")))
                             {
                                 // then we have the pubweb from the other variation... 

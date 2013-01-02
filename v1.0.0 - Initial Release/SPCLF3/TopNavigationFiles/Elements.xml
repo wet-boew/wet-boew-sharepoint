@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <Module Name="TopNavigationFiles" RootWebOnly="TRUE" Url="Navigation">
-  <File Path="TopNavigationFiles\menu-eng.txt" Url="menu-eng.txt" Type="GhostableInLibrary" />
-  <File Path="TopNavigationFiles\menu-fra.txt" Url="menu-fra.txt" Type="GhostableInLibrary" />
-</Module>
+  <Module Name="TopNavigationFiles" RootWebOnly="TRUE" Url="Lists/TopNavigation">
+    <File Path="TopNavigationFiles\menu-eng.txt" Url="menu-eng.txt" Type="GhostableInLibrary" />
+    <File Path="TopNavigationFiles\menu-fra.txt" Url="menu-fra.txt" Type="GhostableInLibrary" />
+  </Module>
 </Elements>

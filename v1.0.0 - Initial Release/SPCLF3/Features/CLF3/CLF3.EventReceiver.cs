@@ -22,20 +22,20 @@ namespace SPCLF3.Features.CLF3
     [Guid("1d7f0f0e-448c-4098-99d3-e29cd250eb05")]
     public class CLF3EventReceiver : SPFeatureReceiver
     {
-        private string defaultMasterPage = "CLF3Publishing.master";
-        private string defaultPageLayout = "Layout2Col.aspx";
+        //private string defaultMasterPage = "CLF3Publishing.master";
+        //private string defaultPageLayout = "Layout2Col.aspx";
 
         public override void FeatureActivated(SPFeatureReceiverProperties properties)
         {
             //This feature activation will make changes to the root site only. 
             //Any site built after will be taken care of by the web created event receiver.
-            SPSecurity.RunWithElevatedPrivileges(delegate()
+            /*SPSecurity.RunWithElevatedPrivileges(delegate()
             {
                 CreateNavigationLibrary(((SPSite)properties.Feature.Parent).Url);
                 /*DefaultMasterPageProcess(properties);
                 DefaultPageLayoutProcess(properties);
-                DefaultNavigation(properties);*/
-            });
+                DefaultNavigation(properties);
+            });*/
         }
 
         private void CreateNavigationLibrary(string url)
@@ -46,10 +46,10 @@ namespace SPCLF3.Features.CLF3
                 {
                     using (SPWeb web = site.OpenWeb())
                     {
-                        SPList list = web.Lists.TryGetList("Navigation");
+                        SPList list = web.Lists.TryGetList("TopNavigation");
                         if (list == null)
                         {
-                            web.Lists.Add("Navigation", "", SPListTemplateType.DocumentLibrary);
+                            web.Lists.Add("TopNavigation", "", SPListTemplateType.DocumentLibrary);
                             web.Update();
                         }
                     }

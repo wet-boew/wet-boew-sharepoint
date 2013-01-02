@@ -46,9 +46,9 @@ namespace SPCLF3.WebControls
                 htmlOutput += "<div class=\"wet-boew-menubar mb-mega\"><div><ul class=\"mb-menu\" data-ajax-replace=\"";
                 
                 if(SPContext.Current.Web.Locale.TwoLetterISOLanguageName == "en")
-                    htmlOutput += "/Navigation/menu-eng.txt\">";
+                    htmlOutput += "/Lists/TopNavigation/menu-eng.txt\">";
                 else
-                    htmlOutput += "/Navigation/menu-fra.txt\">";
+                    htmlOutput += "/Lists/TopNavigation/menu-fra.txt\">";
 
                 string langWeb = string.Empty;
                 if (SPContext.Current.ListItem != null && PublishingPage.IsPublishingPage(SPContext.Current.ListItem))

@@ -13,13 +13,13 @@ namespace SPCLF3.CONTROLTEMPLATES.AccessibleSearchBox {
     public partial class AccessibleSearchBox {
         
         /// <summary>
-        /// litSearchLabel control.
+        /// pnlSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litSearchLabel;
+        protected global::System.Web.UI.WebControls.Panel pnlSearch;
         
         /// <summary>
         /// txtSearch control.

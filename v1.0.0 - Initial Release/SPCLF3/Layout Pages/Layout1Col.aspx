@@ -27,12 +27,10 @@
 </asp:Content>
 
 <asp:Content ContentPlaceholderID="PlaceHolderBodyLeftBorder" runat="server">
-    <div id="cn-body-inner-1col">
+    <div id="wb-body">
 </asp:Content>
 
-<asp:Content ContentPlaceholderID="PlaceHolderLeftNavBar" runat="server">
-    <div id="wb-body">   
-</asp:Content>
+<asp:Content ContentPlaceholderID="PlaceHolderLeftNavBar" runat="server" />
 
 <asp:Content ContentPlaceholderID="PlaceHolderMain" runat="server">
     <div id="cont" class="center">
@@ -76,12 +74,3 @@
 </asp:Content>
 
 <asp:Content ContentPlaceholderID="PlaceHolderLastModifiedDate" runat="server"><CLFCustomControls:LastModifiedDate runat="server"></CLFCustomControls:LastModifiedDate></asp:Content>
-
-<script runat="server">
-    protected override void OnPreRender(EventArgs e)
-    {
-        base.OnPreRender(e);
-
-        
-    }
-</script>

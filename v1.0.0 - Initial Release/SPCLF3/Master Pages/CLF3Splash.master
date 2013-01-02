@@ -13,14 +13,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="<%$Resources:wss,language_value %>" dir="<%$Resources:wss,multipages_direction_dir_value %>" style="overflow: hidden;" runat="server">
 <head runat="server">
 	<meta charset="utf-8" />
-	<!-- Begin CLF3 theme Block -->
-        <!--
-        GC Web Usability theme v1.0 / Thème de la facilité d'emploi GC v1.0
-        Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
-        Terms and conditions of use: http://tbs-sct.ircan.gc.ca/projects/gcwwwtemplates/wiki/Terms
-        Conditions régissant l'utilisation : http://tbs-sct.ircan.gc.ca/projects/gcwwwtemplates/wiki/Conditions
-        -->
-    <!-- End CLF theme block -->
 
 	<!-- robots -->
 	<SharePoint:RobotsMetaTag runat="server"/>
@@ -53,44 +45,25 @@
 	<script type="text/javascript">
 		var _fV4UI = true;
 	</script>
-	<!-- load CLF 3.0 Scripts -->
-    <!-- WET scripts/CSS begin / Début des scripts/CSS de la BOEW -->
-    <SharePoint:CssRegistration name="/_layouts/SPCLF3/WET-BOEW/css/base.css" runat="server" />
-    <SharePoint:CssRegistration name="/_layouts/SPCLF3/WET-BOEW/css/base-ie8.css" ConditionalExpression="IE 8" runat="server" />
-    <SharePoint:CssRegistration name="/_layouts/SPCLF3/WET-BOEW/css/base-ie7.css" ConditionalExpression="IE 7" runat="server" />
-    <SharePoint:CssRegistration name="/_layouts/SPCLF3/WET-BOEW/css/base-ie6.css" ConditionalExpression="lte IE 6" runat="server" />
-    <!-- CSS Grid System begins / Début du système de grille de CSS -->
+	 <!--[if lte IE 8]>
+    <script src="/_layouts/SPCLF3/WET-BOEW/js/polyfills/html5shiv-min.js"></script>
+    <![endif]-->
+    <SharePoint:CSSRegistration runat="server" name="/_layouts/SPCLF3/WET-BOEW/grids/css/util-ie-min.css" ConditionalExpression="lte IE 8" />
+    <SharePoint:CSSRegistration runat="server" name="/_layouts/SPCLF3/WET-BOEW/js/css/pe-ap-ie-min.css" ConditionalExpression="lte IE 8" />
+    <SharePoint:CSSRegistration runat="server" name="/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/css/theme-sp-pe-ie-min.css" ConditionalExpression="lte IE 8" />
     
-    <SharePoint:CssRegistration name="/_layouts/SPCLF3/WET-BOEW/grids/css/util.css" runat="server" />
-    <!-- CSS Grid System ends / Fin du système de grille de CSS -->
-    <!-- GC Web Usability theme begins / Début du thème de la facilité d'emploi GC -->
-    <link href="/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/css/framework-static-theme-gcwu-fegc.css" media="screen" rel="stylesheet" id="frameworkresponsive" />
-    <SharePoint:CssRegistration name="/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/css/sp-pe-theme-gcwu-fegc.css" runat="server" />
-	<SharePoint:CssRegistration name="/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/css/sp-pe-theme-gcwu-fegc-ie7.css" ConditionalExpression="IE 7" runat="server" />
-	<SharePoint:CssRegistration name="/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/css/sp-pe-theme-gcwu-fegc-ie6.css" ConditionalExpression="lte IE 6" runat="server" />
-	<!-- GC Web Usability theme ends / Fin du thème de la facilité d'emploi GC -->
-    <!-- Menu bar ends /Fin de la barre de menu -->
-    <!-- FIP visual elements and identifiers begin / Début des éléments et identificateurs visuels de PCIM -->
-    <SharePoint:CssRegistration name="/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/fip-pcim/css/sp-pe-fip-pcim.css" runat="server" />
-    <SharePoint:CssRegistration name="/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/fip-pcim/css/sp-pe-fip-pcim-ie7.css" ConditionalExpression="IE 7" runat="server" />
-    <SharePoint:CssRegistration name="/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/fip-pcim/css/sp-pe-fip-pcim-ie6.css" ConditionalExpression="lte IE 6" runat="server" />
-    <!-- FIP visual elements and identifiers end / Fin des éléments et identificateurs visuels de PCIM -->
+    <SharePoint:CssRegistration name="/_layouts/SPCLF3/WET-BOEW/grids/css/util-min.css" runat="server" />
+    <SharePoint:CssRegistration name="/_layouts/SPCLF3/WET-BOEW/js/css/pe-ap-min.css" runat="server" />
+    <SharePoint:CssRegistration name="/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/css/theme-sp-pe-min.css" runat="server" />
 
-	<!-- WET scripts/CSS end / Fin des scripts/CSS de la BOEW -->
+    <SharePoint:CssRegistration name="/_layouts/SPCLF3/GC-SharePoint/CSS/SharePoint.css" runat="server" />
+    <SharePoint:CssRegistration name="<% $SPUrl:~sitecollection/Style Library/~language/Core Styles/page-layouts-21.css %>" runat="server"/>
+    <SharePoint:CssRegistration name="<% $SPUrl:~sitecollection/Style Library/~language/Core Styles/edit-mode-21.css %>" After="<% $SPUrl:~sitecollection/Style Library/~language/Core Styles/page-layouts-21.css %>" runat="server"/>
 
-	<!-- Progressive enhancement begins / Début de l'amélioration progressive -->
-    <!-- Need JQUERY HERE to get the pe-ap.js to load with an id of progressive after JQUERY loaded -->
-    <asp:literal runat="server" Text="&lt;script src='" /><asp:literal runat="server" Text="/_layouts/SPCLF3/WET-BOEW/js/lib/jquery.min.js" /><asp:literal runat="server" Text="' type='text/javascript'&gt;&lt;/script&gt;" />
-    <asp:literal runat="server" Text="&lt;script src='" /><asp:literal runat="server" Text="/_layouts/SPCLF3/WET-BOEW/js/pe-ap.js" /><asp:literal runat="server" Text="' id='progressive' type='text/javascript'&gt;&lt;/script&gt;" />
-    <script>
-	/* <![CDATA[ */
-		var params = {
-            menubar : {}
-            <%= this.RenderFeatures() %>
-		};
-		PE.progress(params);
-	/* ]]> */
-	</script>
+    <noscript><link rel="Stylesheet" href="/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/css/theme-ns-min.css" /></noscript>	
+
+    <asp:literal ID="Literal10" runat="server" Text="&lt;script src='" /><asp:literal ID="Literal11" runat="server" Text="/_layouts/SPCLF3/WET-BOEW/js/jquery.min.js" /><asp:literal ID="Literal12" runat="server" Text="' type='text/javascript'&gt;&lt;/script&gt;" />
+    
 	<!-- Progressive enhancement ends / Fin de l'amélioration progressive -->
 
 	<!-- Custom scripts/CSS begin / Début des scripts/CSS personnalisés -->
@@ -102,138 +75,17 @@
 	<!-- load SharePoint javascript -->
     <CLFCustomControls:SuppressJSForAnonymous FilesToSuppress="cui.js;SP.Ribbon.js" runat="server" />
 	<SharePoint:ScriptLink language="javascript" Defer="true" runat="server"/>
- 
- 	<style type="text/css">
-        /* fix grid.css */
-        /* fix the ZIndex of the Menu and Banner...  cn-banner needs zindex of 1 greater than web-boww-menu */
-        /* Can't have zindex of 10000+ or it messes up sharepoint menues */
-        #cn-banner
-        {
-            z-index: 11 !important;
+    <style type="text/css">
+        #wb-cont {
+            border:0px !important;
+            padding-bottom:40px !important;
+            padding-top:40px !important;
         }
-        .wet-boew-menubar
-        {
-            z-index: 10 !important;
+        #wb-main a:link {
+            text-decoration:none !important;
         }
-		/* fix scrolling on list pages */
-		#s4-bodyContainer {
-			position: relative;
-		}
-
-		/* hide body scrolling (SharePoint will handle) */
-		body {
-			height:100%;
-			overflow:hidden;
-			width:100%;
-            font-size: 80%;
-            color: black;
-		}
-				
-		/* popout breadcrumb menu needs background color for firefox */
-		.s4-breadcrumb-menu {
-			background:#F2F2F2;
-		}
-
-		/* if you want to change the left nav width, change this and the margin-left in .s4-ca */
-		body #s4-leftpanel {
-			/* width:155px; */
-		}		
-		
-		/* body area normally has a white background */
-		.s4-ca {
-			background:transparent none repeat scroll 0 0;
-			/* margin-left:155px; */
-		}
-
-        /*Search Box Styles*/
-        /* fix the spacing around the search image - reduces to 1px blue line on either side */
-        #cn-search-box A
-        {
-            padding-right: 1px !important;
-            padding-left: 1px !important;
-        }
-
-        .adminBar .ms-sbrow a, .ms-sbcell {
-            margin:0; padding:0;
-        }
-        
-        #searchBoxOuter {
-            padding-top: 0px !important;
-            padding-right:0 !important; 
-            margin: 0 !important;
-            border-style: none !important;
-            float: right;
-        }
-
-        .s4-search INPUT.ms-sbplain {
-	        color:#444;
-            border:1px solid #ccc;
-            border-radius:2px;
-            -moz-border-radius:2px;
-            -webkit-border-radius:2px;
-            margin:0 !important;
-            width:218px;
-            box-shadow:none;
-            -moz-box-shadow:none;
-            -webkit-box-shadow:none;
-            background:#fff;
-            padding:1px 0;
-        }
-
-        /* Hide the search image */
-        /*
-        .s4-search .srch-gosearchimg {
-        	background-color:transparent; 
-            background-image:none; 
-            visibility:hidden;
-        }
-        */
-        
-        input.s4-searchbox-QueryPrompt {
-	        font-size:13px !important; 
-        }
-        #searchBoxOuter .s4-wpTopTable { 
-            padding: 0 !important;
-            margin: 0 !important;
-            border-style: none !important;
-        }
-        #searchBoxOuter .s4-wpTopTable tbody tr td {
-            padding: 0 !important;
-            margin: 0 !important;
-            border-style: none !important;
-        }
-        #searchBoxOuter table.s4-search
-        {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        /* END Search Box Styles */
-
-        /* CLF3 specific overrides */
-
-        #cn-cont
-        {
-            margin-left: 10px !important; 
-            margin-right: 10px !important;
-        }
-
-        #cn-centre-col a:link, #cn-centre-col a:visited, .ms-WPBody a:link, .ms-WPBody a:visited
-        {
-            text-decoration: none !important;
-        }
-
-        #cn-site-title
-        {
-            width: auto !important;
-        }
-
-        /* END CLF3 Specific Overrides */
-	</style>
- 
-	<!-- javascript to override the active-x message in ie 
-		// See http://blog.drisgill.com/2010/02/removing-name-activex-control-warning.html for more info
-		// Remove if the IM pressence icons are needed in SharePoint
-	-->
+    </style>
+ 	
 	<script type="text/javascript">
 		function ProcessImn(){}
 		function ProcessImnMarkers(){}	
@@ -508,26 +360,21 @@
             <!-- page editing status bar -->
 	        <div class="s4-notdlg"><div id="s4-statusbarcontainer" class="s4-notdlg"><div id="pageStatusBar" class="s4-status-s1"></div></div></div>
 
-            <!-- MUST USE THE LAYOUTSPLASH.ASPX PAGE LAYOUT -->
-            <!-- Two column layout begins / Début de la mise en page de deux colonnes -->
-            <!-- Border element for the main page body is used to set the layout in layout page have this set to -->
-            <!-- div id="cn-body-inner-1col -->
-            <asp:ContentPlaceHolder ID="PlaceHolderBodyLeftBorder" runat="server"/>  <!-- div id="cn-body-inner-1col-->
-                <!--googleoff:all-->
-                <!-- Skip header begins / Début du saut de l'en-tête -->
-                <div id="cn-skip-head">
-                    <ul id="cn-tphp">
-                        <li id="cn-sh-link-1"><a href="#cn-cont"><asp:Literal Text="<%$Resources:CLF3, SkipLinkMain%>" runat="server" /></a></li>
-                        <li id="cn-sh-link-2"><a href="#cn-nav"><asp:Literal Text="<%$Resources:CLF3, SkipLinkNav%>" runat="server" /></a></li>
+            <asp:ContentPlaceHolder ID="PlaceHolderBodyLeftBorder" runat="server"/>
+                
+                <div id="wb-skip">
+                    <ul id="wb-tphp">
+                        <li id="wb-skip1"><a href="#wb-cont"><asp:Literal Text="<%$Resources:CLF3, SkipLinkMain%>" runat="server" /></a></li>
+                        <li id="wb-skip2"><a href="#wb-nav"><asp:Literal Text="<%$Resources:CLF3, SkipLinkNav%>" runat="server" /></a></li>
                     </ul>
                 </div>
                 <!-- Skip header ends / Fin du saut de l'en-tête -->
                 <!-- Header begins / Début de l'en-tête -->
-                <div id="cn-head"><!-- cn-head -->
-                    <div id="cn-head-inner"> <!-- cn-head-inner -->
+                <div id="wb-head"><!-- cn-head -->
+                    <div id="wb-head-in"> <!-- cn-head-inner -->
                         <header><!-- HeaderStart -->
-                            <div id="cn-sig" class="span-8">
-                                <div id="cn-sig-inner">
+                            <div id="gcwu-sig" class="span-8">
+                                <div id="gcwu-sig-in">
                                     <asp:Literal Text="<%$Resources:CLF3, fipPcimSigDiv%>" Mode="PassThrough" runat="server" /> <!-- <div id="fip-pcim-sig-eng" title="Government of Canada / Gouvernement du Canada"> -->
                                         <!-- <img src="/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/fip-pcim/images/sig-eng.gif" class="image-actual" width="214" height="20" alt="Government of Canada / Gouvernement du Canada" /> -->
                                         <img src="<%$Resources:CLF3, SplashSigImage%>" class="image-actual" width="214" height="20" alt="<%$Resources:CLF3, GovOfCanada%>" runat="server" />
@@ -540,32 +387,32 @@
                 <!-- Header ends / Fin de l'en-tête -->
     
                 <!-- Columns begin / Début des colonnes -->
-                <div id="cn-cols"><!-- cn-cols -->
-                    <div id="cn-cols-inner" class="equalize"><!-- cn-cols-inner -->
+                <div id="wb-core"><!-- cn-cols -->
+                    <div id="wb-core-in" class="equalize"><!-- cn-cols-inner -->
                         <!-- Main content begins / Début du contenu principal -->
-                        <div id="cn-centre-col" role="main"> <!-- cn-centre-col -->
-                            <div id="cn-centre-col-inner"><!-- cn-centre-col-inner -->
+                        <div id="wb-main" role="main"> <!-- cn-centre-col -->
+                            <div id="wb-main-in"><!-- cn-centre-col-inner -->
                                 <!-- Content title begins / Début du titre du contenu -->
-                                <h1 id="cn-cont"><asp:Literal Text="<%$Resources:CLF3, SplashHeading%>" Mode="PassThrough" runat="server" /> </span>
+                                <h1 id="wb-cont"><asp:Literal Text="<%$Resources:CLF3, SplashHeading%>" Mode="PassThrough" runat="server" /> </span>
                                     <!-- <asp:ContentPlaceHolder id="PlaceHolderPageTitleInTitleArea" runat="server" /> -->
                                 </h1>
                                 <!-- Content Title ends / Fin du titre du contenu -->
                                 
                                 <!-- Site Title section begins -->
-                                <div id="cn-site-title">
-                                    <div id="cn-site-title-left" class="span-3 margin-bottom-none" lang="fr"><asp:Literal Text="<%$Resources:CLF3, SplashTitle2%>" Mode="PassThrough" runat="server" /></div>
+                                <div id="gcwu-title">
+                                    <div id="gcwu-title-left" class="span-3 margin-bottom-none" lang="fr"><asp:Literal Text="<%$Resources:CLF3, SplashTitle2%>" Mode="PassThrough" runat="server" /></div>
                                     <div class="span-2 margin-bottom-none"></div>
-                                    <div id="cn-site-title-right" class="span-3 margin-bottom-none"><asp:Literal Text="<%$Resources:CLF3, SplashTitle1%>" Mode="PassThrough" runat="server" /></div>
+                                    <div id="gcwu-title-right" class="span-3 margin-bottom-none"><asp:Literal Text="<%$Resources:CLF3, SplashTitle1%>" Mode="PassThrough" runat="server" /></div>
                                     <div class="clear"></div>
                                 </div>
                                 <!-- Site Title section ends -->
 
                                 <!-- Englsh/French Buttons start -->
-                                <div id="cn-lang-links">
+                                <div id="gcwu-lang">
                                     <nav role="navigation">
                                         <h2><span lang="fr">Liens de sélection de langue</span> / Language selection links</h2>
                                         <div class="span-6 grid-12 margin-bottom-none">
-                                            <ul id="cn-ef-lang-links">
+                                            <ul id="gcwu-ef-lang">
                                                 <li lang="fr">
                                                     <div class="span-2 row-start margin-bottom-none"><a href="<%$Resources:CLF3, SplashButton2URL%>" runat="server"><asp:Literal Text="<%$Resources:CLF3, SplashButton2%>" Mode="PassThrough" runat="server" /></a></div>
                                                 </li>
@@ -575,10 +422,10 @@
                                             </ul>
                                         </div>
                                         
-                                        <div id="cn-wmms" class="span-2 margin-bottom-none">
-                                            <div id="cn-wmms-inner">
+                                        <div id="gcwu-wmms" class="span-2 margin-bottom-none">
+                                            <div id="gcwu-wmms-in">
                                                 <asp:Literal Text="<%$Resources:CLF3, fipPcimWmmsDiv%>" Mode="PassThrough" runat="server" /> <!-- <div id="fip-pcim-wmms" title="Symbol of the Government of Canada / Symbole du gouvernement du Canada"> -->
-                                                    <img src="/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/fip-pcim/images/wmms.gif" width="126" height="30"  alt="<%$Resources:CLF3, wmmsText%>" runat="server"/>
+                                                    <img src="/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/images/wmms.gif" width="126" height="30"  alt="<%$Resources:CLF3, wmmsText%>" runat="server"/>
                                                 <asp:Literal Text="<%$Resources:CLF3, CloseDivLiteralText%>" Mode="PassThrough" runat="server" /><!-- </div> -->
                                             </div>
                                         </div>
@@ -605,15 +452,15 @@
                 <!-- Columns end / Fin des colonnes -->
 
                 <!-- Footer begins / Début du pied de page -->
-                <div id="cn-foot"><!-- cn-foot -->
-                    <div id="cn-foot-inner"><!-- cn-foot-inner -->
+                <div id="wb-foot"><!-- cn-foot -->
+                    <div id="wb-foot-in"><!-- cn-foot-inner -->
                         <footer>
 		                    <h2><asp:Literal Text="<%$Resources:CLF3, FooterHeaderText%>" runat="server" /></h2>
                             <!-- GC Web Usability theme begins / Début du thème de la facilité d'emploi GC -->
 		                    <!-- Site footer begins / Début du pied de page du site -->
-		                    <div id="cn-tc" class="span-8">
+		                    <div id="gcwu-tc" class="span-8">
                                 <div class="span-6 grid-12 margin-bottom-none margin-top-none row-start row-end">
-                                    <ul id="cn-ef-tc">
+                                    <ul id="gcwu-ef-tc">
                                         <li lang="fr">
                                             <div class="span-2 row-start"><a href="<%$Resources:CLF3, SplashFooter2URL%>" rel="license" runat="server"><asp:Literal Text="<%$Resources:CLF3, SplashFooter2%>" Mode="PassThrough" runat="server" /></a></div>
                                         </li>
@@ -695,16 +542,8 @@
 	<asp:ContentPlaceHolder id="PlaceHolderLeftNavBarBorder" runat="server"/>
 	<!-- Right margin of the main page body -->
 	<asp:ContentPlaceHolder id="PlaceHolderBodyRightMargin" runat="server" />
-	
+	<asp:ContentPlaceHolder ID="PlaceHolderLastModifiedDate" runat="server" />
 </asp:Panel>
-
-<!-- Handle Search "enter" key and back button -->
-<p style="display:none;">
-    <label for="__spDummyText1">__spDummyText1</label>
-    <input type="text" name="__spDummyText1" id="__spDummyText1" size="1"/>
-    <label for="__spDummyText2">__spDummyText2</label>
-    <input type="text" name="__spDummyText2" id="__spDummyText2" size="1"/>
-</p>
 </form>
 
 <!-- extra form for some instances -->

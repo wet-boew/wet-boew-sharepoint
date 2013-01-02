@@ -142,10 +142,10 @@
     <value>FR - This SPListItem is not a PublishingPage</value>
   </data>
   <data name="fipPcimSigDiv" xml:space="preserve">
-    <value>&lt;div id="fip-pcim-sig-fra" title="Gouvernement du Canada"&gt;</value>
+    <value>&lt;div id="gcwu-sig-fra" title="Gouvernement du Canada"&gt;</value>
   </data>
   <data name="fipPcimWmmsDiv" xml:space="preserve">
-    <value>&lt;div id="fip-pcim-wmms" title="Symbole du gouvernement du Canada"&gt;</value>
+    <value>&lt;div id="gcwu-wmms-fip" title="Symbole du gouvernement du Canada"&gt;</value>
   </data>
   <data name="FooterHeaderText" xml:space="preserve">
     <value>Pied de page</value>
@@ -208,7 +208,7 @@
     <value>Programmes</value>
   </data>
   <data name="SigImage" xml:space="preserve">
-    <value>/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/fip-pcim/images/sig-fra.gif</value>
+    <value>/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/images/sig-fra.gif</value>
   </data>
   <data name="SiteFooterHeaderText" xml:space="preserve">
     <value>Pied de page du site</value>
@@ -259,7 +259,7 @@
     <value>/eng/Pages/terms-and-conditions.aspx</value>
   </data>
   <data name="SplashSigImage" xml:space="preserve">
-    <value>/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/fip-pcim/images/sig-fra.gif</value>
+    <value>/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/images/sig-fra.gif</value>
   </data>
   <data name="SplashTitle1" xml:space="preserve">
     <value>Bibliothèque et Archives Canada</value>

@@ -14,7 +14,7 @@
 <asp:literal ID="html1a" runat="server" Text="&lt;!--[if IE 7]&gt; &lt;html class=&quot;no-js ie7&quot; lang=&quot;"/><asp:Literal ID="html1b" runat="server" Text="<%$Resources:wss,language_value%>" /><asp:literal ID="html1c" runat="server" Text="&quot;&gt;&lt;![endif]--&gt;"/>
 <asp:literal ID="html2a" runat="server" Text="&lt;!--[if IE 8]&gt; &lt;html class=&quot;no-js ie8&quot; lang=&quot;"/><asp:Literal ID="html2b" runat="server" Text="<%$Resources:wss,language_value%>" /><asp:literal ID="html2c" runat="server" Text="&quot;&gt;&lt;![endif]--&gt;"/>
 <asp:literal ID="html3a" runat="server" Text="&lt;!--[if gt IE 8]&gt; &lt;html lang=&quot;"/><asp:Literal ID="html3b" runat="server" Text="<%$Resources:wss,language_value%>" /><asp:literal ID="html3c" runat="server" Text="&quot;&gt;&lt;![endif]--&gt;"/>
-
+<asp:literal ID="html4a" runat="server" Text="&lt;html lang=&quot;<%$Resources:wss,language_value%>&quot;&gt;" />
 <head runat="server">
 	<meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=8"/>	
@@ -65,8 +65,8 @@
 
     <noscript><link rel="Stylesheet" href="/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/css/theme-ns-min.css" /></noscript>	
 
-    <asp:literal ID="Literal10" runat="server" Text="&lt;script src='" /><asp:literal ID="Literal11" runat="server" Text="/_layouts/SPCLF3/WET-BOEW/js/jquery.min.js" /><asp:literal ID="Literal12" runat="server" Text="' type='text/javascript'&gt;&lt;/script&gt;" />
-    
+    <asp:literal runat="server" Text="&lt;script src='" /><asp:literal runat="server" Text="/_layouts/SPCLF3/WET-BOEW/js/jquery.min.js" /><asp:literal runat="server" Text="' type='text/javascript'&gt;&lt;/script&gt;" />
+        
 	<!-- Custom scripts/CSS begin / Début des scripts/CSS personnalisés -->
     <!-- Edit Panel Placeholder for CLF Pages -->
     <asp:ContentPlaceHolder id="PlaceHolderCLFCSS1" runat="server"/>
@@ -407,7 +407,7 @@
                             <div id="gcwu-bnr-in">
 			                    <div id="gcwu-wmms">
                                     <div id="gcwu-wmms-in">
-                                        <asp:Literal ID="Literal7" Text="<%$Resources:CLF3, fipPcimWmmsDiv%>" Mode="PassThrough" runat="server" /><img id="Img1" src="/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/fip-pcim/images/wmms.gif" width="126" height="30"  alt="<%$Resources:CLF3, wmmsText%>" runat="server" /><asp:Literal ID="Literal8" Text="<%$Resources:CLF3, CloseDivLiteralText%>" Mode="PassThrough" runat="server" />
+                                        <asp:Literal ID="Literal7" Text="<%$Resources:CLF3, fipPcimWmmsDiv%>" Mode="PassThrough" runat="server" /><img id="Img1" src="/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/images/wmms.gif" width="126" height="30"  alt="<%$Resources:CLF3, wmmsText%>" runat="server" /><asp:Literal ID="Literal8" Text="<%$Resources:CLF3, CloseDivLiteralText%>" Mode="PassThrough" runat="server" />
                                     </div>
                                 </div>
             
@@ -460,9 +460,7 @@
                         <div id="wb-main" role="main"> 
                             <div id="wb-main-in">
                                 <!-- Content title begins / Début du titre du contenu -->
-                                <h1 id="wb-cont">
-                                    <asp:ContentPlaceHolder id="PlaceHolderPageTitleInTitleArea" runat="server" />
-                                </h1>
+                                <h1 id="wb-cont"><asp:ContentPlaceHolder id="PlaceHolderPageTitleInTitleArea" runat="server" /></h1>                                
                                 <!-- Content Title ends / Fin du titre du contenu -->
                                 
                                 <!-- s4-ca is the main body div -->
@@ -637,10 +635,21 @@
 <script runat="server">
     protected override void OnPreRender(EventArgs e)
     {
-        base.OnPreRender(e);
+        base.OnPreRender(e);          
 
         // populate litExtraCSS with the css required depending if we are logged in or not
-        litExtraCSS.Text = getEditModeCSS();
-        
+        litExtraCSS.Text = getEditModeCSS();        
+    }
+
+    protected override void Render(HtmlTextWriter writer)
+    {
+ 	    base.Render(writer);
+
+        if (SPContext.Current.ListItem != null && Microsoft.SharePoint.Publishing.PublishingPage.IsPublishingPage(SPContext.Current.ListItem))
+        {
+            Microsoft.SharePoint.Publishing.PublishingPage publishingPage = Microsoft.SharePoint.Publishing.PublishingPage.GetPublishingPage(SPContext.Current.ListItem);
+
+            this.Page.Title = publishingPage.Title;
+        }
     }
 </script>

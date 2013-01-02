@@ -208,7 +208,7 @@
     <value>Services</value>
   </data>
   <data name="SigImage" xml:space="preserve">
-    <value>/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/fip-pcim/images/sig-eng.gif</value>
+    <value>/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/images/sig-eng.gif</value>
   </data>
   <data name="SiteFooterHeaderText" xml:space="preserve">
     <value>Site Footer</value>
@@ -217,10 +217,10 @@
     <value>Library and Archives Canada</value>
   </data>
   <data name="SkipLinkMain" xml:space="preserve">
-    <value>Skip to main content</value>
+    <value>Skip to main content / &lt;span lang="fr"&gt;Passer au contenu principal&lt;/span&gt;</value>
   </data>
   <data name="SkipLinkNav" xml:space="preserve">
-    <value>Skip to primary navigation</value>
+    <value>Skip to footer / &lt;span lang="fr"&gt;Passer au pied de page&lt;/span&gt;</value>
   </data>
   <data name="TermsAndConditionsText" xml:space="preserve">
     <value>Terms and conditions</value>
@@ -259,7 +259,7 @@
     <value>/fra/Pages/avis.aspx</value>
   </data>
   <data name="SplashSigImage" xml:space="preserve">
-    <value>/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/fip-pcim/images/sig-fra.gif</value>
+    <value>/_layouts/SPCLF3/WET-BOEW/theme-gcwu-fegc/images/sig-fra.gif</value>
   </data>
   <data name="SplashTitle1" xml:space="preserve">
     <value>Library and Archives&lt;br /&gt;Canada</value>
@@ -281,5 +281,8 @@
   </data>
   <data name="LangISO" xml:space="preserve">
     <value>en</value>
+  </data>
+  <data name="ItemViewer2ColName" xml:space="preserve">
+    <value>Item Viewer 2 Columns</value>
   </data>
 </root>

@@ -1,101 +1,84 @@
-﻿/* March 2012 Fixes */
+﻿.mb-menu { z-index: 10; }  /* Fix for SP Ribbon To Go Over Menu */
+ 
+#gcwu-bnr
+{
+    z-index: 11 !important;
+}
 
-        /* Updates to fip-pcim.css*/
-        /*Otech - updated link colours within the body of page content*/
-	    #s4-bodyContainer #cn-body-inner-2col #wb-core #wb-core-in #wb-cont #cn-centre-col-inner a:link {color:#295376;}
-	    #s4-bodyContainer #cn-body-inner-2col #wb-core #wb-core-in #wb-cont #cn-centre-col-inner a:visited {color:#5a306b;}
-	    #s4-bodyContainer #cn-body-inner-1col #wb-core #wb-core-in #wb-cont #cn-centre-col-inner a:link {color:#295376;}
-	    #s4-bodyContainer #cn-body-inner-1col #wb-core #wb-core-in #wb-cont #cn-centre-col-inner a:visited {color:#5a306b;}
+.wet-boew-menubar
+{
+    z-index: 10 !important;
+}
+		
+/* fix scrolling on list pages */
+#s4-bodyContainer {
+    position: relative;
+}        
 
-        /* reset body links to default sharpoint */
-	    a:link {color:#0072bc;}
-	    a:visited {color:#5a306b}
-        
-        /* mega menu updates */
-        .mb-menu { z-index: 10; }  /* Fix for SP Ribbon To Go Over Menu */
-        /* End Updates to fip-pcis.css*/       
-
-        /* March 2012 Fixes End*/
-        /* fix grid.css */
-        /* fix the ZIndex of the Menu and Banner...  cn-banner needs zindex of 1 greater than web-boww-menu */
-        /* Can't have zindex of 10000+ or it messes up sharepoint menues */
-        #gcwu-bnr
-        {
-            z-index: 11 !important;
-        }
-        .wet-boew-menubar
-        {
-            z-index: 10 !important;
-        }
-		/* fix scrolling on list pages */
-		#s4-bodyContainer {
-			position: relative;
-		}        
-
-		/* hide body scrolling (SharePoint will handle) */
-		body {
-			height:100%;
-			width:100%;
-            font-size: 80% !important;
-            color: black !important;
-            font-family: Verdana,Arial,Helvetica,sans-serif !important;
-		}       
+/* hide body scrolling (SharePoint will handle) */
+body {
+    height:100%;
+	width:100%;
+    font-size: 80% !important;
+    color: black !important;
+    font-family: Verdana,Arial,Helvetica,sans-serif !important;
+}       
 				
-		/* popout breadcrumb menu needs background color for firefox */
-		.s4-breadcrumb-menu {
-			background:#F2F2F2;
-		}
+/* popout breadcrumb menu needs background color for firefox */
+.s4-breadcrumb-menu {
+    background:#F2F2F2;
+}
         		
-		/* body area normally has a white background */
-		.s4-ca {
-			background:transparent none repeat scroll 0 0;
-			/* margin-left:155px; */
-		}
+/* body area normally has a white background */
+.s4-ca {
+    background:transparent none repeat scroll 0 0;
+	/* margin-left:155px; */
+}
 
-        /*Search Box Styles*/
-        /* fix the spacing around the search image - reduces to 1px blue line on either side */
-        #gcwu-srchbx A
-        {
-            padding-right: 1px !important;
-            padding-left: 1px !important;
-        }
+/*Search Box Styles*/
+/* fix the spacing around the search image - reduces to 1px blue line on either side */
+#gcwu-srchbx A
+{
+    padding-right: 1px !important;
+    padding-left: 1px !important;
+}
 
-        .adminBar .ms-sbrow a, .ms-sbcell {
-            margin:0; padding:0;
-        }
+.adminBar .ms-sbrow a, .ms-sbcell {
+    margin:0; padding:0;
+}
         
-        #searchBoxOuter {
-            padding-top: 0px !important;
-            padding-right:0 !important; 
-            margin: 0 !important;
-            border-style: none !important;
-            float: right;
-        }
+#searchBoxOuter {
+    padding-top: 0px !important;
+    padding-right:0 !important; 
+    margin: 0 !important;
+    border-style: none !important;
+    float: right;
+}
 
-        .s4-search INPUT.ms-sbplain {
-	        color:#444;
-            border:1px solid #ccc;
-            border-radius:2px;
-            -moz-border-radius:2px;
-            -webkit-border-radius:2px;
-            margin:0 !important;
-            width:218px;
-            box-shadow:none;
-            -moz-box-shadow:none;
-            -webkit-box-shadow:none;
-            background:#fff;
-            padding:1px 0;
-        }
+.s4-search INPUT.ms-sbplain {
+    color:#444;
+    border:1px solid #ccc;
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    margin:0 !important;
+    width:218px;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    background:#fff;
+    padding:1px 0;
+}
         
-        input.s4-searchbox-QueryPrompt {
-	        font-size:13px !important; 
-        }        
+input.s4-searchbox-QueryPrompt {
+    font-size:13px !important; 
+}        
         
-        .srch-gosearchimg
-        {
-            height: auto !important;
-            margin-left: 3px;
-        }
+.srch-gosearchimg
+{
+    height: auto !important;
+    margin-left: 3px;
+}
 
         .ms-sbplain
         {
@@ -111,6 +94,7 @@
 
         .ms-wpTdSpace {
             border:0px !important;
+            background-color:transparent !important;
         }
 
         .ms-WPHeaderTdMenu {
@@ -161,7 +145,6 @@
             font-size:155% !important;
             font-weight:700 !important;
             line-height:150% !important;
-            margin-left:10px !important;
             margin-right:10px !important;
         }
 
@@ -185,7 +168,7 @@
         
         .ms-siteactionsmenu
         {
-            line-height:1em !important;
+            line-height:normal !important;
         }
 
         #ctl00_PlaceHolderMain_WikiField {
@@ -194,7 +177,7 @@
 
         .ms-rteTable-0 td{
             border:0px !important;
-            line-height:auto !important;
+            line-height:normal !important;
             padding-top:0px !important;
             padding-bottom:0px !important;
             padding-left:0px !important;
@@ -218,6 +201,7 @@
         .ms-vh-icon{
             padding-bottom:0px !important;
             padding-top:0px !important;
+            border:0px !important;
         }
 
         #wb-main a:link {
@@ -225,9 +209,14 @@
             text-decoration:underline !important;
         }
 
+        #wb-main a:visited {
+            color:#5a306b !important;
+            text-decoration:underline !important;
+        }
+
 
 .ms-linksectionheader {
-    line-height:1em !important;
+    line-height:normal !important;
 }
 
 .ms-authoringcontrols td{
@@ -284,7 +273,7 @@
 .ms-1pxfont
 {
 	border:0px !important;
-	line-height:1em !important;
+	line-height:normal !important;
 	padding-bottom:0px !important;
 	padding-top:0px !important;
 }
@@ -341,7 +330,7 @@
 	padding-bottom:0px !important;
 	padding-left:0px !important;
 	padding-right:0px !important;
-	line-height:1em;
+	line-height:normal;
 	vertical-align:middle !important;
 }
 
@@ -356,7 +345,7 @@
 	padding-bottom:0px !important;
 	padding-left:0px !important;
 	padding-right:0px !important;
-	line-height:1em;
+	line-height:normal;
 }
 
 .ie7 #gcwu-bnr {
@@ -383,12 +372,9 @@
     overflow: visible !important;
 }
 
-[class*='span-'] table td {
-    border-style:none !important;
-}
-
 .ms-vb {
     border:0px !important;
+    background-color:rgb(238, 238, 238) !important;
 }
 
 .s4-specialNavLinkList {
@@ -409,5 +395,80 @@
 
 .wet-boew-zebra td {
     line-height:1.5em;
-    padding:3px;
+    padding:8px !important;
+    border-color:#ccc !important;
+    border-style:solid !important;
+    border-width:1px !important;
+}
+
+#wb-main-in td 
+{
+    border-style: none;
+}
+
+.ms-wpheadermenuimg {
+    width:auto;
+}
+
+.ms-alternating {
+    background-color:transparent !important;
+}
+
+.ms-itmhover:hover {
+    line-height:normal !important;
+}
+
+.ms-bottompagingline1 {
+    background-color:rgb(238, 238, 238) !important;
+}
+
+.ms-bottompagingline2 {
+    background-color:rgb(238, 238, 238) !important;
+}
+
+.ms-vh2-nofilter-icon {
+    border:0px !important;
+}
+
+.ms-vh2-nograd {
+    border:0px !important;
+}
+
+.ms-viewselector {
+    background-color:transparent !important;
+}
+
+.ms-toolbar {
+    vertical-align:middle !important;
+    height:30px !important;
+}
+
+.ms-menubuttoninactivehover {
+    margin-bottom:0px !important;
+    margin-top:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.ms-splitbuttontext {
+    height:30px !important;
+}
+
+#gcwu-ef-lang{
+    text-decoration:none !important;
+}
+
+.dfwp-list {
+    margin-left:0px !important;
+}
+
+#wb-skip1 a:link {
+    text-align:center !important;
+}
+
+#wb-skip2 a:link {
+    text-align:center !important;
+}
+
+INPUT[type='submit'] {
+    display:inline;
 }

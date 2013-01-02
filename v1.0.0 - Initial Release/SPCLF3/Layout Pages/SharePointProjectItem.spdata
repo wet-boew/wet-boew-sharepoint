@@ -5,5 +5,12 @@
     <ProjectItemFile Source="Layout1Col.aspx" Target="Layout Pages\" Type="ElementFile" />
     <ProjectItemFile Source="Layout2Col.aspx" Target="Layout Pages\" Type="ElementFile" />
     <ProjectItemFile Source="LayoutSplash.aspx" Target="Layout Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="ItemViewer2Col.aspx" Target="Layout Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="LayoutCollectionItemDisplay.aspx" Target="Layout Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="LayoutCollectionLandingPage.aspx" Target="Layout Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="LayoutLeftSidebar.aspx" Target="Layout Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="LayoutSearchResults.aspx" Target="Layout Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="LayoutSiteLandingPage.aspx" Target="Layout Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="LayoutTwoMiddleZones.aspx" Target="Layout Pages\" Type="ElementFile" />
   </Files>
 </ProjectItem>

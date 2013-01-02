@@ -33,7 +33,7 @@ namespace SPCLF3.WebControls
                     PublishingPage publishingPage = PublishingPage.GetPublishingPage(SPContext.Current.ListItem);
                     writer.WriteLine(publishingPage.Title);
                 }
-                else if(SPContext.Current.ListItem != null)
+                else if (SPContext.Current.ListItem != null)
                 {
                     writer.Write(SPContext.Current.ListItem.Title);
                 }
@@ -41,6 +41,15 @@ namespace SPCLF3.WebControls
                 {
                     writer.Write(SPContext.Current.List.Title);
                 }
+                else if (HttpContext.Current.Request != null)
+                {
+                    string curUrl = HttpContext.Current.Request.Url.ToString();
+                    string fileNameNoExtension = curUrl.Split('/')[curUrl.Split('/').Length - 1].Split('.')[0];
+                    string fakeTitle = char.ToUpper(fileNameNoExtension[0]) + fileNameNoExtension.ToLower().Substring(1);
+                    writer.Write(fakeTitle);
+                }
+                else
+                    writer.Write("Administrative Page");
             }
             else
                 writer.WriteLine(masterPage.PageTitle);
