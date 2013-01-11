@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="1326e9d7-3c3f-452d-82cd-5caa10bd4f30" solutionId="1326e9d7-3c3f-452d-82cd-5caa10bd4f30" resetWebServer="false" name="AccessibleLists" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="619af179-055b-4518-bf23-9ca02086eedd" />
-  </features>
-</package>
