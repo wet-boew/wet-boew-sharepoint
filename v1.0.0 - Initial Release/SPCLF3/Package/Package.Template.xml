@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Solution xmlns="http://schemas.microsoft.com/sharepoint/">
-<ApplicationResourceFiles>
-    <App_GlobalResourceFile Location="Resources\CLF3.fr-CA.resx"/>
-    <App_GlobalResourceFile Location="Resources\CLF3.fr-FR.resx"/>
-    <App_GlobalResourceFile Location="Resources\CLF3.resx"/>
-  </ApplicationResourceFiles>
-</Solution>
