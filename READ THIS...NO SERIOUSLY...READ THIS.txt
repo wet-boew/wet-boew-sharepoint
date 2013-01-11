@@ -1,5 +1,0 @@
-January 2nd, 2013
-This code was developed by Library and Archives Canada. It builds on the foundation created by OranguTech that can be found on codeplex. It applies the WET 3.02 framework. Our intention is to keep the source code up to date with the latest major versions of the WET, 
-
-Sincerely yours,
-Nik
