@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="CLF3GlobalNavigation" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/CLF3GlobalNavigation" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+      <ContentType ID="0x010008cccf9559f84743bbf59effb5945e04" Name="CLF3 Global Navigation Item" Group="CLF3" Description="CLF3 Global Navigation" Inherits="TRUE" Version="0">
+        <FieldRefs>
+        <FieldRef ID="{F37601B8-2616-4DF0-A1C4-13A2037AA926}"  Name="Title" Required="TRUE" />
+        <FieldRef ID="{DF71F42F-6DBB-4417-972B-455F7DF8724C}"  Name="Title_fr" Required="TRUE" />
+        <FieldRef ID="{33900784-59DA-43F4-9AFC-EA64C7581084}"  Name="Level" Required="TRUE" />
+        <FieldRef ID="{A59F66AF-2E5A-49CF-AB26-11DAF3B41FE2}"  Name="SortOrder" />
+        <FieldRef ID="{78B6D7E8-B9FE-44F0-B9D7-B96BB7EEAD85}"  Name="UrlLink"  />
+        <FieldRef ID="{9BDFCF67-0B5C-4F6F-9683-A2208FA21CC3}"  Name="UrlLink_fr" />
+        </FieldRefs>
+      </ContentType>
+    </ContentTypes>
+    <Fields>
+      <Field ID="{F37601B8-2616-4DF0-A1C4-13A2037AA926}"  Name="Title" Type="Text" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" FromBaseType="TRUE" />
+      <Field ID="{DF71F42F-6DBB-4417-972B-455F7DF8724C}" Name="Title_fr" Type="Text" DisplayName="French Title" Description="French Title" StaticName="Title_fr" Required="FALSE" />
+      <Field ID="{33900784-59DA-43F4-9AFC-EA64C7581084}"  Name="Level" Type="Text" DisplayName="Level" StaticName="Level"  Required="FALSE" />
+      <Field ID="{A59F66AF-2E5A-49CF-AB26-11DAF3B41FE2}" Name="SortOrder" Type="Number" DisplayName="Sort Order" StaticName="SortOrder"  Required="FALSE" />
+      <Field ID="{78B6D7E8-B9FE-44F0-B9D7-B96BB7EEAD85}" Name="UrlLink" Type="Text" DisplayName="UrlLink" StaticName="UrlLink"  Required="FALSE" />
+      <Field ID="{9BDFCF67-0B5C-4F6F-9683-A2208FA21CC3}" Name="UrlLink_fr" Type="Text" DisplayName="French UrlLink" StaticName="Type"  Required="FALSE" />
+    </Fields>
+    <Views>
+      <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="LinkTitleNoMenu"></FieldRef>
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="Modified" Ascending="FALSE"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View>
+      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="Title"></FieldRef>
+          <FieldRef Name="Title_fr"></FieldRef>
+          <FieldRef Name="Level"></FieldRef>
+          <FieldRef Name="SortOrder"></FieldRef>
+          <FieldRef Name="UrlLink"></FieldRef>
+          <FieldRef Name="UrlLink_fr"></FieldRef>
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="ID"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View>
+    </Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>

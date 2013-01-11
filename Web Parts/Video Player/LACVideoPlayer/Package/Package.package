@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="cfa63367-90f0-471f-9e85-1b579db241eb" solutionId="cfa63367-90f0-471f-9e85-1b579db241eb" resetWebServer="false" name="LACVideoPlayer" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="9d706bc4-7b2f-4103-a6ce-afa7ea89eeae" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="0ca66954-d066-4866-9def-ca83440b843f" />
+  </projectItems>
+</package>
