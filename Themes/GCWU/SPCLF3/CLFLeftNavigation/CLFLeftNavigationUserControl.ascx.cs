@@ -150,7 +150,7 @@ namespace SPCLF3.CLFLeftNavigation
             {
                 // have children... render for expansion
                 returnString = "<section><h3>" +
-                                "<a href=\"" + urlLink + "?selected=" + aLevel + "\"" + currentNavClass + ">" + title + "</a></h3>";
+                                "<a href=\"" + urlLink + "\"" + currentNavClass + ">" + title + "</a></h3>";
 
                 // render any children
                 foreach (SPListItem oItem in secondLevelCollItem)
@@ -164,7 +164,7 @@ namespace SPCLF3.CLFLeftNavigation
             else
             {
                 // top level heading with no children
-                returnString = "<section><h3><a href=\"" + urlLink + "?selected=" + aLevel + "\"" + currentNavClass + ">" + title + "</a></h3></section>";
+                returnString = "<section><h3><a href=\"" + urlLink + "\"" + currentNavClass + ">" + title + "</a></h3></section>";
             }
             return returnString;
         }
@@ -196,7 +196,7 @@ namespace SPCLF3.CLFLeftNavigation
                     }
 
                     returnString = "<ul>" +
-                                   "<li><a href=\"" + urlLink + "?selected=" + level + "\"" + currentNavClass + ">" + title + "</a>";
+                                   "<li><a href=\"" + urlLink + "\"" + currentNavClass + ">" + title + "</a>";
 
                     //Check if this level has any sub levels
                     List<SPListItem> thirdLevelCollItem = (from SPListItem li in aList.Items
@@ -234,7 +234,7 @@ namespace SPCLF3.CLFLeftNavigation
                                 title = Convert.ToString(item["Title"]);
                                 urlLink = Convert.ToString(item["UrlLink"]);
 
-                                returnString += "<li><a href=\"" + urlLink + "?selected=" + thirdLevel + "\"" + currentNavClass + ">" + title + "</a></li>";
+                                returnString += "<li><a href=\"" + urlLink + "\"" + currentNavClass + ">" + title + "</a></li>";
                             }
                         }
 

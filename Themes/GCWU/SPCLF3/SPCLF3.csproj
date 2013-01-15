@@ -88,6 +88,8 @@
     <Reference Include="Microsoft.SharePoint.Security" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\RichHtmlFieldAdapter.cs" />
+    <Compile Include="Adapters\WebPartZoneAdapter.cs" />
     <Compile Include="CLFLeftNavigation\CLFLeftNavigation.cs" />
     <Compile Include="CLFLeftNavigation\CLFLeftNavigationUserControl.ascx.cs">
       <DependentUpon>CLFLeftNavigationUserControl.ascx</DependentUpon>
@@ -102,6 +104,9 @@
     </Compile>
     <Compile Include="CONTROLTEMPLATES\AccessibleSearchBox\AccessibleSearchBox.ascx.designer.cs">
       <DependentUpon>AccessibleSearchBox.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\AttachAdapter\AttachAdapter.EventReceiver.cs">
+      <DependentUpon>AttachAdapter.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\CLF3\CLF3.EventReceiver.cs">
       <DependentUpon>CLF3.feature</DependentUpon>
@@ -145,6 +150,9 @@
     </None>
     <None Include="Features\CLF3\CLF3.feature">
       <FeatureId>{467b7f23-b943-4595-aee7-ee4cbe46d9ff}</FeatureId>
+    </None>
+    <None Include="Features\AttachAdapter\AttachAdapter.feature">
+      <FeatureId>{318b1d99-fc05-4fcf-b0ca-816cfc698572}</FeatureId>
     </None>
     <None Include="Fields\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{10c360dd-e646-40e0-99ff-d1363616348d}</SharePointProjectItemId>
@@ -227,6 +235,9 @@
     </Content>
     <Content Include="Features\CLF3\CLF3.Template.xml">
       <DependentUpon>CLF3.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\AttachAdapter\AttachAdapter.Template.xml">
+      <DependentUpon>AttachAdapter.feature</DependentUpon>
     </Content>
     <Content Include="Fields\Elements.xml" />
     <Content Include="Images\CLF3\search.png" />

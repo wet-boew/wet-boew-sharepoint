@@ -29,6 +29,26 @@ namespace SPCLF3.Master_Pages
 
         private List<string> Parameters = new List<string>();
 
+        public CLF3PublishingMaster()
+        {
+
+        }
+
+        private static void AddControlAdapterToType<T>(Type controlType) where T : Adapters.WebPartZoneAdapter, new()
+        {
+            try
+            {
+                var adapters = System.Web.HttpContext.Current.Request.Browser.Adapters;
+                var key = controlType.AssemblyQualifiedName;
+                if(!adapters.Contains(key))
+                {
+                    var adapter = typeof(T).AssemblyQualifiedName;
+                    if(key !=null)
+                        adapters.Add(key, adapter);
+                }
+            }
+            catch { }
+        }
 
         /// <summary>
         /// Register a new WET feature with the progressive enhancement initialization.
