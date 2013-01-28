@@ -44,43 +44,69 @@ namespace SPCLF3.Adapters
                     {
                         foundOne = false;
                         // Nik20130115 - Remove the HasPers attribute;
-                        start = content.IndexOf("HasPers=");
+                        start = content.ToLower().IndexOf("haspers=");
                         end = content.IndexOf("\"", start + 9);
 
                         if (end > start && start > 0)
                         {
                             foundOne = true;
-                            content = content.Remove(start, end - start);
+                            string line = content.Substring(start - 1, end - start + 2);
+                            content = content.Remove(start - 1, end - start + 2);
                         }
 
                         // Nik20130115 - Remove the WebPartID attribute;
-                        start = content.IndexOf("WebPartID=");
+                        start = content.ToLower().IndexOf("webpartid=");
                         end = content.IndexOf("\"", start + 11);
 
                         if (end > start && start > 0)
                         {
                             foundOne = true;
-                            content = content.Remove(start, end - start);
+                            string line = content.Substring(start - 1, end - start + 2);
+                            content = content.Remove(start - 1, end - start+2);
+                        }
+
+                        // Nik20130125 - Remove the WebPartID2 attribute;
+                        start = content.ToLower().IndexOf("webpartid2=");
+                        end = content.IndexOf("\"", start + 12);
+
+                        if (end > start && start > 0)
+                        {
+                            foundOne = true;
+                            string line = content.Substring(start - 1, end - start + 2);
+                            content = content.Remove(start - 1, end - start + 2);
                         }
 
                         // Nik20130115 - Remove the AllowDelete attribute;
-                        start = content.IndexOf("AllowDelete=");
+                        start = content.ToLower().IndexOf("allowdelete=");
                         end = content.IndexOf("\"", start + 13);
 
                         if (end > start && start > 0)
                         {
                             foundOne = true;
-                            content = content.Remove(start, end - start);
+                            string line = content.Substring(start - 1, end - start + 2);
+                            content = content.Remove(start - 1, end - start + 2);
                         }
 
                         // Nik20130115 - Remove the AllowExport attribute;
-                        start = content.IndexOf("AllowExport=");
+                        start = content.ToLower().IndexOf("allowexport=");
                         end = content.IndexOf("\"", start + 13);
 
                         if (end > start && start > 0)
                         {
                             foundOne = true;
-                            content = content.Remove(start, end - start);
+                            string line = content.Substring(start - 1, end - start + 2);
+                            content = content.Remove(start - 1, end - start + 2);
+                        }
+
+                        // Nik20130125 - Remove the AllowRemove attribute;
+                        start = content.ToLower().IndexOf("allowremove=");
+                        end = content.IndexOf("\"", start + 13);
+
+                        if (end > start && start > 0)
+                        {
+                            foundOne = true;
+                            string line = content.Substring(start - 1, end - start + 2);
+                            content = content.Remove(start - 1, end - start + 2);
                         }
                     }
 

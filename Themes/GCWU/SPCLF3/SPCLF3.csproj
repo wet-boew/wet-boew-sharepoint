@@ -111,6 +111,7 @@
     <Compile Include="Features\CLF3\CLF3.EventReceiver.cs">
       <DependentUpon>CLF3.feature</DependentUpon>
     </Compile>
+    <Compile Include="LogEngine.cs" />
     <Compile Include="Master Pages\CLF3PublishingMaster.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -328,6 +329,7 @@
     <Content Include="Layouts\SPCLF3\WET-BOEW\js\dependencies\validate-min.js" />
     <Content Include="Layouts\SPCLF3\WET-BOEW\js\dependencies\validateAdditional-min.js" />
     <Content Include="Layouts\SPCLF3\WET-BOEW\js\dependencies\xregexp-min.js" />
+    <Content Include="Layouts\SPCLF3\WET-BOEW\js\i18n\base-min.js" />
     <Content Include="Layouts\SPCLF3\WET-BOEW\js\i18n\bg-min.js" />
     <Content Include="Layouts\SPCLF3\WET-BOEW\js\i18n\en-min.js" />
     <Content Include="Layouts\SPCLF3\WET-BOEW\js\i18n\es-min.js" />

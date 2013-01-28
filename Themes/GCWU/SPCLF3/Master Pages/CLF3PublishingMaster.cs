@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Web.UI;
+using Microsoft.SharePoint;
 
 namespace SPCLF3.Master_Pages
 {
@@ -168,9 +169,43 @@ namespace SPCLF3.Master_Pages
         {
             //base.Render(writer);
             // extract all html
-            if (Microsoft.SharePoint.SPContext.Current.Web.CurrentUser != null)
+            if (SPContext.Current.Web.CurrentUser != null)
             {
-                base.Render(writer);
+                try
+                {
+                    // Nik20130116 - Check to see if the current user is part of the Draft Reviewers Group;
+                    bool isDraftReviewer = false;
+                    string siteUrl = SPContext.Current.Web.Url;
+                    string userName = SPContext.Current.Web.CurrentUser.LoginName;
+                    SPSecurity.RunWithElevatedPrivileges(delegate()
+                    {
+                        using (SPSite site = new SPSite(siteUrl))
+                        {
+                            using (SPWeb web = site.OpenWeb())
+                            {
+                                SPGroup draftRevGroup = web.Groups["Draft Reviewers"];
+                                foreach (SPUser user in draftRevGroup.Users)
+                                {
+                                    if (user.LoginName == userName && userName != @"SHAREPOINT\system")
+                                        isDraftReviewer = true;
+                                }
+                            }
+                        }
+                    });
+
+                    // Nik20130116 - Get the page's mode (edit or display);
+                    Microsoft.SharePoint.WebControls.SPControlMode pageMode = SPContext.Current.FormContext.FormMode;
+
+                    // Nik20130116 - If the current user is part of the Draft Reviewer group, and the page is trying to access the Edit mode, then block page's load;
+                    if (pageMode == Microsoft.SharePoint.WebControls.SPControlMode.Edit && isDraftReviewer)
+                        System.Web.HttpContext.Current.Response.End();
+                    else
+                        base.Render(writer);
+                }
+                catch (Exception ex)
+                {
+                    LogEngine.Log(ex, "Master Pages - Publishing Master - Code Behind");
+                }
             }
             else
             {

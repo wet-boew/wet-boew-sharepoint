@@ -25,35 +25,40 @@ namespace SPCLF3.Features.AttachAdapter
         {
             try
             {
-                // Add the Mobile Web Part Adapter to the compat.browser file
-                SPWebApplication webApp = null;
-
-                if (properties.Feature.Parent is SPSite)
+                SPSecurity.RunWithElevatedPrivileges(delegate
                 {
-                    SPSite spSite = properties.Feature.Parent as SPSite;
-                    webApp = spSite.WebApplication;
-                }
-                else if (properties.Feature.Parent is SPWebApplication)
-                {
-                    webApp = properties.Feature.Parent as SPWebApplication;
-                }
+                    // Add the Mobile Web Part Adapter to the compat.browser file
+                    SPWebApplication webApp = null;
 
-                String pathToCompatBrowser = webApp.IisSettings[SPUrlZone.Default].Path + @"\App_Browsers\compat.browser";
-                XElement compatBrowser = XElement.Load(pathToCompatBrowser);
+                    if (properties.Feature.Parent is SPSite)
+                    {
+                        SPSite spSite = properties.Feature.Parent as SPSite;
+                        webApp = spSite.WebApplication;
+                    }
+                    else if (properties.Feature.Parent is SPWebApplication)
+                    {
+                        webApp = properties.Feature.Parent as SPWebApplication;
+                    }
 
-                // Get the node for the default browser.
-                XElement controlAdapters = compatBrowser.XPathSelectElement("./browser[@refID = \"default\"]/controlAdapters");
+                    String pathToCompatBrowser = webApp.IisSettings[SPUrlZone.Default].Path + @"\App_Browsers\compat.browser";
+                    XElement compatBrowser = XElement.Load(pathToCompatBrowser);
 
-                // Create and add the markup.
-                XElement newAdapter = new XElement("adapter");
+                    // Get the node for the default browser.
+                    XElement controlAdapters = compatBrowser.XPathSelectElement("./browser[@refID = \"default\"]/controlAdapters");
 
-                newAdapter.SetAttributeValue("controlType", controlType);
-                newAdapter.SetAttributeValue("adapterType", webPartFQN);
+                    // Create and add the markup.
+                    XElement newAdapter = new XElement("adapter");
 
-                controlAdapters.Add(newAdapter);
-                compatBrowser.Save(pathToCompatBrowser);
+                    newAdapter.SetAttributeValue("controlType", controlType);
+                    newAdapter.SetAttributeValue("adapterType", webPartFQN);
+
+                    controlAdapters.Add(newAdapter);
+                    compatBrowser.Save(pathToCompatBrowser);
+                });
             }
-            catch { }
+            catch (Exception ex) {
+                LogEngine.Log(ex, "Control Adapter - Feature Receiver - Activated");
+            }
         }
         
         public override void FeatureDeactivating(SPFeatureReceiverProperties properties)
