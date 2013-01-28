@@ -5,6 +5,10 @@ This repository includes the latest version of the SharePoint 2010 Master Pages 
 Change Log
 ===================
 
+January 28th, 2013
+--------------------
+[Nik] Updated all WET files to match version 3.04
+
 January 15th, 2013
 --------------------
-Added beta Control Adapter for RichHTMLField rendering. This ensures invalid properties such has "AllowDelete, and AllowExport are not rendered by the pages' HTML.
+[Nik] Added beta Control Adapter for RichHTMLField rendering. This ensures invalid properties such has "AllowDelete, and AllowExport are not rendered by the pages' HTML.
