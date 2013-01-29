@@ -5,6 +5,10 @@ This repository includes the latest version of the SharePoint 2010 Master Pages 
 Change Log
 ===================
 
+January 29th, 2013
+--------------------
+[Nik] Added List Definitions and better Resource Usage
+
 January 28th, 2013
 --------------------
 [Nik] Updated all WET files to match version 3.04
