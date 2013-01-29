@@ -24,6 +24,11 @@ namespace SPCLF3.WebControls
             {
                 PublishingPage publishingPage;
                 PublishingPage targetPage;
+                string currentLang = "";
+                if (HttpContext.Current.Request.Url.ToString().ToLower().Contains("/eng/"))
+                    currentLang = "en";
+                else
+                    currentLang = "fr";
 
                 // figure out what variation we are in and link back to the other language using the 
 
@@ -47,15 +52,16 @@ namespace SPCLF3.WebControls
                             queryString = masterPage.LanguageFlipQueryString;
                     }
 
-                    // check for variations... if we have variations then use the currentThreads culture to figure out our language rather than the webs 
                     if (label == null)
                     {
                         // no variations... use the current users local
-                        string langlabel = HttpContext.GetGlobalResourceObject("CLF3", "OtherLanguageText", System.Threading.Thread.CurrentThread.CurrentUICulture).ToString();
-                        string propLang = System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
-                        string Languagecontrol = (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "en") ?
-                            "<a href=\"" + publishingPage.Uri.AbsoluteUri + queryString + "\" lang=\"" + propLang + "\" xml:lang=\"" + propLang + "\" onclick=\"javascript:OnSelectionChange(1036); return false;\"><span>" + langlabel + "</span></a>" :
-                            "<a href=\"" + publishingPage.Uri.AbsoluteUri + queryString + "\" lang=\"" + propLang + "\" xml:lang=\"" + propLang + "\" onclick=\"javascript:OnSelectionChange(1033); return false;\"><span>" + langlabel + "</span></a>";
+                        string langlabel = HttpContext.GetGlobalResourceObject("CLF3", "OtherLanguageText", SPContext.Current.Web.Locale).ToString();
+                        string Languagecontrol = "";
+
+                        if (currentLang.Equals("en"))
+                            Languagecontrol = "<a href=\"" + publishingPage.Uri.AbsoluteUri + queryString + "\" lang=\"" + currentLang + "\" xml:lang=\"" + currentLang + "\" onclick=\"javascript:OnSelectionChange(1036); return false;\"><span>" + langlabel + "</span></a>";
+                        else
+                            Languagecontrol = "<a href=\"" + publishingPage.Uri.AbsoluteUri + queryString + "\" lang=\"" + currentLang + "\" xml:lang=\"" + currentLang + "\" onclick=\"javascript:OnSelectionChange(1033); return false;\"><span>" + langlabel + "</span></a>";
                         this.Controls.Add(new LiteralControl(Languagecontrol));
                     }
                     else
@@ -87,27 +93,29 @@ namespace SPCLF3.WebControls
                         else
                         {
                             targetPage = publishingPage.GetVariation(label);
+                            if (targetPage != null)
+                            {
+                                string currenturl = HttpContext.Current.Request.Path.ToString().ToLower();
 
-                            string currenturl = HttpContext.Current.Request.Path.ToString().ToLower();
+                                string reverseurl = targetPage.Uri.AbsoluteUri;
+                                string langlabel = HttpContext.GetGlobalResourceObject("CLF3", "OtherLanguageText", SPContext.Current.Web.Locale).ToString();
+                                string propLang = (publishingPage.PublishingWeb.Label.Language.Substring(0, 2) == "en") ? "fr" : "en";
 
-                            string reverseurl = targetPage.Uri.AbsoluteUri;
-                            string langlabel = HttpContext.GetGlobalResourceObject("CLF3", "OtherLanguageText", SPContext.Current.Web.Locale).ToString();
-                            string propLang = (publishingPage.PublishingWeb.Label.Language.Substring(0, 2) == "en") ? "fr" : "en";
-
-                            this.Controls.Add(new LiteralControl("<script type=\"text/javascript\">" + System.Environment.NewLine +
-                               "function OnSelectionChange2(value){" +
-                               System.Environment.NewLine + "var today = new Date();" +
-                               System.Environment.NewLine + "var oneYear = new Date(today.getTime() + 365 * 24 * 60 * 60 * 1000);" +
-                               System.Environment.NewLine + "var url = \"" + reverseurl + queryString + "\";" +
-                               System.Environment.NewLine + "document.cookie = \"lcid=\" + value + \";path=/;expires=\" + oneYear.toGMTString();" +
-                               System.Environment.NewLine + "window.location.href = url;" +
-                               System.Environment.NewLine + "}" +
-                               System.Environment.NewLine +
-                               "</script>"));
-                            string Languagecontrol = (publishingPage.PublishingWeb.Label.Language.Substring(0, 2) == "en") ?
-                                "<a href=\"" + reverseurl + queryString + "\" lang=\"" + propLang + "\" xml:lang=\"" + propLang + "\" onclick=\"javascript:OnSelectionChange2(1036); return false;\"><span>" + langlabel + "</span></a>" :
-                                "<a href=\"" + reverseurl + queryString + "\" lang=\"" + propLang + "\" xml:lang=\"" + propLang + "\" onclick=\"javascript:OnSelectionChange2(1033); return false;\"><span>" + langlabel + "</span></a>";
-                            this.Controls.Add(new LiteralControl(Languagecontrol));
+                                this.Controls.Add(new LiteralControl("<script type=\"text/javascript\">" + System.Environment.NewLine +
+                                   "function OnSelectionChange2(value){" +
+                                   System.Environment.NewLine + "var today = new Date();" +
+                                   System.Environment.NewLine + "var oneYear = new Date(today.getTime() + 365 * 24 * 60 * 60 * 1000);" +
+                                   System.Environment.NewLine + "var url = \"" + reverseurl + queryString + "\";" +
+                                   System.Environment.NewLine + "document.cookie = \"lcid=\" + value + \";path=/;expires=\" + oneYear.toGMTString();" +
+                                   System.Environment.NewLine + "window.location.href = url;" +
+                                   System.Environment.NewLine + "}" +
+                                   System.Environment.NewLine +
+                                   "</script>"));
+                                string Languagecontrol = (publishingPage.PublishingWeb.Label.Language.Substring(0, 2) == "en") ?
+                                    "<a href=\"" + reverseurl + queryString + "\" lang=\"" + propLang + "\" xml:lang=\"" + propLang + "\" onclick=\"javascript:OnSelectionChange2(1036); return false;\"><span>" + langlabel + "</span></a>" :
+                                    "<a href=\"" + reverseurl + queryString + "\" lang=\"" + propLang + "\" xml:lang=\"" + propLang + "\" onclick=\"javascript:OnSelectionChange2(1033); return false;\"><span>" + langlabel + "</span></a>";
+                                this.Controls.Add(new LiteralControl(Languagecontrol));
+                            }
                         }
                     }
                 }
@@ -130,11 +138,13 @@ namespace SPCLF3.WebControls
 
                     string url = SPContext.Current.Web.Url;
                     // no variations... use the current users local
-                    string langlabel = HttpContext.GetGlobalResourceObject("CLF3", "OtherLanguageText", System.Threading.Thread.CurrentThread.CurrentUICulture).ToString();
-                    string propLang = System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
-                    string Languagecontrol = (System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName == "en") ?
-                            "<a href=\"" + url + queryString + "\" lang=\"" + propLang + "\" xml:lang=\"" + propLang + "\" onclick=\"javascript:OnSelectionChange(1036); return false;\"><span>" + langlabel + "</span></a>" :
-                            "<a href=\"" + url + queryString + "\" lang=\"" + propLang + "\" xml:lang=\"" + propLang + "\" onclick=\"javascript:OnSelectionChange(1033); return false;\"><span>" + langlabel + "</span></a>";
+                    string langlabel = HttpContext.GetGlobalResourceObject("CLF3", "OtherLanguageText", SPContext.Current.Web.Locale).ToString();
+                    
+                    string Languagecontrol = "";
+                    if (currentLang.Equals("en"))
+                        Languagecontrol = "<a href=\"" + url + queryString + "\" lang=\"" + currentLang + "\" xml:lang=\"" + currentLang + "\" onclick=\"javascript:OnSelectionChange(1036); return false;\"><span>" + langlabel + "</span></a>";
+                    else
+                        Languagecontrol = "<a href=\"" + url + queryString + "\" lang=\"" + currentLang + "\" xml:lang=\"" + currentLang + "\" onclick=\"javascript:OnSelectionChange(1033); return false;\"><span>" + langlabel + "</span></a>";
                     this.Controls.Add(new LiteralControl(Languagecontrol));                    
                 }
             }

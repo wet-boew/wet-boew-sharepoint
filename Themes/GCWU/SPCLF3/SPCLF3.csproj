@@ -168,6 +168,18 @@
     <None Include="Layouts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{7b2403cd-f9e5-4312-b8f7-362214cffc07}</SharePointProjectItemId>
     </None>
+    <None Include="Lists\CLF3FooterNavigation\CLF3FooterNavigationInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0b134d24-dac4-42a2-82be-13565fd62936}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\CLF3FooterNavigation\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{60dbd175-e1fd-4d15-bc58-3fc9db501611}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\CLF3LeftNavigation\CLF3LeftNavigationInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2354ee9f-4f06-4784-b94b-78fe603330ac}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\CLF3LeftNavigation\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1ac3ba35-2453-4fc0-bcdb-4789cd518d52}</SharePointProjectItemId>
+    </None>
     <None Include="Master Pages\CLF3Publishing.master">
       <SubType>ASPXCodeBehind</SubType>
     </None>
@@ -482,6 +494,12 @@
     <Content Include="Layouts\SPCLF3\WET-BOEW\theme-gcwu-fegc\images\wmms-bg.gif" />
     <Content Include="Layouts\SPCLF3\WET-BOEW\theme-gcwu-fegc\images\wmms.gif" />
     <Content Include="Layouts\SPCLF3\WET-BOEW\theme-gcwu-fegc\js\theme-min.js" />
+    <Content Include="Lists\CLF3FooterNavigation\CLF3FooterNavigationInstance\Elements.xml" />
+    <Content Include="Lists\CLF3FooterNavigation\Elements.xml" />
+    <Content Include="Lists\CLF3FooterNavigation\Schema.xml" />
+    <Content Include="Lists\CLF3LeftNavigation\CLF3LeftNavigationInstance\Elements.xml" />
+    <Content Include="Lists\CLF3LeftNavigation\Elements.xml" />
+    <Content Include="Lists\CLF3LeftNavigation\Schema.xml" />
     <Content Include="Master Pages\Elements.xml" />
     <Content Include="Layout Pages\Layout1Col.aspx">
       <SubType>ASPXCodeBehind</SubType>

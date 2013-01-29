@@ -78,7 +78,12 @@ namespace SPCLF3.WebControls
                 {
                     //Nik20121026 - Handles the case where the site's template is a collaboration one;
                     string langWeb = string.Empty;
-                    string cultISO = System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+                    string cultISO = "";
+                    if (HttpContext.Current.Request.Url.ToString().ToLower().Contains("/eng/"))
+                        cultISO = "en";
+                    else
+                        cultISO = "fr";
+
                     langWeb = (cultISO == "en") ? "eng" : "fra";                    
 
                     currentNavClass = "class=\"nav-current\"";

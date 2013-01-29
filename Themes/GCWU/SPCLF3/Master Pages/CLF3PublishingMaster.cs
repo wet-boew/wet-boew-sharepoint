@@ -159,8 +159,7 @@ namespace SPCLF3.Master_Pages
             }
             return code.ToString();
         }
-
-
+        
         /// <summary>
         /// Render cleaned up code.
         /// </summary>

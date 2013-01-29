@@ -291,4 +291,7 @@
   <data name="Print" xml:space="preserve">
     <value>Print</value>
   </data>
+  <data name="languagevalue" xml:space="preserve">
+    <value>en-us</value>
+  </data>
 </root>

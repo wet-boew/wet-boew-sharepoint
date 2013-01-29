@@ -291,4 +291,7 @@
   <data name="Print" xml:space="preserve">
     <value>Imprimer</value>
   </data>
+  <data name="languagevalue" xml:space="preserve">
+    <value>fr-fr</value>
+  </data>
 </root>
