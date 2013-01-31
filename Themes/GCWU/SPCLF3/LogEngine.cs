@@ -18,10 +18,15 @@ namespace SPCLF3
                     {
                         using (SPWeb rootweb = site.OpenWeb())
                         {
+                            rootweb.AllowUnsafeUpdates = true;
                             SPList logs = rootweb.Lists["Logs"];
                             SPListItem item = logs.AddItem();
-                            item["Message"] = ex.Message;
-                            item["StackTrace"] = ex.StackTrace;
+                            if (ex.Message.Length > 100)
+                                item["Message"] = ex.Message.Substring(0, 100);
+                            else
+                                item["Message"] = ex.Message;
+                            if (ex.StackTrace != null)
+                                item["StackTrace"] = ex.StackTrace;
                             item["Component"] = component;
                             item.Update();
                             logs.Update();

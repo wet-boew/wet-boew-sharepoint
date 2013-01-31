@@ -128,7 +128,6 @@
     <Compile Include="WebControls\HomeLink.cs" />
     <Compile Include="WebControls\Language.cs" />
     <Compile Include="WebControls\LastModifiedDate.cs" />
-    <Compile Include="WebControls\LeftNavigation.cs" />
     <Compile Include="WebControls\PageMetadata.cs" />
     <Compile Include="WebControls\CLFTopNavigation.cs" />
     <Compile Include="WebControls\PageTitle.cs" />
@@ -205,6 +204,9 @@
       <SharePointProjectItemId>{cfd5b8c4-f74d-413d-8c83-251951a28e12}</SharePointProjectItemId>
     </None>
     <None Include="SharePointProjectItem.spdata" />
+    <None Include="StyleSheets\Core\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{787ea0ae-c218-4aaf-bb18-e68848c18d0d}</SharePointProjectItemId>
+    </None>
     <None Include="TopNavigationFiles\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{3cd0c306-015c-47db-977c-762b07d4eaa2}</SharePointProjectItemId>
     </None>
@@ -257,6 +259,9 @@
     <Content Include="Images\CLF3\SearchActive.png" />
     <Content Include="Images\CLF3\SearchActiveFR.png" />
     <Content Include="Images\CLF3\searchFR.png" />
+    <Content Include="Layout Pages\LayoutFloatingRight.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
     <Content Include="Layout Pages\ItemViewer2Col.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
@@ -507,6 +512,8 @@
     <Content Include="SearchBoxDelegate\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="StyleSheets\Core\Elements.xml" />
+    <Content Include="StyleSheets\Core\SPCLF3.css" />
     <Content Include="TopNavigationFiles\Elements.xml" />
     <Content Include="TopNavigationFiles\menu-eng.txt" />
     <Content Include="TopNavigationFiles\menu-fra.txt" />

@@ -15,5 +15,6 @@
     <projectItemReference itemId="1ac3ba35-2453-4fc0-bcdb-4789cd518d52" />
     <projectItemReference itemId="0b134d24-dac4-42a2-82be-13565fd62936" />
     <projectItemReference itemId="60dbd175-e1fd-4d15-bc58-3fc9db501611" />
+    <projectItemReference itemId="787ea0ae-c218-4aaf-bb18-e68848c18d0d" />
   </projectItems>
 </feature>

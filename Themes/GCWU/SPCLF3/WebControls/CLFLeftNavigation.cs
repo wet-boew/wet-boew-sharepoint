@@ -149,6 +149,10 @@ namespace SPCLF3.WebControls
             {
                 currentNavClass = " class=\"nav-current\"";
             }
+            else
+            {
+                currentNavClass = "";
+            }
 
             if (secondLevelCollItem.Count > 1)
             {
@@ -223,8 +227,8 @@ namespace SPCLF3.WebControls
                         string thirdLevel = item["Level"].ToString();
                         List<char> thirdList = thirdLevel.ToList<char>();
                         numberOfDots = thirdList.Count<char>(c => c == '.');
-
-                        if (selected == urlLink)
+                        urlLink = Convert.ToString(item["UrlLink"]);
+                        if (urlLink.ToLower().Contains(selected.ToLower()))
                         {
                             currentNavClass = " class=\"nav-current\"";
                         }
@@ -237,8 +241,6 @@ namespace SPCLF3.WebControls
                         if (numberOfDots == 2)
                         {
                             title = Convert.ToString(item["Title"]);
-                            urlLink = Convert.ToString(item["UrlLink"]);
-
                             returnString += "<li><a href=\"" + urlLink + "\"" + currentNavClass + ">" + title + "</a></li>";
                         }
                     }

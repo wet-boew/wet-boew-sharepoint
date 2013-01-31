@@ -4,6 +4,10 @@ This repository includes the latest version of the SharePoint 2010 Master Pages 
 
 Change Log
 ===================
+January 31st, 2013
+--------------------
+- Added a New Page layout allowing for images to float right;
+- Included the core css file for the Master Pages to inherit from;
 
 January 29th, 2013
 --------------------

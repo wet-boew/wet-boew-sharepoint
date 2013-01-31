@@ -51,7 +51,7 @@
     <div id="cont" class="center">
         <div class="span-6">
             <WebPartPages:SPProxyWebPartManager runat="server" id="ProxyWebPartManager"></WebPartPages:SPProxyWebPartManager>
-            <PublishingWebControls:RichHtmlField FieldName="PublishingPageContent" HasInitialFocus="True" MinimumEditHeight="400px" runat="server"></PublishingWebControls:RichHtmlField>
+            <PublishingWebControls:RichHtmlField FieldName="PublishingPageContent" HasInitialFocus="True" MinimumEditHeight="400px" runat="server" PrefixStyleSheet="WET"></PublishingWebControls:RichHtmlField>
 	        <PublishingWebControls:editmodepanel runat="server" id="editmodepanel1">
 			    <!-- Add field controls here to bind custom metadata viewable and editable in edit mode only.-->
 			    <table width="100%" cellpadding="10" cellspacing="0" class="editModePanel">

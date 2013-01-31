@@ -12,5 +12,6 @@
     <ProjectItemFile Source="LayoutSearchResults.aspx" Target="Layout Pages\" Type="ElementFile" />
     <ProjectItemFile Source="LayoutSiteLandingPage.aspx" Target="Layout Pages\" Type="ElementFile" />
     <ProjectItemFile Source="LayoutTwoMiddleZones.aspx" Target="Layout Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="LayoutFloatingRight.aspx" Target="Layout Pages\" Type="ElementFile" />
   </Files>
 </ProjectItem>

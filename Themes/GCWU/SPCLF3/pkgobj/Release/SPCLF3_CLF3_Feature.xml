@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" ImageUrl="microsoft-windows-8-icon.png" AlwaysForceInstall="TRUE" Description="Deployment of the CLF features for use in site templates and master pages." Id="082e4a1a-fd50-426b-adfa-62da42ccddc8" ReceiverAssembly="SPCLF3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=04a860f987069351" ReceiverClass="SPCLF3.Features.CLF3.CLF3EventReceiver" Scope="Site" Title="CLF 3.0 Feature">
+  <ElementManifests>
+    <ElementManifest Location="Master Pages\Elements.xml" />
+    <ElementFile Location="Master Pages\CLF3Publishing.master" />
+    <ElementFile Location="Master Pages\CLF3Splash.master" />
+    <ElementFile Location="Master Pages\CLF3System.master" />
+    <ElementManifest Location="Layout Pages\Elements.xml" />
+    <ElementFile Location="Layout Pages\Layout1Col.aspx" />
+    <ElementFile Location="Layout Pages\Layout2Col.aspx" />
+    <ElementFile Location="Layout Pages\LayoutSplash.aspx" />
+    <ElementFile Location="Layout Pages\ItemViewer2Col.aspx" />
+    <ElementFile Location="Layout Pages\LayoutCollectionItemDisplay.aspx" />
+    <ElementFile Location="Layout Pages\LayoutCollectionLandingPage.aspx" />
+    <ElementFile Location="Layout Pages\LayoutLeftSidebar.aspx" />
+    <ElementFile Location="Layout Pages\LayoutSearchResults.aspx" />
+    <ElementFile Location="Layout Pages\LayoutSiteLandingPage.aspx" />
+    <ElementFile Location="Layout Pages\LayoutTwoMiddleZones.aspx" />
+    <ElementManifest Location="ContentTypes\Elements.xml" />
+    <ElementManifest Location="Fields\Elements.xml" />
+    <ElementManifest Location="SearchBoxDelegate\Elements.xml" />
+    <ElementManifest Location="WebProvisioning\Elements.xml" />
+    <ElementManifest Location="CLFLeftNavigation\Elements.xml" />
+    <ElementFile Location="CLFLeftNavigation\CLFLeftNavigation.webpart" />
+    <ElementManifest Location="TopNavigationFiles\Elements.xml" />
+    <ElementFile Location="TopNavigationFiles\menu-eng.txt" />
+    <ElementFile Location="TopNavigationFiles\menu-fra.txt" />
+    <ElementManifest Location="TopNavigationListInstance\Elements.xml" />
+    <ElementManifest Location="TopNavigationList\Elements.xml" />
+    <ElementFile Location="TopNavigationList\Schema.xml" />
+    <ElementFile Location="TopNavigationList\EditDlg.htm" />
+    <ElementFile Location="TopNavigationList\FileDlg.htm" />
+    <ElementFile Location="TopNavigationList\Repair.aspx" />
+    <ElementFile Location="TopNavigationList\Upload.aspx" />
+    <ElementManifest Location="CLF3LeftNavigationInstance\Elements.xml" />
+    <ElementManifest Location="CLF3LeftNavigation\Elements.xml" />
+    <ElementFile Location="CLF3LeftNavigation\Schema.xml" />
+    <ElementManifest Location="CLF3FooterNavigationInstance\Elements.xml" />
+    <ElementManifest Location="CLF3FooterNavigation\Elements.xml" />
+    <ElementFile Location="CLF3FooterNavigation\Schema.xml" />
+  </ElementManifests>
+</Feature>
