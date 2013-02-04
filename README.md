@@ -4,19 +4,26 @@ This repository includes the latest version of the SharePoint 2010 Master Pages 
 
 Change Log
 ===================
+February 4th, 2013
+--------------------
+[Nik]
+- Added error handling for the Draft Reviewer Group;
+- Added space betweenleft menu and print option for small content pages;
+
 January 31st, 2013
 --------------------
+[Nik]
 - Added a New Page layout allowing for images to float right;
 - Included the core css file for the Master Pages to inherit from;
 
 January 29th, 2013
 --------------------
-[Nik] Added List Definitions and better Resource Usage
+[Nik] Added List Definitions and better Resource Usage;
 
 January 28th, 2013
 --------------------
-[Nik] Updated all WET files to match version 3.04
+[Nik] Updated all WET files to match version 3.04;
 
 January 15th, 2013
 --------------------
-[Nik] Added beta Control Adapter for RichHTMLField rendering. This ensures invalid properties such has "AllowDelete, and AllowExport are not rendered by the pages' HTML.
+[Nik] Added beta Control Adapter for RichHTMLField rendering. This ensures invalid properties such has "AllowDelete, and AllowExport are not rendered by the pages' HTML;
