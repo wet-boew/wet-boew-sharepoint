@@ -176,21 +176,29 @@ namespace SPCLF3.Master_Pages
                     bool isDraftReviewer = false;
                     string siteUrl = SPContext.Current.Web.Url;
                     string userName = SPContext.Current.Web.CurrentUser.LoginName;
-                    SPSecurity.RunWithElevatedPrivileges(delegate()
+
+                    try
                     {
-                        using (SPSite site = new SPSite(siteUrl))
+                        SPSecurity.RunWithElevatedPrivileges(delegate()
                         {
-                            using (SPWeb web = site.OpenWeb())
+                            using (SPSite site = new SPSite(siteUrl))
                             {
-                                SPGroup draftRevGroup = web.Groups["Draft Reviewers"];
-                                foreach (SPUser user in draftRevGroup.Users)
+                                using (SPWeb web = site.OpenWeb())
                                 {
-                                    if (user.LoginName == userName && userName != @"SHAREPOINT\system")
-                                        isDraftReviewer = true;
+                                    SPGroup draftRevGroup = web.Groups["Draft Reviewers"];
+                                    foreach (SPUser user in draftRevGroup.Users)
+                                    {
+                                        if (user.LoginName == userName && userName != @"SHAREPOINT\system")
+                                            isDraftReviewer = true;
+                                    }
                                 }
                             }
-                        }
-                    });
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        LogEngine.Log(ex, "Master Page");
+                    }
 
                     // Nik20130116 - Get the page's mode (edit or display);
                     Microsoft.SharePoint.WebControls.SPControlMode pageMode = SPContext.Current.FormContext.FormMode;

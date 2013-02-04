@@ -71,7 +71,7 @@ namespace SPCLF3.WebControls
                     finally
                     {
                     }
-
+                    htmlOutput += "<br /><br /><br />";
                     writer.Write(htmlOutput);
                 }
                 else
