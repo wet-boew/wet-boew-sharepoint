@@ -2,6 +2,10 @@ Information
 ===================
 This repository includes the latest version of the SharePoint 2010 Master Pages based on the most up-to-date version of the WET toolkit. This template is currently being maintained by Library and Archives Canada, and is being used on their Internet Web Site (http://bac-lac.gc.ca).
 
+Help Wanted
+===================
+Interested in helping with the Variant? Send me an email at Nikolas.Charlebois-Laprade@BAC-LAC.gc.ca
+
 Documentation
 ===================
 https://github.com/wet-boew/wet-boew-sharepoint/wiki
