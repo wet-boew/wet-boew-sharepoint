@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.SharePoint;
 
-namespace SPCLF3
+namespace WET.Theme.GCWU
 {
     public static class LogEngine
     {

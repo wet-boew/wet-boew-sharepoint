@@ -8,9 +8,9 @@ using Microsoft.SharePoint;
 using Microsoft.SharePoint.Publishing;
 using Microsoft.SharePoint.Publishing.Navigation;
 using Microsoft.SharePoint.WebControls;
-using SPCLF3.Objects;
+using WET.Theme.GCWU.Objects;
 
-namespace SPCLF3.WebControls
+namespace WET.Theme.GCWU.WebControls
 {
     [ToolboxData("<{0}:Language runat=server></{0}:Language>")]
     public class Language : WebControl
@@ -47,7 +47,7 @@ namespace SPCLF3.WebControls
                     // controls on the page can override the query string parameter if needed
                     if (this.Page.Master != null)
                     {
-                        Master_Pages.CLF3PublishingMaster masterPage = (Master_Pages.CLF3PublishingMaster)this.Page.Master;
+                        Master_Pages.WETPublishingMaster masterPage = (Master_Pages.WETPublishingMaster)this.Page.Master;
                         if (!String.IsNullOrEmpty(masterPage.LanguageFlipQueryString))
                             queryString = masterPage.LanguageFlipQueryString;
                     }
@@ -55,7 +55,7 @@ namespace SPCLF3.WebControls
                     if (label == null)
                     {
                         // no variations... use the current users local
-                        string langlabel = HttpContext.GetGlobalResourceObject("CLF3", "OtherLanguageText", SPContext.Current.Web.Locale).ToString();
+                        string langlabel = HttpContext.GetGlobalResourceObject("WET", "OtherLanguageText", SPContext.Current.Web.Locale).ToString();
                         string Languagecontrol = "";
 
                         if (currentLang.Equals("en"))
@@ -88,7 +88,7 @@ namespace SPCLF3.WebControls
                         }
                         if (label == null)
                         {
-                            throw new System.ArgumentException(HttpContext.GetGlobalResourceObject("CLF3", "Error_CantFindPubWebLabel", SPContext.Current.Web.Locale).ToString(), "listItem");
+                            throw new System.ArgumentException(HttpContext.GetGlobalResourceObject("WET", "Error_CantFindPubWebLabel", SPContext.Current.Web.Locale).ToString(), "listItem");
                         }
                         else
                         {
@@ -98,7 +98,7 @@ namespace SPCLF3.WebControls
                                 string currenturl = HttpContext.Current.Request.Path.ToString().ToLower();
 
                                 string reverseurl = targetPage.Uri.AbsoluteUri;
-                                string langlabel = HttpContext.GetGlobalResourceObject("CLF3", "OtherLanguageText", SPContext.Current.Web.Locale).ToString();
+                                string langlabel = HttpContext.GetGlobalResourceObject("WET", "OtherLanguageText", SPContext.Current.Web.Locale).ToString();
                                 string propLang = (publishingPage.PublishingWeb.Label.Language.Substring(0, 2) == "en") ? "fr" : "en";
 
                                 this.Controls.Add(new LiteralControl("<script type=\"text/javascript\">" + System.Environment.NewLine +
@@ -131,14 +131,14 @@ namespace SPCLF3.WebControls
                     // controls on the page can override the query string parameter if needed
                     if (this.Page.Master != null)
                     {
-                        Master_Pages.CLF3PublishingMaster masterPage = (Master_Pages.CLF3PublishingMaster)this.Page.Master;
+                        Master_Pages.WETPublishingMaster masterPage = (Master_Pages.WETPublishingMaster)this.Page.Master;
                         if (!String.IsNullOrEmpty(masterPage.LanguageFlipQueryString))
                             queryString = masterPage.LanguageFlipQueryString;
                     }
 
                     string url = SPContext.Current.Web.Url;
                     // no variations... use the current users local
-                    string langlabel = HttpContext.GetGlobalResourceObject("CLF3", "OtherLanguageText", SPContext.Current.Web.Locale).ToString();
+                    string langlabel = HttpContext.GetGlobalResourceObject("WET", "OtherLanguageText", SPContext.Current.Web.Locale).ToString();
                     
                     string Languagecontrol = "";
                     if (currentLang.Equals("en"))

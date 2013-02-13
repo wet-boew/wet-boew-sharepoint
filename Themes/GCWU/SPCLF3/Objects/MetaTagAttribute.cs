@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SPCLF3.Objects
+namespace WET.Theme.GCWU.Objects
 {
     public class MetaTagAttribute
     {

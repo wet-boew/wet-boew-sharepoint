@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPCLF3", "SPCLF3\SPCLF3.csproj", "{C4835364-DE10-4F1A-BF58-1AE5AEAC02E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterPages", "SPCLF3\MasterPages.csproj", "{C4835364-DE10-4F1A-BF58-1AE5AEAC02E6}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 2
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://v41tfs01.lac-bac.int:8080/tfs/defaultcollection
+		SccTeamFoundationServer = http://v41tfs01:8080/tfs/defaultcollection
 		SccLocalPath0 = .
-		SccProjectUniqueName1 = SPCLF3\\SPCLF3.csproj
+		SccProjectUniqueName1 = SPCLF3\\MasterPages.csproj
 		SccProjectName1 = SPCLF3
 		SccLocalPath1 = SPCLF3
 	EndGlobalSection

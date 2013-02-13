@@ -9,9 +9,9 @@ using System.Web;
 using System.Web.UI.WebControls;
 using System.ComponentModel;
 using System.Security;
-using SPCLF3.Objects;
+using WET.Theme.GCWU.Objects;
 
-namespace SPCLF3.WebControls
+namespace WET.Theme.GCWU.WebControls
 {
     /// <summary>
     /// 
@@ -25,7 +25,7 @@ namespace SPCLF3.WebControls
             base.Render(writer);
 
             // allow third party applications to override the title of the current node in the breadcrumb
-            SPCLF3.Master_Pages.CLF3PublishingMaster masterPage = (SPCLF3.Master_Pages.CLF3PublishingMaster)this.Page.Master;
+            WET.Theme.GCWU.Master_Pages.WETPublishingMaster masterPage = (WET.Theme.GCWU.Master_Pages.WETPublishingMaster)this.Page.Master;
             if (String.IsNullOrEmpty(masterPage.PageTitle))
             {
                 if (SPContext.Current.ListItem != null && PublishingPage.IsPublishingPage(SPContext.Current.ListItem))

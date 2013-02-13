@@ -4,8 +4,8 @@
 <%@ Register Tagprefix="PublishingWebControls" Namespace="Microsoft.SharePoint.Publishing.WebControls" Assembly="Microsoft.SharePoint.Publishing, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %> 
 <%@ Register Tagprefix="PublishingNavigation" Namespace="Microsoft.SharePoint.Publishing.Navigation" Assembly="Microsoft.SharePoint.Publishing, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
-<%@ Register Tagprefix="CLFCustomControls" Namespace="SPCLF3.WebControls" Assembly="SPCLF3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=04a860f987069351" %>
-<asp:Content ContentPlaceholderID="PlaceHolderCLFCSS1" runat="server"> 
+<%@ Register Tagprefix="CustomControls" Namespace="WET.Theme.GCWU.WebControls" Assembly="WET.Theme.GCWU, Version=1.0.0.0, Culture=neutral, PublicKeyToken=04a860f987069351" %>
+<asp:Content ContentPlaceholderID="PlaceHolderCSS1" runat="server"> 
     <SharePointWebControls:UIVersionedContent ID="UIVersionedContent2" UIVersion="4" runat="server">
 		<ContentTemplate>
 			<SharePointWebControls:CssRegistration name="<% $SPUrl:~sitecollection/Style Library/~language/Core Styles/page-layouts-21.css %>" runat="server"/>
@@ -34,11 +34,11 @@
     <div id="wb-sec">
         <div id="wb-sec-in">
             <nav role="navigation" >
-                <h2 id="wb-nav"><asp:Literal Text="<%$Resources:CLF3, PrimaryNavigationHeaderText%>" runat="server" /></h2>
+                <h2 id="wb-nav"><asp:Literal Text="<%$Resources:WET, PrimaryNavigationHeaderText%>" runat="server" /></h2>
                 <div class="wb-sec-def">
                     <!-- GC Web Usability theme begins / Début du thème de la facilité d'emploi GC -->
                     
-                    <CLFCustomControls:CLFLeftNavigation ID="CLFLeftNavigation1" runat="server" />
+                    <CustomControls:LeftNavigation ID="CLFLeftNavigation1" runat="server" />
                     
                     <!-- GC Web Usability theme ends / Fin du thème de la facilité d'emploi GC -->
                 </div>
@@ -100,8 +100,8 @@
 </asp:Content>
 
 <asp:Content ContentPlaceholderID="PlaceHolderAdditionalPageHead" runat="server"> 
-	<CLFCustomControls:PageMetadata runat="server"></CLFCustomControls:PageMetadata>
+	<CustomControls:PageMetadata runat="server"></CustomControls:PageMetadata>
 </asp:Content>
 <asp:Content ContentPlaceholderID="PlaceHolderLastModifiedDate" runat="server"> 
-	<CLFCustomControls:LastModifiedDate runat="server"></CLFCustomControls:LastModifiedDate>
+	<CustomControls:LastModifiedDate runat="server"></CustomControls:LastModifiedDate>
 </asp:Content>

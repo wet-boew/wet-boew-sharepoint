@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Web;
 using System.Web.UI;
 
-namespace SPCLF3.WebControls
+namespace WET.Theme.GCWU.WebControls
 {
     /// <summary>
     /// Ensures anonymous users of a SharePoint 2010 site do not receive unnecessary large JavaScript files (slows down first page load). Files to suppress are specified

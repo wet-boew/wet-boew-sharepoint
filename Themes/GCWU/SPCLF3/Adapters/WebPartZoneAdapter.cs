@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.SharePoint.WebPartPages;
 using System.Web.UI.WebControls.WebParts;
 
-namespace SPCLF3.Adapters
+namespace WET.Theme.GCWU.Adapters
 {
     public class WebPartZoneAdapter:System.Web.UI.Adapters.ControlAdapter
     {

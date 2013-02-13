@@ -9,16 +9,16 @@ using Microsoft.SharePoint.Utilities;
 using Microsoft.SharePoint.Publishing;
 using System.Linq;
 using Microsoft.SharePoint.Administration;
-using SPCLF3.Objects;
+using WET.Theme.GCWU.Objects;
 
-namespace SPCLF3.WebProvisioning
+namespace WET.Theme.GCWU.WebProvisioning
 {
     /// <summary>
     /// Web Events
     /// </summary>
     public class WebProvisioning : SPWebEventReceiver
     {
-        private string defaultMasterPage = "CLF3Publishing.master";
+        private string defaultMasterPage = "WETPublishing.master";
         private string defaultPageLayout = "Layout2Col.aspx";
         private string footerListName = "CLF3FooterNavigation";
         private SPListTemplateType listtype = SPListTemplateType.GenericList;

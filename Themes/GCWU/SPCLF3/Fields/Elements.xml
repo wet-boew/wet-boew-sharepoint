@@ -26,13 +26,13 @@
       Name="Content"
       DisplayName="Content"
       StaticName ="Content"
-      Group="CLF 3.0"
+      Group="WET"
       Type="HTML" RichText="TRUE" RichTextMode="FullHtml" />
   <Field ID="{C2DD6CB3-1FDF-449B-B518-D9035E7460F0}"
       SourceID="http://schemas.microsoft.com/sharepoint/v3"
       Name="ContentRight"
       DisplayName="ContentRight"
       StaticName ="ContentRight"
-      Group="CLF 3.0"
+      Group="WET"
       Type="HTML" RichText="TRUE" RichTextMode="FullHtml" />
 </Elements>

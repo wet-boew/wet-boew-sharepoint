@@ -2,7 +2,7 @@
 using System.IO;
 using Microsoft.SharePoint.Administration;
 
-namespace SPCLF3.Objects
+namespace WET.Theme.GCWU.Objects
 {
     /// <summary>
     /// Summary description for Logger.

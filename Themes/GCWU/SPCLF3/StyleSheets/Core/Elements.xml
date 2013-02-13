@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Core" Url="Style Library/CSS Style Sheets">
-    <File Path="Core\SPCLF3.css" Url="SPCLF3.css" Type="GhostableInLibrary" />
+    <File Path="Core\WET.Theme.GCWU.css" Url="WET.Theme.GCWU.css" Type="GhostableInLibrary" />
   </Module>
 </Elements>

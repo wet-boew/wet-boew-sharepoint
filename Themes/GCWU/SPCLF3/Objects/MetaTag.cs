@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 using Microsoft.SharePoint;
 using Microsoft.SharePoint.Publishing;
 
-namespace SPCLF3.Objects
+namespace WET.Theme.GCWU.Objects
 {
     [Serializable]
     public class MetaTag
@@ -126,7 +126,7 @@ namespace SPCLF3.Objects
                     defaultContent = Microsoft.SharePoint.Administration.SPServer.Local.DisplayName;
                     break;
                 case "@SiteTitle":
-                    defaultContent = HttpContext.GetGlobalResourceObject("CLF3", "SiteTitleText", SPContext.Current.Web.Locale).ToString();
+                    defaultContent = HttpContext.GetGlobalResourceObject("WET", "SiteTitleText", SPContext.Current.Web.Locale).ToString();
                     break;
                 default:
                     defaultContent = parameter;

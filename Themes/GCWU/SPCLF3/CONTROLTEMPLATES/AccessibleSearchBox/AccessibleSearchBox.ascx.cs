@@ -5,7 +5,7 @@ using Microsoft.SharePoint.Publishing;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 
-namespace SPCLF3.CONTROLTEMPLATES.AccessibleSearchBox
+namespace WET.Theme.GCWU.CONTROLTEMPLATES.AccessibleSearchBox
 {
     public partial class AccessibleSearchBox : UserControl
     {

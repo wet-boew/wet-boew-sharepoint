@@ -10,7 +10,7 @@ using Microsoft.SharePoint.Publishing;
 using System.Security;
 using System.Web;
 
-namespace SPCLF3.WebControls
+namespace WET.Theme.GCWU.WebControls
 {
     [DefaultProperty("Text"),
     ToolboxData("<{0}:LastModifiedDate runat=server></{0}:LastModifiedDate>")]

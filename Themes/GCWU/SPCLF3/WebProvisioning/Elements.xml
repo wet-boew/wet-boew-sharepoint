@@ -5,7 +5,7 @@
         <Name>WebProvisioningWebProvisioned</Name>
         <Type>WebProvisioned</Type>
         <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
-        <Class>SPCLF3.WebProvisioning.WebProvisioning</Class>
+        <Class>WET.Theme.GCWU.WebProvisioning.WebProvisioning</Class>
         <SequenceNumber>10000</SequenceNumber>
         <Synchronization>Synchronous</Synchronization>
       </Receiver>

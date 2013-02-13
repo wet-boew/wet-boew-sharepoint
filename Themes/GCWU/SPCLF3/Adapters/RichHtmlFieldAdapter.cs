@@ -11,7 +11,7 @@ using Microsoft.SharePoint.WebControls;
 using System.IO;
 using System.Web.UI;
 
-namespace SPCLF3.Adapters
+namespace WET.Theme.GCWU.Adapters
 {
     public class RichHtmlFieldAdapter:System.Web.UI.Adapters.ControlAdapter
     {

@@ -9,9 +9,9 @@ using Microsoft.SharePoint;
 using Microsoft.SharePoint.Publishing;
 using System.Security;
 using System.Web;
-using SPCLF3.Objects;
+using WET.Theme.GCWU.Objects;
 
-namespace SPCLF3.WebControls
+namespace WET.Theme.GCWU.WebControls
 {
     [DefaultProperty("Text"),
     ToolboxData("<{0}:HomeLink runat=server></{0}:HomeLink>")]
@@ -38,7 +38,7 @@ namespace SPCLF3.WebControls
                                 "<a href=\"" +
                                 page.PublishingWeb.Label.TopWebUrl +
                                 "\" style=\"font-size:1.5em;\">" +
-                                HttpContext.GetGlobalResourceObject("CLF3", "SiteTitleText", SPContext.Current.Web.Locale).ToString() +
+                                HttpContext.GetGlobalResourceObject("WET", "SiteTitleText", SPContext.Current.Web.Locale).ToString() +
                                 "</a>"
                             );
                         }
@@ -47,7 +47,7 @@ namespace SPCLF3.WebControls
                             // when variations are not enabled
                             output.Write(
                                 "<a href=\"" + SPContext.Current.Site.RootWeb.Url + "\" style=\"font-size:1.5em;\">" +
-                                HttpContext.GetGlobalResourceObject("CLF3", "SiteTitleText", SPContext.Current.Web.Locale).ToString() +
+                                HttpContext.GetGlobalResourceObject("WET", "SiteTitleText", SPContext.Current.Web.Locale).ToString() +
                                 "</a>"
                             );
                         }
@@ -63,7 +63,7 @@ namespace SPCLF3.WebControls
                 // when variations are not enabled
                 output.Write(
                     "<a href=\"" + SPContext.Current.Site.RootWeb.Url + "\" style=\"font-size:1.5em;\">" +
-                    HttpContext.GetGlobalResourceObject("CLF3", "SiteTitleText", SPContext.Current.Web.Locale).ToString() +
+                    HttpContext.GetGlobalResourceObject("WET", "SiteTitleText", SPContext.Current.Web.Locale).ToString() +
                     "</a>"
                 );
             }

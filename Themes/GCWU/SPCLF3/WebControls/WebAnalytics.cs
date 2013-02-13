@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Web;
 using System.Web.UI;
 
-namespace SPCLF3.WebControls
+namespace WET.Theme.GCWU.WebControls
 {
     /// <summary>
     /// Contains all the methods required to render the tracking code from Google Analytics and WebTrends.
@@ -60,7 +60,7 @@ namespace SPCLF3.WebControls
                     writer.WriteLine("<!-- Version: 9.4.0 -->");
                     writer.WriteLine("<!-- Tag Builder Version: 4.1  -->");
                     writer.WriteLine("<!-- Created: 8/30/2012 3:33:50 PM -->");
-                    writer.WriteLine("<script src=\"/_layouts/SPCLF3/webtrends/js/webtrends.js\" type=\"text/javascript\"></script>");
+                    writer.WriteLine("<script src=\"/_layouts/WET.Theme.GCWU/webtrends/js/webtrends.js\" type=\"text/javascript\"></script>");
 
                     writer.WriteLine("<!-- Warning: The two script blocks below must remain inline. Moving them to an external -->");
                     writer.WriteLine("<!-- JavaScript include file can cause serious problems with cross-domain tracking.      -->");

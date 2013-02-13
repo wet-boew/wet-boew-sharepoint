@@ -9,9 +9,9 @@ using System.Web;
 using System.Web.UI.WebControls;
 using System.ComponentModel;
 using System.Security;
-using SPCLF3.Objects;
+using WET.Theme.GCWU.Objects;
 
-namespace SPCLF3.WebControls
+namespace WET.Theme.GCWU.WebControls
 {
     [DefaultProperty("Text"),
     ToolboxData("<{0}:PageMetadata runat=server></{0}:PageMetadata>")]

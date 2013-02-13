@@ -7,7 +7,7 @@ using System.Xml.Linq;
 using System.Xml.XPath;
 
 
-namespace SPCLF3.Features.AttachAdapter
+namespace WET.Theme.GCWU.Features.AttachAdapter
 {
     /// <summary>
     /// This class handles events raised during feature activation, deactivation, installation, uninstallation, and upgrade.
@@ -18,7 +18,7 @@ namespace SPCLF3.Features.AttachAdapter
     [Guid("478cb469-ff18-4213-ae6f-11c9b14e3641")]
     public class AttachAdapterEventReceiver : SPFeatureReceiver
     {
-        string webPartFQN = "SPCLF3.Adapters.RichHtmlFieldAdapter, SPCLF3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=04a860f987069351";
+        string webPartFQN = "WET.Theme.GCWU.Adapters.RichHtmlFieldAdapter, WET.Theme.GCWU, Version=1.0.0.0, Culture=neutral, PublicKeyToken=04a860f987069351";
         string controlType = "Microsoft.SharePoint.Publishing.WebControls.RichHtmlField";
 
         public override void FeatureActivated(SPFeatureReceiverProperties properties)

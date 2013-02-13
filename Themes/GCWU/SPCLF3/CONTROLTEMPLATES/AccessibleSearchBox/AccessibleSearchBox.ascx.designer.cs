@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SPCLF3.CONTROLTEMPLATES.AccessibleSearchBox {
+namespace WET.Theme.GCWU.CONTROLTEMPLATES.AccessibleSearchBox {
     
     
     public partial class AccessibleSearchBox {
