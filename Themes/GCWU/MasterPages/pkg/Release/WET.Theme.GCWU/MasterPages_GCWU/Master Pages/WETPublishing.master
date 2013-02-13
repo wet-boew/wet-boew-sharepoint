@@ -756,7 +756,7 @@
         }
         catch (Exception ex)
         {
-            WET.Theme.GCWU.LogEngine.Log(ex, "WET Theme");
+            WET.Theme.GCWU.Objects.Logger.WriteLog("WET Theme");
         }
     }
 </script>

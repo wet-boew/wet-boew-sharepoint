@@ -197,7 +197,7 @@ namespace WET.Theme.GCWU.Master_Pages
                     }
                     catch (Exception ex)
                     {
-                        LogEngine.Log(ex, "Master Page");
+                        WET.Theme.GCWU.Objects.Logger.WriteLog("Master Page");
                     }
 
                     // Nik20130116 - Get the page's mode (edit or display);
@@ -211,7 +211,7 @@ namespace WET.Theme.GCWU.Master_Pages
                 }
                 catch (Exception ex)
                 {
-                    LogEngine.Log(ex, "Master Pages - Publishing Master - Code Behind");
+                    WET.Theme.GCWU.Objects.Logger.WriteLog("Master Pages - Publishing Master - Code Behind");
                 }
             }
             else

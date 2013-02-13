@@ -6,7 +6,7 @@
       <Property Name="MasterPageDescription" Value="WETPublishing.master"/>
     </File>
     <File Path="Layout2Col.aspx" Url="Layout Pages/Layout2Col.aspx" Type="GhostableInLibrary">
-      <Property Name="Title" Value="2 columns"/>
+      <Property Name="Title" Value="2 Columns"/>
       <Property Name="MasterPageDescription" Value="WETPublishing.master"/>
     </File>
     <File Path="LayoutSplash.aspx" Url="Layout Pages/LayoutSplash.aspx" Type="GhostableInLibrary">

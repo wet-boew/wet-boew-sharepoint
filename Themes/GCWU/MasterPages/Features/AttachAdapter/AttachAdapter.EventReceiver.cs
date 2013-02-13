@@ -57,7 +57,7 @@ namespace WET.Theme.GCWU.Features.AttachAdapter
                 });
             }
             catch (Exception ex) {
-                LogEngine.Log(ex, "Control Adapter - Feature Receiver - Activated");
+                WET.Theme.GCWU.Objects.Logger.WriteLog("Control Adapter - Feature Receiver - Activated");
             }
         }
         

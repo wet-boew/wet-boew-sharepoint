@@ -13,7 +13,6 @@
     <ElementFile Location="Layout Pages\LayoutSiteLandingPage.aspx" />
     <ElementManifest Location="Fields\Elements.xml" />
     <ElementManifest Location="SearchBoxDelegate\Elements.xml" />
-    <ElementManifest Location="WebProvisioning\Elements.xml" />
     <ElementManifest Location="TopNavigationFiles\Elements.xml" />
     <ElementFile Location="TopNavigationFiles\menu-eng.txt" />
     <ElementFile Location="TopNavigationFiles\menu-fra.txt" />
