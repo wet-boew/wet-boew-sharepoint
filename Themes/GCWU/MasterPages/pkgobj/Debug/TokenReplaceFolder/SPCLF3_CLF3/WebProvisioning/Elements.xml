@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Receivers >
+      <Receiver>
+        <Name>WebProvisioningWebProvisioned</Name>
+        <Type>WebProvisioned</Type>
+        <Assembly>SPCLF3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=04a860f987069351</Assembly>
+        <Class>SPCLF3.WebProvisioning.WebProvisioning</Class>
+        <SequenceNumber>10000</SequenceNumber>
+        <Synchronization>Synchronous</Synchronization>
+      </Receiver>
+  </Receivers>
+</Elements>

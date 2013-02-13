@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="Layout Pages" Url="_catalogs/masterpage" Path="Layout Pages" RootWebOnly="TRUE">
+    <File Path="Layout1Col.aspx" Url="Layout Pages/Layout1Col.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="1 Column"/>
+      <Property Name="MasterPageDescription" Value="WETPublishing.master"/>
+    </File>
+    <File Path="Layout2Col.aspx" Url="Layout Pages/Layout2Col.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="2 columns"/>
+      <Property Name="MasterPageDescription" Value="WETPublishing.master"/>
+    </File>
+    <File Path="LayoutSplash.aspx" Url="Layout Pages/LayoutSplash.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="Splash Page"/>
+      <Property Name="MasterPageDescription" Value="WETSplash.master"/>
+    </File>
+    <File Path="LayoutSearchResults.aspx" Url="Layout Pages/LayoutSearchResults.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="Search Results"/>
+      <Property Name="MasterPageDescription" Value="WETPublishing.master"/>
+    </File>
+    <File Path="LayoutSiteLandingPage.aspx" Url="Layout Pages/LayoutSiteLandingPage.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="3 Columns"/>
+      <Property Name="MasterPageDescription" Value="WETPublishing.master"/>
+    </File>
+</Module>
+</Elements>

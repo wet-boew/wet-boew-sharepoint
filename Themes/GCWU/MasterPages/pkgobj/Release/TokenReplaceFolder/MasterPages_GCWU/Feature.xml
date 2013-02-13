@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" ImageUrl="MasterPages/wet.gif" Title="WET - GCWU Theme" AlwaysForceInstall="TRUE" Description="Deployment of the GCWU theme" Id="082e4a1a-fd50-426b-adfa-62da42ccddc8" ReceiverAssembly="WET.Theme.GCWU, Version=1.0.0.0, Culture=neutral, PublicKeyToken=04a860f987069351" ReceiverClass="WET.Theme.GCWU.Features.EventReceiver" Scope="Site">
+  <ElementManifests>
+    <ElementManifest Location="Master Pages\Elements.xml" />
+    <ElementFile Location="Master Pages\WETPublishing.master" />
+    <ElementFile Location="Master Pages\WETSplash.master" />
+    <ElementFile Location="Master Pages\WETSystem.master" />
+    <ElementManifest Location="Layout Pages\Elements.xml" />
+    <ElementFile Location="Layout Pages\Layout1Col.aspx" />
+    <ElementFile Location="Layout Pages\Layout2Col.aspx" />
+    <ElementFile Location="Layout Pages\LayoutSplash.aspx" />
+    <ElementFile Location="Layout Pages\LayoutSearchResults.aspx" />
+    <ElementFile Location="Layout Pages\LayoutSiteLandingPage.aspx" />
+    <ElementManifest Location="Fields\Elements.xml" />
+    <ElementManifest Location="SearchBoxDelegate\Elements.xml" />
+    <ElementManifest Location="WebProvisioning\Elements.xml" />
+    <ElementManifest Location="TopNavigationFiles\Elements.xml" />
+    <ElementFile Location="TopNavigationFiles\menu-eng.txt" />
+    <ElementFile Location="TopNavigationFiles\menu-fra.txt" />
+    <ElementManifest Location="TopNavigationListInstance\Elements.xml" />
+    <ElementManifest Location="TopNavigationList\Elements.xml" />
+    <ElementFile Location="TopNavigationList\Schema.xml" />
+    <ElementFile Location="TopNavigationList\EditDlg.htm" />
+    <ElementFile Location="TopNavigationList\FileDlg.htm" />
+    <ElementFile Location="TopNavigationList\Repair.aspx" />
+    <ElementFile Location="TopNavigationList\Upload.aspx" />
+    <ElementManifest Location="Core\Elements.xml" />
+    <ElementFile Location="Core\WET.Theme.GCWU.css" />
+    <ElementManifest Location="Resource Files\Elements.xml" />
+    <ElementManifest Location="WETFooterNavigationInstance\Elements.xml" />
+    <ElementManifest Location="WETFooterNavigation\Elements.xml" />
+    <ElementFile Location="WETFooterNavigation\Schema.xml" />
+    <ElementManifest Location="WETLeftNavigationInstance\Elements.xml" />
+    <ElementManifest Location="WETLeftNavigation\Elements.xml" />
+    <ElementFile Location="WETLeftNavigation\Schema.xml" />
+  </ElementManifests>
+</Feature>
