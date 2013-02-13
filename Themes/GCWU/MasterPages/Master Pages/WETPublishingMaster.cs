@@ -185,11 +185,21 @@ namespace WET.Theme.GCWU.Master_Pages
                             {
                                 using (SPWeb web = site.OpenWeb())
                                 {
-                                    SPGroup draftRevGroup = web.Groups["Draft Reviewers"];
-                                    foreach (SPUser user in draftRevGroup.Users)
+                                    bool groupExists = false;
+                                    foreach (SPGroup group in web.Groups)
                                     {
-                                        if (user.LoginName == userName && userName != @"SHAREPOINT\system")
-                                            isDraftReviewer = true;
+                                        if (group.Name.Equals("Draft Reviewers"))
+                                            groupExists = true;
+                                    }
+
+                                    if (groupExists)
+                                    {
+                                        SPGroup draftRevGroup = web.Groups["Draft Reviewers"];
+                                        foreach (SPUser user in draftRevGroup.Users)
+                                        {
+                                            if (user.LoginName == userName && userName != @"SHAREPOINT\system")
+                                                isDraftReviewer = true;
+                                        }
                                     }
                                 }
                             }
