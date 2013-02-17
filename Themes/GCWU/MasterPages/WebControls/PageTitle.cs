@@ -35,7 +35,21 @@ namespace WET.Theme.GCWU.WebControls
                 }
                 else if (SPContext.Current.ListItem != null)
                 {
-                    writer.Write(SPContext.Current.ListItem.Title);
+                    try
+                    {
+
+                        writer.Write(SPContext.Current.ListItem.Title);
+                    }
+                    catch {
+                        try
+                        {
+                            writer.Write(SPContext.Current.ListItem.DisplayName);
+                        }
+                        catch (Exception ex)
+                        {
+                            WET.Theme.GCWU.Objects.Logger.WriteLog("Page Title:" + ex.Message);
+                        }
+                    }
                 }
                 else if (SPContext.Current.List != null)
                 {

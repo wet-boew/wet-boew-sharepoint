@@ -12,6 +12,11 @@ https://github.com/wet-boew/wet-boew-sharepoint/wiki
 
 Change Log
 ===================
+February 17th, 2013
+--------------------
+[Nik]
+- Fixed issues with System Master Page not displaying properly;
+
 February 4th, 2013
 --------------------
 [Nik]
