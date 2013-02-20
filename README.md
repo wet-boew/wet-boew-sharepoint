@@ -12,6 +12,11 @@ https://github.com/wet-boew/wet-boew-sharepoint/wiki
 
 Change Log
 ===================
+February 20th, 2013
+--------------------
+[Nik]
+- Updated source files from WET 3.05;
+
 February 17th, 2013
 --------------------
 [Nik]
