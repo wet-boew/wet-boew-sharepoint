@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="MasterPages" Url ="_catalogs/masterpage" RootWebOnly ="TRUE">
+    <File Path="Master Pages\WETIntranetPublishing.master" Url="WETIntranetPublishing.master" Type="GhostableInLibrary"  />
+    <File Path="Master Pages\WETIntranetSplash.master" Url="WETIntranetSplash.master" Type="GhostableInLibrary" />
+    <File Path="Master Pages\WETIntranetSystem.master" Url="WETIntranetSystem.master" Type="GhostableInLibrary" />
+</Module>
+</Elements>

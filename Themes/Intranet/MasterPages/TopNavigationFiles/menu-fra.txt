@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+wet-boew.github.com/wet-boew/License-eng.txt / wet-boew.github.com/wet-boew/Licence-fra.txt -->
+<!-- DataAjaxFragmentStart -->
+<li><section><h3><a href="#">Menu 1</a></h3>
+<div class="mb-sm">
+	<div class="span-2">
+		<section><h4><a href="#">Sous Menu 1</a></h4>
+			<ul>
+				<li><a href="#">Sous Menu 1.1</a></li>
+				<li><a href="#">Sous Menu 1.2</a></li>
+			</ul>
+		</section>
+		<section><h4><a href="#">Sous Menu 2</a></h4>
+			<ul>
+				<li><a href="#">Sous Menu 2.1</a></li>
+			</ul>
+		</section>		
+	</div>
+	<div class="span-2">
+		<section><h4><a href="#">Sous Menu 3</a></h4>
+			<ul>
+				<li><a href="#">Sous Menu 3.1</a></li>
+			</ul>
+		</section>		
+	<div class="clear"></div>
+</div>
+</section></li>
+<li><section><h3><a href="#">Menu 2</a></h3>
+</section></li>
+<!-- DataAjaxFragmentEnd -->
+</html>
