@@ -12,6 +12,11 @@ https://github.com/wet-boew/wet-boew-sharepoint/wiki
 
 Change Log
 ===================
+Februray 22nd, 2013
+--------------------
+[Nik]
+- Added the Intranet Master Pages;
+
 February 20th, 2013
 --------------------
 [Nik]
