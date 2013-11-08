@@ -4,6 +4,14 @@ In SharePoint 2013, master pages are now plain HTML files that contain special p
 
 The current solution contains two files, the HTML master page based off the WET 3.1.6 Internet Template, and a .wsp sandbox solution. The sandbox solution contains all the WET artefacts (images, css, and js) that are required by the master page to render properly.
 
+Contacts
+===================
+This GitHub project is provided by Nik Charlebois. If you have any questions or comments, or if you are interested in helping with the development, please contact me at
+
+Nikolas.Charlebois-Laprade@BAC-LAC.gc.ca
+
+You can also reach me on twitter (@NikCharlebois), on facebook, on linked in, by smoke signals, carrier pidgeons, etc
+
 Installation
 ===================
 Sandbox Solution
@@ -18,7 +26,7 @@ Sandbox Solution
 
 4.a - If the folder exists, you're golden;
 
-4.b - If the folder is not there, go in the fridge, grab a beer and start back at step 1 again, you've done something wrong;
+4.b - If the folder is not there, go in the fridge, grab a beer and start back at step 1, you've done something wrong;
 
 HTML Master Page
 --------------------
