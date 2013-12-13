@@ -18,7 +18,7 @@ Installation
 ===================
 Sandbox Solution
 -------------------
-1 - Navigate to your solutions gallery (http://<your domain>/_catalogs/solution/)
+1 - Navigate to your solutions gallery (http://[your domain]/_catalogs/solution/)
 
 2 - Upload the SPWetResources.wsp file;
 
