@@ -1,3 +1,5 @@
+/* This template is still in Beta */
+
 Information
 ===================
 In SharePoint 2013, master pages are now plain HTML files that contain special pieces of codes named SharePoint Snippets. When uploaded to your Master Page gallery, the HTML master page automatically creates an associated .master file. 
@@ -22,7 +24,7 @@ Sandbox Solution
 
 3 - Activate the SPWetResources solution;
 
-4 - Navigate to http://<your domain>/style library/css style sheets/ and ensure there is an existing GCWU folder in there;
+4 - Navigate to http://[your domain]/style library/css style sheets/ and ensure there is an existing GCWU folder in there;
 
 4.a - If the folder exists, you're golden;
 
@@ -32,7 +34,7 @@ HTML Master Page
 --------------------
 1 - Make sure the publishing infrastructure feature is enabled on the site collection;
 
-2 - Navigate to the Design Manager Administration of your site collection (http://<your domain>/_layouts/15/DesignWelcomePage.aspx)
+2 - Navigate to the Design Manager Administration of your site collection (http://[your domain]/_layouts/15/DesignWelcomePage.aspx)
 
 3 - In the left menu, click on Edit Master Pages
 
