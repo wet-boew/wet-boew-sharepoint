@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+<WET4Changes>
+  2014-11-24 This Web Control does not need to be adjusted for WET4. - BARIBF
+</WET4Changes>
+-->
+
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="SPWET4.WETLeftNavigation.WETLeftNavigation, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">WET4LeftNavigation</property>
+        <property name="Description" type="string">WET4 Left Navigation</property>
+        <property name="ChromeType" type="chrometype">None</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="Master Pages\" Type="ElementManifest" />
+    <ProjectItemFile Source="WET4System.master" Target="Master Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="WET4Publishing.master" Target="Master Pages\" Type="ElementFile" />
+    <ProjectItemFile Source="WET4Splash.master" Target="Master Pages\" Type="ElementFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SCE_WebControls" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="SPWET4.WebControls" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+    <SafeControl Name="SCE_MasterPages" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="SPWET4.Master_Pages" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>
