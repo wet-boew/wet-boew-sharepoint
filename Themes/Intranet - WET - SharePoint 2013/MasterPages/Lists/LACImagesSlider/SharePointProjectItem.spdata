@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.ListDefinition" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="LACImagesSlider\" Type="ElementManifest" />
+    <ProjectItemFile Source="Schema.xml" Target="LACImagesSlider\" Type="ElementFile" />
+    <ProjectItemFile Source="EditDlg.htm" Target="LACImagesSlider\" Type="ElementFile" />
+    <ProjectItemFile Source="FileDlg.htm" Target="LACImagesSlider\" Type="ElementFile" />
+    <ProjectItemFile Source="Repair.aspx" Target="LACImagesSlider\" Type="ElementFile" />
+    <ProjectItemFile Source="Upload.aspx" Target="LACImagesSlider\" Type="ElementFile" />
+  </Files>
+  <ExtensionData>
+    <ExtensionDataItem Key="Microsoft.VisualStudio.SharePoint.ListSettings.ListFieldsContentTypeID" Value="0x0100a0e61547febb403c9ada3a3c240dff07" />
+  </ExtensionData>
+</ProjectItem>

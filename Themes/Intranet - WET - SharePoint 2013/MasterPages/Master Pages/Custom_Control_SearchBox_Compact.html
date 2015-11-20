@@ -1,0 +1,124 @@
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+    <title>Site Search Box</title>
+
+    <!--[if gte mso 9]><xml>
+    <mso:CustomDocumentProperties>
+    <mso:TemplateHidden msdt:dt="string">0</mso:TemplateHidden>
+    <mso:MasterPageDescription msdt:dt="string">Displays the Search Box control in a compact form.</mso:MasterPageDescription>
+    <mso:ContentTypeId msdt:dt="string">0x0101002039C03B61C64EC4A04F5361F385106601</mso:ContentTypeId>
+    <mso:TargetControlType msdt:dt="string">;#SearchBox;#</mso:TargetControlType>
+    <mso:HtmlDesignAssociated msdt:dt="string">1</mso:HtmlDesignAssociated>
+    <mso:HtmlDesignConversionSucceeded msdt:dt="string">True</mso:HtmlDesignConversionSucceeded>
+    <mso:HtmlDesignStatusAndPreview msdt:dt="string">http://lacintranet/_catalogs/masterpage/Display%20Templates/Search/Custom_Control_SearchBox_Compact.html, La conversion a réussi.</mso:HtmlDesignStatusAndPreview>
+    </mso:CustomDocumentProperties>
+    </xml><![endif]-->
+</head>
+<body>
+    <div id="Control_SearchBox_Compact">
+        <!--#_
+                var showQuerySuggestions = ctx.ClientControl.get_showQuerySuggestions();
+                var showNavigation = ctx.ClientControl.get_showNavigation();
+
+                var prompt = ctx.ClientControl.get_initialPrompt();
+                if ($isNull(prompt))
+                {
+                    prompt = Srch.Res.sb_Prompt;
+                }
+
+                var searchBoxDivId = ctx.ClientControl.get_id() + "_sboxdiv";
+                var searchBoxId = ctx.ClientControl.get_id() + "_sbox";
+                var navButtonId = ctx.ClientControl.get_id() + "_NavButton";
+                var suggestionsListId = ctx.ClientControl.get_id() + "_AutoCompList";
+                var navListId = ctx.ClientControl.get_id() + "_NavDropdownList";
+                var searchBoxLinkId = ctx.ClientControl.get_id() + "_SearchLink";
+                var searchBoxProgressClass = "ms-srch-sbprogress";
+                var searchBoxPromptClass = "ms-srch-sb-prompt ms-helperText";
+
+                ctx.OnPostRender = function(rCtx) {
+                    ctx.ClientControl.activate(
+                        prompt,
+                        searchBoxId,
+                        searchBoxDivId,
+                        navButtonId,
+                        suggestionsListId,
+                        navListId,
+                        searchBoxLinkId,
+                        searchBoxProgressClass,
+                        searchBoxPromptClass);
+                }
+        _#-->
+        <div id=" wet-srchbx SearchBox" name="Control">
+            <div class=" wet-srchbx-in ms-srch-sb ms-srch-sb-border" id="_#= $htmlEncode(searchBoxDivId) =#_">
+                <input type="text" value="_#= $htmlEncode(ctx.ClientControl.get_currentTerm()) =#_" maxlength="2048" class="ms-textSmall wet-srch"
+                       accesskey="_#= $htmlEncode(Srch.Res.sb_AccessKey) =#_"
+                       title="_#= $htmlEncode(prompt) =#_"
+                       id="_#= $htmlEncode(searchBoxId) =#_" autocomplete="off" autocorrect="off"
+                       onkeypress="if (Srch.U.isEnterKey(String.fromCharCode(event.keyCode))) { $getClientControl(this).search(this.value);return Srch.U.cancelEvent(event); }"
+                       onkeydown="var ctl = $getClientControl(this);ctl.activateDefaultQuerySuggestionBehavior();"
+                       onfocus="var ctl = $getClientControl(this);ctl.hidePrompt();ctl.setBorder(true);"
+                       onblur="var ctl = $getClientControl(this);ctl.showPrompt();ctl.setBorder(false);" />
+                <!--#_
+                                var imagesUrl = GetThemedImageUrl('searchresultui.png');
+                                if (showNavigation) {
+                _#-->
+                <a class="ms-srch-sb-navLink" title="_#= $htmlEncode(Srch.Res.sb_GoNav) =#_" id="_#= $htmlEncode(navButtonId) =#_"
+                   onclick="$getClientControl(this).activateDefaultNavigationBehavior();return Srch.U.cancelEvent(event);"
+                   href="javascript: {}">
+                    <img src="_#= $urlHtmlEncode(imagesUrl) =#_" class="ms-srch-sb-navImg" id="navImg" alt="_#= $htmlEncode(Srch.Res.sb_GoNav) =#_" />
+               
+                 </a>
+                <!--#_
+                                }
+                _#-->
+                <a title="_#= $htmlEncode(Srch.Res.sb_GoSearch) =#_" class="ms-srch-sb-searchLink" id="_#= $htmlEncode(searchBoxLinkId) =#_"
+                   onclick="SubmitFrm(); return false;"  href="javascript: {}">
+                    <input id="wet-srch-submit" name="wet-srch-submit" type="button" value="Search" data-icon="search" class="button button-accent" onclick="SubmitFrm(); return false;" />
+                    <script type="text/javascript">
+                        function SubmitFrm() {
+                            var Searchtxt = $getClientControl(this).search($get('_#= $scriptEncode(searchBoxId) =#_').value);
+                            window.location = "http://collab.lac-bac.int/SiteDirectory/search/pages/results.aspx?k=" + Searchtxt;
+                        }
+                    </script>
+                </a>
+                <!--#_
+                            if (showQuerySuggestions) {
+                _#-->
+                <div class="ms-qSuggest-container ms-shadow" id="AutoCompContainer">
+                    <div id="_#= $htmlEncode(suggestionsListId) =#_"></div>
+                </div>
+                <!--#_
+                            }
+
+                            if (showNavigation) {
+                _#-->
+                <div class="ms-qSuggest-container ms-shadow" id="NavDropdownListContainer">
+                    <div id="_#= $htmlEncode(navListId) =#_"></div>
+                </div>
+                <!--#_
+                            }
+                _#-->
+            </div>
+            <!--#_
+                        if (ctx.ClientControl.get_showAdvancedLink()) {
+                            var advancedUrl = ctx.ClientControl.get_advancedSearchPageAddress();
+                            if(!$isEmptyString(advancedUrl)){
+            _#-->
+            <div class="ms-srch-sb-link"><a id="AdvancedLink" href="_#= $urlHtmlEncode(advancedUrl) =#_">_#= $htmlEncode(Srch.Res.sb_AdvancedLink) =#_</a></div>
+            <!--#_
+                            }
+                        }
+                        if (ctx.ClientControl.get_showPreferencesLink()) {
+                            var preferencesUrl = ctx.ScriptApplicationManager.get_preferencesUrl();
+                            if(!$isEmptyString(preferencesUrl)){
+            _#-->
+            <div class="ms-srch-sb-link"><a id="PreferencesLink" href="_#= $urlHtmlEncode(preferencesUrl) =#_">_#= $htmlEncode(Srch.Res.sb_PreferencesLink) =#_</a></div>
+            <!--#_
+                            }
+                        }
+            _#-->
+        </div>
+    </div>
+</body>
+</html>
+

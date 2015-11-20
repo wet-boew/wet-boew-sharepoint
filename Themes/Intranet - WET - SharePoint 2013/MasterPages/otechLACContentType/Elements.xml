@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <!-- Parent ContentType: Page Layout (0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE811) -->
+  <ContentType ID="0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE81100B873E4F15F6E48B6A45A65121DD4D7C7" Name="LACTwoColumnPageLayout_v1" Group="otechLACContentType" Description="LAC Two Column PageLayout" Inherits="TRUE" Version="0">
+    <FieldRefs>
+      <FieldRef ID="{F55C4D88-1F2E-4ad9-AAA8-819AF4EE7EE8}" DisplayName="$Resources:cmscore,column_pagecontent_displayname;" Required="FALSE" Description="$Resources:cmscore,column_pagecontent_description;" Name="PublishingPageContent" Sealed="TRUE" />
+    </FieldRefs>
+  </ContentType>
+
+  <!-- Parent ContentType: Page Layout (0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE811) -->
+  <ContentType ID="0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE81100160A32C65DD54D078E8935D7E05CE1E7" Name="LACThreeColumnPageLayout_v1" Group="otechLACContentType" Description="LAC Three Column PageLayout" Inherits="TRUE" Version="0">
+    <FieldRefs>
+      <FieldRef ID="{F55C4D88-1F2E-4ad9-AAA8-819AF4EE7EE8}" DisplayName="$Resources:cmscore,column_pagecontent_displayname;" Required="FALSE" Description="$Resources:cmscore,column_pagecontent_description;" Name="PublishingPageContent" Sealed="TRUE" />
+      <FieldRef ID="{8FF09840-D9AB-4066-858D-8F14CA52BD44}" DisplayName="LAC PageContent" Name="LACPageContent" />
+    </FieldRefs>
+  </ContentType>
+
+  <!-- Parent ContentType: Page Layout (0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE811) -->
+  <ContentType ID="0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE811007F1D89C4E8764880AA40405C93FFD5F0" Name="LACLandingPageLayout_v1" Group="otechLACContentType" Description="LAC Landing PageLayout" Inherits="TRUE" Version="0">
+    <FieldRefs>
+      <FieldRef ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="$Resources:core,Title;" Name="LinkTitle" ReadOnly="TRUE" />
+    </FieldRefs>
+  </ContentType>
+
+  <!-- Parent ContentType: Page Layout (0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE811) -->
+  <ContentType ID="0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE81100DFDE375E13CE4A5E806E9DAFA14E55DC" Name="LACSplashPageLayout_v1" Group="otechLACContentType" Description="Lac Splash PageLayout " Inherits="TRUE" Version="0">
+    <FieldRefs>
+      <FieldRef ID="{f5520ac9-9ff4-4f00-9280-642519919e6e}" DisplayName="English Title" Name="EnglishTitle" />
+      <FieldRef ID="{1AA2AAFB-B7BF-4C9B-AC30-5C818DFC4002}" DisplayName="French Title" Name="FrenchTitle" />
+      <FieldRef ID="{88340333-972A-4473-8217-CA1FDD10E0F4}" DisplayName="English HyperLink" Name="EnglishHyperLink" Format="Hyperlink" />
+      <FieldRef ID="{1840147B-C4C6-407B-917E-F04036804AE0}" DisplayName="French HyperLink" Name="FrenchHyperLink" Format="Hyperlink" />
+    </FieldRefs>
+  </ContentType>
+</Elements>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="..\Resource Files\WET.resx" Target="MasterPages\Resource Files\" Type="AppGlobalResource" />
+    <ProjectItemFile Source="..\Resource Files\WET.fr-FR.resx" Target="MasterPages\Resource Files\" Type="AppGlobalResource" />
+    <ProjectItemFile Source="..\Resource Files\WET.fr-CA.resx" Target="MasterPages\Resource Files\" Type="AppGlobalResource" />
+  </Files>
+</ProjectItem>

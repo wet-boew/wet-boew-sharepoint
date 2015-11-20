@@ -1,0 +1,797 @@
+
+<%@ Master language="C#" Inherits="WET.Theme.Intranet.Master_Pages.WETIntranetPublishingMaster, WET.Theme.Intranet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=04a860f987069351" %>
+<!DOCTYPE html>
+<%@ Import Namespace="Microsoft.SharePoint" %>
+<%@ Import Namespace="System.IO" %>
+<%@ Import Namespace="System.Text" %>
+<%@ Register Tagprefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="wssuc" TagName="Welcome" src="~/_controltemplates/Welcome.ascx" %>
+<%@ Register TagPrefix="wssuc" TagName="DesignModeConsole" src="~/_controltemplates/DesignModeConsole.ascx" %>
+<%@ Register TagPrefix="wssuc" TagName="MUISelector" src="~/_controltemplates/MUISelector.ascx" %>
+<%@ Register Tagprefix="PublishingNavigation" Namespace="Microsoft.SharePoint.Publishing.Navigation" Assembly="Microsoft.SharePoint.Publishing, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register Tagprefix="otechCustomControls" Namespace="WET.Theme.Intranet.WebControls" Assembly="WET.Theme.Intranet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=04a860f987069351" %>
+
+<asp:literal ID="html1a" runat="server" Text="&lt;!--[if IE 7]&gt; &lt;html class=&quot;no-js ie7&quot; lang=&quot;"/><asp:Literal ID="html1b" runat="server" /><asp:literal ID="html1c" runat="server" Text="&quot;&gt;&lt;![endif]--&gt;"/>
+<asp:literal ID="html2a" runat="server" Text="&lt;!--[if IE 8]&gt; &lt;html class=&quot;no-js ie8&quot; lang=&quot;"/><asp:Literal ID="html2b" runat="server" /><asp:literal ID="html2c" runat="server" Text="&quot;&gt;&lt;![endif]--&gt;"/>
+<asp:literal ID="html3a" runat="server" Text="&lt;!--[if gt IE 8]&gt; &lt;html lang=&quot;"/><asp:Literal ID="html3b" runat="server" /><asp:literal ID="html3c" runat="server" Text="&quot;&gt;&lt;![endif]--&gt;"/>
+<asp:literal ID="html4a" runat="server" Text="&lt;html lang=&quot;" /><asp:Literal ID="html4b" runat="server" /><asp:Literal ID="html4c" runat="server" Text="&quot;&gt;" />
+<head runat="server">
+    <SharePoint:SPPinnedSiteTile runat="server" TileUrl="/_layouts/15/images/SharePointMetroAppTile.png" TileColor="#0072C6" />
+	<SharePoint:RobotsMetaTag runat="server"/>
+	<SharePoint:PageTitle runat="server">
+		<asp:ContentPlaceHolder id="PlaceHolderPageTitle" runat="server">
+			<SharePoint:ProjectProperty Property="Title" runat="server" />
+		</asp:ContentPlaceHolder>
+	</SharePoint:PageTitle>
+
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+	<!-- robots -->
+	<SharePoint:RobotsMetaTag runat="server"/>	
+    <!-- Title begins / Début du titre -->
+    <!-- page title - overridden by asp:content on pages or page layouts -->
+	<!-- Title ends / Fin du titre -->
+
+	<!-- Favicon (optional) begins / Début du favicon (optionnel) -->
+    <link rel="shortcut icon" href="/_layouts/WET.Theme.Intranet/WET-BOEW/theme-gcwu-intranet/images/favicon.ico" type="image/vnd.microsoft.icon" />
+        
+    <SharePoint:StartScript runat="server" />
+	<SharePoint:CssLink runat="server" Version="15"/>
+	<SharePoint:CacheManifestLink runat="server"/>
+	<SharePoint:ScriptLink language="javascript" name="core.js" OnDemand="true" runat="server" Localizable="false" />
+	<SharePoint:ScriptLink language="javascript" name="menu.js" OnDemand="true" runat="server" Localizable="false" />
+	<SharePoint:ScriptLink language="javascript" name="callout.js" OnDemand="true" runat="server" Localizable="false" />
+	<SharePoint:ScriptLink language="javascript" name="sharing.js" OnDemand="true" runat="server" Localizable="false" />
+	<SharePoint:ScriptLink language="javascript" name="suitelinks.js" OnDemand="true" runat="server" Localizable="false" />
+	<SharePoint:CustomJSUrl runat="server" />
+	<SharePoint:SoapDiscoveryLink runat="server" />
+
+    <SharePoint:AjaxDelta id="DeltaPlaceHolderAdditionalPageHead" Container="false" runat="server">
+		<asp:ContentPlaceHolder id="PlaceHolderAdditionalPageHead" runat="server" />
+		<SharePoint:DelegateControl runat="server" ControlId="AdditionalPageHead" AllowMultipleControls="true" />
+		<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
+	</SharePoint:AjaxDelta>
+	<SharePoint:CssRegistration Name="Themable/corev15.css" runat="server" />
+
+    <SharePoint:CSSRegistration runat="server" name="../../_layouts/15/WET.Theme.Intranet/WET-BOEW/grids/css/util-ie-min.css" ConditionalExpression="lte IE 8" />
+    <SharePoint:CSSRegistration runat="server" name="../../_layouts/15/WET.Theme.Intranet/WET-BOEW/js/css/pe-ap-ie-min.css" ConditionalExpression="lte IE 8" />
+    <SharePoint:CSSRegistration runat="server" name="../../_layouts/15/WET.Theme.Intranet/WET-BOEW/theme-gcwu-intranet/css/theme-ie-min.css" ConditionalExpression="lte IE 8" />       
+    <SharePoint:CSSRegistration runat="server" name="../../../Style Library/ImageSlider/fcacslider.css"></SharePoint:CSSRegistration>
+   <SharePoint:CSSRegistration runat="server" name="../../../Style Library/ImageSlider/nivo-slider.css"></SharePoint:CSSRegistration>    
+
+    
+    <SharePoint:CssRegistration name="/_layouts/15/WET.Theme.Intranet/WET-BOEW/grids/css/util-min.css" runat="server"  />
+    <SharePoint:CssRegistration name="/_layouts/15/WET.Theme.Intranet/WET-BOEW/js/css/pe-ap-min.css" runat="server" />
+    <SharePoint:CssRegistration name="/_layouts/15/WET.Theme.Intranet/WET-BOEW/theme-gcwu-intranet/css/theme-min.css" runat="server" />
+
+    <SharePoint:CSSRegistration ID="CSSRegistration2" runat="server" name="<% $SPUrl:~sitecollection/Style Library/CSS Style Sheets/LacIntranet.css %>"/>
+
+    <SharePoint:CssRegistration name="/_layouts/15/WET.Theme.Intranet/GC-SharePoint/CSS/SharePoint.css" runat="server" />
+    <SharePoint:CssRegistration name="<% $SPUrl:~sitecollection/Style Library/~language/Core Styles/page-layouts-21.css %>" runat="server"/>
+    <SharePoint:CssRegistration name="<% $SPUrl:~sitecollection/Style Library/~language/Core Styles/edit-mode-21.css %>" After="<% $SPUrl:~sitecollection/Style Library/~language/Core Styles/page-layouts-21.css %>" runat="server"/>
+    <SharePoint:CssRegistration name="<% $SPUrl:~sitecollection/Style Library/WetHeadings.css %>" runat="server"/>
+    <noscript><link rel="Stylesheet" ID="CSSRegistration3" href="../../_layouts/15/WET.Theme.Intranet/WET-BOEW/theme-gcwu-intranet/css/theme-ns-min.css" /></noscript>	
+
+    <asp:literal runat="server" Text="&lt;script src='" /><asp:literal runat="server" Text="../../_layouts/15/WET.Theme.Intranet/WET-BOEW/js/jquery.min.js" /><asp:literal runat="server" Text="' type='text/javascript'&gt;&lt;/script&gt;" />
+
+	<!-- Custom scripts/CSS begin / Début des scripts/CSS personnalisés -->
+    <!-- Edit Panel Placeholder for CLF Pages -->
+    <asp:ContentPlaceHolder id="PlaceHolderCSS1" runat="server"/>
+	<!-- Custom scripts/CSS end / Fin des scripts/CSS personnalisés -->
+    <!-- End load CLF 3.0 Scripts -->
+
+	<!-- load SharePoint javascript -->
+    <otechCustomControls:SuppressJSForAnonymous FilesToSuppress="cui.js;SP.Ribbon.js" runat="server" />
+	<SharePoint:ScriptLink language="javascript" Defer="true" runat="server" />
+    <style type="text/css">            
+        <asp:Literal id="litExtraCSS" Mode="PassThrough" runat="server" />
+	</style>
+     
+    <!-- additional header delegate control -->
+	<SharePoint:DelegateControl runat="server" ControlId="AdditionalPageHead" AllowMultipleControls="true" />
+	
+    <!-- microsoft says these should always be inside the head tag. -->
+   	<asp:ContentPlaceHolder id="PlaceHolderBodyAreaClass" runat="server"/>
+	<asp:ContentPlaceHolder id="PlaceHolderTitleAreaClass" runat="server"/>
+
+  
+</head>
+
+<body oninit="ValidateCookies();"  style="overflow: visible !important" onload="javascript:_spBodyOnLoadWrapper(); ">
+
+<SharePoint:ImageLink runat="server"/>
+  <SharePoint:SPNoScript runat="server"/>
+  <SharePoint:SPClientIDGenerator runat="server" ServerControlID="DeltaPlaceHolderMain;DeltaPlaceHolderPageTitleInTitleArea;DeltaPlaceHolderUtilityContent" />
+  <SharePoint:SharePointForm runat="server" onsubmit="if (typeof(_spFormOnSubmitWrapper) != 'undefined') {return _spFormOnSubmitWrapper();} else {return true;}">
+	<script type="text/javascript"> var submitHook = function () { return false; }; theForm._spOldSubmit = theForm.submit; theForm.submit = function () { if (!submitHook()) { this._spOldSubmit(); } }; </script>
+	<SharePoint:AjaxDelta id="DeltaSPWebPartManager" runat="server">
+		<WebPartPages:SPWebPartManager runat="Server" />
+	</SharePoint:AjaxDelta>
+	<asp:ScriptManager id="ScriptManager" runat="server" EnablePageMethods="false" EnablePartialRendering="true" EnableScriptGlobalization="false" EnableScriptLocalization="true" />
+	<SharePoint:AjaxDelta id="DeltaDelegateControls" runat="server">
+		<SharePoint:DelegateControl runat="server" ControlId="GlobalNavigation" />
+		<SharePoint:DelegateControl ControlId="GlobalSiteLink3" Scope="Farm" runat="server" Visible="false" />
+	</SharePoint:AjaxDelta>
+<!-- =====  Begin Ribbon ============================================================ -->
+<!-- remove SPSecurityTrimmedControl and div after end tag to enable the ribbon when annonymous -->
+<SharePoint:SPSecurityTrimmedControl ID="SPRibbon" runat="server" PermissionsString="ManageWeb">
+            <div id="suiteBar" class="ms-dialogHidden noindex">
+                <div id="suiteBarLeft">
+                    <div class="ms-table ms-fullWidth">
+                        <div class="ms-tableRow">
+                            <div class="ms-tableCell ms-verticalAlignMiddle">
+                                <SharePoint:DelegateControl id="ID_SuiteBarBrandingDelegate" ControlId="SuiteBarBrandingDelegate" runat="server" />
+                            </div>
+                            <SharePoint:AjaxDelta runat="server" id="DeltaSuiteLinks" BlockElement="true" CssClass="ms-core-deltaSuiteLinks">
+                                <div id="suiteLinksBox">
+                                    <SharePoint:DelegateControl id="ID_SuiteLinksDelegate" ControlId="SuiteLinksDelegate" runat="server" />
+                                </div>
+                            </SharePoint:AjaxDelta>
+                        </div>
+                    </div>
+                </div>
+                <div id="suiteBarRight">
+                    <SharePoint:AjaxDelta runat="server" id="DeltaSuiteBarRight" CssClass="ms-core-deltaSuiteBarRight" BlockElement="true">
+                        <div id="welcomeMenuBox">
+                            <wssuc:Welcome id="IdWelcome" runat="server" EnableViewState="false" />
+                        </div>
+                        <div id="suiteBarButtons">
+                            <span class="ms-siteactions-root" id="siteactiontd">
+                                <SharePoint:SiteActions runat="server" accesskey="<%$Resources:wss,tb_SiteActions_AK%>" id="SiteActionsMenuMain"
+                                                        PrefixHtml=""
+                                                        SuffixHtml=""
+                                                        ImageUrl="/_layouts/15/images/spcommon.png?rev=23"
+                                                        ThemeKey="spcommon"
+                                                        MenuAlignment="Right"
+                                                        MenuNotVisibleHtml="&amp;nbsp;"
+                                                        LargeIconMode="false">
+                                    <customtemplate>
+                                        <sharepoint:featuremenutemplate runat="server"
+                                                                        featurescope="Site"
+                                                                        location="Microsoft.SharePoint.StandardMenu"
+                                                                        groupid="SiteActions"
+                                                                        useshortid="true">
+                                            <SharePoint:MenuItemTemplate runat="server"
+                                                                         id="MenuItem_ShareThisSite"
+                                                                         Text="<%$Resources:wss,siteactions_sharethissite%>"
+                                                                         Description="<%$Resources:wss,siteactions_sharethissitedescription%>"
+                                                                         MenuGroupId="100"
+                                                                         Sequence="110"
+                                                                         UseShortId="true"
+                                                                         PermissionsString="ViewPages"
+                                                                         PermissionMode="Any" />
+                                            <SharePoint:MenuItemTemplate runat="server" id="MenuItem_EditPage"
+                                                                         Text="<%$Resources:wss,siteactions_editpage15%>"
+                                                                         Description="<%$Resources:wss,siteactions_editpagedescriptionv4%>"
+                                                                         ImageUrl="/_layouts/15/images/ActionsEditPage.png?rev=23"
+                                                                         MenuGroupId="200"
+                                                                         Sequence="210"
+                                                                         PermissionsString="EditListItems"
+                                                                         ClientOnClickNavigateUrl="javascript:ChangeLayoutMode(false);" />
+                                            <SharePoint:MenuItemTemplate runat="server" id="MenuItem_CreatePage"
+                                                                         Text="<%$Resources:wss,siteactions_addpage15%>"
+                                                                         Description="<%$Resources:wss,siteactions_createpagedesc%>"
+                                                                         ImageUrl="/_layouts/15/images/NewContentPageHH.png?rev=23"
+                                                                         MenuGroupId="200"
+                                                                         Sequence="220"
+                                                                         UseShortId="true"
+                                                                         ClientOnClickScriptContainingPrefixedUrl="OpenCreateWebPageDialog('~siteLayouts/createwebpage.aspx')"
+                                                                         PermissionsString="AddListItems, EditListItems"
+                                                                         PermissionMode="All" />
+                                            <SharePoint:MenuItemTemplate runat="server" id="MenuItem_Create"
+                                                                         Text="<%$Resources:wss,siteactions_addapp15%>"
+                                                                         Description="<%$Resources:wss,siteactions_createdesc%>"
+                                                                         MenuGroupId="200"
+                                                                         Sequence="230"
+                                                                         UseShortId="true"
+                                                                         ClientOnClickScriptContainingPrefixedUrl="GoToPage('~siteLayouts/addanapp.aspx')"
+                                                                         PermissionsString="ManageLists, ManageSubwebs"
+                                                                         PermissionMode="Any" />
+                                            <SharePoint:MenuItemTemplate runat="server" id="MenuItem_ViewAllSiteContents"
+                                                                         Text="<%$Resources:wss,quiklnch_allcontent_15%>"
+                                                                         Description="<%$Resources:wss,siteactions_allcontentdescription%>"
+                                                                         ImageUrl="/_layouts/15/images/allcontent32.png?rev=23"
+                                                                         MenuGroupId="200"
+                                                                         Sequence="240"
+                                                                         UseShortId="true"
+                                                                         ClientOnClickNavigateUrl="~siteLayouts/viewlsts.aspx"
+                                                                         PermissionsString="ViewFormPages"
+                                                                         PermissionMode="Any" />
+                                            <SharePoint:MenuItemTemplate runat="server" id="MenuItem_ChangeTheLook"
+                                                                         Text="<%$Resources:wss,siteactions_changethelook15%>"
+                                                                         Description="<%$Resources:wss,siteactions_changethelookdesc15%>"
+                                                                         MenuGroupId="300"
+                                                                         Sequence="310"
+                                                                         UseShortId="true"
+                                                                         ClientOnClickNavigateUrl="~siteLayouts/designgallery.aspx"
+                                                                         PermissionsString="ApplyThemeAndBorder,ApplyStyleSheets,Open,ViewPages,OpenItems,ViewListItems"
+                                                                         PermissionMode="All" />
+                                            <SharePoint:MenuItemTemplate runat="server" id="MenuItem_Settings"
+                                                                         Text="<%$Resources:wss,siteactions_settings15%>"
+                                                                         Description="<%$Resources:wss,siteactions_sitesettingsdescriptionv4%>"
+                                                                         ImageUrl="/_layouts/15/images/settingsIcon.png?rev=23"
+                                                                         MenuGroupId="300"
+                                                                         Sequence="320"
+                                                                         UseShortId="true"
+                                                                         ClientOnClickScriptContainingPrefixedUrl="GoToPage('~siteLayouts/settings.aspx')"
+                                                                         PermissionsString="EnumeratePermissions,ManageWeb,ManageSubwebs,AddAndCustomizePages,ApplyThemeAndBorder,ManageAlerts,ManageLists,ViewUsageData"
+                                                                         PermissionMode="Any" />
+                                            <SharePoint:MenuItemTemplate runat="server" id="MenuItem_SwitchToMobileView"
+                                                                         Visible="false"
+                                                                         Text="<%$Resources:wss,siteactions_switchtomobileview%>"
+                                                                         Description="<%$Resources:wss,siteactions_switchtomobileviewdesc%>"
+                                                                         MenuGroupId="300"
+                                                                         Sequence="330"
+                                                                         UseShortId="true"
+                                                                         ClientOnClickScript="var mswlh = window.location.href; if (mswlh.indexOf('?')==-1) { window.location = mswlh + '?mobile=1'; } else { window.location = mswlh + '&mobile=1'; }" />
+                                        </sharepoint:featuremenutemplate>
+                                    </customtemplate>
+                                </SharePoint:SiteActions>
+                            </span>
+                            <span id="ms-help">
+                                <SharePoint:ThemedClusteredHoverImage runat="server"
+                                                                      ID="TopHelpLink"
+                                                                      ThemeKey="spintl"
+                                                                      TouchMode="true"
+                                                                      TouchModeWidth="30"
+                                                                      TouchModeHeight="30"
+                                                                      TouchModePaddingTop="7"
+                                                                      TouchModePaddingRight="7"
+                                                                      TouchModePaddingBottom="7"
+                                                                      TouchModePaddingLeft="7"
+                                                                      ImageUrl="/_layouts/15/~lcid/images/spintl.png"
+                                                                      Width="16"
+                                                                      Height="16"
+                                                                      OffsetX="19"
+                                                                      OffsetY="1"
+                                                                      HoverOffsetX="1"
+                                                                      HoverOffsetY="1"
+                                                                      NavigateUrl="#"
+                                                                      onclick="TopHelpButtonClick('HelpHome',event);return false"
+                                                                      AlternateText="<%$Resources:wss,multipages_helplink_text%>"
+                                                                      AccessKey="<%$Resources:wss,multipages_helplink_accesskey%>"
+                                                                      ToolTip="<%$Resources:wss,multipages_helplink_text%>" />
+                            </span>
+                        </div>
+                    </SharePoint:AjaxDelta>
+                </div>
+            </div>
+            <div id="ms-hcTest"></div>
+            <div id="s4-ribbonrow">
+                <div id="globalNavBox" class="noindex">
+                    <div id="ribbonBox">
+                        <div id="s4-ribboncont">
+                            <SharePoint:AjaxDelta id="DeltaSPRibbon" BlockElement="true" runat="server">
+                                <SharePoint:DelegateControl runat="server" ID="GlobalDelegate0" ControlId="GlobalSiteLink0" />
+                                <sharepoint:spribbon runat="server"
+                                                     placeholderelementid="RibbonContainer"
+                                                     cssfile="">
+                                    <sharepoint:spribbonperipheralcontent runat="server"
+                                                                          cssclass="ms-core-defaultFont ms-dialogHidden"
+                                                                          location="TabRowLeft">
+                                    </sharepoint:spribbonperipheralcontent>
+                                    <SharePoint:SPRibbonPeripheralContent runat="server"
+                                                                          Location="TabRowRight"
+                                                                          ID="RibbonTabRowRight"
+                                                                          CssClass="s4-trc-container s4-notdlg ms-core-defaultFont">
+                                        <sharepoint:spsharepromotedactionbutton runat="server" />
+                                        <sharepoint:delegatecontrol runat="server" controlid="PromotedActions" allowmultiplecontrols="true" />
+                                        <sharepoint:spsyncpromotedactionbutton runat="server" />
+                                        <SharePoint:PageStateActionButton id="PageStateActionButton" runat="server" Visible="false" />
+                                        <span id="fullscreenmodebox" class="ms-qatbutton">
+                                            <span id="fullscreenmode">
+                                                <SharePoint:ThemedClusteredHoverImage runat="server"
+                                                                                      ID="fullscreenmodeBtn"
+                                                                                      ThemeKey="spcommon"
+                                                                                      TouchMode="true"
+                                                                                      TouchModeWidth="30"
+                                                                                      TouchModeHeight="30"
+                                                                                      TouchModePaddingLeft="7"
+                                                                                      TouchModePaddingTop="7"
+                                                                                      TouchModePaddingRight="7"
+                                                                                      TouchModePaddingBottom="7"
+                                                                                      ImageUrl="/_layouts/15/images/spcommon.png?rev=23"
+                                                                                      Width="16"
+                                                                                      Height="16"
+                                                                                      OffsetX="143"
+                                                                                      OffsetY="178"
+                                                                                      HoverOffsetX="125"
+                                                                                      HoverOffsetY="178"
+                                                                                      NavigateUrl="#"
+                                                                                      onclick="SetFullScreenMode(true);PreventDefaultNavigation();return false;"
+                                                                                      AlternateText="<%$Resources:wss,multipages_fullscreenmodelinkalt_text%>"
+                                                                                      ToolTip="<%$Resources:wss,multipages_fullscreenmodelinkalt_text%>" />
+                                            </span>
+                                            <span id="exitfullscreenmode" style="display: none;">
+                                                <SharePoint:ThemedClusteredHoverImage runat="server"
+                                                                                      ID="exitfullscreenmodeBtn"
+                                                                                      ThemeKey="spcommon"
+                                                                                      TouchMode="true"
+                                                                                      TouchModeWidth="30"
+                                                                                      TouchModeHeight="30"
+                                                                                      TouchModePaddingLeft="7"
+                                                                                      TouchModePaddingTop="7"
+                                                                                      TouchModePaddingRight="7"
+                                                                                      TouchModePaddingBottom="7"
+                                                                                      ImageUrl="/_layouts/15/images/spcommon.png?rev=23"
+                                                                                      Width="16"
+                                                                                      Height="16"
+                                                                                      OffsetX="107"
+                                                                                      OffsetY="178"
+                                                                                      HoverOffsetX="179"
+                                                                                      HoverOffsetY="96"
+                                                                                      NavigateUrl="#"
+                                                                                      onclick="SetFullScreenMode(false);PreventDefaultNavigation();return false;"
+                                                                                      AlternateText="<%$Resources:wss,multipages_fullscreenmodelinkalt_text%>"
+                                                                                      ToolTip="<%$Resources:wss,multipages_fullscreenmodelinkalt_text%>" />
+                                            </span>
+                                        </span>
+                                        <sharepoint:developerdashboard runat="server" />
+                                        <SharePoint:DeveloperDashboardLauncher ID="DeveloperDashboardLauncher"
+                                                                               ThemeKey="spcommon"
+                                                                               TouchMode="true"
+                                                                               TouchModeWidth="30"
+                                                                               TouchModeHeight="30"
+                                                                               TouchModePaddingLeft="7"
+                                                                               TouchModePaddingTop="7"
+                                                                               TouchModePaddingRight="7"
+                                                                               TouchModePaddingBottom="7"
+                                                                               NavigateUrl="javascript:return false"
+                                                                               OnClick="ToggleDeveloperDashboard(window.g_ddHostBase);return false"
+                                                                               OuterCssClass="ms-dd-button ms-qatbutton"
+                                                                               runat="server"
+                                                                               ImageUrl="/_layouts/15/images/spcommon.png?rev=23"
+                                                                               AlternateText="<%$Resources:wss,multipages_launchdevdashalt_text%>"
+                                                                               ToolTip="<%$Resources:wss,multipages_launchdevdashalt_text%>"
+                                                                               OffsetX="145"
+                                                                               OffsetY="196"
+                                                                               HoverOffsetX="163"
+                                                                               HoverOffsetY="196"
+                                                                               Height="16"
+                                                                               Width="16" />
+                                    </SharePoint:SPRibbonPeripheralContent>
+                                </sharepoint:spribbon>
+                            </SharePoint:AjaxDelta>
+                        </div>
+                        <SharePoint:AjaxDelta id="DeltaSPNavigation" runat="server">
+                            <asp:ContentPlaceHolder ID="SPNavigation" runat="server">
+                                <SharePoint:DelegateControl runat="server" ControlId="PublishingConsole" Id="PublishingConsoleDelegate" />
+                            </asp:ContentPlaceHolder>
+                        </SharePoint:AjaxDelta>
+                    </div>
+                    <SharePoint:AjaxDelta id="DeltaWebPartAdderUpdatePanelContainer" BlockElement="true" CssClass="ms-core-webpartadder" runat="server">
+                        <div id="WebPartAdderUpdatePanelContainer">
+                            <asp:UpdatePanel ID="WebPartAdderUpdatePanel"
+                                             UpdateMode="Conditional"
+                                             ChildrenAsTriggers="false"
+                                             runat="server">
+                                <contenttemplate>
+                                    <WebPartPages:WebPartAdder ID="WebPartAdder" runat="server" />
+                                </contenttemplate>
+                                <triggers>
+                                    <asp:postbacktrigger controlid="WebPartAdder" />
+                                </triggers>
+                            </asp:UpdatePanel>
+                        </div>
+                    </SharePoint:AjaxDelta>
+                </div>
+            </div>
+<!-- remove these two rows to show the ribbon when annonymous -->
+</SharePoint:SPSecurityTrimmedControl>
+
+<!-- annonymous access hide ribbon -->
+<!-- =====  End Ribbon and other Top Content ============================================================ -->
+<!-- =====  Start Scrolling Body Area ============================================================ -->
+<!-- these two div id's are used to setup the main scrolling page area, they should stay if you are sticking the ribbon to the top -->
+<div id="s4-workspace" class="s4-nosetwidth" style="overflow:hidden;"> <!-- s4-workspace-->  <!-- NOTE: s4-nosetwidth is used when you are setting a fixed page width in css, remove for 100% -->
+    <!-- id="mso_contentdiv" required, helps SharePoint put the web part editing pane in the main body on the right, you can move the ID if needed -->
+    <div id="MSO_ContentDiv" runat="server"> <!-- MSO_ContentDiv -->
+        <div id="s4-bodyContainer"> <!-- s4-bodyContainer -->
+            <!-- page editing status bar -->
+            <SharePoint:SPSecurityTrimmedControl runat="server" AuthenticationResctriction="AuthenticateUsersOnly">
+	        <div class="s4-notdlg">
+                <div id="s4-statusbarcontainer" class="s4-notdlg">
+                    <div id="pageStatusBar" class="s4-status-s1"></div>
+                </div>
+	        </div>
+            </SharePoint:SPSecurityTrimmedControl>
+            <div id="wb-body-sec">
+                <!-- Two column layout begins / Début de la mise en page de deux colonnes -->
+                <!-- Border element for the main page body is used to set the layout in layout page have this set to -->
+	            <asp:ContentPlaceHolder ID="PlaceHolderBodyLeftBorder" runat="server"/>
+            
+                <!--googleoff:all-->
+                <!-- Skip header begins / Début du saut de l'en-tête -->
+                <div id="wb-skip">
+                    <ul id="wb-tphp">
+                        <li id="wb-skip1"><a href="#wb-cont"><asp:Literal id="litSkipMain" runat="server" /></a></li>
+                        <li id="wb-skip2"><a href="#wb-nav"><asp:Literal id="litSkipNav" runat="server" /></a></li>
+                    </ul>
+                </div>
+
+                <!-- Skip header ends / Fin du saut de l'en-tête -->
+                <!-- Header begins / Début de l'en-tête -->
+                <div id="wb-head"><!-- cn-head -->
+                    <div id="wb-head-in"> <!-- cn-head-inner -->
+                    <header>
+                        <!-- GC Web Usability theme begins / Début du thème de la facilité d'emploi GC -->
+                        <!-- GC menu bar begins / Début de la barre de menu GC -->
+                        <nav role="navigation">
+                            <div id="gcwu-gcnb">
+                                <h2 style="color:#555 !important;border:none !important;font-size:155% !important;clipbottom:1px;clipleft:1px;cliptop:1px; font-family:Verdana,Arial,Helvetica,sans-serif !important;">
+                                    <asp:Literal id="litGOCNavBar" Mode="PassThrough" runat="server" /></h2>
+                                <div id="gcwu-gcnb-in">
+                                    <div id="gcwu-intranetnb">
+					                    <div id="gcwu-intranetnb-in">
+                                            <ul>
+							                    <otechCustomControls:HeaderLink runat="server"></otechCustomControls:HeaderLink>
+							                <li id="gcwu-gcnb-lang">
+                                                <otechCustomControls:Language runat="server"></otechCustomControls:Language>
+							                </li>
+
+                                        </ul>
+					                    </div>						                
+			                        </div>
+                                    <div id="gcwu-gcnb-fip">
+                                        <div id="gcwu-sig">
+                                            <div id="gcwu-sig-in">
+                                               <asp:Literal ID="litObjFIP" runat="server" ></asp:Literal>
+                                                    <asp:Literal id="litFIP" runat="server"></asp:Literal><asp:Image id="imgSig" ImageUrl="../../_layouts/15/WET.Theme.Intranet/WET-BOEW/theme-gcwu-intranet/images/sig-eng.gif" runat="server" Width="214" Height="20" AlternateText="Government of Canada"/><asp:Literal id="litClosingDivTag" runat="server"></asp:Literal>
+                                               <asp:Literal ID="litClosingObjTag" runat="server"></asp:Literal>
+                                            </div>
+                                        </div>
+                                        <div id="gcwu-wmms">
+                                            <div id="gcwu-wmms-in">
+                                                <asp:Literal ID="litObjWMMS" runat="server" ></asp:Literal>                                                 
+                                                    <asp:Literal id="litSignature" runat="server"></asp:Literal><asp:Image runat="server" ID="imgWMMS" ImageUrl="../../_layouts/15/WET.Theme.Intranet/WET-BOEW/theme-gcwu-intranet/images/wmms.gif" Width="126" Height="30" AlternateText="Symbol of thegovernment of Canada" /><asp:Literal id="litClosingDivTag2" runat="server"></asp:Literal>
+                                                <asp:Literal ID="litClosingObjTag2" runat="server"></asp:Literal>
+                                            </div>
+                                        </div>
+                                    </div>
+		                        </div>
+                            </div>
+                        </nav>
+                        <!-- GC navigation bar ends / Fin de la barre de navigation GC -->
+        
+                        <!-- Banner begins / Début de la bannière -->
+                        <div id="gcwu-bnr" role="banner" >
+                            <div id="gcwu-bnr-in">	
+			                    <!-- Site title begins / Début du titre du site -->
+                                <div id="gcwu-title"><p id="gcwu-title-in"><otechCustomControls:HomeLink runat="server"></otechCustomControls:HomeLink></p></div>
+                                <!-- Site title ends / Fin du titre du site -->
+            
+                                <!-- Site search begins / Début de la recherche du site -->
+                                <section role="search">
+                                <div id="gcwu-srchbx">
+                                     <otechCustomControls:TopRightLink runat="server"></otechCustomControls:TopRightLink>
+                                    <h2><asp:Literal id="litSearchHeader" Mode="PassThrough" runat="server" /></h2>
+                                    <div id="gcwu-srchbx-in">
+                                        <label for="ctl00_PlaceHolderSearchArea_ctl01_txtSearch"><asp:Literal id="litSearchHeaderLabel" Mode="PassThrough"  runat="server" /></label>
+                                        <SharePoint:AjaxDelta id="DeltaPlaceHolderSearchArea" Width="300px" BlockElement="true" CssClass="ms-mpSearchBox ms-floatLeft" runat="server">
+                                        <asp:ContentPlaceHolder id="PlaceHolderSearchArea" runat="server">
+							              <div id="">
+                                               <SharePoint:DelegateControl runat="server" ControlId="SmallSearchInputBoxAdv" />
+                                          </div>
+                                             </asp:ContentPlaceHolder>
+							</SharePoint:AjaxDelta>
+                                    </div>
+                                </div>
+                                </section>
+			                    <!-- Site search ends / Fin de la recherche du site -->
+                            </div>
+                        </div> 
+                        <!-- Banner ends / Fin de la bannière -->
+                        <nav role="navigation">
+                            <!-- Primary site navigation bar begins / Début de la barre de navigation primaire du site -->
+                            <div id="gcwu-psnb">
+                                <h2><asp:Literal id="litMenuBarHeader" runat="server" /></h2>
+                                <div id="gcwu-psnb-in">
+                                    <otechCustomControls:TopNavigation runat="server"></otechCustomControls:TopNavigation>
+                                </div>
+                            </div>
+                            <!-- Primary site navigation bar ends / Fin de la barre de navigation primaire du site -->
+                            <!-- Breadcrumb begins / Début du fil d'Ariane -->
+                            <div id="gcwu-bc"> 
+                                <h2><asp:Literal id="litBreadCrumbHeader" runat="server" /></h2>
+                                <div id="gcwu-bc-in"><otechCustomControls:SiteMap runat="server"></otechCustomControls:SiteMap></div><!-- cn-bc-inner -->
+                            </div>
+                            <!-- Breadcrumb ends / Fin du fil d'Ariane -->
+                        </nav>
+                        <div id="eti"> 
+                                <div id="etiInner" >
+                                    <a id="etiLink" class="EtiLinkClass" href="http://intranet.lac-bac.gc.ca/fra/sc-dpf/innovation-dirigeant-principal-information/Pages/transformation-courriel.aspx">  </a>
+                                </div>
+                        </div>
+                        <!-- GC Web Usability theme ends / Fin du thème de la facilité d'emploi GC -->
+                    </header>
+                    </div>
+                </div>
+                <!-- Header ends / Fin de l'en-tête -->
+    
+                <!-- Columns begin / Début des colonnes -->
+                <div id="wb-core">
+                    <div id="wb-core-in" class="equalize">
+                        <!-- Main content begins / Début du contenu principal -->
+                        <asp:ContentPlaceHolder id="PlaceHolderPageTitleInTitleArea" runat="server" />
+                        <asp:ContentPlaceHolder id="PlaceHolderMain" runat="server" />
+                             
+                           
+                        <!-- Main content ends / Fin du contenu principal -->
+                        <!-- Primary navigation (left column) begins / Début de la navigation principale (colonne gauche) -->
+                    
+                        <!-- Primary navigation (left column) ends / Fin de la navigation principale (colonne gauche) -->
+                    </div>
+                </div>
+                <!-- Columns end / Fin des colonnes -->
+                <!-- Footer begins / Début du pied de page -->
+                
+                <div id="wb-foot"><!-- cn-foot -->
+                    <div id="wb-foot-in"><!-- cn-foot-inner -->
+                        <footer>
+		                    <h2><asp:Literal id="litFooterHeader" runat="server" /></h2>
+                            <!-- GC Web Usability theme begins / Début du thème de la facilité d'emploi GC -->
+		                    <!-- Site footer begins / Début du pied de page du site -->
+		                    <nav role="navigation">
+			                    <div id="gcwu-sft">
+				                    <h3><asp:Literal id="litSiteFooterHeader" runat="server" /></h3>
+				                        <div id="gcwu-sft-in">
+                                            <div id="gcwu-gcft" class="container">
+                                                
+                                                    <otechCustomControls:FooterNavigation runat="server"></otechCustomControls:FooterNavigation>
+                                                
+                                                <div id="gcwu-gcft-in">
+					                                <div id="gcwu-gcft-fip">
+
+						                                <otechCustomControls:FooterLinks runat="server"></otechCustomControls:FooterLinks> 
+                                                    </div>
+					                           </div>
+				                          </div>       
+				                       </div>
+			                        </div>
+		                        </nav>
+		                    <!-- Site footer ends / Fin du pied de page du site -->		                   
+	                    </footer>
+                    </div><!-- cn-foot-inner -->
+                </div><!-- Footer ends / Fin du pied de page -->
+                  
+            </div>
+            <!-- layout ends / Fin de la mis en page -->
+
+            <!-- the developer dashboard can be turned on by administrators and shows debuging and performance info for the page -->
+	        <div id="DeveloperDashboard" class="ms-developerdashboard"><SharePoint:DeveloperDashboard runat="server"/></div>
+        </div>
+    </div>
+</div> 
+
+<!-- =====  End scrolling body area with these two previous div's ============================================================ -->
+
+<!-- The form digest security control used to for security validation on forms -->
+<asp:ContentPlaceHolder id="PlaceHolderFormDigest" runat="server">
+  	<SharePoint:FormDigest runat="server"/>
+</asp:ContentPlaceHolder>
+
+<!-- =====  Hidden Placeholders ============================================================ -->
+<asp:Panel visible="false" runat="server">
+    
+    <asp:ContentPlaceHolder id="PlaceHolderTitleBreadcrumb" runat="server"></asp:ContentPlaceHolder>
+
+    <!-- Usually shows the tree view but do not remove because of issue with changing views in the ribbon in publishing sites -->
+	<SharePoint:DelegateControl runat="server" ControlId="TreeViewAndDataSource"></SharePoint:DelegateControl>
+
+    <!-- Hide the quick launch and action bar -->
+    <asp:ContentPlaceHolder id="PlaceHolderLeftActions" runat ="server"/>
+    <asp:ContentPlaceHolder id="PlaceHolderPageDescription" runat="server" />
+
+    <!-- =====  These placeholders don't output anything very often OOTB ========== -->
+	<!-- The navigation menu that is inside the top navigation bar. -->
+    <asp:ContentPlaceHolder id="PlaceHolderHorizontalNav" runat="server"/>
+	<!-- The top navigation where GlobalNavigationSiteMap is contained. Gets overridden by default. V4 uses it to change the top nav -->
+	<asp:ContentPlaceHolder id="PlaceHolderTopNavBar" runat="server"/>
+	<!-- The top of the Quick Launch menu. -->
+	<asp:ContentPlaceHolder id="PlaceHolderQuickLaunchTop" runat="server"/>
+	<!-- The bottom of the Quick Launch menu. -->    
+	<asp:ContentPlaceHolder id="PlaceHolderQuickLaunchBottom" runat="server"/>
+
+	<!-- The placement of the data source used to populate the left navigation bar. -->
+	<asp:ContentPlaceHolder id="PlaceHolderLeftNavBarDataSource" runat="server" />
+	<!-- The date picker used when a calendar is visible on the page. -->
+	<asp:ContentPlaceHolder id="PlaceHolderCalendarNavigator" runat ="server" />
+	<!-- The top section of the left navigation bar. -->
+	<asp:ContentPlaceHolder id="PlaceHolderLeftNavBarTop" runat="server" />	
+	<!-- used to override the global sitemap? -->
+	<asp:ContentPlaceHolder id="PlaceHolderGlobalNavigationSiteMap" runat="server" />
+	
+   <!-- =====  These placeholders does not appear as part of the 2010 UI but must be present for backward compatibility. ========== -->
+	<!-- The name of the site where the current page resides. -->
+	<asp:ContentPlaceHolder id="PlaceHolderSiteName" runat="server"/>	
+	<!-- Page icon in the upper-left area of the page -->
+	<asp:ContentPlaceHolder ID="PlaceHolderPageImage" runat="server"/>
+	<!-- Left border of the title area -->
+	<asp:ContentPlaceHolder ID="PlaceHolderTitleLeftBorder" runat="server"/>
+	<!-- mini console - supplementary buttons for pages like the wiki / history / incoming links -->
+	<asp:ContentPlaceHolder id="PlaceHolderMiniConsole" runat="server"/>
+	<!-- Right margin of the title area -->
+	<asp:ContentPlaceHolder id="PlaceHolderTitleRightMargin" runat="server"/>
+	<!-- Left border of the title area -->
+	<asp:ContentPlaceHolder ID="PlaceHolderTitleAreaSeparator" runat="server"/>	
+	<!-- The width of the left navigation area -->
+	<asp:ContentPlaceHolder ID="PlaceHolderNavSpacer" runat="server"/>
+	<asp:ContentPlaceHolder id="PlaceHolderLeftNavBarBorder" runat="server"/>
+	<!-- Right margin of the main page body -->
+	<asp:ContentPlaceHolder id="PlaceHolderBodyRightMargin" runat="server" />
+	
+</asp:Panel>
+  <script type="text/javascript">
+
+      _spBodyOnLoadFunctionNames.push('ValidateCookies');
+
+      function ValidateCookies() {
+          var LCID = window.location.href.indexOf("/fra/") >= 0 ? 1036 : 1033; //HttpContext.Current.Request.Url.Segments.Contains("fra/") ? 1036 : 1033;
+          CreateCookies(LCID, "");
+      }
+ </script>
+<!-- Handle Search "enter" key and back button -->
+<p style="display:none;">
+    <label for="__spDummyText1">__spDummyText1</label>
+    <input type="text" name="__spDummyText1" id="__spDummyText1" size="1"/>
+    <label for="__spDummyText2">__spDummyText2</label>
+    <input type="text" name="__spDummyText2" id="__spDummyText2" size="1"/>
+</p>
+</sharepoint:sharepointform>
+
+<!-- extra form for some instances -->
+<asp:ContentPlaceHolder id="PlaceHolderUtilityContent" runat="server" />
+    
+<asp:literal ID="Literal1" runat="server" Text="&lt;script src='" /><asp:literal ID="Literal2" runat="server" Text="../../_layouts/15/WET.Theme.Intranet/WET-BOEW/theme-gcwu-intranet/js/theme-min.js" /><asp:literal ID="Literal3" runat="server" Text="' type='text/javascript'&gt;&lt;/script&gt;" />
+<asp:literal ID="Literal4" runat="server" Text="&lt;script src='" /><asp:literal ID="Literal5" runat="server" Text="../../_layouts/15/WET.Theme.Intranet/WET-BOEW/js/settings.js" /><asp:literal ID="Literal6" runat="server" Text="' type='text/javascript'&gt;&lt;/script&gt;" />
+<asp:literal ID="Literal13" runat="server" Text="&lt;script src='" /><asp:literal ID="Literal14" runat="server" Text="../../_layouts/15/WET.Theme.Intranet/WET-BOEW/js/pe-ap-min.js" /><asp:literal ID="Literal15" runat="server" Text="' id='progressive' type='text/javascript'&gt;&lt;/script&gt;" />   
+    <script type="text/javascript" src="/Style Library/js/customization.js" >  </script>
+
+<script type="text/javascript">
+
+
+    // Nik20121025 - Not the best piece of code, but does the work. It basically waits for the page to load (a few seconds after last javascript), and then scroll the page back up;
+    //               The users were complaining about the edit mode always bringing them to the bottom of the page;
+    ExecuteOrDelayUntilScriptLoaded(ScrollUp("outside-min"), "outside-min.js");
+    function ScrollUp(script) {
+
+        setTimeout(function ()
+        { document.getElementById("s4-workspace").scrollTop = 0; }, 2000);
+    }
+
+
+    //June 23 2015 SJ Cookies
+    //************************************************************
+    function CreateCookies(languageCode, redirectUrl) {
+
+        //var expiryDate = new Date();
+        //expiryDate.setDate(expiryDate.getDate() + 365); //I am setting it to expire in a year.
+        /*var cookieVal = escape(languageCode); // + "; expires=" + expiryDate.toUTCString();
+        var CookieName = "LACIntranetLanguageCode";
+        var cookieDomain = ".dev.bac-lac.gc.ca;path=/";
+        document.cookie = CookieName + "=" + cookieVal + ";" + cookieDomain;
+        */
+        //alert("My Cookies is being set");
+
+
+
+        var expiryDate = new Date();
+        expiryDate.setDate(expiryDate.getDate() + 999); //atleast good for 3 years 
+        var cookieVal = escape(languageCode); // + 
+        var cookieExpiry = "; expires=" + expiryDate.toUTCString();
+        var CookieName = "LACIntranetLanguageCode";
+        var strUrl;
+        var cookieDomain = "path=/";
+        document.cookie = CookieName + "=" + cookieVal + ";" + cookieDomain + cookieExpiry;
+               
+    }
+    function CheckCookie() {
+        var CookieName = "LACIntranetLanguageCode";
+        if (document.cookie.length > 0) {
+            CookieStart = document.cookie.indexOf(CookieName + "=");
+            if (CookieStart != -1) {
+                CookieStart = CookieStart + CookieName.length + 1; //added one for the '=' sign
+                var CookieEnd = document.cookie.indexOf(";", CookieStart);
+                if (CookieEnd == -1) {
+                    CookieEnd = document.cookie.length;
+                }
+               // alert (unescape(document.cookie.substring(CookieStart, CookieEnd)));
+            }
+        }
+        return "";
+    }
+
+
+   //****************************
+
+</script>
+    
+</body>
+</html>
+
+<script runat="server">
+    protected override void OnPreRender(EventArgs e)
+    {
+        base.OnPreRender(e);          
+
+        // populate litExtraCSS with the css required depending if we are logged in or not
+        litExtraCSS.Text = getEditModeCSS();
+        LoadResourcesText();     
+    }
+
+    protected override void Render(HtmlTextWriter writer)
+    {
+ 	    base.Render(writer);        
+        if (SPContext.Current.ListItem != null && Microsoft.SharePoint.Publishing.PublishingPage.IsPublishingPage(SPContext.Current.ListItem))
+        {
+            Microsoft.SharePoint.Publishing.PublishingPage publishingPage = Microsoft.SharePoint.Publishing.PublishingPage.GetPublishingPage(SPContext.Current.ListItem);
+
+            this.Page.Title = publishingPage.Title;            
+        }      
+    }
+
+    private void LoadResourcesText()
+    {
+        try
+        {
+            #region Literals
+            
+            litObjFIP.Text = HttpContext.GetGlobalResourceObject("WET", "objFIP", SPContext.Current.Web.Locale).ToString();
+            litObjWMMS.Text = HttpContext.GetGlobalResourceObject("WET", "objWMMS", SPContext.Current.Web.Locale).ToString();
+            litClosingObjTag.Text = HttpContext.GetGlobalResourceObject("WET", "closeObj", SPContext.Current.Web.Locale).ToString();
+            litClosingObjTag2.Text = HttpContext.GetGlobalResourceObject("WET", "closeObj", SPContext.Current.Web.Locale).ToString();
+            html1b.Text = HttpContext.GetGlobalResourceObject("WET", "languagevalue", SPContext.Current.Web.Locale).ToString();
+            html2b.Text = HttpContext.GetGlobalResourceObject("WET", "languagevalue", SPContext.Current.Web.Locale).ToString();
+            html3b.Text = HttpContext.GetGlobalResourceObject("WET", "languagevalue", SPContext.Current.Web.Locale).ToString();
+            html4b.Text = HttpContext.GetGlobalResourceObject("WET", "languagevalue", SPContext.Current.Web.Locale).ToString();
+            
+            litFooterHeader.Text = HttpContext.GetGlobalResourceObject("WET", "FooterHeaderText", SPContext.Current.Web.Locale).ToString();
+   
+            litSiteFooterHeader.Text = HttpContext.GetGlobalResourceObject("WET", "SiteFooterHeaderText", SPContext.Current.Web.Locale).ToString();
+    
+            litBreadCrumbHeader.Text = HttpContext.GetGlobalResourceObject("WET", "BreadcrumbHeaderText", SPContext.Current.Web.Locale).ToString();
+  
+            litMenuBarHeader.Text = HttpContext.GetGlobalResourceObject("WET", "MenuBarHeaderText", SPContext.Current.Web.Locale).ToString();
+            
+            litSearchHeaderLabel.Text = HttpContext.GetGlobalResourceObject("WET", "SearchHeaderLabelText", SPContext.Current.Web.Locale).ToString();
+            litSearchHeaderLabel.Text = HttpContext.GetGlobalResourceObject("WET", "SearchHeaderText", SPContext.Current.Web.Locale).ToString();
+            litFIP.Text = HttpContext.GetGlobalResourceObject("WET", "fipPcimWmmsDiv", SPContext.Current.Web.Locale).ToString();
+    
+            litClosingDivTag.Text = HttpContext.GetGlobalResourceObject("WET", "CloseDivLiteralText", SPContext.Current.Web.Locale).ToString();
+            litSignature.Text = HttpContext.GetGlobalResourceObject("WET", "fipPcimSigDiv", SPContext.Current.Web.Locale).ToString();
+    
+            litClosingDivTag2.Text = HttpContext.GetGlobalResourceObject("WET", "CloseDivLiteralText", SPContext.Current.Web.Locale).ToString();
+            litSkipMain.Text = HttpContext.GetGlobalResourceObject("WET", "SkipLinkMain", SPContext.Current.Web.Locale).ToString();
+   
+            litSkipNav.Text = HttpContext.GetGlobalResourceObject("WET", "SkipLinkNav", SPContext.Current.Web.Locale).ToString();
+            litGOCNavBar.Text = HttpContext.GetGlobalResourceObject("WET", "GOCNavBarHeaderText", SPContext.Current.Web.Locale).ToString();
+    
+            #endregion
+
+            #region Images
+            imgSig.ImageUrl = HttpContext.GetGlobalResourceObject("WET", "SigImage", SPContext.Current.Web.Locale).ToString();
+            imgSig.AlternateText = HttpContext.GetGlobalResourceObject("WET", "GovOfCanada", SPContext.Current.Web.Locale).ToString();
+    
+            imgWMMS.AlternateText = HttpContext.GetGlobalResourceObject("WET", "wmmsText", SPContext.Current.Web.Locale).ToString();
+            #endregion
+    
+        }
+        catch (Exception ex)
+        {
+            WET.Theme.Intranet.Objects.Logger.WriteLog(ex.Message + " -- " + ex.StackTrace);
+        }
+    }
+</script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-27341782-3', 'auto');
+    ga('send', 'pageview');
+
+</script> 

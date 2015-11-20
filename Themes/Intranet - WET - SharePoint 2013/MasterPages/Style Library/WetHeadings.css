@@ -1,0 +1,50 @@
+﻿.ms-rteStyle-WETH2heading{
+-ms-name: WET Heading H2;
+font-family: sans-serif;
+color: #555;
+font-weight: 700;
+line-height: 150%;
+vertical-align: bottom;
+font-size: 155%;
+}
+
+.ms-rteStyle-WETH3heading{
+-ms-name: WET Heading H3;
+font-family: sans-serif;
+color: #666;
+font-weight: 700;
+line-height: 150%;
+vertical-align: bottom;
+font-size: 140%;
+}
+
+.ms-rteStyle-WETH4heading{
+-ms-name: WET Heading H4;
+font-family: sans-serif;
+color: #222;
+font-weight: 700;
+line-height: 150%;
+vertical-align: bottom;
+font-size: 130%;
+
+}
+
+.ms-rteStyle-WETH5heading{
+-ms-name: WET Heading H5;
+font-family: sans-serif;
+color: #555;
+font-weight: 700;
+line-height: 150%;
+vertical-align: bottom;
+font-size: 120%;
+
+}
+
+.ms-rteStyle-WETH6heading{
+-ms-name: WET Heading H6;
+font-family: sans-serif;
+color: #666;
+font-weight: 700;
+line-height: 110%;
+vertical-align: bottom;
+}

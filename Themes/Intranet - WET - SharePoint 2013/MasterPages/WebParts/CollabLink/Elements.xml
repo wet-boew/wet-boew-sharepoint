@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <Module Name="CollabLink" List="113" Url="_catalogs/wp">
+    <File Path="CollabLink\CollabLink.webpart" Url="MasterPages_CollabLink.webpart" Type="GhostableInLibrary" >
+      <Property Name="Group" Value="Custom" />
+      <Property Name="Title" Value="CollabLink" />
+    </File>
+  </Module>
+</Elements>

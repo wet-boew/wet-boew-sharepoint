@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="PageLayout\" Type="ElementManifest" />
+    <ProjectItemFile Source="IntranetLayoutSplash.aspx" Target="PageLayout\" Type="ElementFile" />
+    <ProjectItemFile Source="LACLandingPageLayout.aspx" Target="PageLayout\" Type="ElementFile" />
+    <ProjectItemFile Source="LACThreeColumnPageLayout.aspx" Target="PageLayout\" Type="ElementFile" />
+    <ProjectItemFile Source="LACTwoColumnPageLayout.aspx" Target="PageLayout\" Type="ElementFile" />
+  </Files>
+</ProjectItem>

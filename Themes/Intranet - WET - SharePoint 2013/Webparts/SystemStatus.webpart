@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="webparts.SystemStatus.SystemStatus, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">System Status</property>
+        <property name="Description" type="string">Displays system Status from the Service Desk List</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

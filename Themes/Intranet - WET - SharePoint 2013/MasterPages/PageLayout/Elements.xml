@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="PageLayout" Url="_catalogs/masterpage" RootWebOnly="TRUE">
+    <File Path="PageLayout\IntranetLayoutSplash.aspx" Url="Layout Pages/IntranetILayoutSplash.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="Intranet - Splash Page"/>
+      <Property Name="MasterPageDescription" Value="WETIntranetSplash.master"/>
+    </File>
+    <File Path="PageLayout\LACLandingPageLayout.aspx" Url="PageLayout/LACLandingPageLayout.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" Level="Published">
+      <Property Name="Title" Value="LAC Landing Page Layout" />
+      <Property Name="UIVersion" Value="15" />
+      <Property Name="PublishingHidden" Value="FALSE" />
+      <Property Name="PublishingAssociatedContentType" Value=";#LACLandingPageLayout;#0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE811007F1D89C4E8764880AA40405C93FFD5F0;#" />
+      <Property Name="HtmlDesignAssociated" Value="FALSE" />
+      <Property Name="ContentType" Value="Page Layout" />
+    </File>
+    
+    <File Path="PageLayout\LACThreeColumnPageLayout.aspx" Url="PageLayout/LACThreeColumnPageLayout.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" Level="Published">
+      <Property Name="Title" Value="LAC Three Column Pagelayout" />
+      <Property Name="UIVersion" Value="15" />
+      <Property Name="PublishingHidden" Value="FALSE" />
+      <Property Name="PublishingAssociatedContentType" Value=";#LACThreeColumnPageLayout;#0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE81100160A32C65DD54D078E8935D7E05CE1E7;#" />
+      <Property Name="HtmlDesignAssociated" Value="FALSE" />
+      <Property Name="ContentType" Value="Page Layout" />
+    </File>
+    
+    <File Path="PageLayout\LACTwoColumnPageLayout.aspx" Url="PageLayout/LACTwoColumnPageLayout.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" Level="Published">
+      <Property Name="Title" Value="LAC Two Column Pagelayout" />
+      <Property Name="UIVersion" Value="15" />
+      <Property Name="PublishingHidden" Value="FALSE" />
+      <Property Name="PublishingAssociatedContentType" Value=";#LACTwoColumnPageLayout;#0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE81100B873E4F15F6E48B6A45A65121DD4D7C7;#" />
+      <Property Name="HtmlDesignAssociated" Value="FALSE" />
+      <Property Name="ContentType" Value="Page Layout" />
+    </File>
+  </Module>
+</Elements>

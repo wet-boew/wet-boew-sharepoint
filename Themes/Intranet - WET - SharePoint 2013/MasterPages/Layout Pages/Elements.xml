@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="Layout Pages" Url="_catalogs/masterpage" Path="Layout Pages" RootWebOnly="TRUE">
+    <File Path="IntranetLayout1Col.aspx" Url="Layout Pages/IntranetLayout1Col.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="Intranet - 1 Column"/>
+      <Property Name="MasterPageDescription" Value="WETIntranetPublishing.master"/>
+    </File>
+    <File Path="IntranetLayout2Col.aspx" Url="Layout Pages/IntranetLayout2Col.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="Intranet - 2 Columns"/>
+      <Property Name="MasterPageDescription" Value="WETIntranetPublishing.master"/>
+    </File>
+    <File Path="IntranetLayoutSplash.aspx" Url="Layout Pages/IntranetILayoutSplash.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="Intranet - Splash Page"/>
+      <Property Name="MasterPageDescription" Value="WETIntranetSplash.master"/>
+    </File>
+    <File Path="IntranetLayoutSearchResults.aspx" Url="Layout Pages/IntranetIntLayoutSearchResults.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="Intranet - Search Results"/>
+      <Property Name="MasterPageDescription" Value="WETIntranetPublishing.master"/>
+    </File>
+    <File Path="IntranetLayoutSiteLandingPage.aspx" Url="Layout Pages/IntranetLayoutSiteLandingPage.aspx" Type="GhostableInLibrary">
+      <Property Name="Title" Value="Intranet - 3 Columns"/>
+      <Property Name="MasterPageDescription" Value="WETIntranetPublishing.master"/>
+    </File>
+    <File Path="LACLandingPageLayout.aspx" Url="Layout Pages/LACLandingPageLayout.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" Level="Published">
+      <Property Name="Title" Value="LAC Landing Page Layout" />
+      <Property Name="UIVersion" Value="15" />
+      <Property Name="PublishingHidden" Value="FALSE" />
+      <Property Name="PublishingAssociatedContentType" Value=";#LACLandingPageLayout;#0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE811007F1D89C4E8764880AA40405C93FFD5F0;#" />
+      <Property Name="HtmlDesignAssociated" Value="FALSE" />
+      <Property Name="ContentType" Value="Page Layout" />
+    </File>
+    
+    <File Path="LACThreeColumnPageLayout.aspx" Url="Layout Pages/LACThreeColumnPageLayout.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" Level="Published">
+      <Property Name="Title" Value="LAC Three Column Pagelayout" />
+      <Property Name="UIVersion" Value="15" />
+      <Property Name="PublishingHidden" Value="FALSE" />
+      <Property Name="PublishingAssociatedContentType" Value=";#LACThreeColumnPageLayout;#0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE81100160A32C65DD54D078E8935D7E05CE1E7;#" />
+      <Property Name="HtmlDesignAssociated" Value="FALSE" />
+      <Property Name="ContentType" Value="Page Layout" />
+    </File>
+    
+    <File Path="LACTwoColumnPageLayout.aspx" Url="Layout Pages/LACTwoColumnPageLayout.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" Level="Published">
+      <Property Name="Title" Value="LAC Two Column Pagelayout" />
+      <Property Name="UIVersion" Value="15" />
+      <Property Name="PublishingHidden" Value="FALSE" />
+      <Property Name="PublishingAssociatedContentType" Value=";#LACTwoColumnPageLayout;#0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE81100B873E4F15F6E48B6A45A65121DD4D7C7;#" />
+      <Property Name="HtmlDesignAssociated" Value="FALSE" />
+      <Property Name="ContentType" Value="Page Layout" />
+    </File>
+  </Module>
+</Elements>
