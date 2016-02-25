@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="Style Library" Url="Style Library">
+    <File Path="Style Library\WetHeadings.css" Url="WetHeadings.css" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" />
+    <File Path="Style Library\WETIntranetSplash.css" Url="WETIntranetSplash.css" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" />
+    <File Path="Style Library\ExternalScripts.js" Url="ExternalScripts.js" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE"/>
+    <File Path="Style Library\WETIntranet.css" Url="WETIntranet.css" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE"/>
+  </Module>
+</Elements>

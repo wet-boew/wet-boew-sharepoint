@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="Style Library\" Type="ElementManifest" />
+    <ProjectItemFile Source="WetHeadings.css" Target="Style Library\" Type="ElementFile" />
+    <ProjectItemFile Source="WETIntranetSplash.css" Target="Style Library\" Type="ElementFile" />
+    <ProjectItemFile Source="ExternalScripts.js" Target="Style Library\" Type="ElementFile" />
+    <ProjectItemFile Source="WETIntranet.css" Target="Style Library\" Type="ElementFile" />
+  </Files>
+</ProjectItem>

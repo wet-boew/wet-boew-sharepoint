@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C4835364-DE10-4F1A-BF58-1AE5AEAC02E6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WET.Theme</RootNamespace>
+    <AssemblyName>WET.Theme.Intranet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <ActiveDeploymentConfiguration>Default</ActiveDeploymentConfiguration>
+    <ProjectMode>SharePointCustomization</ProjectMode>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint.Publishing, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\ISAPI\Microsoft.SharePoint.Publishing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.WorkflowActions, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Security" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapters\RichHtmlFieldAdapter.cs" />
+    <Compile Include="Adapters\WebPartZoneAdapter.cs" />
+    <Compile Include="Features\AttachAdapter\AttachAdapter.EventReceiver.cs">
+      <DependentUpon>AttachAdapter.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\GCWU\GCWU.EventReceiver.cs">
+      <DependentUpon>GCWU.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Master Pages\WETIntranetPublishingMaster.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master Pages\WETIntranetSplash.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utilities\Logger.cs" />
+    <Compile Include="Utilities\MetaTag.cs" />
+    <Compile Include="Utilities\MetaTagAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebControls\FooterLinks.cs" />
+    <Compile Include="WebControls\FooterNavigation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebControls\HeaderLink.cs" />
+    <Compile Include="WebControls\LeftNavigation.cs" />
+    <Compile Include="WebControls\SiteMap.cs" />
+    <Compile Include="WebControls\HomeLink.cs" />
+    <Compile Include="WebControls\Language.cs" />
+    <Compile Include="WebControls\LastModifiedDate.cs" />
+    <Compile Include="WebControls\PageMetadata.cs" />
+    <Compile Include="WebControls\PageTitle.cs" />
+    <Compile Include="WebControls\SuppressJSForAnonymous.cs" />
+    <Compile Include="WebControls\TopNavigation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WebControls\TopRightLink.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DelegateControls\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{dfc4be3d-797d-45ca-b422-f9ab98be1a55}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\GCWU\GCWU.feature">
+      <FeatureId>{467b7f23-b943-4595-aee7-ee4cbe46d9ff}</FeatureId>
+    </None>
+    <None Include="Features\AttachAdapter\AttachAdapter.feature">
+      <FeatureId>{318b1d99-fc05-4fcf-b0ca-816cfc698572}</FeatureId>
+    </None>
+    <None Include="Fields\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{10c360dd-e646-40e0-99ff-d1363616348d}</SharePointProjectItemId>
+    </None>
+    <None Include="Javascripts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{be2ba364-0d2b-44ef-ac1c-5f0348b078d2}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\wet-boew\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Layouts\wet-boew\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Layouts\wet-boew\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Layouts\wet-boew\js\jquery\1.11.1\jquery.min.map" />
+    <None Include="Layouts\wet-boew\js\jquery\2.1.4\jquery.min.map" />
+    <None Include="Layouts\wet-boew\js\polyfills\datalist.min.js.map" />
+    <None Include="Layouts\wet-boew\js\polyfills\datalist_dynamic.min.js.map" />
+    <None Include="Layouts\wet-boew\js\polyfills\datepicker.min.js.map" />
+    <None Include="Layouts\wet-boew\js\polyfills\details.min.js.map" />
+    <None Include="Layouts\wet-boew\js\polyfills\jawsariafixes.min.js.map" />
+    <None Include="Layouts\wet-boew\js\polyfills\meter.min.js.map" />
+    <None Include="Layouts\wet-boew\js\polyfills\mobile.min.js.map" />
+    <None Include="Layouts\wet-boew\js\polyfills\progress.min.js.map" />
+    <None Include="Layouts\wet-boew\js\polyfills\slider.min.js.map" />
+    <None Include="Layouts\wet-boew\js\polyfills\slider_wrapper.min.js.map" />
+    <None Include="Layouts\wet-boew\js\polyfills\svg.min.js.map" />
+    <None Include="Layouts\wet-boew\js\wet-boew.min.js.map" />
+    <None Include="Lists\LACSideImagesLinks\LACSideImagesLinksInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a5ed70e5-4e06-4b6a-a104-c18a253be31a}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LACSideImagesLinks\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ef11e296-510e-4458-9c14-c3bea34d6b59}</SharePointProjectItemId>
+    </None>
+    <None Include="PageLayout\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{49233bd6-c3de-4f91-af0c-b53fa8827b59}</SharePointProjectItemId>
+    </None>
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7b2403cd-f9e5-4312-b8f7-362214cffc07}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\TabList\TabListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{29c19106-978f-4256-ada9-a6d14b073a2b}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\TabList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4ebefa2f-ac7a-4381-900e-67d4ec7b2547}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LACFooterImages\LACFooterImagesInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{dd51b685-f496-4d2d-9668-c5853fd4402f}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LACFooterImages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6a72a16e-bf9e-44d3-bc8e-3dcc53e82e80}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LACFooterLinks\LACFooterLinksInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6257f5be-9040-46ac-8e3d-e6d195a3a6cc}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LACFooterLinks\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c7579128-f466-4dc0-8ca2-e19f1f8d670f}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LACImagesSlider\LACImagesSliderInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b78f23bb-97fd-4c56-8d44-9981eade5855}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LACImagesSlider\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{30093085-8df3-4df2-9bdb-e3190436eb97}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LACMainTopNavigation\LACMainTopNavigationInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{66be16cc-0b55-4b33-ae08-39bababe1074}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LACMainTopNavigation\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2e2b4fed-1d69-487f-9e75-add0277aecfe}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LACQuickLinks\LACQuickLinksInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bb2251db-e956-4db3-a8cb-7e9fd861f876}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LACQuickLinks\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d021c8ec-2ef4-463c-9abd-d4660368aaad}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LACRightHeaderLink\LACRightHeaderLinkInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8734809c-51b8-4d11-890c-ec1c53c4784e}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LACRightHeaderLink\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6bc4fd9a-8e4f-48ed-863f-6c69e00106df}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LACNewDigitalsImages\LACNewDigitalsImagesInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f3497940-b926-40af-b2ea-a1fe308ad025}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\LACNewDigitalsImages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{eaf86867-2db1-4f9e-929f-74047bf7035d}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\WETFooterNavigation\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a6b4678f-fc96-4957-bd54-95f89b20c0f8}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\WETFooterNavigation\WETFooterNavigationInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0ec14a2d-7806-41bf-92bf-03948f4a68ad}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\WETHeaderNavigation\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5a722100-7e48-4134-911e-3a249e4f13e4}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\WETHeaderNavigation\WETHeaderNavigationInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4b6a08d1-0ba3-4931-95e0-e6941229ddd8}</SharePointProjectItemId>
+    </None>
+    <None Include="Master Pages\WETIntranetPublishing.master">
+      <SubType>ASPXCodeBehind</SubType>
+    </None>
+    <None Include="Master Pages\WETIntranetSplash.master">
+      <SubType>ASPXCodeBehind</SubType>
+    </None>
+    <None Include="Master Pages\WETIntranetSystem.master">
+      <SubType>ASPXCodeBehind</SubType>
+    </None>
+    <None Include="Master Pages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{54b10a99-d9ef-4f53-9062-f568a41f71f2}</SharePointProjectItemId>
+    </None>
+    <None Include="ContentTypes\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{de598a1c-5a96-4c43-bae0-21386080ecb6}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{e096195e-a395-444a-9cbd-36f1db37553a}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Resource Files\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{7dcfda53-e295-4879-b442-d37158ea41d5}</SharePointProjectItemId>
+    </None>
+    <None Include="SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{58bf8d04-302c-49bc-bcb9-41cfbf08ae5a}</SharePointProjectItemId>
+    </None>
+    <None Include="Style Library\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ce9b857d-29c4-4227-ac5d-c6216af88b72}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DelegateControls\Elements.xml" />
+    <Content Include="Features\GCWU\GCWU.Template.xml">
+      <DependentUpon>GCWU.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\AttachAdapter\AttachAdapter.Template.xml">
+      <DependentUpon>AttachAdapter.feature</DependentUpon>
+    </Content>
+    <Content Include="Fields\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Javascripts\Elements.xml" />
+    <Content Include="Javascripts\leftmenuselector.js" />
+    <Content Include="Layouts\theme-gc-intranet\assets\bcrumb-mobile.png" />
+    <Content Include="Layouts\theme-gc-intranet\assets\bcrumb-rtl.gif" />
+    <Content Include="Layouts\theme-gc-intranet\assets\bcrumb.gif" />
+    <Content Include="Layouts\theme-gc-intranet\assets\favicon-mobile.png" />
+    <Content Include="Layouts\theme-gc-intranet\assets\favicon.ico" />
+    <Content Include="Layouts\theme-gc-intranet\assets\sig-blk-en.png" />
+    <Content Include="Layouts\theme-gc-intranet\assets\sig-blk-en.svg" />
+    <Content Include="Layouts\theme-gc-intranet\assets\sig-blk-eng.svg" />
+    <Content Include="Layouts\theme-gc-intranet\assets\sig-blk-fr.png" />
+    <Content Include="Layouts\theme-gc-intranet\assets\sig-blk-fr.svg" />
+    <Content Include="Layouts\theme-gc-intranet\assets\sig-blk-fra.svg" />
+    <Content Include="Layouts\theme-gc-intranet\assets\wmms-intra.png" />
+    <Content Include="Layouts\theme-gc-intranet\assets\wmms-intra.svg" />
+    <Content Include="Layouts\theme-gc-intranet\assets\wmms.png" />
+    <Content Include="Layouts\theme-gc-intranet\css\ie8-theme-srv.css" />
+    <Content Include="Layouts\theme-gc-intranet\css\ie8-theme-srv.min.css" />
+    <Content Include="Layouts\theme-gc-intranet\css\ie8-theme.css" />
+    <Content Include="Layouts\theme-gc-intranet\css\ie8-theme.min.css" />
+    <Content Include="Layouts\theme-gc-intranet\css\ie8-wet-boew.css" />
+    <Content Include="Layouts\theme-gc-intranet\css\ie8-wet-boew.min.css" />
+    <Content Include="Layouts\theme-gc-intranet\css\theme-srv.css" />
+    <Content Include="Layouts\theme-gc-intranet\css\theme-srv.min.css" />
+    <Content Include="Layouts\theme-gc-intranet\css\theme.css" />
+    <Content Include="Layouts\theme-gc-intranet\css\theme.min.css" />
+    <Content Include="Layouts\theme-gc-intranet\css\wet-boew.css" />
+    <Content Include="Layouts\theme-gc-intranet\css\wet-boew.min.css" />
+    <Content Include="Layouts\theme-gc-intranet\js\theme.js" />
+    <Content Include="Layouts\theme-gc-intranet\js\theme.min.js" />
+    <Content Include="Layouts\wet-boew\assets\cloud-popup-relative.png" />
+    <Content Include="Layouts\wet-boew\assets\fd-slider-sprite.png" />
+    <Content Include="Layouts\wet-boew\assets\loading.png" />
+    <Content Include="Layouts\wet-boew\assets\mediacontrols.html" />
+    <Content Include="Layouts\wet-boew\assets\multimedia.swf" />
+    <Content Include="Layouts\wet-boew\assets\sprites_geomap.png" />
+    <Content Include="Layouts\wet-boew\assets\sprites_share.png" />
+    <Content Include="Layouts\wet-boew\assets\zoom-minus-mini.png" />
+    <Content Include="Layouts\wet-boew\assets\zoom-plus-mini.png" />
+    <Content Include="Layouts\wet-boew\assets\zoom-world-mini.png" />
+    <Content Include="Layouts\wet-boew\css\noscript.css" />
+    <Content Include="Layouts\wet-boew\css\noscript.min.css" />
+    <Content Include="Layouts\wet-boew\css\polyfills\datalist.css" />
+    <Content Include="Layouts\wet-boew\css\polyfills\datalist.min.css" />
+    <Content Include="Layouts\wet-boew\css\polyfills\datepicker.css" />
+    <Content Include="Layouts\wet-boew\css\polyfills\datepicker.min.css" />
+    <Content Include="Layouts\wet-boew\css\polyfills\details.css" />
+    <Content Include="Layouts\wet-boew\css\polyfills\details.min.css" />
+    <Content Include="Layouts\wet-boew\css\polyfills\meter.css" />
+    <Content Include="Layouts\wet-boew\css\polyfills\meter.min.css" />
+    <Content Include="Layouts\wet-boew\css\polyfills\progress.css" />
+    <Content Include="Layouts\wet-boew\css\polyfills\progress.min.css" />
+    <Content Include="Layouts\wet-boew\css\polyfills\slider.css" />
+    <Content Include="Layouts\wet-boew\css\polyfills\slider.min.css" />
+    <Content Include="Layouts\wet-boew\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Layouts\wet-boew\js\deps\additional-methods.js" />
+    <Content Include="Layouts\wet-boew\js\deps\additional-methods.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\geomap-lib.js" />
+    <Content Include="Layouts\wet-boew\js\deps\geomap-lib.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\jquery.dataTables.js" />
+    <Content Include="Layouts\wet-boew\js\deps\jquery.dataTables.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\jquery.flot.canvas.js" />
+    <Content Include="Layouts\wet-boew\js\deps\jquery.flot.canvas.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\jquery.flot.js" />
+    <Content Include="Layouts\wet-boew\js\deps\jquery.flot.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\jquery.flot.orderBars.js" />
+    <Content Include="Layouts\wet-boew\js\deps\jquery.flot.orderBars.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\jquery.flot.pie.js" />
+    <Content Include="Layouts\wet-boew\js\deps\jquery.flot.pie.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\jquery.magnific-popup.js" />
+    <Content Include="Layouts\wet-boew\js\deps\jquery.magnific-popup.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\jquery.pjax.js" />
+    <Content Include="Layouts\wet-boew\js\deps\jquery.pjax.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\jquery.validate.js" />
+    <Content Include="Layouts\wet-boew\js\deps\jquery.validate.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-apollo.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-apollo.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-basic.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-basic.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-clj.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-clj.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-css.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-css.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-dart.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-dart.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-erlang.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-erlang.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-go.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-go.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-hs.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-hs.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-lisp.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-lisp.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-llvm.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-llvm.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-lua.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-lua.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-matlab.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-matlab.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-ml.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-ml.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-mumps.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-mumps.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-n.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-n.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-pascal.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-pascal.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-proto.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-proto.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-r.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-r.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-rd.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-rd.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-scala.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-scala.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-sql.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-sql.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-tcl.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-tcl.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-tex.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-tex.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-vb.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-vb.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-vhdl.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-vhdl.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-wiki.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-wiki.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-xq.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-xq.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-yaml.js" />
+    <Content Include="Layouts\wet-boew\js\deps\lang-yaml.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\OpenLayers.js" />
+    <Content Include="Layouts\wet-boew\js\deps\OpenLayers.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\prettify.js" />
+    <Content Include="Layouts\wet-boew\js\deps\prettify.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\proj4.js" />
+    <Content Include="Layouts\wet-boew\js\deps\proj4.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\run_prettify.js" />
+    <Content Include="Layouts\wet-boew\js\deps\run_prettify.min.js" />
+    <Content Include="Layouts\wet-boew\js\deps\tableparser.js" />
+    <Content Include="Layouts\wet-boew\js\deps\tableparser.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\af.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\af.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\ar.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\ar.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\bg.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\bg.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\cs.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\cs.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\de.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\de.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\el.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\el.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\en.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\en.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\es.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\es.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\et.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\et.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\fr.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\fr.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\hi.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\hi.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\hu.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\hu.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\hy.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\hy.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\id.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\id.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\is.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\is.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\it.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\it.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\ja.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\ja.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\ko.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\ko.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\lt.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\lt.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\lv.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\lv.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\nl.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\nl.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\pl.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\pl.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\pt-BR.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\pt-BR.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\pt.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\pt.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\ru.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\ru.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\sk.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\sk.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\sq.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\sq.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\th.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\th.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\tr.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\tr.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\uk.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\uk.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\vi.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\vi.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\zh-Hans.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\zh-Hans.min.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\zh.js" />
+    <Content Include="Layouts\wet-boew\js\i18n\zh.min.js" />
+    <Content Include="Layouts\wet-boew\js\ie8-wet-boew.js" />
+    <Content Include="Layouts\wet-boew\js\ie8-wet-boew.min.js" />
+    <Content Include="Layouts\wet-boew\js\ie8-wet-boew2.js" />
+    <Content Include="Layouts\wet-boew\js\ie8-wet-boew2.min.js" />
+    <Content Include="Layouts\wet-boew\js\jquery\1.11.1\jquery.js" />
+    <Content Include="Layouts\wet-boew\js\jquery\1.11.1\jquery.min.js" />
+    <Content Include="Layouts\wet-boew\js\jquery\2.1.4\jquery.js" />
+    <Content Include="Layouts\wet-boew\js\jquery\2.1.4\jquery.min.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\datalist.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\datalist.min.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\datalist_dynamic.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\datalist_dynamic.min.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\datepicker.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\datepicker.min.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\details.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\details.min.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\jawsariafixes.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\jawsariafixes.min.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\meter.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\meter.min.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\mobile.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\mobile.min.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\progress.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\progress.min.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\slider.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\slider.min.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\slider_wrapper.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\slider_wrapper.min.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\svg.js" />
+    <Content Include="Layouts\wet-boew\js\polyfills\svg.min.js" />
+    <Content Include="Layouts\wet-boew\js\wet-boew.js" />
+    <Content Include="Layouts\wet-boew\js\wet-boew.min.js" />
+    <Content Include="Lists\LACSideImagesLinks\EditDlg.htm" />
+    <Content Include="Lists\LACSideImagesLinks\Elements.xml" />
+    <Content Include="Lists\LACSideImagesLinks\FileDlg.htm" />
+    <Content Include="Lists\LACSideImagesLinks\LACSideImagesLinksInstance\Elements.xml" />
+    <Content Include="Lists\LACSideImagesLinks\Repair.aspx" />
+    <Content Include="Lists\LACSideImagesLinks\Schema.xml" />
+    <Content Include="Lists\LACSideImagesLinks\Upload.aspx" />
+    <Content Include="Master Pages\Custom_Control_SearchBox_Compact.html" />
+    <Content Include="Master Pages\Custom_Control_SearchBox_Compact.js" />
+    <Content Include="PageLayout\LACLandingPageLayout.aspx" />
+    <Content Include="PageLayout\LACThreeColumnPageLayout.aspx" />
+    <Content Include="PageLayout\LACTwoColumnPageLayout.aspx" />
+    <Content Include="PageLayout\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="PageLayout\IntranetLayoutSplash.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Lists\TabList\Elements.xml" />
+    <Content Include="Lists\TabList\TabListInstance\Elements.xml" />
+    <Content Include="Lists\TabList\Schema.xml" />
+    <Content Include="Lists\LACFooterImages\EditDlg.htm" />
+    <Content Include="Lists\LACFooterImages\Elements.xml" />
+    <Content Include="Lists\LACFooterImages\FileDlg.htm" />
+    <Content Include="Lists\LACFooterImages\LACFooterImagesInstance\Elements.xml" />
+    <Content Include="Lists\LACFooterImages\Repair.aspx" />
+    <Content Include="Lists\LACFooterImages\Schema.xml" />
+    <Content Include="Lists\LACFooterImages\Upload.aspx" />
+    <Content Include="Lists\LACFooterLinks\Elements.xml" />
+    <Content Include="Lists\LACFooterLinks\LACFooterLinksInstance\Elements.xml" />
+    <Content Include="Lists\LACFooterLinks\Schema.xml" />
+    <Content Include="Lists\LACImagesSlider\EditDlg.htm" />
+    <Content Include="Lists\LACImagesSlider\Elements.xml" />
+    <Content Include="Lists\LACImagesSlider\FileDlg.htm" />
+    <Content Include="Lists\LACImagesSlider\LACImagesSliderInstance\Elements.xml" />
+    <Content Include="Lists\LACImagesSlider\Repair.aspx" />
+    <Content Include="Lists\LACImagesSlider\Schema.xml" />
+    <Content Include="Lists\LACImagesSlider\Upload.aspx" />
+    <Content Include="Lists\LACMainTopNavigation\Elements.xml" />
+    <Content Include="Lists\LACMainTopNavigation\LACMainTopNavigationInstance\Elements.xml" />
+    <Content Include="Lists\LACMainTopNavigation\Schema.xml" />
+    <Content Include="Lists\LACQuickLinks\Elements.xml" />
+    <Content Include="Lists\LACQuickLinks\LACQuickLinksInstance\Elements.xml" />
+    <Content Include="Lists\LACQuickLinks\Schema.xml" />
+    <Content Include="Lists\LACRightHeaderLink\Elements.xml" />
+    <Content Include="Lists\LACRightHeaderLink\LACRightHeaderLinkInstance\Elements.xml" />
+    <Content Include="Lists\LACRightHeaderLink\Schema.xml" />
+    <Content Include="Lists\LACNewDigitalsImages\EditDlg.htm" />
+    <Content Include="Lists\LACNewDigitalsImages\Elements.xml" />
+    <Content Include="Lists\LACNewDigitalsImages\FileDlg.htm" />
+    <Content Include="Lists\LACNewDigitalsImages\LACNewDigitalsImagesInstance\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Lists\LACNewDigitalsImages\Repair.aspx" />
+    <Content Include="Lists\LACNewDigitalsImages\Schema.xml" />
+    <Content Include="Lists\LACNewDigitalsImages\Upload.aspx" />
+    <Content Include="Lists\WETFooterNavigation\Elements.xml" />
+    <Content Include="Lists\WETFooterNavigation\Schema.xml" />
+    <Content Include="Lists\WETFooterNavigation\WETFooterNavigationInstance\Elements.xml" />
+    <Content Include="Lists\WETHeaderNavigation\Elements.xml" />
+    <Content Include="Lists\WETHeaderNavigation\Schema.xml" />
+    <Content Include="Lists\WETHeaderNavigation\WETHeaderNavigationInstance\Elements.xml" />
+    <Content Include="Master Pages\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ContentTypes\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Style Library\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Style Library\ExternalScripts.js" />
+    <Content Include="Style Library\WETIntranet.css" />
+    <Content Include="Style Library\WETIntranetSplash.css" />
+    <Content Include="Style Library\WetHeadings.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Layouts\ajax\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource Files\WET.fr-CA.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource Files\WET.fr-FR.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource Files\WET.resx">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="false" />
+</Project>

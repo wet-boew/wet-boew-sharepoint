@@ -1,0 +1,2546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.SharePoint.Taxonomy</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.SharePoint.Taxonomy.ChangedGroup">
+      <summary>Represents a Group object that has been modified.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.ChangedItem">
+      <summary>Represents an Item object that has been modified.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ChangedItem.ChangedBy">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ChangedItem.ChangedTime">
+      <returns>Returns <see cref="T:System.DateTime" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ChangedItem.Id">
+      <returns>Returns <see cref="T:System.Guid" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ChangedItem.ItemType">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.ChangedItemType" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ChangedItem.Operation">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.ChangedOperationType" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.ChangedItemCollection">
+      <summary>A group of ChangedItem objects.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.ChangedItemType">
+      <summary>Indicates the type of change made to a ChangedItem object.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ChangedItemType.Unknown">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ChangedItemType.Term">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ChangedItemType.TermSet">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ChangedItemType.Group">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ChangedItemType.TermStore">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ChangedItemType.Site">
+      <summary />
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.ChangedOperationType">
+      <summary>Indicates the new type of operation associated the current ChangedItem object.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ChangedOperationType.Unknown">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ChangedOperationType.Add">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ChangedOperationType.Edit">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ChangedOperationType.Delete">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ChangedOperationType.Move">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ChangedOperationType.Copy">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ChangedOperationType.PathChange">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ChangedOperationType.Merge">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ChangedOperationType.Import">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ChangedOperationType.Restore">
+      <summary />
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.ChangedSite">
+      <summary>Represents the changed version of a Site object.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ChangedSite.SiteId">
+      <returns>Returns <see cref="T:System.Guid" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ChangedSite.TermId">
+      <returns>Returns <see cref="T:System.Guid" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ChangedSite.TermSetId">
+      <returns>Returns <see cref="T:System.Guid" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.ChangedTerm">
+      <summary>Represents the changed version of a Term object.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ChangedTerm.GroupId">
+      <returns>Returns <see cref="T:System.Guid" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ChangedTerm.TermSetId">
+      <returns>Returns <see cref="T:System.Guid" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.ChangedTermSet">
+      <summary>Represents the changed version of a TermSet object.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ChangedTermSet.FromGroupId">
+      <returns>Returns <see cref="T:System.Guid" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ChangedTermSet.GroupId">
+      <returns>Returns <see cref="T:System.Guid" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.ChangedTermStore">
+      <summary>Represents the changed version of a TermStore object.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ChangedTermStore.ChangedLanguage">
+      <returns>Returns <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ChangedTermStore.IsDefaultLanguageChanged">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ChangedTermStore.IsFullFarmRestore"></member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.FeatureIds"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.FeatureIds.ContentTypePublishing"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.FeatureIds.MetadataHub"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.FeatureIds.Syndication"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.FeatureIds.Taxonomy"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.FeatureIds.TaxonomyTenantAdministration"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.FeatureIds.TaxonomyTimerJobs"></member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.Group">
+      <summary>Represents a group that may be a parent to one or more TermSet child objects.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Group.AddContributor(System.String)">
+      <param name="principalName"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Group.AddGroupManager(System.String)">
+      <param name="principalName"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Group.Contributors">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Administration.SPAcl`1" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Group.CreateTermSet(System.String)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermSet" />.</returns>
+      <param name="name"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Group.CreateTermSet(System.String,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermSet" />.</returns>
+      <param name="name"></param>
+      <param name="newTermSetId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Group.CreateTermSet(System.String,System.Guid,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Group.CreateTermSet(System.String,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Group.Delete"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Group.DeleteContributor(System.String)">
+      <param name="principalName"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Group.DeleteGroupManager(System.String)">
+      <param name="principalName"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Group.Description">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Group.DoesUserHavePermissions(Microsoft.SharePoint.Taxonomy.TaxonomyRights)">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+      <param name="rights"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Group.Export">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Group.GetChanges(System.DateTime)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.ChangedItemCollection" />.</returns>
+      <param name="startTime"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Group.GetChanges(System.DateTime,Microsoft.SharePoint.Taxonomy.ChangedItemType)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.ChangedItemCollection" />.</returns>
+      <param name="startTime"></param>
+      <param name="itemType"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Group.GetChanges(System.DateTime,Microsoft.SharePoint.Taxonomy.ChangedItemType,Microsoft.SharePoint.Taxonomy.ChangedOperationType)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.ChangedItemCollection" />.</returns>
+      <param name="startTime"></param>
+      <param name="itemType"></param>
+      <param name="operationType"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Group.GetEffectivePermissions">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TaxonomyRights" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Group.GroupManagers">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Administration.SPAcl`1" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Group.IsSiteCollectionGroup">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Group.IsSystemGroup">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Group.Name">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Group.TermSets">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermSetCollection" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.GroupCollection">
+      <summary>A collection of Group objects.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.HiddenListFullSyncJobDefinition"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.HiddenListFullSyncJobDefinition.#ctor"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.HiddenListFullSyncJobDefinition.Description"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.HiddenListFullSyncJobDefinition.Execute(Microsoft.SharePoint.Administration.SPContentDatabase,Microsoft.SharePoint.Administration.SPJobState)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.HiddenListFullSyncJobDefinition.ProcessSite(Microsoft.SharePoint.SPSite,Microsoft.SharePoint.Administration.SPJobState)"></member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.ImportManager">
+      <summary>Manages the import and export of Term, TermSet, and Group objects and related data.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ImportManager.BatchSize">
+      <returns>Returns <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.ImportManager.ImportTermSet(Microsoft.SharePoint.Taxonomy.Group,System.IO.TextReader,System.Boolean@,System.String@)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermSet" />.</returns>
+      <param name="parentGroup"></param>
+      <param name="reader"></param>
+      <param name="allTermsAdded"></param>
+      <param name="errorMessage"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.ImportManager.TermStore">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermStore" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.Label">
+      <summary>Represents the text used to name term and keyword fields.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Label.Delete"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Label.IsDefaultForLanguage">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Label.Language">
+      <returns>Returns <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Label.SetAsDefaultForLanguage"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Label.Term">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Term" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Label.Value">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.LabelCollection">
+      <summary>A collection of Label objects.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.MobileTaxonomyField"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.MobileTaxonomyField.#ctor">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.MobileTaxonomyField" /> object.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.MobileTaxonomyField.CreateControlForDisplay"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.MobileTaxonomyField.ReadOnly">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.StringMatchOption">
+      <summary>Indicates whether a source string and a target string are an exact match or if they start to match.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.StringMatchOption.StartsWith">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.StringMatchOption.ExactMatch">
+      <summary />
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TaxonomyField">
+      <summary>Represents a field of type managed field.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.#ctor(Microsoft.SharePoint.SPFieldCollection,System.String)">
+      <param name="fields"></param>
+      <param name="fieldName"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.#ctor(Microsoft.SharePoint.SPFieldCollection,System.String,System.String)">
+      <param name="fields"></param>
+      <param name="typeName"></param>
+      <param name="displayName"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.AllowMultipleValues">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.AnchorId">
+      <returns>Returns <see cref="T:System.Guid" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.CreateValuesInEditForm"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.DefaultValueTyped">
+      <returns>Returns <see cref="T:System.Object" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.FieldRenderingControl">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.WebControls.BaseFieldControl" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.FieldRenderingMobileControl">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.MobileControls.SPMobileBaseFieldControl" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.FieldValueType">
+      <returns>Returns <see cref="T:System.Type" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.FilteringJavascript">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.GetFieldValue(System.String)">
+      <returns>Returns <see cref="T:System.Object" />.</returns>
+      <param name="value"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.GetFieldValueAsHtml(System.Object)">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+      <param name="value"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.GetFieldValueAsText(System.Object)">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+      <param name="value"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.GetFilteringHtml(System.String,Microsoft.SharePoint.SPField,System.String)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.GetValidatedString(System.Object)">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+      <param name="value"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.GetWssIdsOfKeywordTerm(Microsoft.SharePoint.SPSite,System.Guid,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.GetWssIdsOfTerm(Microsoft.SharePoint.SPSite,System.Guid,System.Guid,System.Guid,System.Boolean,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.HasValue(System.Object)">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+      <param name="value"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.IsAnchorValid">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.IsKeyword"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.IsPathRendered">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.IsTermSetValid">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.OnAdded(Microsoft.SharePoint.SPAddFieldOptions)">
+      <param name="op"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.OnAddingToContentType(Microsoft.SharePoint.SPContentType)">
+      <param name="contentType"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.OnDeleting"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.OnDeletingFromContentType(Microsoft.SharePoint.SPContentType)">
+      <param name="contentType"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.Open">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.SetFieldValue(Microsoft.SharePoint.SPListItem,Microsoft.SharePoint.Taxonomy.TaxonomyFieldValue)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.SetFieldValue(Microsoft.SharePoint.SPListItem,Microsoft.SharePoint.Taxonomy.TaxonomyFieldValueCollection)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.SetFieldValue(Microsoft.SharePoint.SPListItem,Microsoft.SharePoint.Taxonomy.Term)">
+      <param name="item"></param>
+      <param name="term"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.SetFieldValue(Microsoft.SharePoint.SPListItem,Microsoft.SharePoint.Taxonomy.Term,System.Int32)">
+      <param name="item"></param>
+      <param name="term"></param>
+      <param name="lcid"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.SetFieldValue(Microsoft.SharePoint.SPListItem,Microsoft.SharePoint.Taxonomy.TermCollection)">
+      <param name="item"></param>
+      <param name="terms"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.SetFieldValue(Microsoft.SharePoint.SPListItem,Microsoft.SharePoint.Taxonomy.TermCollection,System.Int32)">
+      <param name="item"></param>
+      <param name="terms"></param>
+      <param name="lcid"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.SetFieldValue(Microsoft.SharePoint.SPListItem,System.Collections.Generic.ICollection{Microsoft.SharePoint.Taxonomy.Term})"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.SetFieldValue(Microsoft.SharePoint.SPListItem,System.Collections.Generic.ICollection{Microsoft.SharePoint.Taxonomy.Term},System.Int32)"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.SspId">
+      <returns>Returns <see cref="T:System.Guid" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.TargetTemplate"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.TaxonomyGuidLabelDelimiter"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.TaxonomyMultipleTermDelimiter"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.TaxonomyTermPathDelimiter"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.TermSetId">
+      <returns>Returns <see cref="T:System.Guid" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.TextField">
+      <returns>Returns <see cref="T:System.Guid" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyField.Update"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyField.UserCreated">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TaxonomyFieldControl">
+      <summary>Represents a term field control.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldControl.#ctor"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldControl.CreateChildControls"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyFieldControl.EmptyValueDescriptionForTargetTemplate"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldControl.GetMultipleValueText(Microsoft.SharePoint.Taxonomy.TaxonomyFieldValueCollection)">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+      <param name="taxCollection"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldControl.GetTaxonomyCollection(System.String)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldControl.GetTaxonomyValue(System.String)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldControl.OnLoad(System.EventArgs)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldControl.RenderFieldForDisplay(System.Web.UI.HtmlTextWriter)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldControl.UpdateFieldValueInItem"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldControl.Validate"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyFieldControl.Value">
+      <returns>Returns <see cref="T:System.Object" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor">
+      <summary>Provides methods and properties used to supply the correct hierarchical data to and support editing a TaxonomyField object.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.#ctor"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.createAnchorId"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.createAnchorIdPath"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.createSspId"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.createTermSet"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.createTermSetDescription"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.createTermSetDescriptionLabel"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.createTermSetId"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.createTermSetName"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.createTermSetNameLabel"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.defaultControlValidator"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.defaultValueControl"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.DisplayAsNewSection">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.displayPath"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.displayTerm"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.fillInFalse"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.fillInTrue"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.InitializeWithField(Microsoft.SharePoint.SPField)">
+      <param name="field"></param>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.multipleAllowed"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.OnLoad(System.EventArgs)">
+      <param name="e"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.OnSaveChange(Microsoft.SharePoint.SPField,System.Boolean)">
+      <param name="field"></param>
+      <param name="isNewField"></param>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.reuseAnchorId"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.reuseAnchorIdPath"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.reuseGroupId"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.reuseSspId"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.reuseTermSet"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.reuseTermSetId"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.reuseTreeControl"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.termECBMenu"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.termSetECBMenu"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.termSetSearchBox"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.termSetSearchBoxLabel"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyFieldEditor.treeControlValidator"></member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TaxonomyFieldValue">
+      <summary>Provides property values that are available to a TaxonomyField object.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldValue.#ctor(Microsoft.SharePoint.SPField)">
+      <param name="creatingField"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldValue.#ctor(System.String)">
+      <param name="value"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldValue.#ctor(System.String,Microsoft.SharePoint.SPField)">
+      <param name="value"></param>
+      <param name="creatingField"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyFieldValue.Label">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldValue.PopulateFromLabelGuidPair(System.String)">
+      <param name="text"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyFieldValue.TermGuid">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldValue.ToString">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyFieldValue.ValidatedString">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyFieldValue.WssId">
+      <returns>Returns <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TaxonomyFieldValueCollection">
+      <summary>A collection of TaxonomyFieldValue objects.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldValueCollection.#ctor(Microsoft.SharePoint.SPField)">
+      <param name="creatingField"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldValueCollection.#ctor(System.String)">
+      <param name="fieldValue"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldValueCollection.#ctor(System.String,Microsoft.SharePoint.SPField)">
+      <param name="fieldValue"></param>
+      <param name="creatingField"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldValueCollection.PopulateFromLabelGuidPairs(System.String)">
+      <param name="text"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyFieldValueCollection.ToString">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TaxonomyItem">
+      <summary>A base class representing a member of a taxonomy.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyItem.CreatedDate">
+      <returns>Returns <see cref="T:System.DateTime" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyItem.Delete"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyItem.Id">
+      <returns>Returns <see cref="T:System.Guid" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyItem.LastModifiedDate">
+      <returns>Returns <see cref="T:System.DateTime" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyItem.Name">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyItem.NormalizeName(System.String)"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyItem.TermStore">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermStore" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TaxonomyRights">
+      <summary>An enumerated type defining the types of permissions.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyRights.None">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyRights.EditTerm">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyRights.EditTermSet">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyRights.EditGroup">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyRights.AddTermSetEditPermissions">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyRights.ManageTermStore">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyRights.AddManageTermStorePermissions">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyRights.Contributor">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyRights.GroupManager">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyRights.TermStoreAdministrator">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.TaxonomyRights.All">
+      <summary />
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TaxonomySession">
+      <summary>The entry point to accessing all data associated with TermStore objects and performing searches across them.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.#ctor(Microsoft.SharePoint.SPSite)">
+      <param name="site"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.#ctor(Microsoft.SharePoint.SPSite,System.Boolean)">
+      <param name="site"></param>
+      <param name="updateCache"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomySession.DefaultKeywordsTermStore">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermStore" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomySession.DefaultSiteCollectionTermStore">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermStore" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.GetTerm(System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Term" />.</returns>
+      <param name="termId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.GetTerms(System.Guid[])">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termIds"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.GetTerms(System.String,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termLabel"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.GetTerms(System.String,System.Boolean,Microsoft.SharePoint.Taxonomy.StringMatchOption,System.Int32,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termLabel"></param>
+      <param name="defaultLabelOnly"></param>
+      <param name="stringMatchOption"></param>
+      <param name="resultCollectionSize"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.GetTerms(System.String,System.Int32,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termLabel"></param>
+      <param name="lcid"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.GetTerms(System.String,System.Int32,System.Boolean,Microsoft.SharePoint.Taxonomy.StringMatchOption,System.Int32,System.Boolean,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termLabel"></param>
+      <param name="lcid"></param>
+      <param name="defaultLabelOnly"></param>
+      <param name="stringMatchOption"></param>
+      <param name="resultCollectionSize"></param>
+      <param name="trimUnavailable"></param>
+      <param name="trimDeprecated"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.GetTermSets(System.String,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.GetTermSets(System.String[])">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermSetCollection" />.</returns>
+      <param name="requiredTermLabels"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.GetTermSets(System.String[],System.Int32)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermSetCollection" />.</returns>
+      <param name="requiredTermLabels"></param>
+      <param name="lcid"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.GetTermsInDefaultLanguage(System.String,System.Boolean,Microsoft.SharePoint.Taxonomy.StringMatchOption,System.Int32,System.Boolean,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termLabel"></param>
+      <param name="defaultLabelOnly"></param>
+      <param name="stringMatchOption"></param>
+      <param name="resultCollectionSize"></param>
+      <param name="trimUnavailable"></param>
+      <param name="trimDeprecated"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.GetTermsInWorkingLocale(System.String,System.Boolean,Microsoft.SharePoint.Taxonomy.StringMatchOption,System.Int32,System.Boolean,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termLabel"></param>
+      <param name="defaultLabelOnly"></param>
+      <param name="stringMatchOption"></param>
+      <param name="resultCollectionSize"></param>
+      <param name="trimUnavailable"></param>
+      <param name="trimDeprecated"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.GetTermsWithCustomProperty(System.String,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="customPropertyName"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.GetTermsWithCustomProperty(System.String,System.Int32,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="customPropertyName"></param>
+      <param name="resultCollectionSize"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.GetTermsWithCustomProperty(System.String,System.String,Microsoft.SharePoint.Taxonomy.StringMatchOption,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="customPropertyName"></param>
+      <param name="customPropertyValue"></param>
+      <param name="stringMatchOption"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.GetTermsWithCustomProperty(System.String,System.String,Microsoft.SharePoint.Taxonomy.StringMatchOption,System.Int32,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="customPropertyName"></param>
+      <param name="customPropertyValue"></param>
+      <param name="stringMatchOption"></param>
+      <param name="resultCollectionSize"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.GetTermsWithCustomProperty(System.String,System.String,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="customPropertyName"></param>
+      <param name="customPropertyValue"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomySession.OfflineTermStoreNames">
+      <returns>Returns <see cref="T:System.Collections.Specialized.StringCollection" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomySession.SyncHiddenList(Microsoft.SharePoint.SPSite)"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomySession.TermStores">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermStoreCollection" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl">
+      <summary>Represents a control used to manage tagging for a taxonomy in a Web client user interface.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.#ctor"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.AllowFillIn">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.AnchorId">
+      <returns>Returns <see cref="T:System.Guid" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.ContainerId">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.CreateChildControls"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.ExcludeKeyword">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.FieldId">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.FieldName">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.GroupId">
+      <returns>Returns <see cref="T:System.Guid" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.HeightCss">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.IsAddTerms"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.IsDisplayPickerButton"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.IsIgnoreFormatting"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.IsIncludeDeprecated"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.IsIncludePathData"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.IsIncludeTermSetName"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.IsIncludeUnavailable"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.IsMulti">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.IsSpanTermSets"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.IsSpanTermStores"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.IsUIRightToLeft">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.IsUseCommaAsDelimiter"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.Language">
+      <returns>Returns <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.OnInit(System.EventArgs)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.OnLoad(System.EventArgs)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.OnPreRender(System.EventArgs)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.ShowIPFSAsterisk(System.String)">
+      <param name="errorMessage"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.SspId">
+      <returns>Returns <see cref="T:System.Collections.Generic.List`1" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.SSPList">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.TermSetId">
+      <returns>Returns <see cref="T:System.Collections.Generic.List`1" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.TermSetList">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.Text">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.Validate(System.String@)">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+      <param name="reason"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.WebServiceUrl">
+      <returns>Returns <see cref="T:System.Uri" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TaxonomyWebTaggingControl.WidthCss">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.Term">
+      <summary>Represents a term.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.Copy(System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Term" />.</returns>
+      <param name="doCopyChildren"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.CreateLabel(System.String,System.Int32,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Label" />.</returns>
+      <param name="labelName"></param>
+      <param name="lcid"></param>
+      <param name="isDefault"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.CustomProperties">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Generic.ReadOnlyDictionary`2" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.CustomSortOrder">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.Delete"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.DeleteCustomProperty(System.String)">
+      <param name="name"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.Deprecate(System.Boolean)">
+      <param name="doDeprecate"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.GetAllLabels(System.Int32)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.LabelCollection" />.</returns>
+      <param name="lcid"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.GetDefaultLabel(System.Int32)">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+      <param name="lcid"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.GetDescription"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.GetDescription(System.Int32)">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+      <param name="lcid"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.GetIsDescendantOf(Microsoft.SharePoint.Taxonomy.Term)">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+      <param name="ancestorTerm"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.GetPath">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.GetPath(System.Int32)">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+      <param name="lcid"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.GetTerms(System.String,System.Int32,System.Boolean,Microsoft.SharePoint.Taxonomy.StringMatchOption,System.Int32,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termLabel"></param>
+      <param name="lcid"></param>
+      <param name="defaultLabelOnly"></param>
+      <param name="stringMatchOption"></param>
+      <param name="resultCollectionSize"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.IsAvailableForTagging">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.IsDeprecated">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.IsKeyword">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.IsReused">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.IsRoot">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.IsSourceTerm">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.Labels">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.LabelCollection" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.Merge(Microsoft.SharePoint.Taxonomy.Term)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Term" />.</returns>
+      <param name="termToMerge"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.MergedTermIds">
+      <returns>Returns <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.Move(Microsoft.SharePoint.Taxonomy.Term)">
+      <param name="newParentTerm"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.Move(Microsoft.SharePoint.Taxonomy.TermSet)">
+      <param name="parentTermSet"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.Name">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.Owner">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.Parent">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Term" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.ReassignSourceTerm(Microsoft.SharePoint.Taxonomy.Term)">
+      <param name="reusedTerm"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.ReusedTerms">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.SetCustomProperty(System.String,System.String)">
+      <param name="name"></param>
+      <param name="value"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Term.SetDescription(System.String,System.Int32)">
+      <param name="description"></param>
+      <param name="lcid"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.SourceTerm">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Term" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.Terms">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.TermsCount"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.TermSet">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermSet" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Term.TermSets">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermSetCollection" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TermCollection">
+      <summary>A collection of Term objects.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermCollection.MoveNext">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermCollection.PagingLimit">
+      <returns>Returns <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TermSet">
+      <summary>Represents a hierarchical or flat set of <see cref="Term" /> objects known as a "term set."</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.AddStakeholder(System.String)">
+      <param name="stakeholderName"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermSet.Contact">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.Copy">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermSet" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermSet.CustomSortOrder">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.Delete"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.DeleteStakeholder(System.String)">
+      <param name="stakeholderName"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermSet.Description">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.Export">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.GetAllTerms">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.GetChanges(System.DateTime)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.ChangedItemCollection" />.</returns>
+      <param name="startTime"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.GetChanges(System.DateTime,Microsoft.SharePoint.Taxonomy.ChangedItemType)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.ChangedItemCollection" />.</returns>
+      <param name="startTime"></param>
+      <param name="itemType"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.GetChanges(System.DateTime,Microsoft.SharePoint.Taxonomy.ChangedItemType,Microsoft.SharePoint.Taxonomy.ChangedOperationType)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.ChangedItemCollection" />.</returns>
+      <param name="startTime"></param>
+      <param name="itemType"></param>
+      <param name="operationType"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.GetTerm(System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Term" />.</returns>
+      <param name="termId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.GetTerms(System.String,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termLabel"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.GetTerms(System.String,System.Boolean,Microsoft.SharePoint.Taxonomy.StringMatchOption,System.Int32,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termLabel"></param>
+      <param name="defaultLabelOnly"></param>
+      <param name="stringMatchOption"></param>
+      <param name="resultCollectionSize"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.GetTerms(System.String,System.Int32,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termLabel"></param>
+      <param name="lcid"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.GetTerms(System.String,System.Int32,System.Boolean,Microsoft.SharePoint.Taxonomy.StringMatchOption,System.Int32,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termLabel"></param>
+      <param name="lcid"></param>
+      <param name="defaultLabelOnly"></param>
+      <param name="stringMatchOption"></param>
+      <param name="resultCollectionSize"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.GetTermsWithCustomProperty(System.String,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="customPropertyName"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.GetTermsWithCustomProperty(System.String,System.Int32,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="customPropertyName"></param>
+      <param name="resultCollectionSize"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.GetTermsWithCustomProperty(System.String,System.String,Microsoft.SharePoint.Taxonomy.StringMatchOption,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="customPropertyName"></param>
+      <param name="customPropertyValue"></param>
+      <param name="stringMatchOption"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.GetTermsWithCustomProperty(System.String,System.String,Microsoft.SharePoint.Taxonomy.StringMatchOption,System.Int32,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="customPropertyName"></param>
+      <param name="customPropertyValue"></param>
+      <param name="stringMatchOption"></param>
+      <param name="resultCollectionSize"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.GetTermsWithCustomProperty(System.String,System.String,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="customPropertyName"></param>
+      <param name="customPropertyValue"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermSet.Group">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Group" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermSet.IsAvailableForTagging">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermSet.IsOpenForTermCreation">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSet.Move(Microsoft.SharePoint.Taxonomy.Group)">
+      <param name="targetGroup"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermSet.Name">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermSet.Owner">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermSet.Stakeholders">
+      <returns>Returns <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermSet.Terms">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TermSetCollection">
+      <summary>A collection of <see cref="TermSet" /> objects.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TermSetItem">
+      <summary>A base class that represents a <see cref="Term" /> or <see cref="TermSet" /> object.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSetItem.CreateTerm(System.String,System.Int32)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Term" />.</returns>
+      <param name="name"></param>
+      <param name="lcid"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSetItem.CreateTerm(System.String,System.Int32,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Term" />.</returns>
+      <param name="name"></param>
+      <param name="lcid"></param>
+      <param name="newTermId"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermSetItem.CustomSortOrder">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSetItem.DoesUserHavePermissions(Microsoft.SharePoint.Taxonomy.TaxonomyRights)">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+      <param name="rights"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSetItem.GetTerms(System.Int32)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="pagingLimit"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermSetItem.IsAvailableForTagging">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermSetItem.Owner">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermSetItem.ReuseTerm(Microsoft.SharePoint.Taxonomy.Term,System.Boolean)"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermSetItem.Terms">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TermStore">
+      <summary>Represents a "term store" database.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.AddLanguage(System.Int32)">
+      <param name="lcid"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.AddTermStoreAdministrator(System.String)">
+      <param name="principalName"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.CommitAll"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermStore.ContentTypePublishingHub">
+      <returns>Returns <see cref="T:System.Uri" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.CreateGroup(System.String)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Group" />.</returns>
+      <param name="name"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.CreateSiteCollectionGroup(System.String)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Group" />.</returns>
+      <param name="name"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermStore.DefaultLanguage">
+      <returns>Returns <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.DeleteLanguage(System.Int32)">
+      <param name="lcid"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.DeleteTermStoreAdministrator(System.String)">
+      <param name="principalName"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.DoesUserHavePermissions(Microsoft.SharePoint.Taxonomy.TaxonomyRights)">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+      <param name="rights"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.FlushCache"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetChanges(System.DateTime)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.ChangedItemCollection" />.</returns>
+      <param name="startTime"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetChanges(System.DateTime,Microsoft.SharePoint.Taxonomy.ChangedItemType)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.ChangedItemCollection" />.</returns>
+      <param name="startTime"></param>
+      <param name="itemType"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetChanges(System.DateTime,Microsoft.SharePoint.Taxonomy.ChangedItemType,Microsoft.SharePoint.Taxonomy.ChangedOperationType)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.ChangedItemCollection" />.</returns>
+      <param name="startTime"></param>
+      <param name="itemType"></param>
+      <param name="operationType"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetChanges(System.TimeSpan)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.ChangedItemCollection" />.</returns>
+      <param name="sinceTimeAgo"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetGroup(System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Group" />.</returns>
+      <param name="id"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetTerm(System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Term" />.</returns>
+      <param name="termId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetTerm(System.Guid,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Term" />.</returns>
+      <param name="termSetId"></param>
+      <param name="termId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetTerms(System.Guid[])">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termIds"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetTerms(System.String,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termLabel"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetTerms(System.String,System.Boolean,Microsoft.SharePoint.Taxonomy.StringMatchOption,System.Int32,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termLabel"></param>
+      <param name="defaultLabelOnly"></param>
+      <param name="stringMatchOption"></param>
+      <param name="resultCollectionSize"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetTerms(System.String,System.Int32,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termLabel"></param>
+      <param name="lcid"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetTerms(System.String,System.Int32,System.Boolean,Microsoft.SharePoint.Taxonomy.StringMatchOption,System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="termLabel"></param>
+      <param name="lcid"></param>
+      <param name="defaultLabelOnly"></param>
+      <param name="stringMatchOption"></param>
+      <param name="resultCollectionSize"></param>
+      <param name="trimUnavailable"></param>
+      <param name="trimDeprecated"></param>
+      <param name="excludeKeyword"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetTermSet(System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermSet" />.</returns>
+      <param name="termSetId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetTermSets(System.String,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetTermSets(System.String[])">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermSetCollection" />.</returns>
+      <param name="requiredTermLabels"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetTermSets(System.String[],System.Int32)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermSetCollection" />.</returns>
+      <param name="requiredTermLabels"></param>
+      <param name="lcid"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetTermsWithCustomProperty(System.String,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="customPropertyName"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetTermsWithCustomProperty(System.String,System.Int32,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="customPropertyName"></param>
+      <param name="resultCollectionSize"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetTermsWithCustomProperty(System.String,System.String,Microsoft.SharePoint.Taxonomy.StringMatchOption,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="customPropertyName"></param>
+      <param name="customPropertyValue"></param>
+      <param name="stringMatchOption"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetTermsWithCustomProperty(System.String,System.String,Microsoft.SharePoint.Taxonomy.StringMatchOption,System.Int32,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="customPropertyName"></param>
+      <param name="customPropertyValue"></param>
+      <param name="stringMatchOption"></param>
+      <param name="resultCollectionSize"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.GetTermsWithCustomProperty(System.String,System.String,System.Boolean)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermCollection" />.</returns>
+      <param name="customPropertyName"></param>
+      <param name="customPropertyValue"></param>
+      <param name="trimUnavailable"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermStore.Groups">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.GroupCollection" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermStore.Id">
+      <returns>Returns <see cref="T:System.Guid" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermStore.IsOnline"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermStore.KeywordsTermSet">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermSet" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermStore.Languages">
+      <returns>Returns <see cref="T:System.Collections.ObjectModel.Collection`1" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermStore.Name">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermStore.OrphanedTermsTermSet">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermSet" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.ResyncHiddenList(Microsoft.SharePoint.SPSite)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.RollbackAll"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermStore.SystemGroup">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.Group" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermStore.TermStoreAdministrators">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Administration.SPAcl`1" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStore.UpdateUsedTermsOnSite(Microsoft.SharePoint.SPSite)"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TermStore.WorkingLanguage">
+      <returns>Returns <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TermStoreCollection">
+      <summary>A collection of <see cref="TermStore" /> objects.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TermStoreOperationException"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStoreOperationException.#ctor">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.TermStoreOperationException" /> object.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStoreOperationException.#ctor(System.String)">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.TermStoreOperationException" /> object.</summary>
+      <param name="message"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TermStoreOperationException.#ctor(System.String,System.Exception)"></member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.TreeControl">
+      <summary>Represents a tree control used in the "SharePoint Metadata Manager" application.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TreeControl.#ctor"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TreeControl.DefaultMenuID">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TreeControl.GetChildren(System.String)">
+      <returns>Returns <see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />.</returns>
+      <param name="path"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TreeControl.NameField">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TreeControl.Nodes">
+      <returns>Returns <see cref="T:System.Web.UI.WebControls.TreeNodeCollection" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TreeControl.OnPreRender(System.EventArgs)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TreeControl.PerformDataBinding"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TreeControl.Render(System.Web.UI.HtmlTextWriter)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TreeControl.System#Web#UI#ICallbackEventHandler#GetCallbackResult">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TreeControl.System#Web#UI#ICallbackEventHandler#RaiseCallbackEvent(System.String)">
+      <param name="eventArgument"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TreeControl.System#Web#UI#IScriptControl#GetScriptDescriptors">
+      <returns>Returns <see cref="T:System.Collections.Generic.IEnumerable`1" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.TreeControl.System#Web#UI#IScriptControl#GetScriptReferences">
+      <returns>Returns <see cref="T:System.Collections.Generic.IEnumerable`1" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.TreeControl.ViewPath">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.ContentTypeSync.ContentTypePublisher">
+      <summary>Publishes content types across the enterprise.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.ContentTypeSync.ContentTypePublisher.#ctor(Microsoft.SharePoint.SPSite)">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.ContentTypeSync.ContentTypePublisher" /> site.</summary>
+      <param name="hubSite"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.ContentTypeSync.ContentTypePublisher.IsContentTypeSharingEnabled(Microsoft.SharePoint.SPSite)">
+      <summary>Indicates whether the target <see cref="T:Microsoft.SharePoint.SPSite" /> serving as a hub is enabled for content type sharing.</summary>
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+      <param name="hubSite"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.ContentTypeSync.ContentTypePublisher.IsPublished(Microsoft.SharePoint.SPContentType)">
+      <summary>Indicates whether the target <see cref="T:Microsoft.SharePoint.SPContentType" /> is published.</summary>
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+      <param name="contentType">The <see cref="T:Microsoft.SharePoint.SPContentType" />. </param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.ContentTypeSync.ContentTypePublisher.Publish(Microsoft.SharePoint.SPContentType)">
+      <param name="contentType"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.ContentTypeSync.ContentTypePublisher.Unpublish(Microsoft.SharePoint.SPContentType)">
+      <param name="contentType"></param>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.ContentTypeSync.ContentTypeSyndicationException">
+      <summary>Represents an exception that occurs during content type syndication.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.ContentTypeSync.ContentTypeSyndicationException.#ctor"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.ContentTypeSync.ContentTypeSyndicationException.#ctor(System.String)">
+      <param name="message"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.ContentTypeSync.ContentTypeSyndicationException.#ctor(System.String,System.Exception)">
+      <param name="message"></param>
+      <param name="innerException"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.ContentTypeSync.ContentTypeSyndicationException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <param name="info"></param>
+      <param name="context"></param>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus">
+      <summary>Indicates the status of the syndication of a content type.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.None">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.Publishing">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.TimeStampRetrieving">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.PackageRetrieving">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.Importing">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.ImportingContentType">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.ImportingNonContentType">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.ContentTypeUnsharing">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.PreCheck">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.SiteRefreshing">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.WorkflowImporting">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.ContentTypePolicyDirtyBagUpdating">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.ContentTypeSealing">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.TimeStampUpdating">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.LogTrimming">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.LogSynchronizing">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.Unpublishing">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.Failed">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.ContentTypeSync.SyndicationStatus.Succeeded">
+      <summary />
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.Generic.GenericCollection`1">
+      <summary>A generic collection base class that manages root synchronization, getting enumerations, synchronization state, counts, and other aspects of managing a collection of objects.</summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Generic.GenericCollection`1.CopyTo(System.Array,System.Int32)">
+      <param name="array"></param>
+      <param name="index"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Generic.GenericCollection`1.CopyTo(`0[],System.Int32)">
+      <param name="array"></param>
+      <param name="index"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Generic.GenericCollection`1.Count">
+      <returns>Returns <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Generic.GenericCollection`1.GetEnumerator">
+      <returns>Returns <see cref="T:System.Collections.Generic.IEnumerator`1" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Generic.GenericCollection`1.IsSynchronized">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Generic.GenericCollection`1.Item(System.Int32)">
+      <param name="index"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Generic.GenericCollection`1.SyncRoot">
+      <returns>Returns <see cref="T:System.Object" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Generic.GenericCollection`1.System#Collections#IEnumerable#GetEnumerator">
+      <returns>Returns <see cref="T:System.Collections.IEnumerator" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.Generic.IndexedCollection`1">
+      <summary>Represents a generic collection of objects indexed by GUID and string.</summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Generic.IndexedCollection`1.Item(System.Guid)">
+      <param name="index"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Generic.IndexedCollection`1.Item(System.String)">
+      <param name="index"></param>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.Generic.PropertyCollection`1">
+      <summary>Represents a generic collection of objects indexed by string.</summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Generic.PropertyCollection`1.Item(System.String)">
+      <param name="index"></param>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.Generic.ReadOnlyDictionary`2">
+      <summary>Represents a generic, read-only dictionary of key/value pairs.</summary>
+      <typeparam name="TKey"></typeparam>
+      <typeparam name="TValue"></typeparam>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Generic.ReadOnlyDictionary`2.ContainsKey(`0)">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+      <param name="key"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Generic.ReadOnlyDictionary`2.Count">
+      <returns>Returns <see cref="T:System.Int32" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Generic.ReadOnlyDictionary`2.GetEnumerator">
+      <returns>Returns <see cref="T:System.Collections.Generic.IEnumerator`1" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Generic.ReadOnlyDictionary`2.IsReadOnly">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Generic.ReadOnlyDictionary`2.Item(`0)">
+      <param name="key"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Generic.ReadOnlyDictionary`2.Keys">
+      <returns>Returns <see cref="T:System.Collections.Generic.ICollection`1" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Generic.ReadOnlyDictionary`2.System#Collections#IEnumerable#GetEnumerator">
+      <returns>Returns <see cref="T:System.Collections.IEnumerator" />.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.Generic.ReadOnlyDictionary`2.TryGetValue(`0,`1@)">
+      <returns>Returns <see cref="T:System.Boolean" />.</returns>
+      <param name="key"></param>
+      <param name="value"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Generic.ReadOnlyDictionary`2.Values">
+      <returns>Returns <see cref="T:System.Collections.Generic.ICollection`1" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.Generic.TaxonomyItemCollection`1">
+      <summary>Represents a collection of <see cref="TaxonomyItem" /> objects.</summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ContentTypeSyndicationHubsPage">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ContentTypeSyndicationHubsPage.#ctor">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ContentTypeSyndicationHubsPage.checkboxRefresh"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ContentTypeSyndicationHubsPage.logListUrl"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ContentTypeSyndicationHubsPage.OKButton_Click(System.Object,System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="sender"></param>
+      <param name="e"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ContentTypeSyndicationHubsPage.OnLoad(System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="e"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ContentTypeSyndicationHubsPage.RenderHubs">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.Disambiguation">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.Disambiguation.#ctor">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.Disambiguation.dialogDescription">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.Disambiguation.isKeyword">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.Disambiguation.OnLoad(System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="e"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.Disambiguation.OnPreRender(System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="e"></param>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.InputCsvFile">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.InputCsvFile.#ctor">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.InputCsvFile.AllTermsAdded">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.InputCsvFile.dialogTitle">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.InputCsvFile.ErrorMessage">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.InputCsvFile.ImportTermSet">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.InputCsvFile.inputInstructions">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.InputCsvFile.OkClicked">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.InputCsvFile.OnLoad(System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="e"></param>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.InputCsvFile.statusDescription"></member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageCTPublishing"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageCTPublishing.#ctor">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageCTPublishing.actionSection">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageCTPublishing.labelLastDate">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageCTPublishing.okButton"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageCTPublishing.OkButton_Click(System.Object,System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="sender"></param>
+      <param name="e"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageCTPublishing.OnLoad(System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="e"></param>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageCTPublishing.publishButton">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageCTPublishing.republishButton">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageCTPublishing.RightsRequired"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageCTPublishing.titleAreaTitle">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageCTPublishing.unpublishButton">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataProxyPage">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataProxyPage.#ctor">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataProxyPage.AccessibleByDelegatedAdminGroup"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataProxyPage.keywordCheckBox">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataProxyPage.LoadValues">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataProxyPage.OkButton_Click(System.Object,System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="sender"></param>
+      <param name="e"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataProxyPage.OnInit(System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="e"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataProxyPage.OnLoad(System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="e"></param>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataProxyPage.pushdownCheckBox">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataProxyPage.siteCollectionCheckbox">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataProxyPage.syndicationCheckbox">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.#ctor">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.AccessibleByDelegatedAdminGroup"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.applicationPoolSection">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.associationCheckBox">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.CancelButtonClick(System.Object,System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="sender"></param>
+      <param name="e"></param>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.contentTypeSyncAndProxySection">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.databaseSection">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.hubUrlReadonlyLiteral"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.hubUrlTextBox">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.LoadValues">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.metadataAppValidation">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.nameTextBox">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.nameValidation">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.OkButton_Click(System.Object,System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="sender"></param>
+      <param name="e"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.OnInit(System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="e"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.OnLoad(System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="e"></param>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.reportErrorCheckBox">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.ManageMetadataServicePage.ValidateHubUrl(System.Object,System.Web.UI.WebControls.ServerValidateEventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="source"></param>
+      <param name="args"></param>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TaxonomyTreePicker">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TaxonomyTreePicker.#ctor">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TaxonomyTreePicker.dialogTitle">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TaxonomyTreePicker.keywordControl">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TaxonomyTreePicker.OnLoad(System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="e"></param>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TaxonomyTreePicker.ServerTestPanel">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TaxonomyTreePicker.TermStoreTree"></member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.#ctor">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.adminPicker">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.contributorPicker">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.CreateChildControls">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.customSortData">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.errorMessage">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.GetTermStore(Microsoft.SharePoint.Taxonomy.TaxonomySession,System.Guid)">
+      <summary>Reserved for internal use.</summary>
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.TermStore" />.</returns>
+      <param name="session"></param>
+      <param name="sspId"></param>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.groupDescription">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.groupECBMenu">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.groupMgrPicker">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.groupName">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.groupNoDeleteECBMenu">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.IfNullRaiseStoreChangeExp(System.Object)">
+      <summary>Reserved for internal use.</summary>
+      <param name="item"></param>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.importTermSetUrl">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.keywordAvailableForTaggingCheckBox">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.keywordControl">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.keywordECBMenu">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.leafTermECBMenu">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.OnLoad(System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="e"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.OnPreRender(System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="e"></param>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.otherSubmitData">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.ownerPicker">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.Render(System.Web.UI.HtmlTextWriter)">
+      <param name="writer"></param>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.rootECBMenu">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.selectedItemModifiedTime">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.selectedTaxItemGuid">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.selectedTaxItemName">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.selectedTaxItemType">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.selectedTermSetGuid">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.ServerTestPanel">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.sharedAppId">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.sharedAppSelector">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.sourceTermGuid">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.stakeholderPicker">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.submitPanel">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.submitProperties">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.SubmitProperties_Click(System.Object,System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="sender"></param>
+      <param name="e"></param>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.termAvailableForTaggingCheckBox">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.termDefaultLabel">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.termDescription">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.termECBMenu">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.termLabelsList">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.termsetAvailableForTaggingCheckBox">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.termsetContact">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.termsetDescription">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.termSetECBMenu">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.termsetName">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.termsetPolicyClosed">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.termsetPolicyOpen">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.TermStoreTree">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TermStoreManager.workingLanguage">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TreeNodeType"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TreeNodeType.Root">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TreeNodeType.Group">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TreeNodeType.GroupNoDelete">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TreeNodeType.TermSet">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TreeNodeType.Term">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TreeNodeType.KeywordSet">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TreeNodeType.Keyword">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TreeNodeType.SystemGroup">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TreeNodeType.OrphanSet">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TreeNodeType.Orphan">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TreeNodeType.Ssp">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TreeNodeType.MinRange">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.TreeNodeType.MaxRange">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.WebTaggingDialog">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.WebTaggingDialog.#ctor">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.WebTaggingDialog.dialogTitle">
+      <summary>Reserved for internal use.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.WebTaggingDialog.OnLoad(System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="e"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.OM.CodeBehind.WebTaggingDialog.OnPreRender(System.EventArgs)">
+      <summary>Reserved for internal use.</summary>
+      <param name="e"></param>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.Upgrade.MetadataDatabaseUpgradeSqlScripts">
+      <summary>Represents scripts used to update the Microsoft SQL Server database that stores metadata.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.Upgrade.MetadataDatabaseUpgradeSqlScripts.AddContactColumn"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.Upgrade.MetadataDatabaseUpgradeSqlScripts.AddCustomSortColumn"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.Upgrade.MetadataDatabaseUpgradeSqlScripts.AddGroupTypeColumn"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.Upgrade.MetadataDatabaseUpgradeSqlScripts.FixEcmUsedTerms"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.Upgrade.MetadataDatabaseUpgradeSqlScripts.SqlScriptPath"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.Upgrade.MetadataDatabaseUpgradeSqlScripts.UpdateChangeLogPartitionIndex"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.Upgrade.MetadataDatabaseUpgradeSqlScripts.UpdateChangeLogTable"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.Upgrade.MetadataDatabaseUpgradeSqlScripts.UpdateStoredProcsScript"></member>
+    <member name="F:Microsoft.SharePoint.Taxonomy.Upgrade.MetadataDatabaseUpgradeSqlScripts.UpdateTermSetName"></member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.WebServices.DisambiguationInstanceReturnObject"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.DisambiguationInstanceReturnObject.#ctor">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.DisambiguationInstanceReturnObject" /> object.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.DisambiguationInstanceReturnObject.ApplyTermsetAndPaths(System.Collections.Generic.List{System.String})">
+      <summary>Applies term set and path values to a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.DisambiguationInstanceReturnObject" /> object.</summary>
+      <param name="value"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.DisambiguationInstanceReturnObject.DefaultLabel">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.DisambiguationInstanceReturnObject.Description">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.DisambiguationInstanceReturnObject.Id">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.DisambiguationInstanceReturnObject.Synonyms">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.DisambiguationInstanceReturnObject.TermsetAndPaths">
+      <returns>Returns 
+<see cref="T:System.Collections.Generic.List`1" />
+.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.WebServices.MatchesReturnObject"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.MatchesReturnObject.#ctor">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.MatchesReturnObject" /> object.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.MatchesReturnObject.ApplyMatches(System.Collections.Generic.List{Microsoft.SharePoint.Taxonomy.WebServices.MatchReturnObject})">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.MatchesReturnObject" /> object.</summary>
+      <param name="value"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.MatchesReturnObject.Matches">
+      <returns>Returns 
+<see cref="T:System.Collections.Generic.List`1" />
+.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.WebServices.MatchReturnObject"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.MatchReturnObject.#ctor">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.MatchReturnObject" /> object.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.MatchReturnObject.ApplyDisambiguationData(System.Collections.Generic.List{Microsoft.SharePoint.Taxonomy.WebServices.DisambiguationInstanceReturnObject})">
+      <param name="value"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.MatchReturnObject.DefaultLabel">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.MatchReturnObject.DisambiguationData">
+      <returns>Returns 
+<see cref="T:System.Collections.Generic.List`1" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.MatchReturnObject.Id">
+      <summary>The ID of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.MatchReturnObject" /> object.</summary>
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.MatchReturnObject.IsAmbiguous">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionGroupReturnObject"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionGroupReturnObject.#ctor">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionGroupReturnObject" /> object.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionGroupReturnObject.ApplySuggestions(System.Collections.Generic.List{Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject})">
+      <param name="value"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionGroupReturnObject.Header">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionGroupReturnObject.IsNewKeyword"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionGroupReturnObject.Suggestions">
+      <returns>Returns 
+<see cref="T:System.Collections.Generic.List`1" />
+.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.#ctor">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject" /> object.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.ApplyPaths(System.Collections.Generic.List{System.String})">
+      <param name="value"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.CompareTo(System.Object)"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.Completions"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.DefaultLabel">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.Description">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.Equals(System.Object)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.GetHashCode"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.Id">
+      <summary>ID of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject" /> object.</summary>
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.IsKeyword"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.IsSynonym">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.op_Equality(Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject,Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.op_GreaterThan(Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject,Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.op_Inequality(Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject,Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.op_LessThan(Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject,Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject)"></member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.Paths">
+      <returns>Returns 
+<see cref="T:System.Collections.Generic.List`1" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.Start">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionReturnObject.Synonyms">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionsReturnObject"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionsReturnObject.#ctor">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionsReturnObject" /> object.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionsReturnObject.ApplyGroups(System.Collections.Generic.List{Microsoft.SharePoint.Taxonomy.WebServices.SuggestionGroupReturnObject})">
+      <param name="value"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.SuggestionsReturnObject.Groups">
+      <returns>Returns 
+<see cref="T:System.Collections.Generic.List`1" />
+.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyClientService">
+      <summary>Provides services that add terms, get keyword by GUID, get list items, and get "term sets".</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyClientService.#ctor"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyClientService.AddTerms(System.Guid,System.Guid,System.Int32,System.String)">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+      <param name="sharedServiceId"></param>
+      <param name="termSetId"></param>
+      <param name="lcid"></param>
+      <param name="newTerms"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyClientService.Dispose(System.Boolean)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyClientService.GetChildTermsInTerm(System.Guid,System.Int32,System.Guid,System.Guid)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyClientService.GetChildTermsInTermSet(System.Guid,System.Int32,System.Guid)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyClientService.GetKeywordTermsByGuids(System.String,System.Int32)">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+      <param name="termIds"></param>
+      <param name="lcid"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyClientService.GetTermsByLabel(System.String,System.Int32,Microsoft.SharePoint.Taxonomy.StringMatchOption,System.Int32,System.String,System.Boolean)">
+      <returns>Returns <see cref="T:System.String" />.</returns>
+      <param name="label"></param>
+      <param name="lcid"></param>
+      <param name="matchOption"></param>
+      <param name="resultCollectionSize"></param>
+      <param name="termIds"></param>
+      <param name="addIfNotFound"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyClientService.GetTermSets(System.String,System.String,System.Int32,System.String,System.String,System.String@)"></member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService">
+      <summary>Includes classes that manage operations used to add and modify terms.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.#ctor"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.ChangeTaxonomyItemName(System.Guid,System.Int32,System.Int32,System.Guid,System.Guid,System.String,System.Guid,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject" />.</returns>
+      <param name="sspId"></param>
+      <param name="lcid"></param>
+      <param name="itemType"></param>
+      <param name="itemId"></param>
+      <param name="parentId"></param>
+      <param name="newName"></param>
+      <param name="webId"></param>
+      <param name="listId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.CheckPermission(System.Guid,System.Guid,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject" />.</returns>
+      <param name="sspId"></param>
+      <param name="webId"></param>
+      <param name="listId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.CopyTaxonomyItem(System.Guid,System.Int32,System.Int32,System.Guid,System.Guid,System.Boolean,System.Guid,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject" />.</returns>
+      <param name="sspId"></param>
+      <param name="lcid"></param>
+      <param name="itemType"></param>
+      <param name="itemId"></param>
+      <param name="termsetId"></param>
+      <param name="isCopyWChildren"></param>
+      <param name="webId"></param>
+      <param name="listId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.CreateSiteCollectionTermSet(System.Guid,System.Guid,System.String,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.CreateTaxonomyItem(System.Guid,System.Int32,System.Int32,System.Guid,System.Guid,System.String,System.Guid,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject" />.</returns>
+      <param name="sspId"></param>
+      <param name="lcid"></param>
+      <param name="parentType"></param>
+      <param name="parentId"></param>
+      <param name="termsetId"></param>
+      <param name="newName"></param>
+      <param name="webId"></param>
+      <param name="listId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.CreateTaxonomyItemInSiteGroup(System.Int32,System.Guid,System.Guid,System.String,System.Guid,System.Guid,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.DeleteTaxonomyItem(System.Guid,System.Int32,System.Int32,System.Guid,System.Guid,System.Boolean,System.Int32,System.Boolean,System.Guid,System.Guid,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject" />.</returns>
+      <param name="sspId"></param>
+      <param name="lcid"></param>
+      <param name="itemType"></param>
+      <param name="itemId"></param>
+      <param name="termsetId"></param>
+      <param name="refillPage"></param>
+      <param name="pageLimit"></param>
+      <param name="includeDeprecated"></param>
+      <param name="firstItemIdInPage"></param>
+      <param name="webId"></param>
+      <param name="listId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.DeprecateTerm(System.Guid,System.Guid,System.Boolean,System.Guid,System.Guid,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.Dispose(System.Boolean)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.ExpandToNodeById(System.Guid,System.Int32,System.Guid,System.Guid,System.Guid,System.Int32,System.Boolean,System.Boolean,System.Guid,System.Guid,System.Int32,System.Boolean)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.ExpandToNodeByPath(System.Guid,System.Int32,System.Int32,System.Guid,System.String,System.Int32,System.Boolean,System.Boolean,System.Guid,System.Guid,System.Boolean)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.FindTermSet(System.String,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.GetChildTermsInTermSetWithPaging(System.Guid,System.Int32,System.Guid,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Guid,System.Guid,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject" />.</returns>
+      <param name="sspId"></param>
+      <param name="lcid"></param>
+      <param name="guid"></param>
+      <param name="includeDeprecated"></param>
+      <param name="pageLimit"></param>
+      <param name="pagingForward"></param>
+      <param name="includeCurrentChild"></param>
+      <param name="currentChildId"></param>
+      <param name="webId"></param>
+      <param name="listId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.GetChildTermsInTermWithPaging(System.Guid,System.Int32,System.Guid,System.Guid,System.Boolean,System.Int32,System.Boolean,System.Boolean,System.Guid,System.Guid,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject" />.</returns>
+      <param name="sspId"></param>
+      <param name="lcid"></param>
+      <param name="guid"></param>
+      <param name="termsetId"></param>
+      <param name="includeDeprecated"></param>
+      <param name="pageLimit"></param>
+      <param name="pagingForward"></param>
+      <param name="includeCurrentChild"></param>
+      <param name="currentChildId"></param>
+      <param name="webId"></param>
+      <param name="listId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.GetGroups(System.Guid,System.Guid,System.Guid,System.Boolean,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.GetMatches(System.String,System.Int32,System.String,System.String,System.Guid,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.GetNextFilteringHierarchy(System.Guid,System.Guid,System.Guid,System.Guid,System.Boolean)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.GetRestOfFilteringHierarchy(System.Guid,System.Guid,System.Guid,System.Guid,System.Boolean)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.GetSortOrderList(System.Guid,System.Int32,System.Guid,System.Guid,System.Guid,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject" />.</returns>
+      <param name="sspId"></param>
+      <param name="lcid"></param>
+      <param name="webId"></param>
+      <param name="listId"></param>
+      <param name="termSetId"></param>
+      <param name="termId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.GetSuggestions(System.String,System.Int32,System.String,System.String,System.Guid,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Guid)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.GetTermCustomProperty(System.Guid,System.Guid,System.Guid,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.GetTermMembership(System.Guid,System.Int32,System.Guid,System.Guid,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject" />.</returns>
+      <param name="sspId"></param>
+      <param name="lcid"></param>
+      <param name="termGuid"></param>
+      <param name="webId"></param>
+      <param name="listId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.GetTermSets(System.Guid,System.Guid,System.Boolean,System.Guid,System.Guid,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.GetTermSetWAnchorTerm(System.Guid,System.Int32,System.Guid,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject" />.</returns>
+      <param name="sspId"></param>
+      <param name="lcid"></param>
+      <param name="termSetId"></param>
+      <param name="anchorId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.MergeTaxonomyItem(System.Guid,System.Int32,System.Guid,System.Guid,System.Guid,System.Guid,System.Int32,System.Boolean,System.Guid,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject" />.</returns>
+      <param name="sspId"></param>
+      <param name="lcid"></param>
+      <param name="mergeSourceId"></param>
+      <param name="mergeSourceTermsetId"></param>
+      <param name="mergeTargetId"></param>
+      <param name="mergeTargetTermsetId"></param>
+      <param name="pageLimit"></param>
+      <param name="includeDeprecated"></param>
+      <param name="webId"></param>
+      <param name="listId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.MoveTaxonomyItem(System.Guid,System.Int32,System.Guid,System.Guid,System.Int32,System.Guid,System.Guid,System.Int32,System.Boolean,System.Int32,System.Boolean,System.Guid,System.Guid,System.Guid,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.PickSsps(System.Guid,System.Guid,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.PickTermSets(System.String,System.String,System.Guid,System.Guid,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.PreloadTermSetsInRoot(System.Guid,System.Boolean,System.Guid,System.Guid,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.PreloadTermsForTermSetWithPaging(System.Guid,System.Int32,System.Guid,System.Boolean,System.Boolean,System.Int32,System.Guid,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject" />.</returns>
+      <param name="sspId"></param>
+      <param name="lcid"></param>
+      <param name="guid"></param>
+      <param name="includeDeprecated"></param>
+      <param name="includeNoneTaggableTermset"></param>
+      <param name="pageLimit"></param>
+      <param name="webId"></param>
+      <param name="listId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.PreloadTermsForTermWithPaging(System.Guid,System.Int32,System.Guid,System.Guid,System.Boolean,System.Int32,System.Guid,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject" />.</returns>
+      <param name="sspId"></param>
+      <param name="lcid"></param>
+      <param name="guid"></param>
+      <param name="termsetId"></param>
+      <param name="includeDeprecated"></param>
+      <param name="pageLimit"></param>
+      <param name="webId"></param>
+      <param name="listId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.PreloadTermsInGroupWithPaging(System.Guid,System.Int32,System.Guid,System.Boolean,System.Boolean,System.Int32,System.Guid,System.Guid)">
+      <returns>Returns <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject" />.</returns>
+      <param name="sspId"></param>
+      <param name="lcid"></param>
+      <param name="guid"></param>
+      <param name="includeDeprecated"></param>
+      <param name="includeNoneTaggableTermset"></param>
+      <param name="pageLimit"></param>
+      <param name="webId"></param>
+      <param name="listId"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.ReuseTerm(System.Guid,System.Guid,System.Int32,System.Guid,System.Guid,System.Guid,System.Guid,System.Guid,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TaxonomyInternalService.ValidateTerms(System.String,System.String,System.String,System.String,System.Boolean,System.Int32)"></member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.WebServices.TermLanguageSpecificInfo"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TermLanguageSpecificInfo.#ctor">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TermLanguageSpecificInfo" /> object.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermLanguageSpecificInfo.Ds">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermLanguageSpecificInfo.Lc">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermLanguageSpecificInfo.Ln">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject">
+      <summary>Represents a generic term store.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.#ctor">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject" /> object.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.#ctor(Microsoft.SharePoint.Taxonomy.Group)">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject" /> object.</summary>
+      <param name="group"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.#ctor(Microsoft.SharePoint.Taxonomy.Term,System.Boolean)">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject" /> object.</summary>
+      <param name="term"></param>
+      <param name="isOrphane"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.#ctor(Microsoft.SharePoint.Taxonomy.TermSet)">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject" /> object.</summary>
+      <param name="termSet"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.#ctor(Microsoft.SharePoint.Taxonomy.TermSet,System.Boolean)">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject" /> object.</summary>
+      <param name="termSet"></param>
+      <param name="includeLanguages"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.#ctor(Microsoft.SharePoint.Taxonomy.TermStore)">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject" /> object.</summary>
+      <param name="termStore"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Cb">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Cc">
+      <returns>Returns 
+<see cref="T:System.Int64" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Di">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Dl">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Ds">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Dw">
+      <returns>Returns 
+<see cref="T:System.Int32" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Gm">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Ha">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Hb">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Ic">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Id">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Ig">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Ik">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Io">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Ip">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Ir">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Is">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.It">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.La">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Lb">
+      <returns>Returns 
+<see cref="T:System.Collections.Generic.List`1" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Lm">
+      <returns>Returns 
+<see cref="T:System.Int64" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Mt">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Nm">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Ow">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Rl">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Sh">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.So">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Sp">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Sw">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Tb">
+      <returns>Returns 
+<see cref="T:System.Boolean" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject.Tp">
+      <returns>Returns 
+<see cref="T:System.Int32" />
+.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObjectConverter">
+      <summary>Serializes and deserializes supported type data when converting objects to and from generics.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObjectConverter.#ctor"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObjectConverter.Deserialize(System.Collections.Generic.IDictionary{System.String,System.Object},System.Type,System.Web.Script.Serialization.JavaScriptSerializer)">
+      <returns>Returns <see cref="T:System.Object" />.</returns>
+      <param name="dictionary"></param>
+      <param name="type"></param>
+      <param name="serializer"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObjectConverter.Serialize(System.Object,System.Web.Script.Serialization.JavaScriptSerializer)">
+      <returns>Returns <see cref="T:System.Collections.Generic.IDictionary`2" />.</returns>
+      <param name="obj"></param>
+      <param name="serializer"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObjectConverter.SupportedTypes">
+      <returns>Returns <see cref="T:System.Collections.Generic.IEnumerable`1" />.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericParent">
+      <summary>Represents the parent of a generic term store object.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericParent.#ctor">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericParent" /> object.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericParent.AddChildCollection(System.Collections.Generic.List{Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericObject})">
+      <param name="childCollection"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericParent.Ch">
+      <returns>Returns 
+<see cref="T:System.Collections.Generic.List`1" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericParent.PId">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TermStoreGenericParent.PN">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject"></member>
+    <member name="M:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject.#ctor">
+      <summary>Constructs an instance of a <see cref="T:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject" /> object.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject.Content">
+      <returns>Returns 
+<see cref="T:System.Object" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject.Error">
+      <returns>Returns 
+<see cref="T:System.String" />
+.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Taxonomy.WebServices.TSMTReturnObject.OtherData">
+      <returns>Returns 
+<see cref="T:System.Object" />
+.</returns>
+    </member>
+  </members>
+</doc>

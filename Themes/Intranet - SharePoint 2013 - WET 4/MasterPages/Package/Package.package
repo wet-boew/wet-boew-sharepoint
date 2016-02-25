@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e096195e-a395-444a-9cbd-36f1db37553a" solutionId="e096195e-a395-444a-9cbd-36f1db37553a" resetWebServer="false" sharePointProductVersion="15.0" name="WET.Theme.Intranet" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="467b7f23-b943-4595-aee7-ee4cbe46d9ff" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="7b2403cd-f9e5-4312-b8f7-362214cffc07" />
+  </projectItems>
+</package>

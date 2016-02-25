@@ -1,0 +1,44 @@
+﻿ #gcwu-ef-lang
+        {
+	        width:890px !important;
+	        padding-left:30px;
+	        padding-right:30px;
+        }
+       #gcwu-ef-tc
+       {
+           width:890px !important;
+	        padding-left:200px;
+	        padding-right:30px;
+	        
+       }
+       #wb-main
+       {
+           padding-right: 50px;
+       }
+       #wb-core-in
+       {
+           padding-right: 60px;
+       }
+       #wb-main-in
+       {
+           width: 900px !important;
+
+       }
+.span-2 margin-bottom-none
+{
+	width:890px !important;
+	padding-left:30px;
+	padding-right:30px;
+
+}
+#button1
+{
+    visibility:hidden;
+
+  }
+#button2
+{
+    visibility:hidden;
+    padding-right: 50px; 
+    padding-left: 400px
+}

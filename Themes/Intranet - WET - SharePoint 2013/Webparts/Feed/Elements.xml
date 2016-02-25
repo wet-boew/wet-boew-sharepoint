@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
-  <Module Name="Feed" List="113" Url="_catalogs/wp">
-    <File Path="Feed\Feed.webpart" Url="webparts_Feed.webpart" Type="GhostableInLibrary"  ReplaceContent="TRUE">
-      <Property Name="Group" Value="Custom" />
-    </File>
-  </Module>
-</Elements>

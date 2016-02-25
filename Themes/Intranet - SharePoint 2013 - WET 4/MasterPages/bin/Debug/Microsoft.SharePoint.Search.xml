@@ -1,0 +1,670 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.SharePoint.Search</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.SharePoint.Search.SPEncodedSatelliteResourceExpressionBuilder"></member>
+    <member name="M:Microsoft.SharePoint.Search.SPEncodedSatelliteResourceExpressionBuilder.#ctor"></member>
+    <member name="M:Microsoft.SharePoint.Search.SPEncodedSatelliteResourceExpressionBuilder.Encode(System.String)"></member>
+    <member name="P:Microsoft.SharePoint.Search.SPEncodedSatelliteResourceExpressionBuilder.EncodeMethod"></member>
+    <member name="M:Microsoft.SharePoint.Search.SPEncodedSatelliteResourceExpressionBuilder.EvaluateExpression(System.Object,System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)"></member>
+    <member name="M:Microsoft.SharePoint.Search.SPEncodedSatelliteResourceExpressionBuilder.GetCodeExpression(System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)"></member>
+    <member name="T:Microsoft.SharePoint.Search.SPHtmlEncodedSatelliteResourceExpressionBuilder"></member>
+    <member name="M:Microsoft.SharePoint.Search.SPHtmlEncodedSatelliteResourceExpressionBuilder.#ctor"></member>
+    <member name="T:Microsoft.SharePoint.Search.SPSatelliteResourceExpressionBuilder"></member>
+    <member name="M:Microsoft.SharePoint.Search.SPSatelliteResourceExpressionBuilder.#ctor"></member>
+    <member name="M:Microsoft.SharePoint.Search.SPSatelliteResourceExpressionBuilder.EvaluateExpression(System.Object,System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)"></member>
+    <member name="M:Microsoft.SharePoint.Search.SPSatelliteResourceExpressionBuilder.GetCodeExpression(System.Web.UI.BoundPropertyEntry,System.Object,System.Web.Compilation.ExpressionBuilderContext)"></member>
+    <member name="M:Microsoft.SharePoint.Search.SPSatelliteResourceExpressionBuilder.GetResource(System.String,System.String)"></member>
+    <member name="M:Microsoft.SharePoint.Search.SPSatelliteResourceExpressionBuilder.ParseExpression(System.String,System.Type,System.Web.Compilation.ExpressionBuilderContext)"></member>
+    <member name="T:Microsoft.SharePoint.Search.SPSimpleFormattingEncodedSatelliteResourceExpressionBuilder"></member>
+    <member name="M:Microsoft.SharePoint.Search.SPSimpleFormattingEncodedSatelliteResourceExpressionBuilder.#ctor"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.AllNoiseQueryException">
+      <summary>Represents the exception that is thrown when a search query's terms are all noise words.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.CollapsingStatus">
+      <summary>Defines whether duplicate results are collapsed for Search queries results.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Search.Query.CollapsingStatus.DuplicatesCollapsed">
+      <summary>Specifies that duplicate items in search results are collapsed, meaning that they are grouped together and only the most relevant item is returned in the search results set.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Search.Query.CollapsingStatus.NoCollapsing">
+      <summary />
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.DbPropertyInformation"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.DbPropertyInformation.m_eDBType"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.DbPropertyInformation.m_eFlags"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.DbPropertyInformation.m_pid"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.FullTextSqlQuery">
+      <summary>Represents a search query using the SearchSQL Syntax.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.FullTextSqlQuery.#ctor(Microsoft.SharePoint.SPSite)">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.SharePoint.Search.Query.FullTextSqlQuery" /> class, based on the specified site.</summary>
+      <param name="site">A <see cref="T:Microsoft.SharePoint.SPSite" /> object representing the context for the Shared Services Provider.</param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.FullTextSqlQuery.#ctor(System.String)">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.SharePoint.Search.Query.FullTextSqlQuery" /> class, based on the specified application name.</summary>
+      <param name="Application"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.FullTextSqlQuery.DeserializeQuery(System.Xml.XmlTextReader)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.FullTextSqlQuery.SerializeQuery(System.Xml.XmlTextWriter)"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.FullTextSqlQueryInternal"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.FullTextSqlQueryInternal.#ctor(System.String)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.FullTextSqlQueryInternal.CreateQueryProperties"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.FullTextSqlQueryInternal.Execute"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.FullTextSqlQueryInternal.FullTextSqlQueryProperties"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.FullTextSqlQueryProperties"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.FullTextSqlQueryProperties.#ctor"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.HighlightedString"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.HighlightedString.#ctor"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.HighlightedString.HighlightCount"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.HighlightedString.Value"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.InvalidPropertyException">
+      <summary>Represents the exception that is thrown when the search query contains a property that is not valid.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.InvalidPropertyException.Property">
+      <summary>Gets the property name that triggered the <see cref="T:Microsoft.SharePoint.Search.Query.InvalidPropertyException" /> exception.</summary>
+      <returns>A string containing the property name.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.InvalidPropertyException.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <param name="info"></param>
+      <param name="context"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.InvalidPropertyException.ToString">
+      <summary>Returns a string that represents the <see cref="InvalidPropertyException" /> object.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.ISearchQueryServiceApplication"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ISearchQueryServiceApplication.Execute(Microsoft.SharePoint.Search.Query.QueryProperties)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ISearchQueryServiceApplication.GetKeywordsInterpretation(Microsoft.SharePoint.Search.Query.KeywordQueryProperties)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ISearchQueryServiceApplication.GetSearchTerms(Microsoft.SharePoint.Search.Query.KeywordQueryProperties)"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.KeywordInclusion">
+      <summary>Defines the keyword inclusion values.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Search.Query.KeywordInclusion.AllKeywords">
+      <summary>Indicates that the query returns only the search results that contain all of the query terms.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Search.Query.KeywordInclusion.AnyKeyword">
+      <summary>Indicates that the query returns search results that contain any of the query terms.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.KeywordInformation">
+      <summary>Contains information about a keyword.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.KeywordInformation.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.SharePoint.Search.Query.KeywordInformation" /> class.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordInformation.Definition">
+      <summary>Gets or sets the keyword's definition.</summary>
+      <returns>A string containing the definition text.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordInformation.Keyword">
+      <summary>Gets or sets the keyword term.</summary>
+      <returns>A string containing the keyword term.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.KeywordQuery"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.KeywordQuery.#ctor(Microsoft.SharePoint.SPSite)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.KeywordQuery.#ctor(System.String)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.KeywordQuery.DeserializeQuery(System.Xml.XmlTextReader)"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordQuery.EnableUrlSmashing"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordQuery.HiddenConstraints"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordQuery.KeywordsInterpretation"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordQuery.SearchTerms"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordQuery.SelectProperties"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.KeywordQuery.SerializeQuery(System.Xml.XmlTextWriter)"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordQuery.SortList"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordQuery.TimeZone"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.KeywordQueryInternal"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.KeywordQueryInternal.#ctor(System.String)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.KeywordQueryInternal.BuildCommandTree(IColumnMapper*,IApplicationSchema*)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.KeywordQueryInternal.CreateQueryProperties"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.KeywordQueryInternal.Execute"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.KeywordQueryInternal.GetKeywordsInterpretation(Microsoft.SharePoint.Search.Query.KeywordQueryProperties)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.KeywordQueryInternal.GetSearchTerms(Microsoft.SharePoint.Search.Query.KeywordQueryProperties)"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordQueryInternal.KeywordQueryProperties"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordQueryInternal.KeywordsInterpretation"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.KeywordQueryInternal.s_Path"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.KeywordQueryInternal.s_TwoDots"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordQueryInternal.SearchTerms"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.KeywordQueryInternal.VerifyParameters(IColumnMapper*,IApplicationSchema*)"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.KeywordQueryProperties"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.KeywordQueryProperties.#ctor"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordQueryProperties.EnableUrlSmashing"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordQueryProperties.HiddenConstraints"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordQueryProperties.RefinementFilters"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordQueryProperties.SelectProperties"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordQueryProperties.SortList"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordQueryProperties.TimeZone"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.KeywordsInterpretation"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordsInterpretation.PropertyConstraints"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.KeywordsInterpretation.SearchTerms"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.PropertyConstraint"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.PropertyConstraint.Property"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.PropertyConstraint.Values"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.PropertyConstraintCollection">
+      <summary>Represents a collection of <see cref="T:Microsoft.SharePoint.Search.Query.PropertyConstraint" /> objects.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.PropertyConstraintCollection.Count">
+      <summary>Gets the number of <see cref="T:Microsoft.SharePoint.Search.Query.PropertyConstraint" /> objects in the collection.</summary>
+      <returns>A 32-bit integer representing the number of property constraints in the collection.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.PropertyConstraintCollection.GetEnumerator">
+      <summary>Returns an enumerator that can be used to access the items in the crawl rule collection.</summary>
+      <returns>A System.Collections.IEnumerator object.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.PropertyConstraintCollection.Item(System.Int32)">
+      <summary>Gets the property constraint at the specified index in the collection.</summary>
+      <returns>A <see cref="T:Microsoft.SharePoint.Search.Query.PropertyConstraint" /> object.</returns>
+      <param name="index">A 32-bit integer that specifies the position in the index.</param>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.PropertyInformation">
+      <summary>Provides information about a managed property.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.PropertyInformation.Description">
+      <summary>Gets the property description.</summary>
+      <returns>A string containing the description.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.PropertyInformation.FullTextQueriable">
+      <summary>Gets a Boolean value indicating whether the property can be used in full-text SQL syntax queries.</summary>
+      <returns>true if the property can be used in SQL syntax queries; otherwise, false.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.PropertyInformation.Name">
+      <summary>Gets the property name.</summary>
+      <returns>A string containing the name.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.PropertyInformation.Retrievable">
+      <summary>Gets a Boolean value indicating whether the property value can be retrieved.</summary>
+      <returns>true if the property can be retrieved; otherwise, false.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.PropertyInformation.Type">
+      <summary>Gets the property data type.</summary>
+      <returns>An object of type System.Type representing the managed property type.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.Query">
+      <summary>Provides the base class for executing search queries using the Search query object model. This class defines properties and methods that are shared by the <see cref="T:Microsoft.SharePoint.Search.Query.FullTextSqlQuery" /> and <see cref="T:Microsoft.SharePoint.Search.Query.KeywordQuery" /> classes.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.Query.#ctor(Microsoft.SharePoint.SPSite)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.Query.#ctor(System.String)"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.Application">
+      <summary>Gets the application name for the query request.</summary>
+      <returns>A string that contains the application name.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.AuthenticationType">
+      <summary>Gets or sets the authentication type for the query.</summary>
+      <returns>A value from the <see cref="T:Microsoft.SharePoint.Search.Query.QueryAuthenticationType" /> enumeration.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.Culture">
+      <summary>Gets or sets the locale for the query.</summary>
+      <returns>A System.Globalization.CultureInfo object that specifies the locale ID.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.Query.DeserializeQuery(System.Xml.XmlTextReader)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.Query.Dispose"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.EnableNicknames"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.EnablePhonetic"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.EnableStemming">
+      <summary>Gets or sets a Boolean value that specifies whether stemming is enabled. </summary>
+      <returns>true if the stemming is enabled; otherwise, false.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.Query.Execute">
+      <summary>Executes the search query.</summary>
+      <returns>A <see cref="T:Microsoft.SharePoint.Search.Query.ResultTableCollection" /> object.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.HighlightedSentenceCount">
+      <summary>Gets or sets the number of sentences to include in the hit-highlighted summary.</summary>
+      <returns>A 32-bit integer representing the number of sentences. The default value is 3.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.Hint">
+      <summary>Gets or sets a value that specifies xxx</summary>
+      <returns>A value from the <see cref="T:Microsoft.SharePoint.Search.Query.QueryHint" /> enumeration.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.HitHighlightedProperties"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.IgnoreAllNoiseQuery">
+      <summary>Gets or sets a Boolean value that specifies whether the search query should execute if the query text contains only noise words.</summary>
+      <returns>true if search queries containing only noise words are executed; otherwise, false.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.KeywordInclusion">
+      <summary>Gets or sets a value that specifies whether the query returns results that contain all or any of the specified search terms. </summary>
+      <returns>A value from the <see cref="T:Microsoft.SharePoint.Search.Query.KeywordInclusion" /> enumeration.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.QueryText">
+      <summary>Gets or sets the text for the search query.</summary>
+      <returns>A string containing the query text.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.RankingModelId"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.ResultTypes">
+      <summary>Gets or sets a value that specifies the search result type.</summary>
+      <returns>A value from the <see cref="T:Microsoft.SharePoint.Search.Query.ResultType" /> enumeration.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.RowLimit">
+      <summary>Gets or sets the maximum number of rows to be retrieved in the search results.</summary>
+      <returns>A 32-bit integer that represents the maximum number of rows to be retrieved in the results of a search.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.Query.SerializeQuery(System.Xml.XmlTextWriter)"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.Site"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.SiteContext">
+      <summary>Gets or sets the site URL for the search query.</summary>
+      <returns>A System.Uri object that represents the site's URL.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.StartRow">
+      <summary>Gets or sets the first row of information from the search results. </summary>
+      <returns>A 32-bit integer that represents the index number of the row. The default value is 1.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.Timeout">
+      <summary>Gets or sets the amount of time, in milliseconds, before the query request times out.   </summary>
+      <returns>A 32-bit integer representing the number of milliseconds. </returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.TotalRowsExactMinimum"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.TrimDuplicates">
+      <summary>Gets or sets a Boolean value that specifies whether duplicate items should be removed from the search results. </summary>
+      <returns>true if duplicate items are removed from the search results; otherwise, false.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Query.UrlZone">
+      <summary>Gets the originating URL zone for the query request.</summary>
+      <returns>A value from the Microsoft.SharePoint.Administration.SPUrlZone enumeration specifying the URL zone.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.QueryAuthenticationType">
+      <summary>Defines the query authentication types supported in Search.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryAuthenticationType.NtAuthenticatedQuery">
+      <summary>Specifies that the query uses Windows authentication.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryAuthenticationType.PluggableAuthenticatedQuery">
+      <summary>Specifies that the query uses pluggable authentication.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.QueryContainsOnlyExcludedTermsException">
+      <summary>Represents the exception that is thrown when the search query contains only excluded terms.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.QueryHint"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryHint.None">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryHint.OptimizeWithFullTextIndex">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryHint.OptimizeWithPropertyStore">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryHint.PropertySelectWithInClause">
+      <summary />
+    </member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryHint.PropertySelectWithTempTable">
+      <summary />
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.QueryInternal"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryInternal.#ctor"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryInternal._GetInterfaces(ICommand**,IMSSApplicationCacheInterfaces**,IColumnMapper**,IApplicationSchema**,IGatherLanguageResourcePool2**)"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryInternal.Application"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryInternal.CreateQueryProperties"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryInternal.CreateWordBreaker"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryInternal.Dispose"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryInternal.Dispose(System.Boolean)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryInternal.Execute"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryInternal.Execute(Microsoft.SharePoint.Search.Query.QueryProperties)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryInternal.FinishConstruction(System.String)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryInternal.GetKeywordsInterpretation(Microsoft.SharePoint.Search.Query.KeywordQueryProperties)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryInternal.GetResults(IMSSMultipleDataReader*,Microsoft.SharePoint.Search.Query.ResultTableCollection)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryInternal.GetSearchTerms(Microsoft.SharePoint.Search.Query.KeywordQueryProperties)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryInternal.HighlightStringValue(System.String,System.Boolean)"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryInternal.QueryProperties"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.QueryMalformedException">
+      <summary>Represents the exception that is thrown when a search query is not formed correctly.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.QueryProperties"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryProperties.#ctor"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.AuthenticationType"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.CorrelationId"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.Culture"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.EnableNicknames"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.EnablePhonetic"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.EnableStemming"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.HighlightedSentenceCount"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.Hint"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.HitHighlightedProperties"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.IgnoreAllNoiseQuery"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.KeywordInclusion"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.QueryText"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.RankingModelId"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.ResultTypes"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.RowLimit"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.Sid"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.SiteId"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.StartRow"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.Timeout"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.TotalRowsExactMinimum"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.TrimDuplicates"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.QueryProperties.UrlZone"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.QueryService"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryService.#ctor"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryService.Query(System.String)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryService.QueryEx(System.String)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryService.Registration(System.String)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.QueryService.Status"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryService.STR_BPG_DOCUMENT_PROPERTY_TYPE_BOOLEAN"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryService.STR_BPG_DOCUMENT_PROPERTY_TYPE_DATETIME"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryService.STR_BPG_DOCUMENT_PROPERTY_TYPE_DECIMAL"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryService.STR_BPG_DOCUMENT_PROPERTY_TYPE_DOUBLE"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryService.STR_BPG_DOCUMENT_PROPERTY_TYPE_INT32"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryService.STR_BPG_DOCUMENT_PROPERTY_TYPE_INT64"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryService.STR_BPG_DOCUMENT_PROPERTY_TYPE_OBJECT"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryService.STR_BPG_DOCUMENT_PROPERTY_TYPE_SINGLE"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryService.STR_BPG_DOCUMENT_PROPERTY_TYPE_STRING"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryService.STR_BPG_DOCUMENT_PROPERTY_TYPE_UINT32"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.QueryService.STR_BPG_DOCUMENT_PROPERTY_TYPE_UINT64"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.RankingModelNotFoundException"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.RankingModelNotFoundException.RankingModelId"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.RankingModelNotFoundException.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.RankingModelNotFoundException.ToString"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.ResultDefinition"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.ResultDefinition.DocHref"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.ResultDefinition.DocTitle"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.ResultDefinition.Sentence"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.ResultDefinition.TermLength"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.ResultDefinition.TermOffset"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.ResultTable">
+      <summary>Provides a means of reading query search results through the <see cref="T:System.Data.IDataReader" /> interface. Each row of the <see cref="T:System.Data.IDataReader" /> represents one search result.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.#ctor"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.#ctor(Microsoft.SharePoint.Search.Query.ResultTableInternal)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.#ctor(System.Data.DataTable,Microsoft.SharePoint.Search.Query.ResultType,System.Int32,System.Int32,System.Boolean)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.Close"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTable.Depth"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.Dispose"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTable.FieldCount">
+      <summary>Gets the number of columns returned in the search results.</summary>
+      <returns>A 32-bit integer representing the number of fields.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetBoolean(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetByte(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetBytes(System.Int32,System.Int64,System.Byte[],System.Int32,System.Int32)">
+      <param name="i"></param>
+      <param name="fieldOffset"></param>
+      <param name="buffer"></param>
+      <param name="bufferoffset"></param>
+      <param name="length"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetChar(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetChars(System.Int32,System.Int64,System.Char[],System.Int32,System.Int32)">
+      <param name="i"></param>
+      <param name="fieldoffset"></param>
+      <param name="buffer"></param>
+      <param name="bufferoffset"></param>
+      <param name="length"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetData(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetDataTypeName(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetDateTime(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetDecimal(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetDouble(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetFieldType(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetFloat(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetGuid(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetInt16(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetInt32(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetInt64(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetName(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetOrdinal(System.String)">
+      <param name="name"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetSchemaTable"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetString(System.Int32)">
+      <summary>Gets the string value of the field at the specified ordinal index.</summary>
+      <returns>The string value of the specified field.</returns>
+      <param name="i">The ordinal index of the string value to get.</param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetValue(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.GetValues(System.Object[])">
+      <param name="values"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTable.IsClosed">
+      <summary>Gets a Boolean value indicating if the ResultTable is closed.</summary>
+      <returns>true if the ResultTable is closed; otherwise, false.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.IsDBNull(System.Int32)">
+      <param name="i"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTable.IsTotalRowsExact"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTable.Item(System.Int32)">
+      <summary>Gets a search result from the collection, based on the specified index.</summary>
+      <param name="i">A 32-bit integer specifying the row index. </param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTable.Item(System.String)">
+      <summary>Gets a search result from the collection, based on the name of the row to return.</summary>
+      <param name="name">A string containing the name of the individual result row to return.</param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.NextResult"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTable.Read">
+      <summary>Advances the <see cref="T:System.Data.IDataReader" /> to the next record.</summary>
+      <returns>true if there are more rows; otherwise, false.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTable.RecordsAffected"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTable.ResultType"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTable.RowCount">
+      <summary>Gets the number of query results contained in the <see cref="T:Microsoft.SharePoint.Search.Query.ResultTable" /> object.</summary>
+      <returns>The number of query results contained in the <see cref="T:Microsoft.SharePoint.Search.Query.ResultTable" /> object.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTable.Table"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTable.TotalRows"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.ResultTableCollection">
+      <summary>Represents a collection of <see cref="T:Microsoft.SharePoint.Search.Query.ResultTable" /> objects.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableCollection.#ctor"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableCollection.Add(Microsoft.SharePoint.Search.Query.ResultTable)"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableCollection.Count">
+      <summary>Gets the number of <see cref="T:Microsoft.SharePoint.Search.Query.ResultTable" /> objects in the collection.</summary>
+      <returns>A 32-bit integer indicating the number of <see cref="T:Microsoft.SharePoint.Search.Query.ResultTable" /> objects in the collection.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableCollection.DatabaseTime">
+      <summary>Gets or sets the duration of query execution on the database server.</summary>
+      <returns>A 32-bit integer indicating how long the query ran, in milliseconds.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableCollection.Definition">
+      <summary>Gets the <see cref="T:Microsoft.SharePoint.Search.Query.ResultDefinition" /> structures for the results of the query.</summary>
+      <returns>An array of <see cref="T:Microsoft.SharePoint.Search.Query.ResultDefinition" /> structures whose fields provide details on the query's keyword definitions.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableCollection.ElapsedTime">
+      <summary>Gets or sets the total duration of the query, combining the time spent executing the query on the database server with the time spent in the  object model.</summary>
+      <returns>A 32-bit integer indicating how long the query ran, in milliseconds.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableCollection.Exists(Microsoft.SharePoint.Search.Query.ResultType)">
+      <summary>Returns a Boolean value that indicates whether the specified ResultTable object exists in the collection.</summary>
+      <returns>true if the specified ResultTable object exists; otherwise, false.</returns>
+      <param name="requestedType">A value from the <see cref="T:Microsoft.SharePoint.Search.Query.ResultType" /> enumeration.</param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableCollection.GetEnumerator">
+      <summary>Returns an enumerator that can be used to access the items in the ResultTable collection.</summary>
+      <returns>A System.Collections.IEnumerator object.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableCollection.IgnoredNoiseWords">
+      <summary>Gets or sets the list of ignored noise words. </summary>
+      <returns>A string array containing the ignored noise words.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableCollection.Item(Microsoft.SharePoint.Search.Query.ResultType)">
+      <summary>Gets a <see cref="T:Microsoft.SharePoint.Search.Query.ResultTable" /> object from the collection, based on the result type.</summary>
+      <returns>A <see cref="T:Microsoft.SharePoint.Search.Query.ResultTable" /> object containing only the requested result types.</returns>
+      <param name="requestedType">A value from the <see cref="T:Microsoft.SharePoint.Search.Query.ResultType" /> enumeration indicating the type of query results to get.</param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableCollection.KeywordInformation">
+      <summary>Gets a <see cref="T:Microsoft.SharePoint.Search.Query.KeywordInformation" /> object that provides information about a matched special term and its definition for a keyword search.</summary>
+      <returns>A <see cref="T:Microsoft.SharePoint.Search.Query.KeywordInformation" /> object.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableCollection.QueryMachine"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableCollection.QueryProcessingTime"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableCollection.QueryTerms">
+      <summary>Gets or sets a list of the search terms used by the query.</summary>
+      <returns>A string array containing the search query terms.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableCollection.SpellingSuggestion">
+      <summary>Gets or sets an alternate spelling for a search term that is not recognized.</summary>
+      <returns>A string containing the suggested term.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.ResultTableInternal"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.Close"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableInternal.Depth"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.Dispose"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableInternal.FieldCount"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetBoolean(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetByte(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetBytes(System.Int32,System.Int64,System.Byte[],System.Int32,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetChar(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetChars(System.Int32,System.Int64,System.Char[],System.Int32,System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetData(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetDataTypeName(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetDateTime(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetDecimal(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetDouble(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetFieldType(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetFloat(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetGuid(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetInt16(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetInt32(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetInt64(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetName(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetOrdinal(System.String)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetSchemaTable"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetString(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetValue(System.Int32)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.GetValues(System.Object[])"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableInternal.IsClosed"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.IsDBNull(System.Int32)"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableInternal.IsTotalRowsExact"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableInternal.Item(System.Int32)"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableInternal.Item(System.String)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.NextResult"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.ResultTableInternal.Read"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableInternal.RecordsAffected"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableInternal.ResultType"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableInternal.RowCount"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.ResultTableInternal.TotalRows"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.ResultType">
+      <summary>Defines the result types for Search results.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Search.Query.ResultType.None">
+      <summary>No result type is specified.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Search.Query.ResultType.RelevantResults">
+      <summary>Specifies the results set that contains the main search results from the content index that matches the search query.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.SchemaInfoGetter"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.SchemaInfoGetter.#ctor(IColumnMapper*,IApplicationSchema*)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.SchemaInfoGetter.Dispose"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.SchemaInfoGetter.GetPropertyInformation(System.String,Microsoft.SharePoint.Search.Query.DbPropertyInformation@)"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.ScopeNotFoundException">
+      <summary>Represents the exception that is thrown when the scope name specified for a search query does not exist.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.SearchQueryException">
+      <summary>Provides the base class for Search query exceptions.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.SearchQueryException.#ctor"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.SearchQueryException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+      <param name="info"></param>
+      <param name="context"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.SearchQueryException.#ctor(System.String)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.SearchQueryException.#ctor(System.String,System.Exception)"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.SearchServiceNotFoundException">
+      <summary>Represents the exception that is thrown when the search service is unavailable.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.Sort">
+      <summary>Defines how the search results are sorted.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.Sort.#ctor"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Sort.Direction">
+      <summary>Gets the direction in which the search results are ordered.</summary>
+      <returns>A value from the <see cref="T:Microsoft.SharePoint.Search.Query.SortDirection" /> enumeration specifying the sort direction for search results.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.Sort.Equals(System.Object)">
+      <param name="other"></param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.Sort.GetHashCode"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.Sort.Property">
+      <summary>Gets the name for a property by which the search results are ordered.</summary>
+      <returns>A string containing the property name.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.SortCollection">
+      <summary>Represents a collection of <see cref="T:Microsoft.SharePoint.Search.Query.Sort" /> structures.</summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.SortCollection.#ctor"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.SortCollection.Add(System.String,Microsoft.SharePoint.Search.Query.SortDirection)">
+      <summary>Adds a new <see cref="T:Microsoft.SharePoint.Search.Query.Sort" /> structure to the collection.</summary>
+      <param name="strProperty">A string that specifies the name of the property to sort the results by.</param>
+      <param name="direction">A value from the <see cref="T:Microsoft.SharePoint.Search.Query.SortDirection" /> enumeration.</param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.SortCollection.Clear">
+      <summary>Removes all <see cref="T:Microsoft.SharePoint.Search.Query.Sort" /> structures from the collection.</summary>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.SortCollection.Count">
+      <summary>Gets the number of <see cref="T:Microsoft.SharePoint.Search.Query.Sort" /> structures in the collection.</summary>
+      <returns>A 32-bit integer representing the number of Sort structures.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Search.Query.SortCollection.GetEnumerator">
+      <summary>Returns an enumerator that can be used to access the items in the crawl rule collection.</summary>
+      <returns>A System.Collections.IEnumerator object.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Search.Query.SortCollection.Item(System.Int32)">
+      <summary>Gets the specified Sort structure from the collection.</summary>
+      <param name="index">A 32-bit integer that specifies the index position. </param>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.SortDirection">
+      <summary>Defines the sort direction values for ordering search results.</summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Search.Query.SortDirection.Ascending">
+      <summary>Specifies that the search results are ordered in ascending order. </summary>
+    </member>
+    <member name="F:Microsoft.SharePoint.Search.Query.SortDirection.Descending">
+      <summary>Specifies that the search results are ordered in descending order.</summary>
+    </member>
+    <member name="T:Microsoft.SharePoint.Search.Query.StringHash"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.StringHash.#ctor"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.StringHash.GetHash(System.String)"></member>
+    <member name="F:Microsoft.SharePoint.Search.Query.StringHash.m_pfnpCalculateInsensitiveStringHash"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.LanguageResources.Token"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.LanguageResources.Token.#ctor(System.UInt32!System.Runtime.CompilerServices.IsLong,System.Char!System.Runtime.CompilerServices.IsConst*)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.LanguageResources.Token.#ctor(System.UInt32!System.Runtime.CompilerServices.IsLong,System.Char!System.Runtime.CompilerServices.IsConst*,System.UInt32!System.Runtime.CompilerServices.IsLong,System.UInt32!System.Runtime.CompilerServices.IsLong)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.LanguageResources.Token.Equals(System.Object)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.LanguageResources.Token.GetToken"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.LanguageResources.Token.IsNoiseWord"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.LanguageResources.Token.SrcLen"></member>
+    <member name="P:Microsoft.SharePoint.Search.Query.LanguageResources.Token.SrcPos"></member>
+    <member name="T:Microsoft.SharePoint.Search.Query.LanguageResources.WordBreaker"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.LanguageResources.WordBreaker.#ctor(IGatherLanguageResourcePool2*,System.String,System.UInt32!System.Runtime.CompilerServices.IsLong,System.Boolean)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.LanguageResources.WordBreaker.AddStemToCurrentToken(System.UInt32!System.Runtime.CompilerServices.IsLong,System.Char!System.Runtime.CompilerServices.IsConst*)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.LanguageResources.WordBreaker.AddToken(System.UInt32!System.Runtime.CompilerServices.IsLong,System.Char!System.Runtime.CompilerServices.IsConst*,System.UInt32!System.Runtime.CompilerServices.IsLong,System.UInt32!System.Runtime.CompilerServices.IsLong)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.LanguageResources.WordBreaker.BreakText(System.String)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.LanguageResources.WordBreaker.Dispose"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.LanguageResources.WordBreaker.Dispose(System.Boolean)"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.LanguageResources.WordBreaker.Finalize"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.LanguageResources.WordBreaker.GetTokens"></member>
+    <member name="M:Microsoft.SharePoint.Search.Query.LanguageResources.WordBreaker.IsNoiseWord(System.String)"></member>
+  </members>
+</doc>

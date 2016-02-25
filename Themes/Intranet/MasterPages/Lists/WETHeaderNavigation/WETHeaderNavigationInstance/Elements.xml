@@ -1,4 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ListInstance Title="WETHeaderNavigation" OnQuickLaunch="FALSE" TemplateType="10003" Url="Lists/WETHeaderNavigation" Description="Contains the items for the top right header navigation"></ListInstance>
-</Elements>

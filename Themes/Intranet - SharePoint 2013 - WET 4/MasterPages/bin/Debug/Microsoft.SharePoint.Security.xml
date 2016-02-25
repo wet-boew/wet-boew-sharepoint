@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.SharePoint.Security</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.SharePoint.Security.SharePointPermission">
+      <summary>Represents a custom permission that controls the ability to access Microsoft SharePoint Products and Technologies. This class cannot be inherited. </summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.SharePointPermission.#ctor(System.Security.Permissions.PermissionState)">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.SharePoint.Security.SharePointPermission" /> class.</summary>
+      <param name="state">One of the System.Security.Permissions.PermissionState values.</param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.SharePointPermission.Copy">
+      <summary>Creates and returns an identical copy of the current permission object. </summary>
+      <returns>System.Security.IPermission A copy of the current permission object.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.SharePointPermission.FromXml(System.Security.SecurityElement)">
+      <summary>Reconstructs a SharePointPermission object from an XML encoding.</summary>
+      <param name="securityElement">The XML encoding from which to reconstruct the SharePointPermission.</param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Security.SharePointPermission.Impersonate"></member>
+    <member name="M:Microsoft.SharePoint.Security.SharePointPermission.Intersect(System.Security.IPermission)">
+      <summary>Returns the logical intersection of two SharePointPermission instances.</summary>
+      <returns>System.Security.IPermission A new SharePointPermission that represents the intersection of the current instance and the target parameter. If the intersection is empty, the method returns a null reference (Nothing in Visual Basic).</returns>
+      <param name="target">The SharePointPermission instance to intersect with the current instance.</param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.SharePointPermission.IsSubsetOf(System.Security.IPermission)">
+      <summary>Determines whether the current permission is a subset of the specified permission. </summary>
+      <returns>true if the current permission is a subset of the specified permission; otherwise, false.</returns>
+      <param name="target">A permission that is to be tested for the subset relationship. This permission must be the same type as the current permission.</param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.SharePointPermission.IsUnrestricted">
+      <summary>Determines whether the current instance of the permission has unrestricted access to the resources protected by the permission. </summary>
+      <returns>true if the current permission is unrestricted; otherwise, false.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Security.SharePointPermission.ObjectModel">
+      <summary>Gets or sets a value indicating whether use of the SharePoint object model is allowed. </summary>
+      <returns>true if object model use is allowed; otherwise, false.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.SharePointPermission.ToXml">
+      <summary>Creates an XML encoding of the permission object and its current state. </summary>
+      <returns>System.Security.SecurityElement An XML encoding of the permission object, including any state information.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.SharePointPermission.Union(System.Security.IPermission)">
+      <summary>Creates a permission that is the union of the current permission and the specified permission. </summary>
+      <returns>System.Security.IPermission A new permission that represents the union of the current permission and the specified permission.</returns>
+      <param name="target"></param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Security.SharePointPermission.UnsafeSaveOnGet">
+      <summary>Gets or sets a value indicating whether saving to the Microsoft SharePoint Products and Technologies database is allowed during an HTTP-GET request.</summary>
+      <returns>true if saving to the database on an HTTP-GET request is allowed; otherwise, false.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Security.SharePointPermissionAttribute">
+      <summary>Allows security actions for SharePointPermission to be applied to code using declarative security. This class cannot be inherited. </summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.SharePointPermissionAttribute.#ctor(System.Security.Permissions.SecurityAction)">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.SharePoint.Security.SharePointPermissionAttribute" /> class with the specified SecurityAction.</summary>
+      <param name="action">One of the SecurityAction values.</param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.SharePointPermissionAttribute.CreatePermission">
+      <summary>Creates and returns a new SharePointPermission object.</summary>
+      <returns>System.Security.IPermission A SharePointPermission that corresponds to this attribute.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Security.SharePointPermissionAttribute.Impersonate"></member>
+    <member name="P:Microsoft.SharePoint.Security.SharePointPermissionAttribute.ObjectModel">
+      <summary>Gets or sets a value indicating whether use of the Microsoft SharePoint Products and Technologies object model is allowed.</summary>
+      <returns>true if object model use is allowed; otherwise, false.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Security.SharePointPermissionAttribute.Unrestricted">
+      <summary>Gets or sets a value indicating whether full (unrestricted) permission is declared to the resource protected by the attribute. </summary>
+      <returns>true if full permission to the protected resource is declared; otherwise, false.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Security.SharePointPermissionAttribute.UnsafeSaveOnGet">
+      <summary>Gets or sets a value indicating whether saving to the Microsoft SharePoint Products and Technologies database is allowed during an HTTP-GET request.</summary>
+      <returns>true if saving to the SharePoint database on an HTTP-GET request is allowed; otherwise, false.</returns>
+    </member>
+    <member name="T:Microsoft.SharePoint.Security.WebPartPermission">
+      <summary>Represents a custom permission that controls the ability to access Web Part resources. </summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.WebPartPermission.#ctor(System.Security.Permissions.PermissionState)">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.SharePoint.Security.WebPartPermission" /> class.</summary>
+      <param name="state">One of the System.Security.Permissions.PermissionState values.</param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Security.WebPartPermission.Connections">
+      <summary>Gets or sets a value that determines whether Web Part to Web Part connections are allowed. </summary>
+      <returns>A Boolean value that is   true if Web Part to Web Part connections are allowed; otherwise, false.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.WebPartPermission.Copy">
+      <summary>Creates and returns an identical copy of the current permission object. </summary>
+      <returns>System.Security.IPermission A copy of the current permission object.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.WebPartPermission.FromXml(System.Security.SecurityElement)">
+      <summary>Reconstructs a WebPartPermission from an XML encoding.</summary>
+      <param name="securityElement">The XML encoding from which to reconstruct the WebPartPermission.</param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.WebPartPermission.Intersect(System.Security.IPermission)">
+      <summary>Returns the logical intersection of two WebPartPermission instances.</summary>
+      <returns>System.Security.IPermission A new WebPartPermission that represents the intersection of the current instance and the <paramref name="target" /> parameter. If the intersection is empty, the method returns a null reference (Nothing in Visual Basic).</returns>
+      <param name="target">The WebPartPermission to intersect with the current instance.</param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.WebPartPermission.IsSubsetOf(System.Security.IPermission)">
+      <summary>Determines whether the current permission is a subset of the specified permission. </summary>
+      <returns>A Boolean value that is  true if the current permission is a subset of the specified permission; otherwise, false.</returns>
+      <param name="target">A permission that is to be tested for the subset relationship. This permission must be of the same type as the current permission.</param>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.WebPartPermission.IsUnrestricted">
+      <summary>Determines whether the current instance of the permission has unrestricted access. </summary>
+      <returns>A Boolean value that is true if the current permission is unrestricted; otherwise, false.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.WebPartPermission.ToXml">
+      <summary>Creates an XML encoding of the permission object and its current state. </summary>
+      <returns>System.Security.SecurityElement An XML encoding of the permission object, including any state information.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.WebPartPermission.Union(System.Security.IPermission)">
+      <summary>Creates a permission that is the union of the current permission and the specified permission. </summary>
+      <returns>System.Security.IPermission A new permission that represents the union of the current permission and the specified permission.</returns>
+      <param name="target"></param>
+    </member>
+    <member name="T:Microsoft.SharePoint.Security.WebPartPermissionAttribute">
+      <summary>Allows security actions for the WebPartPermission to be applied to code using declarative security. This class cannot be inherited. </summary>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.WebPartPermissionAttribute.#ctor(System.Security.Permissions.SecurityAction)">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.SharePoint.Security.WebPartPermissionAttribute" /> class With the specified SecurityAction. </summary>
+      <param name="action">One of the SecurityAction values.</param>
+    </member>
+    <member name="P:Microsoft.SharePoint.Security.WebPartPermissionAttribute.Connections">
+      <summary>Gets or sets a value that determines whether Web Part to Web Part connections are allowed. </summary>
+      <returns>A Boolean value that is true if Web Part to Web Part connections are allowed; otherwise, false.</returns>
+    </member>
+    <member name="M:Microsoft.SharePoint.Security.WebPartPermissionAttribute.CreatePermission">
+      <summary>Creates and returns a new WebPartPermission object.</summary>
+      <returns>System.Security.IPermission A WebPartPermission that corresponds to this attribute.</returns>
+    </member>
+    <member name="P:Microsoft.SharePoint.Security.WebPartPermissionAttribute.Unrestricted">
+      <summary>Gets or sets a value indicating whether full (unrestricted) permission is declared to the resource protected by the attribute. </summary>
+      <returns>A Boolean value that is true if full permission to the protected resource is declared; otherwise, false.</returns>
+    </member>
+  </members>
+</doc>

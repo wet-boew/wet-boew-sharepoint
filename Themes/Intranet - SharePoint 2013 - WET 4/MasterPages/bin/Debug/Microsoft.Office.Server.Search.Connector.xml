@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Microsoft.Office.Server.Search.Connector</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Office.Server.Search.Connector.AuthType"></member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.AuthType.NTLM">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.AuthType.Basic">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.AuthType.Cookies">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.AuthType.Certificates">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.AuthType.Anonymous">
+      <summary />
+    </member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.ChangeScopes"></member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.ChangeScopes.Deep">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.ChangeScopes.Shallow">
+      <summary />
+    </member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.ChangeTypes"></member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.ChangeTypes.None">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.ChangeTypes.Add">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.ChangeTypes.Delete">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.ChangeTypes.Modify">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.ChangeTypes.MoveRename">
+      <summary />
+    </member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.CrawlType"></member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.CrawlType.Full">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.CrawlType.Incremental">
+      <summary />
+    </member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.ErrorCode"></member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.ErrorCode.NONE">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.ErrorCode.PRTH_E_BAD_REQUEST">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.ErrorCode.PRTH_E_ACCESS_DENIED">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.ErrorCode.PRTH_E_OBJ_NOT_FOUND">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.ErrorCode.E_FAIL">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.ErrorCode.CONNECTOR_E_INVALID_URL">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.ErrorCode.CONNECTOR_E_INVALID_CREDENTIALS">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.ErrorCode.CONNECTOR_E_INVALID_COOKIES">
+      <summary />
+    </member>
+    <member name="F:Microsoft.Office.Server.Search.Connector.ErrorCode.CONNECTOR_E_INVALID_CERTIFICATES">
+      <summary />
+    </member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.IAttachment"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.IAttachment.Open"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.ICacheableItemChangeInfo"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.ICacheableItemChangeInfo.SerializeItem(System.IO.Stream)"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.ICacheableItemInfo"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.ICacheableItemInfo.SerializeItem(System.IO.Stream)"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.IConnectionContext"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IConnectionContext.AuthenticationType"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IConnectionContext.Certificates"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IConnectionContext.Cookies"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IConnectionContext.CrawlId"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IConnectionContext.CrawlType"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.IConnectionContext.GetCachedContent"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IConnectionContext.ImpersonationToken"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IConnectionContext.Password"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IConnectionContext.Path"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IConnectionContext.ProxyInfo"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IConnectionContext.UserName"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.IConnector"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.IConnector.FetchItem(Microsoft.Office.Server.Search.Connector.IConnectionContext)"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.IContainer"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.IContainer.Enumerate(System.Boolean)"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.IContainer.GetFields"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.IDocument"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.IDocument.GetContent"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.IDocumentContent"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IDocumentContent.Fields"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IDocumentContent.InlineAttachments"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IDocumentContent.InlineText"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IDocumentContent.OnDemandAttachments"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IDocumentContent.StreamableFields"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.IField"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IField.LCID"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IField.Name"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IField.Value"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.IIndexableItem"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IIndexableItem.Author"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IIndexableItem.DisplayUri"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.IIndexableItem.GetSecurityDescriptor"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IIndexableItem.LastModifiedTime"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IIndexableItem.PropertySet"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IIndexableItem.Title"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.IInfo"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IInfo.AccessUri"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IInfo.DisplayUri"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.IItemChangeInfo"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IItemChangeInfo.Change"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IItemChangeInfo.ParentAccessUri"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IItemChangeInfo.Scope"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.IItemInfo"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IItemInfo.Description"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IItemInfo.InheritSecurity"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IItemInfo.IsContainer"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IItemInfo.IsSynchronizable"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IItemInfo.LastModifiedTime"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.IProxyInfo"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IProxyInfo.BypassProxyForLocalAddress"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IProxyInfo.ProxyBypassList"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IProxyInfo.ProxyServer"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.ISmartContainer"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.ISmartContainer.EnumerateChangedItems(System.DateTime,System.Boolean)"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.ISmartContainer.EnumerateFolders"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.ISmartContainer.GetDeletedCount"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.IStreamableField"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IStreamableField.ContentType"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IStreamableField.Extension"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.IStreamableField.Open"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.ISynchronizableContainer"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.ISynchronizableContainer.EnumerateChanges"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.ISynchronizableContainer.SynchronizationCookie"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.IText"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IText.Contents"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IText.ContentType"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.IText.Extension"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.ProtocolManager"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.ProtocolManager.GetConnector(System.Uri)"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.SearchException"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.SearchException.#ctor(Microsoft.Office.Server.Search.Connector.ErrorCode)"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.SearchException.#ctor(Microsoft.Office.Server.Search.Connector.ErrorCode,System.String)"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.SearchException.#ctor(Microsoft.Office.Server.Search.Connector.ErrorCode,System.String,System.Exception)"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.SearchException.AssociatedHResult"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.SearchException.FormatError(System.String,System.Object[])"></member>
+    <member name="T:Microsoft.Office.Server.Search.Connector.UriParser"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.UriParser.#ctor"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.UriParser.#ctor(System.Uri)"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.UriParser.Authority"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.UriParser.QueryStringParameters"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.UriParser.Scheme"></member>
+    <member name="P:Microsoft.Office.Server.Search.Connector.UriParser.Segments"></member>
+    <member name="M:Microsoft.Office.Server.Search.Connector.UriParser.ToUri(System.Boolean)"></member>
+  </members>
+</doc>

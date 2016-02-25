@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="TabList" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/TabList" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+      <ContentType ID="0x0100b41327b94cf94656b88e518371dd7537" Name="ListFieldsContentType">
+        <FieldRefs>
+          <FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" />
+          <FieldRef ID="{8f867642-d5d8-49b8-a743-91e1597111e0}" Name="EnglishTitle" />
+          <FieldRef ID="{ef0c3190-1ba0-4fa4-8126-5d48bd9b8e40}" Name="FrenchTitle" />
+          <FieldRef ID="{4884111e-ef95-4fe2-911c-2d959cb854a9}" Name="ShowInSlider" />
+          <FieldRef ID="{ea805dac-30ae-4e42-a7a2-8d3f46909390}" Name="EnglishGroup" />
+          <FieldRef ID="{a25310de-986b-458e-a954-fc92102096f8}" Name="FrenchGroup" />
+          <FieldRef ID="{28d80fcf-97b8-438e-b2a6-3167cab2fd3e}" Name="EnglishUrl" />
+          <FieldRef ID="{6f880599-eef6-440f-ae35-40066643513b}" Name="FrenchUrl" />
+          <FieldRef ID="{0c0c0b44-069f-41a0-a7ca-d067c6a980ec}" Name="EnglishOrder" />
+          <FieldRef ID="{43f0a388-281e-4ba9-baed-a009998b6a25}" Name="FrenchOrder" />
+        </FieldRefs>
+      </ContentType>
+      <ContentTypeRef ID="0x01">
+        <Folder TargetName="Item" />
+      </ContentTypeRef>
+      <ContentTypeRef ID="0x0120" />
+    </ContentTypes>
+    <Fields>
+      <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" Hidden="TRUE" DisplayName="$Resources:core,Title;" Required="FALSE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" />
+      <Field Name="EnglishTitle" ID="{8f867642-d5d8-49b8-a743-91e1597111e0}" DisplayName="English Title" Type="Text" />
+      <Field Name="FrenchTitle" ID="{ef0c3190-1ba0-4fa4-8126-5d48bd9b8e40}" DisplayName="French Title" Type="Text" />
+      <Field Name="ShowInSlider" ID="{4884111e-ef95-4fe2-911c-2d959cb854a9}" DisplayName="Show in Slider" Type="Choice">
+        <CHOICES>
+          <CHOICE>YES</CHOICE>
+          <CHOICE>NO</CHOICE>
+        </CHOICES>
+      </Field>
+      <Field Name="EnglishGroup" ID="{ea805dac-30ae-4e42-a7a2-8d3f46909390}" DisplayName="English Group" Type="Choice">
+        <CHOICES>
+          <CHOICE>Administration</CHOICE>
+          <CHOICE>Information</CHOICE>
+          <CHOICE>Facilities</CHOICE>
+        </CHOICES>
+      </Field>
+      <Field Name="FrenchGroup" ID="{a25310de-986b-458e-a954-fc92102096f8}" DisplayName="French Group" Type="Choice">
+        <CHOICES>
+          <CHOICE>Administration French</CHOICE>
+          <CHOICE>Information French</CHOICE>
+          <CHOICE>Facilities French</CHOICE>
+        </CHOICES>
+      </Field>
+      <Field Name="EnglishUrl" ID="{28d80fcf-97b8-438e-b2a6-3167cab2fd3e}" DisplayName="English Url" Type="Text" />
+      <Field Name="FrenchUrl" ID="{6f880599-eef6-440f-ae35-40066643513b}" DisplayName="French Url" Type="Text" />
+      <Field Name="EnglishOrder" ID="{0c0c0b44-069f-41a0-a7ca-d067c6a980ec}" DisplayName="English Order" Type="Number" />
+      <Field Name="FrenchOrder" ID="{43f0a388-281e-4ba9-baed-a009998b6a25}" DisplayName="French Order" Type="Number" />
+    </Fields>
+    <Views>
+      <View BaseViewID="0" Type="HTML" MobileView="TRUE" TabularView="FALSE">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="LinkTitleNoMenu"></FieldRef>
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="Modified" Ascending="FALSE"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="AddNewAnnouncement" Location="Resource(wss,addnewitem)" />
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_ONET_HOME)" />
+        </ParameterBindings>
+      </View>
+      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <JSLink>clienttemplates.js</JSLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          <FieldRef Name="LinkTitle"></FieldRef>
+          <FieldRef Name="EnglishTitle" />
+          <FieldRef Name="FrenchTitle" />
+          <FieldRef Name="ShowInSlider" />
+          <FieldRef Name="EnglishGroup" />
+          <FieldRef Name="FrenchGroup" />
+          <FieldRef Name="EnglishUrl" />
+          <FieldRef Name="FrenchUrl" />
+          <FieldRef Name="EnglishOrder" />
+          <FieldRef Name="FrenchOrder" />
+        </ViewFields>
+        <Query>
+          <OrderBy>
+            <FieldRef Name="ID"></FieldRef>
+          </OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View>
+    </Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>

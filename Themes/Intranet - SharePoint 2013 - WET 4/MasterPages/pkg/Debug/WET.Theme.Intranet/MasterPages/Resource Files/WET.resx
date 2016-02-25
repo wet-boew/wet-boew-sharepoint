@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BreadcrumbHeaderText" xml:space="preserve">
+    <value>Breadcrumb</value>
+  </data>
+  <data name="CanadaSiteLink" xml:space="preserve">
+    <value>http://canada.gc.ca/home.html</value>
+  </data>
+  <data name="CloseDivLiteralText" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="DateModifiedText" xml:space="preserve">
+    <value>Date modified:</value>
+  </data>
+  <data name="DepartmentsSiteLink" xml:space="preserve">
+    <value>http://www.canada.gc.ca/depts/major/depind-eng.html</value>
+  </data>
+  <data name="DepartmentsSiteTitle" xml:space="preserve">
+    <value>Departments</value>
+  </data>
+  <data name="Error_CantFindPubWebLabel" xml:space="preserve">
+    <value>Could not find Publishing Web Label</value>
+  </data>
+  <data name="Error_PageNotPublishingPage" xml:space="preserve">
+    <value>This SPListItem is not a PublishingPage</value>
+  </data>
+  <data name="fipPcimSigDiv" xml:space="preserve">
+    <value>&lt;div id="gcwu-sig-eng" title="Government of Canada"&gt;</value>
+  </data>
+  <data name="fipPcimWmmsDiv" xml:space="preserve">
+    <value>&lt;div id="gcwu-wmms-fip" title="Symbol of the Government of Canada"&gt;</value>
+  </data>
+  <data name="FooterHeaderText" xml:space="preserve">
+    <value>Footer</value>
+  </data>
+  <data name="GOCFooterEconomySiteLink" xml:space="preserve">
+    <value>http://actionplan.gc.ca/eng/index.asp</value>
+  </data>
+  <data name="GOCFooterEconomySiteTitle" xml:space="preserve">
+    <value>&lt;span&gt;Economy&lt;/span&gt;&lt;br /&gt;actionplan.gc.ca</value>
+  </data>
+  <data name="GOCFooterHeaderText" xml:space="preserve">
+    <value>Government of Canada footer</value>
+  </data>
+  <data name="GOCFooterHealthyCanadiansSiteLink" xml:space="preserve">
+    <value>http://healthycanadians.gc.ca/index-eng.php</value>
+  </data>
+  <data name="GOCFooterHealthyCanadiansSiteTitle" xml:space="preserve">
+    <value>&lt;span&gt;Health&lt;/span&gt;&lt;br /&gt;healthycanadians.gc.ca</value>
+  </data>
+  <data name="GOCFooterJobBankSiteLink" xml:space="preserve">
+    <value>http://www.jobbank.gc.ca/intro-eng.aspx</value>
+  </data>
+  <data name="GOCFooterJobBankSiteTitle" xml:space="preserve">
+    <value>&lt;span&gt;Jobs&lt;/span&gt;&lt;br /&gt;jobbank.gc.ca</value>
+  </data>
+  <data name="GOCFooterServiceCanadaSiteTitle" xml:space="preserve">
+    <value>&lt;span&gt;Service Canada&lt;/span&gt;&lt;br /&gt;servicecanada.gc.ca</value>
+  </data>
+  <data name="GOCFooterTravelSiteLink" xml:space="preserve">
+    <value>http://www.voyage.gc.ca/index-eng.asp</value>
+  </data>
+  <data name="GOCFooterTravelSiteTitle" xml:space="preserve">
+    <value>&lt;span&gt;Travel&lt;/span&gt;&lt;br /&gt;travel.gc.ca</value>
+  </data>
+  <data name="GOCNavBarHeaderText" xml:space="preserve">
+    <value>Government of Canada navigation bar</value>
+  </data>
+  <data name="GovOfCanada" xml:space="preserve">
+    <value>Government of Canada</value>
+  </data>
+  <data name="MenuBarHeaderText" xml:space="preserve">
+    <value>&lt;span&gt;Site &lt;/span&gt;menu</value>
+  </data>
+  <data name="OtherLanguageText" xml:space="preserve">
+    <value>Fran&amp;#231;ais</value>
+  </data>
+  <data name="PrimaryNavigationHeaderText" xml:space="preserve">
+    <value>Primary navigation (left column)</value>
+  </data>
+  <data name="SearchHeaderLabelText" xml:space="preserve">
+    <value>Search Web site</value>
+  </data>
+  <data name="SearchHeaderText" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="ServiceCanadaSiteLink" xml:space="preserve">
+    <value>http://www.servicecanada.gc.ca/eng/home.shtml</value>
+  </data>
+  <data name="ServiceCanadaSiteTitle" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="SigImage" xml:space="preserve">
+    <value>../../_layouts/15/WET.Theme.Intranet/WET-BOEW/theme-gcwu-intranet/images/sig-eng.gif</value>
+  </data>
+  <data name="SiteFooterHeaderText" xml:space="preserve">
+    <value>Site Footer</value>
+  </data>
+  <data name="SiteTitleText" xml:space="preserve">
+    <value>Library and Archives Canada - Intranet </value>
+  </data>
+  <data name="SkipLinkMain" xml:space="preserve">
+    <value>Skip to main content</value>
+  </data>
+  <data name="SkipLinkNav" xml:space="preserve">
+    <value>Skip to secondary menu</value>
+  </data>
+  <data name="TermsAndConditionsText" xml:space="preserve">
+    <value>Terms and conditions</value>
+  </data>
+  <data name="TransparencyText" xml:space="preserve">
+    <value>Transparency</value>
+  </data>
+  <data name="wmmsText" xml:space="preserve">
+    <value>Symbol of the Government of Canada</value>
+  </data>
+  <data name="SplashHeading" xml:space="preserve">
+    <value>Bienvenue / Welcome</value>
+  </data>
+  <data name="SplashButton1" xml:space="preserve">
+    <value>Fran&amp;#231;ais</value>
+  </data>
+  <data name="SplashButton1URL" xml:space="preserve">
+    <value>/fra</value>
+  </data>
+  <data name="SplashButton2" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="SplashButton2URL" xml:space="preserve">
+    <value>/eng</value>
+  </data>
+  <data name="SplashFooter1" xml:space="preserve">
+    <value>Avis</value>
+  </data>
+  <data name="SplashFooter1URL" xml:space="preserve">
+    <value>http://intranetsp2013.bac-lac.gc.ca/fra/Pages/avis.aspx</value>
+  </data>
+  <data name="SplashFooter2" xml:space="preserve">
+    <value>Terms and Conditions</value>
+  </data>
+  <data name="SplashFooter2URL" xml:space="preserve">
+    <value>http://intranetsp2013.bac-lac.gc.ca/eng/Pages/notices.aspx</value>
+  </data>
+  <data name="SplashSigImage" xml:space="preserve">
+    <value>/_layouts/WET.Theme.Intranet/WET-BOEW/theme-gcwu-intranet/images/sig-fra.gif</value>
+  </data>
+  <data name="SplashTitle1" xml:space="preserve">
+    <value>Bibliothèque et Archives Canada</value>
+  </data>
+  <data name="SplashTitle2" xml:space="preserve">
+    <value>Library and Archives Canada</value>
+  </data>
+  <data name="PageTitleTextSuffix" xml:space="preserve">
+    <value> - WET (SharePoint Variant)</value>
+  </data>
+  <data name="Layout1ColumnName" xml:space="preserve">
+    <value>1 Column</value>
+  </data>
+  <data name="Layout2ColumnsName" xml:space="preserve">
+    <value>2 Columns</value>
+  </data>
+  <data name="LayoutSplashName" xml:space="preserve">
+    <value>Splash Page</value>
+  </data>
+  <data name="LangISO" xml:space="preserve">
+    <value>en</value>
+  </data>
+  <data name="ItemViewer2ColName" xml:space="preserve">
+    <value>Item Viewer 2 Columns</value>
+  </data>
+  <data name="TopOfPage" xml:space="preserve">
+    <value>&lt;a href="#wb-cont"&gt;Top of Page&lt;/a&gt;</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="languagevalue" xml:space="preserve">
+    <value>en-us</value>
+  </data>
+  <data name="closeObj" xml:space="preserve">
+    <value>&lt;/object&gt;</value>
+  </data>
+  <data name="objFIP" xml:space="preserve">
+    <value>&lt;object data="/_layouts/WET.Theme.Intranet/WET-BOEW/theme-gcwu-intranet/images/sig-eng.svg" role="img" aria-label="Government of Canada" type="image/svg+xml" width="217" height="24"&gt;</value>
+  </data>
+  <data name="objWMMS" xml:space="preserve">
+    <value>&lt;object data="/_layouts/WET.Theme.Intranet/WET-BOEW/theme-gcwu-intranet/images/wmms.svg" role="img" aria-label="Symbol of the Government of Canada" type="image/svg+xml" width="128" height="32"&gt;</value>
+  </data>
+</root>
