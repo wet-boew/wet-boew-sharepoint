@@ -356,7 +356,7 @@
                     <a class="wb-sl" href="#wb-cont">Skip to main content</a>
                 </li>
                 <li class="wb-slc visible-sm visible-md visible-lg">
-                    <a class="wb-sl" href="#wb-info">Skip to "About this site"</a>
+                    <a class="wb-sl" href="#wb-info">Skip to "About this site</a>
                 </li>
             </ul>
             <header role="banner">
@@ -365,12 +365,7 @@
                         <div class="container">
                             <div class="row">
                                 <object id="gcwu-sig" type="image/svg+xml" tabindex="-1" role="img" data="/_layouts/15/theme-gc-intranet/assets/sig-blk-en.svg" aria-label="Government of Canada"></object>
-                                <section id="wb-lng">
-                                    <h2>Language selection</h2>
-                                    <ul class="list-inline">
-                                        <li><a lang="fr" href="content-fr.html">Fran&ccedil;ais</a></li>
-                                    </ul>
-                                </section>
+                               <WETIntranetCustomControls:LanguageToggle runat="server"></WETIntranetCustomControls:LanguageToggle>
                                 <section class="wb-mb-links col-xs-12 visible-sm visible-xs" id="wb-glb-mn">
                                     <h2>Search and menus</h2>
                                     <ul class="pnl-btn list-inline text-right">

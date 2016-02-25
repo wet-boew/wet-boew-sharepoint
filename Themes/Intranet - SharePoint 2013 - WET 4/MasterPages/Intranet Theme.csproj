@@ -119,7 +119,7 @@
     <Compile Include="WebControls\LeftNavigation.cs" />
     <Compile Include="WebControls\SiteMap.cs" />
     <Compile Include="WebControls\HomeLink.cs" />
-    <Compile Include="WebControls\Language.cs" />
+    <Compile Include="WebControls\LanguageToggle.cs" />
     <Compile Include="WebControls\LastModifiedDate.cs" />
     <Compile Include="WebControls\PageMetadata.cs" />
     <Compile Include="WebControls\PageTitle.cs" />

@@ -12,8 +12,8 @@ using WET.Theme.Intranet.Objects;
 
 namespace WET.Theme.Intranet.WebControls
 {
-    [ToolboxData("<{0}:Language runat=server></{0}:Language>")]
-    public class Language : WebControl
+    [ToolboxData("<{0}:LanguageToggle runat=server></{0}:LanguageToggle>")]
+    public class LanguageToggle : WebControl
     {
 
         protected override void OnPreRender(EventArgs e)
@@ -30,11 +30,9 @@ namespace WET.Theme.Intranet.WebControls
                 else
                     currentLang = "fr";
 
-                // figure out what variation we are in and link back to the other language using the 
-                WET.Theme.Intranet.Objects.Logger.WriteLog("Here Before");
+                // Figure out what variation we are in and link back to the other language using the 
                 if (SPContext.Current.ListItem != null && PublishingPage.IsPublishingPage(SPContext.Current.ListItem))
                 {
-                    WET.Theme.Intranet.Objects.Logger.WriteLog("Here After");
                     publishingPage = PublishingPage.GetPublishingPage(SPContext.Current.ListItem);
                     VariationLabel label = publishingPage.PublishingWeb.Label;
 
@@ -111,10 +109,29 @@ namespace WET.Theme.Intranet.WebControls
                                    System.Environment.NewLine + "}" +
                                    System.Environment.NewLine +
                                    "</script>"));
-                                string Languagecontrol = (publishingPage.PublishingWeb.Label.Language.Substring(0, 2) == "en") ?
-                                    "<a href=\"" + reverseurl + queryString + "\" lang=\"" + propLang + "\" xml:lang=\"" + propLang + "\" onclick=\"javascript:OnSelectionChange2(1036); return false;\"><span>" + langlabel + "</span></a>" :
-                                    "<a href=\"" + reverseurl + queryString + "\" lang=\"" + propLang + "\" xml:lang=\"" + propLang + "\" onclick=\"javascript:OnSelectionChange2(1033); return false;\"><span>" + langlabel + "</span></a>";
-                                this.Controls.Add(new LiteralControl(Languagecontrol));
+                                string lang = publishingPage.PublishingWeb.Label.Language.Substring(0, 2);
+                                string controlContent = "";
+                                if (lang == "en")
+                                {
+                                    controlContent = @"<section id=""wb-lng"">
+                                      <h2>Language selection</h2>     
+                                         <ul class=""list-inline"">
+                                        <li><a lang=""fr"" href=""" + reverseurl + queryString + @""">Fran&ccedil;ais</a></li>
+                                        </ul>
+                                    </section>";
+                                }
+                                else
+                                {
+                                    {
+                                        controlContent = @"<section id=""wb-lng"">
+                                        <h2>S&eacute;lection de langue</h2>     
+                                         <ul class=""list-inline"">
+                                        <li><a lang=""en"" href=""" + reverseurl + queryString + @""">English</a></li>
+                                        </ul>
+                                    </section>";
+                                    }
+                                }
+                                this.Controls.Add(new LiteralControl(controlContent));
                             }
                         }
                     }
