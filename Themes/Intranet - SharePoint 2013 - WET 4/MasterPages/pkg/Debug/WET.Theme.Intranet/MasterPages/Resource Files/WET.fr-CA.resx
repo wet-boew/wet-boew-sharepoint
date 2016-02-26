@@ -208,7 +208,7 @@
     <value>Programmes</value>
   </data>
   <data name="SigImage" xml:space="preserve">
-    <value>../../_layouts/15/WET.Theme.Intranet/WET-BOEW/theme-gcwu-intranet/images/sig-fra.gif</value>
+    <value>/_layouts/15/theme-gc-intranet/assets/sig-blk-fr.svg</value>
   </data>
   <data name="SiteFooterHeaderText" xml:space="preserve">
     <value>Pied de page du site</value>

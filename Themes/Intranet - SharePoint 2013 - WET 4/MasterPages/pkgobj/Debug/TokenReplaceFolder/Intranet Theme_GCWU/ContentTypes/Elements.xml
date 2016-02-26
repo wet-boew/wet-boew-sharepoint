@@ -1,26 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ContentType ID="0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE81100B873E4F15F6E48B6A45A65121DD4D7C7" Name="TwoColumnPageLayout" Group="WET - Page Layouts" Description="2 Columns" Inherits="TRUE" Version="0">
+  <ContentType ID="0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE81100B873E4F15F6E48B6A45A65121DD4D7C7" Name="Web Experience Toolkit" Group="WET - Page Layouts" Description="WET Intranet - Page Layouts" Inherits="TRUE" Version="0">
     <FieldRefs>
-      <FieldRef ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="$Resources:core,Title;" Name="LinkTitle" ReadOnly="TRUE" />
-    </FieldRefs>
-  </ContentType>
-
-  <ContentType ID="0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE81100160A32C65DD54D078E8935D7E05CE1E7" Name="ThreeColumnPageLayout" Group="WET - Page Layouts" Description="3 Columns" Inherits="TRUE" Version="0">
-    <FieldRefs>
-      <FieldRef ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="$Resources:core,Title;" Name="LinkTitle" ReadOnly="TRUE" />
-    </FieldRefs>
-  </ContentType>
-
-  <ContentType ID="0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE811007F1D89C4E8764880AA40405C93FFD5F0" Name="OneColumnPageLayout" Group="WET - Page Layouts" Description="1 Column" Inherits="TRUE" Version="0">
-    <FieldRefs>
-      <FieldRef ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="$Resources:core,Title;" Name="LinkTitle" ReadOnly="TRUE" />
-    </FieldRefs>
-  </ContentType>
-  
-  <ContentType ID="0x01010007FF3E057FA8AB4AA42FCB67B453FFC100E214EEE741181F4E9F7ACC43278EE81100DFDE375E13CE4A5E806E9DAFA14E55DC" Name="SplashPageLayout" Group="WET - Page Layouts" Description="Splash Page " Inherits="TRUE" Version="0">
-    <FieldRefs>
-      <FieldRef ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="$Resources:core,Title;" Name="LinkTitle" ReadOnly="TRUE" />
+      <FieldRef ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Web Experience Toolkit" Name="LinkTitle" ReadOnly="TRUE" />
     </FieldRefs>
   </ContentType>
 </Elements>

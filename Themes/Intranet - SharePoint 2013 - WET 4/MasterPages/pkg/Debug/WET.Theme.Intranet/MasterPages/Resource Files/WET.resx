@@ -208,7 +208,7 @@
     <value>Services</value>
   </data>
   <data name="SigImage" xml:space="preserve">
-    <value>../../_layouts/15/WET.Theme.Intranet/WET-BOEW/theme-gcwu-intranet/images/sig-eng.gif</value>
+    <value>/_layouts/15/theme-gc-intranet/assets/sig-blk-en.svg</value>
   </data>
   <data name="SiteFooterHeaderText" xml:space="preserve">
     <value>Site Footer</value>
@@ -259,7 +259,7 @@
     <value>http://intranetsp2013.bac-lac.gc.ca/eng/Pages/notices.aspx</value>
   </data>
   <data name="SplashSigImage" xml:space="preserve">
-    <value>/_layouts/WET.Theme.Intranet/WET-BOEW/theme-gcwu-intranet/images/sig-fra.gif</value>
+    <value>/_layouts/15/theme-gc-intranet/assets/sig-blk-en.svg</value>
   </data>
   <data name="SplashTitle1" xml:space="preserve">
     <value>Bibliothèque et Archives Canada</value>

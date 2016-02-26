@@ -81,3 +81,7 @@ C:\Users\Nik\Documents\GitHub\wet-boew-sharepoint\Themes\Intranet - SharePoint 2
 C:\Users\Nik\Documents\GitHub\wet-boew-sharepoint\Themes\Intranet - SharePoint 2013 - WET 4\MasterPages\bin\Debug\zh-Hant\System.Spatial.resources.dll
 C:\Users\Nik\Documents\GitHub\wet-boew-sharepoint\Themes\Intranet - SharePoint 2013 - WET 4\MasterPages\obj\Debug\WET.Theme.Intranet.dll
 C:\Users\Nik\Documents\GitHub\wet-boew-sharepoint\Themes\Intranet - SharePoint 2013 - WET 4\MasterPages\obj\Debug\WET.Theme.Intranet.pdb
+C:\Users\Nik\Documents\GitHub\wet-boew-sharepoint\Themes\Intranet - SharePoint 2013 - WET 4\MasterPages\obj\Debug\Intranet Theme.csproj.GenerateResource.Cache
+C:\Users\Nik\Documents\GitHub\wet-boew-sharepoint\Themes\Intranet - SharePoint 2013 - WET 4\MasterPages\bin\Debug\fr-CA\WET.Theme.Intranet.resources.dll
+C:\Users\Nik\Documents\GitHub\wet-boew-sharepoint\Themes\Intranet - SharePoint 2013 - WET 4\MasterPages\obj\Debug\WET.Theme.Resource_Files.WET.fr-CA.resources
+C:\Users\Nik\Documents\GitHub\wet-boew-sharepoint\Themes\Intranet - SharePoint 2013 - WET 4\MasterPages\obj\Debug\fr-CA\WET.Theme.Intranet.resources.dll

@@ -55,7 +55,7 @@
 	<SharePoint:DelegateControl runat="server" ControlId="AdditionalPageHead" AllowMultipleControls="true" />
    	<asp:ContentPlaceHolder id="PlaceHolderBodyAreaClass" runat="server"/>
 	<asp:ContentPlaceHolder id="PlaceHolderTitleAreaClass" runat="server"/>  
-    <link rel="stylesheet" href="/style library/WETIntranet.css">
+    <link rel="stylesheet" href="/style library/WETIntranet.css">   
 </head>
 
 <body oninit="ValidateCookies();" style="overflow: visible !important" onload="javascript:_spBodyOnLoadWrapper();" vocab="http://schema.org/" typeof="WebPage">
@@ -353,10 +353,10 @@
             <asp:ContentPlaceHolder ID="PlaceHolderBodyLeftBorder" runat="server"/>
             <ul id="wb-tphp">
                 <li class="wb-slc">
-                    <a class="wb-sl" href="#wb-cont">Skip to main content</a>
+                    <a class="wb-sl" href="#wb-cont"><asp:Literal ID="litSkipToMainContent" runat="server" /></a>
                 </li>
                 <li class="wb-slc visible-sm visible-md visible-lg">
-                    <a class="wb-sl" href="#wb-info">Skip to "About this site</a>
+                    <a class="wb-sl" href="#wb-info"><asp:Literal ID="litSkipAbout" runat="server" /></a>
                 </li>
             </ul>
             <header role="banner">
@@ -364,7 +364,7 @@
                     <div id="wb-bar">
                         <div class="container">
                             <div class="row">
-                                <object id="gcwu-sig" type="image/svg+xml" tabindex="-1" role="img" data="/_layouts/15/theme-gc-intranet/assets/sig-blk-en.svg" aria-label="Government of Canada"></object>
+                                <asp:Literal ID="litFIP1" runat="server" Text="&lt;object id=&quot;gcwu-sig&quot; type=&quot;image/svg+xml&quot; tabindex=&quot;-1&quot; role=&quot;img&quot; data=&quot;" /><asp:Literal id="litFIP2" runat="server" /><asp:Literal ID="litFIP3" runat="server" Text="&quot; aria-label=&quot;Government of Canada&quot;&gt;&lt;/object&gt;" />
                                <WETIntranetCustomControls:LanguageToggle runat="server"></WETIntranetCustomControls:LanguageToggle>
                                 <section class="wb-mb-links col-xs-12 visible-sm visible-xs" id="wb-glb-mn">
                                     <h2>Search and menus</h2>
@@ -380,7 +380,7 @@
                         <div class="row">
                             <div id="wb-sttl" class="col-md-12">
                                 <a href="http://wet-boew.github.io/v4.0-ci/index-en.html">
-                                    <span>Web Experience Toolkit</span>
+                                    <span><SharePoint:ProjectProperty Property="Title" runat="server" /></span>
                                 </a>
                                 <object id="wmms" type="image/svg+xml" tabindex="-1" role="img" data="/_layouts/15/theme-gc-intranet/assets/wmms-intra.svg" aria-label="Symbol of the Government of Canada"></object>
                             </div>
@@ -555,14 +555,15 @@
 
 <script type="text/javascript">
 
+    function getCookie(name) {
+        var re = new RegExp(name + "=([^;]+)");
+        var value = re.exec(document.cookie);
+        return (value != null) ? unescape(value[1]) : null;
+    }
 
-    // Nik20121025 - Not the best piece of code, but does the work. It basically waits for the page to load (a few seconds after last javascript), and then scroll the page back up;
-    //               The users were complaining about the edit mode always bringing them to the bottom of the page;
-    ExecuteOrDelayUntilScriptLoaded(ScrollUp("outside-min"), "outside-min.js");
-    function ScrollUp(script) {
-
-        setTimeout(function ()
-        { document.getElementById("s4-workspace").scrollTop = 0; }, 2000);
+    ExecuteOrDelayUntilScriptLoaded(ChangeSearchLang, "sp.js");
+    function ChangeSearchLang(script) {
+        if (getCookie("lcid") == "1036") { document.getElementById("wet-srch-submit").value = "Recherche"; }
     }
 
 
@@ -659,13 +660,13 @@
             
             //litSearchHeaderLabel.Text = HttpContext.GetGlobalResourceObject("WET", "SearchHeaderLabelText", SPContext.Current.Web.Locale).ToString();
             //litSearchHeaderLabel.Text = HttpContext.GetGlobalResourceObject("WET", "SearchHeaderText", SPContext.Current.Web.Locale).ToString();
-            //litFIP.Text = HttpContext.GetGlobalResourceObject("WET", "fipPcimWmmsDiv", SPContext.Current.Web.Locale).ToString();
+            litFIP2.Text = HttpContext.GetGlobalResourceObject("WET", "SigImage", SPContext.Current.Web.Locale).ToString();
     
             //litClosingDivTag.Text = HttpContext.GetGlobalResourceObject("WET", "CloseDivLiteralText", SPContext.Current.Web.Locale).ToString();
             //litSignature.Text = HttpContext.GetGlobalResourceObject("WET", "fipPcimSigDiv", SPContext.Current.Web.Locale).ToString();
     
             //litClosingDivTag2.Text = HttpContext.GetGlobalResourceObject("WET", "CloseDivLiteralText", SPContext.Current.Web.Locale).ToString();
-            //litSkipMain.Text = HttpContext.GetGlobalResourceObject("WET", "SkipLinkMain", SPContext.Current.Web.Locale).ToString();
+            //litSkipToMainContent.Text = HttpContext.GetGlobalResourceObject("WET", "SkipLinkMain", SPContext.Current.Web.Locale).ToString();
    
             //litSkipNav.Text = HttpContext.GetGlobalResourceObject("WET", "SkipLinkNav", SPContext.Current.Web.Locale).ToString();
             //litGOCNavBar.Text = HttpContext.GetGlobalResourceObject("WET", "GOCNavBarHeaderText", SPContext.Current.Web.Locale).ToString();
@@ -696,5 +697,4 @@
 
     ga('create', 'UA-27341782-3', 'auto');
     ga('send', 'pageview');
-
 </script> 

@@ -2,5 +2,6 @@
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Javascript" Url="Style Library">
     <File Path="Javascripts\leftmenuselector.js" Url="js/leftmenuselector.js" Type="GhostableInLibrary"/>
+    <File Path="Javascripts\AfterTheFactsFixer.js" Url="js/AfterTheFactsFixer.js" Type="GhostableInLibrary" />
   </Module>
 </Elements>

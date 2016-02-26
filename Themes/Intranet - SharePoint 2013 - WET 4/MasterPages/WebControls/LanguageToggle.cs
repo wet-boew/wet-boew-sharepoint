@@ -116,8 +116,8 @@ namespace WET.Theme.Intranet.WebControls
                                     controlContent = @"<section id=""wb-lng"">
                                       <h2>Language selection</h2>     
                                          <ul class=""list-inline"">
-                                        <li><a lang=""fr"" href=""" + reverseurl + queryString + @""">Fran&ccedil;ais</a></li>
-                                        </ul>
+                                        <li><a lang=""fr"" href=""" + reverseurl + queryString + @""" onclick=""javascript: OnSelectionChange2(1036); return false;"">Fran&ccedil;ais</a></li>
+                                         </ul>
                                     </section>";
                                 }
                                 else
@@ -126,7 +126,7 @@ namespace WET.Theme.Intranet.WebControls
                                         controlContent = @"<section id=""wb-lng"">
                                         <h2>S&eacute;lection de langue</h2>     
                                          <ul class=""list-inline"">
-                                        <li><a lang=""en"" href=""" + reverseurl + queryString + @""">English</a></li>
+                                        <li><a lang=""en"" href=""" + reverseurl + queryString + @""" onclick=""javascript: OnSelectionChange2(1033); return false;"">English</a></li>
                                         </ul>
                                     </section>";
                                     }

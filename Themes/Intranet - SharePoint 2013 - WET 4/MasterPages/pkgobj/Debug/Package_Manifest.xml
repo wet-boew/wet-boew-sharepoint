@@ -2,7 +2,6 @@
 <Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="7DB73B5E-25BA-43A9-B654-6672B6C91496" SharePointProductVersion="15.0">
   <ApplicationResourceFiles>
     <App_GlobalResourceFile Location="MasterPages\Resource Files\WET.resx" />
-    <App_GlobalResourceFile Location="MasterPages\Resource Files\WET.fr-FR.resx" />
     <App_GlobalResourceFile Location="MasterPages\Resource Files\WET.fr-CA.resx" />
   </ApplicationResourceFiles>
   <Assemblies>

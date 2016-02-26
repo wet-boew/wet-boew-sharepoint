@@ -7,6 +7,7 @@
     <ElementFile Location="WETFooterNavigation\Schema.xml" />
     <ElementManifest Location="Javascripts\Elements.xml" />
     <ElementFile Location="Javascripts\leftmenuselector.js" />
+    <ElementFile Location="Javascripts\AfterTheFactsFixer.js" />
     <ElementManifest Location="ContentTypes\Elements.xml" />
     <ElementManifest Location="LACFooterImagesInstance\Elements.xml" />
     <ElementManifest Location="LACFooterImages\Elements.xml" />
@@ -48,10 +49,10 @@
     <ElementFile Location="LACSideImagesLinks\Upload.aspx" />
     <ElementManifest Location="LACSideImagesLinksInstance\Elements.xml" />
     <ElementManifest Location="PageLayout\Elements.xml" />
-    <ElementFile Location="PageLayout\IntranetLayoutSplash.aspx" />
-    <ElementFile Location="PageLayout\LACLandingPageLayout.aspx" />
-    <ElementFile Location="PageLayout\LACThreeColumnPageLayout.aspx" />
-    <ElementFile Location="PageLayout\LACTwoColumnPageLayout.aspx" />
+    <ElementFile Location="PageLayout\Splash.aspx" />
+    <ElementFile Location="PageLayout\1Column.aspx" />
+    <ElementFile Location="PageLayout\3Columns.aspx" />
+    <ElementFile Location="PageLayout\2Columns.aspx" />
     <ElementManifest Location="WETHeaderNavigationInstance\Elements.xml" />
     <ElementManifest Location="TabListInstance\Elements.xml" />
     <ElementManifest Location="TabList\Elements.xml" />

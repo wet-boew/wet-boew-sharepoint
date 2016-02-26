@@ -118,16 +118,13 @@
     <Compile Include="WebControls\HeaderLink.cs" />
     <Compile Include="WebControls\LeftNavigation.cs" />
     <Compile Include="WebControls\SiteMap.cs" />
-    <Compile Include="WebControls\HomeLink.cs" />
     <Compile Include="WebControls\LanguageToggle.cs" />
     <Compile Include="WebControls\LastModifiedDate.cs" />
     <Compile Include="WebControls\PageMetadata.cs" />
-    <Compile Include="WebControls\PageTitle.cs" />
     <Compile Include="WebControls\SuppressJSForAnonymous.cs" />
     <Compile Include="WebControls\TopNavigation.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WebControls\TopRightLink.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DelegateControls\SharePointProjectItem.spdata">
@@ -542,13 +539,13 @@
     <Content Include="Lists\LACSideImagesLinks\Upload.aspx" />
     <Content Include="Master Pages\Custom_Control_SearchBox_Compact.html" />
     <Content Include="Master Pages\Custom_Control_SearchBox_Compact.js" />
-    <Content Include="PageLayout\LACLandingPageLayout.aspx" />
-    <Content Include="PageLayout\LACThreeColumnPageLayout.aspx" />
-    <Content Include="PageLayout\LACTwoColumnPageLayout.aspx" />
+    <Content Include="PageLayout\1Column.aspx" />
+    <Content Include="PageLayout\3Columns.aspx" />
+    <Content Include="PageLayout\2Columns.aspx" />
     <Content Include="PageLayout\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="PageLayout\IntranetLayoutSplash.aspx">
+    <Content Include="PageLayout\Splash.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="Lists\TabList\Elements.xml" />
@@ -613,19 +610,12 @@
     <Folder Include="Layouts\ajax\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resource Files\WET.fr-CA.resx">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resource Files\WET.fr-FR.resx">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Resource Files\WET.resx">
       <SubType>Designer</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource Files\WET.fr-CA.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
