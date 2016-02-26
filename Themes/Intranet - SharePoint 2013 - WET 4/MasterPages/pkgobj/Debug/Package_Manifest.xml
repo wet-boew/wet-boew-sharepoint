@@ -30,6 +30,8 @@
     <TemplateFile Location="Layouts\wet-boew\js\polyfills\slider_wrapper.min.js.map" />
     <TemplateFile Location="Layouts\wet-boew\js\polyfills\svg.min.js.map" />
     <TemplateFile Location="Layouts\wet-boew\js\wet-boew.min.js.map" />
+    <TemplateFile Location="Layouts\ajax\sitemenu-en.html" />
+    <TemplateFile Location="Layouts\ajax\sitemenu-fr.html" />
     <TemplateFile Location="Layouts\theme-gc-intranet\assets\bcrumb-mobile.png" />
     <TemplateFile Location="Layouts\theme-gc-intranet\assets\bcrumb-rtl.gif" />
     <TemplateFile Location="Layouts\theme-gc-intranet\assets\bcrumb.gif" />

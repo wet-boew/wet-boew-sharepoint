@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<List xmlns:ows="Microsoft SharePoint" Title="WETHeaderNavigation" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/WETHeaderNavigation" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+<List xmlns:ows="Microsoft SharePoint" Title="WETTopNavigation" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/WETTopNavigation" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
   <MetaData>
     <ContentTypes>
       
       
-    <ContentType ID="0x0100458f52d6896e4b61840372a851d1368a" Name="ListFieldsContentType"><FieldRefs><FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" /><FieldRef ID="{6102f481-a8df-49d2-bf33-8b7cbc56069a}" Name="TitleEng" /><FieldRef ID="{d2227bca-c8c7-4646-9d29-5088c3ae370c}" Name="TitileFra" /><FieldRef ID="{d8ed30de-8ef3-48eb-8877-4c1a2efbccb8}" Name="UrlEng" /><FieldRef ID="{f644814f-13f4-4b7b-af3e-c3691b1a63b9}" Name="UrlFra" /></FieldRefs></ContentType><ContentTypeRef ID="0x01">
+    <ContentType ID="0x01007bb888492e96498cb65a4bc010059a91" Name="ListFieldsContentType"><FieldRefs><FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" /><FieldRef ID="{9b0f822e-a4c3-4f77-96c2-82ff0774dfb5}" Name="TitleFra" /><FieldRef ID="{54af6f91-3e9c-400c-81c3-97d6e0a13da4}" Name="UrlEng" /><FieldRef ID="{471e9a4d-a069-448f-b382-a92004d5c923}" Name="UrlFra" /><FieldRef ID="{6833e39a-3c6f-40b9-830c-9fdaba41b802}" Name="OrderEng" /><FieldRef ID="{37e76783-df73-464e-80a3-d68f4c714708}" Name="OrderFra" /></FieldRefs></ContentType><ContentTypeRef ID="0x01">
         <Folder TargetName="Item" />
       </ContentTypeRef><ContentTypeRef ID="0x0120" /></ContentTypes>
     <Fields>
       
-    <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="Title" Required="FALSE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" Hidden="TRUE" /><Field Name="TitleEng" ID="{6102f481-a8df-49d2-bf33-8b7cbc56069a}" DisplayName="Title Eng" Type="Text" /><Field Name="TitileFra" ID="{d2227bca-c8c7-4646-9d29-5088c3ae370c}" DisplayName="Titile Fra" Type="Text" /><Field Name="UrlEng" ID="{d8ed30de-8ef3-48eb-8877-4c1a2efbccb8}" DisplayName="Url Eng" Type="Text" /><Field Name="UrlFra" ID="{f644814f-13f4-4b7b-af3e-c3691b1a63b9}" DisplayName="Url Fra" Type="Text" /></Fields>
+    <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="TitleEng" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" /><Field Name="TitleFra" ID="{9b0f822e-a4c3-4f77-96c2-82ff0774dfb5}" DisplayName="TitleFra" Type="Text" Required="TRUE" /><Field Name="UrlEng" ID="{54af6f91-3e9c-400c-81c3-97d6e0a13da4}" DisplayName="UrlEng" Type="Text" Required="TRUE" /><Field Name="UrlFra" ID="{471e9a4d-a069-448f-b382-a92004d5c923}" DisplayName="UrlFra" Type="Text" Required="TRUE" /><Field Name="OrderEng" ID="{6833e39a-3c6f-40b9-830c-9fdaba41b802}" DisplayName="OrderEng" Type="Text" Required="TRUE" /><Field Name="OrderFra" ID="{37e76783-df73-464e-80a3-d68f4c714708}" DisplayName="OrderFra" Type="Text" Required="TRUE" /></Fields>
     <Views>
       
       
@@ -37,7 +37,7 @@
         <RowLimit Paged="TRUE">30</RowLimit>
         <ViewFields>
           
-        <FieldRef Name="LinkTitle"></FieldRef><FieldRef Name="TitleEng" /><FieldRef Name="TitileFra" /><FieldRef Name="UrlEng" /><FieldRef Name="UrlFra" /></ViewFields>
+        <FieldRef Name="LinkTitle"></FieldRef><FieldRef Name="TitleFra" /><FieldRef Name="UrlEng" /><FieldRef Name="UrlFra" /><FieldRef Name="OrderEng" /><FieldRef Name="OrderFra" /></ViewFields>
         <Query>
           <OrderBy>
             

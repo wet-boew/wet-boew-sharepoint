@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ProjectItem Type="Microsoft.VisualStudio.SharePoint.ListDefinition" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
   <Files>
-    <ProjectItemFile Source="Elements.xml" Target="WETHeaderNavigation\" Type="ElementManifest" />
-    <ProjectItemFile Source="Schema.xml" Target="WETHeaderNavigation\" Type="ElementFile" />
+    <ProjectItemFile Source="Elements.xml" Target="WETTopNavigation\" Type="ElementManifest" />
+    <ProjectItemFile Source="Schema.xml" Target="WETTopNavigation\" Type="ElementFile" />
   </Files>
   <ExtensionData>
-    <ExtensionDataItem Key="Microsoft.VisualStudio.SharePoint.ListSettings.ListFieldsContentTypeID" Value="0x0100458f52d6896e4b61840372a851d1368a" />
+    <ExtensionDataItem Key="Microsoft.VisualStudio.SharePoint.ListSettings.ListFieldsContentTypeID" Value="0x01007bb888492e96498cb65a4bc010059a91" />
   </ExtensionData>
 </ProjectItem>

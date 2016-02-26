@@ -166,6 +166,12 @@
     <None Include="Lists\LACSideImagesLinks\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{ef11e296-510e-4458-9c14-c3bea34d6b59}</SharePointProjectItemId>
     </None>
+    <None Include="Lists\WETTopNavigation\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{170c56b4-3330-44ce-a80f-42fa14e4643f}</SharePointProjectItemId>
+    </None>
+    <None Include="Lists\WETTopNavigation\WETTopNavigationInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{ba1761ea-9670-4b9c-9661-43d341f3492a}</SharePointProjectItemId>
+    </None>
     <None Include="PageLayout\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{49233bd6-c3de-4f91-af0c-b53fa8827b59}</SharePointProjectItemId>
     </None>
@@ -196,12 +202,6 @@
     <None Include="Lists\LACImagesSlider\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{30093085-8df3-4df2-9bdb-e3190436eb97}</SharePointProjectItemId>
     </None>
-    <None Include="Lists\LACMainTopNavigation\LACMainTopNavigationInstance\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{66be16cc-0b55-4b33-ae08-39bababe1074}</SharePointProjectItemId>
-    </None>
-    <None Include="Lists\LACMainTopNavigation\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{2e2b4fed-1d69-487f-9e75-add0277aecfe}</SharePointProjectItemId>
-    </None>
     <None Include="Lists\LACQuickLinks\LACQuickLinksInstance\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{bb2251db-e956-4db3-a8cb-7e9fd861f876}</SharePointProjectItemId>
     </None>
@@ -225,12 +225,6 @@
     </None>
     <None Include="Lists\WETFooterNavigation\WETFooterNavigationInstance\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{0ec14a2d-7806-41bf-92bf-03948f4a68ad}</SharePointProjectItemId>
-    </None>
-    <None Include="Lists\WETHeaderNavigation\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{5a722100-7e48-4134-911e-3a249e4f13e4}</SharePointProjectItemId>
-    </None>
-    <None Include="Lists\WETHeaderNavigation\WETHeaderNavigationInstance\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{4b6a08d1-0ba3-4931-95e0-e6941229ddd8}</SharePointProjectItemId>
     </None>
     <None Include="Master Pages\WETIntranetPublishing.master">
       <SubType>ASPXCodeBehind</SubType>
@@ -293,6 +287,8 @@
     </Content>
     <Content Include="Javascripts\Elements.xml" />
     <Content Include="Javascripts\leftmenuselector.js" />
+    <Content Include="Layouts\ajax\sitemenu-en.html" />
+    <Content Include="Layouts\ajax\sitemenu-fr.html" />
     <Content Include="Layouts\theme-gc-intranet\assets\bcrumb-mobile.png" />
     <Content Include="Layouts\theme-gc-intranet\assets\bcrumb-rtl.gif" />
     <Content Include="Layouts\theme-gc-intranet\assets\bcrumb.gif" />
@@ -537,6 +533,9 @@
     <Content Include="Lists\LACSideImagesLinks\Repair.aspx" />
     <Content Include="Lists\LACSideImagesLinks\Schema.xml" />
     <Content Include="Lists\LACSideImagesLinks\Upload.aspx" />
+    <Content Include="Lists\WETTopNavigation\Elements.xml" />
+    <Content Include="Lists\WETTopNavigation\Schema.xml" />
+    <Content Include="Lists\WETTopNavigation\WETTopNavigationInstance\Elements.xml" />
     <Content Include="Master Pages\Custom_Control_SearchBox_Compact.html" />
     <Content Include="Master Pages\Custom_Control_SearchBox_Compact.js" />
     <Content Include="PageLayout\1Column.aspx" />
@@ -568,9 +567,6 @@
     <Content Include="Lists\LACImagesSlider\Repair.aspx" />
     <Content Include="Lists\LACImagesSlider\Schema.xml" />
     <Content Include="Lists\LACImagesSlider\Upload.aspx" />
-    <Content Include="Lists\LACMainTopNavigation\Elements.xml" />
-    <Content Include="Lists\LACMainTopNavigation\LACMainTopNavigationInstance\Elements.xml" />
-    <Content Include="Lists\LACMainTopNavigation\Schema.xml" />
     <Content Include="Lists\LACQuickLinks\Elements.xml" />
     <Content Include="Lists\LACQuickLinks\LACQuickLinksInstance\Elements.xml" />
     <Content Include="Lists\LACQuickLinks\Schema.xml" />
@@ -589,9 +585,6 @@
     <Content Include="Lists\WETFooterNavigation\Elements.xml" />
     <Content Include="Lists\WETFooterNavigation\Schema.xml" />
     <Content Include="Lists\WETFooterNavigation\WETFooterNavigationInstance\Elements.xml" />
-    <Content Include="Lists\WETHeaderNavigation\Elements.xml" />
-    <Content Include="Lists\WETHeaderNavigation\Schema.xml" />
-    <Content Include="Lists\WETHeaderNavigation\WETHeaderNavigationInstance\Elements.xml" />
     <Content Include="Master Pages\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -606,9 +599,7 @@
     <Content Include="Style Library\WETIntranetSplash.css" />
     <Content Include="Style Library\WetHeadings.css" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Layouts\ajax\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Resource Files\WET.resx">
       <SubType>Designer</SubType>

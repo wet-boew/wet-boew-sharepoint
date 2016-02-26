@@ -391,18 +391,7 @@
                         </div>
                     </div>
                 </div>
-                <nav role="navigation" id="wb-sm" data-ajax-replace="/_layouts/15/ajax/sitemenu-en.html" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg" typeof="SiteNavigationElement">
-                    <div class="container nvbar">
-                        <h2>Topics menu</h2>
-                        <div class="row">
-                            <ul class="list-inline menu">
-                                <li><a href="./index-en.html">WET project</a></li>
-                                <li><a href="./docs/start-en.html#implement">Implement WET</a></li>
-                                <li><a href="./docs/start-en.html">Contribute to WET</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+                <WETIntranetCustomControls:TopNavigation runat="server" />
                 <nav role="navigation" id="wb-bc" property="breadcrumb">
                     <h2>You are here:</h2>
                     <div class="container">

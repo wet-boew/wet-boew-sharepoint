@@ -7,7 +7,6 @@
     <ElementFile Location="WETFooterNavigation\Schema.xml" />
     <ElementManifest Location="Javascripts\Elements.xml" />
     <ElementFile Location="Javascripts\leftmenuselector.js" />
-    <ElementFile Location="Javascripts\AfterTheFactsFixer.js" />
     <ElementManifest Location="ContentTypes\Elements.xml" />
     <ElementManifest Location="LACFooterImagesInstance\Elements.xml" />
     <ElementManifest Location="LACFooterImages\Elements.xml" />
@@ -22,9 +21,6 @@
     <ElementManifest Location="LACQuickLinksInstance\Elements.xml" />
     <ElementManifest Location="LACQuickLinks\Elements.xml" />
     <ElementFile Location="LACQuickLinks\Schema.xml" />
-    <ElementManifest Location="LACMainTopNavigationInstance\Elements.xml" />
-    <ElementManifest Location="LACMainTopNavigation\Elements.xml" />
-    <ElementFile Location="LACMainTopNavigation\Schema.xml" />
     <ElementManifest Location="LACImagesSliderInstance\Elements.xml" />
     <ElementManifest Location="LACImagesSlider\Elements.xml" />
     <ElementFile Location="LACImagesSlider\Schema.xml" />
@@ -32,8 +28,6 @@
     <ElementFile Location="LACImagesSlider\FileDlg.htm" />
     <ElementFile Location="LACImagesSlider\Repair.aspx" />
     <ElementFile Location="LACImagesSlider\Upload.aspx" />
-    <ElementManifest Location="WETHeaderNavigation\Elements.xml" />
-    <ElementFile Location="WETHeaderNavigation\Schema.xml" />
     <ElementManifest Location="LACRightHeaderLink\Elements.xml" />
     <ElementFile Location="LACRightHeaderLink\Schema.xml" />
     <ElementManifest Location="Style Library\Elements.xml" />
@@ -53,7 +47,6 @@
     <ElementFile Location="PageLayout\1Column.aspx" />
     <ElementFile Location="PageLayout\3Columns.aspx" />
     <ElementFile Location="PageLayout\2Columns.aspx" />
-    <ElementManifest Location="WETHeaderNavigationInstance\Elements.xml" />
     <ElementManifest Location="TabListInstance\Elements.xml" />
     <ElementManifest Location="TabList\Elements.xml" />
     <ElementFile Location="TabList\Schema.xml" />
@@ -72,5 +65,8 @@
     <ElementFile Location="LACNewDigitalsImages\Upload.aspx" />
     <ElementManifest Location="LACNewDigitalsImagesInstance\Elements.xml" />
     <ElementManifest Location="DelegateControls\Elements.xml" />
+    <ElementManifest Location="WETTopNavigationInstance\Elements.xml" />
+    <ElementManifest Location="WETTopNavigation\Elements.xml" />
+    <ElementFile Location="WETTopNavigation\Schema.xml" />
   </ElementManifests>
 </Feature>

@@ -18,45 +18,22 @@ namespace WET.Theme.Intranet.WebControls
    ToolboxData("<{0}:TopNavigation runat=\"server\"></{0}:TopNavigation>")]
     public class TopNavigation : WebControl
     {
-        #region Properties
-
-        const string MegaMenuClass = " mb-megamenu";
-        const string TabbedMenuClass = "";
-
-        public enum ControlModes { MegaMenu, TabbedMenu }
-
-        [DefaultValue(ControlModes.MegaMenu)]
-        [Description("Select the type of Menu from the dropdown list.")]
-        [Browsable(true)]
-        [Category("Appearance")]
-        public ControlModes ControlMode { get; set; }
-
-        #endregion Properties
-
-        char[] dot = { '.' };
+        string langWeb;
 
         protected override void Render(HtmlTextWriter writer)
         {
             string htmlOutput = string.Empty;
 
             try
-            {
-                // setup the outer wrappers
-                htmlOutput += "<div class=\"wet-boew-menubar mb-mega\"><div><ul class=\"mb-menu\" data-ajax-replace=\"";
-
-                if (SPContext.Current.Web.Locale.TwoLetterISOLanguageName == "en")
-                    htmlOutput += "/TopNavigation/menu-eng.txt\">";
-                else
-                    htmlOutput += "/TopNavigation/menu-fra.txt\">";
-
-                string langWeb = string.Empty;
+            {       
+                langWeb = string.Empty;
                 if (SPContext.Current.ListItem != null && PublishingPage.IsPublishingPage(SPContext.Current.ListItem))
                 {
                     // figure out our language of the current label
                     PublishingPage publishingPage = PublishingPage.GetPublishingPage(SPContext.Current.ListItem);
 
                     if (publishingPage.PublishingWeb.Label != null)
-                        langWeb = (publishingPage.PublishingWeb.Label.Title.Substring(0, 2).ToLower() == "en") ? "eng" : "fra";
+                        langWeb = (publishingPage.PublishingWeb.Label.Title.Substring(0, 2).ToLower() == "en") ? "Eng" : "Fra";
                 }
                 else
                 {
@@ -65,19 +42,19 @@ namespace WET.Theme.Intranet.WebControls
                         cultISO = "en";
                     else
                         cultISO = "fr";
-                    langWeb = (cultISO == "en") ? "eng" : "fra";
+                    langWeb = (cultISO == "en") ? "Eng" : "Fra";
                 }
+                
+                htmlOutput += "<nav class=\"wb-menu visible-md visible-lg wb-init wb-data-ajax-replace-inited wb-menu-inited wb-navcurr-inited\" id=\"wb-sm\" role=\"navigation\" typeof=\"SiteNavigationElement\" data-trgt=\"mb-pnl\">\r\n";
+                htmlOutput += "<div class=\"pnl-strt container visible-md visible-lg nvbar\">\r\n";
+                htmlOutput += "<h2>Topics menu</h2>\r\n";
+                htmlOutput += "<div class=\"row\">\r\n";
+                htmlOutput += "<ul class=\"list-inline menu\" role=\"menubar\">\r\n";
+                htmlOutput += renderTopLevelLinks();
+                htmlOutput += "</ul></div></div>";
+                htmlOutput += "</nav>";
 
-                string webUrl = SPContext.Current.Web.Url;
-                using (SPSite site = new SPSite(webUrl))
-                {
-                    htmlOutput += renderTopLevelLink(langWeb);
-
-                    // setup the outer wrappers
-                    htmlOutput += "</ul></div></div>";
-
-                    writer.Write(htmlOutput);
-                }
+                writer.Write(htmlOutput);                
             }
             catch (Exception ex)
             {
@@ -85,22 +62,53 @@ namespace WET.Theme.Intranet.WebControls
             }
         }
 
-        private string renderTopLevelLink(string aLang)
+        private string renderTopLevelLinks()
         {
-            System.Text.StringBuilder sb = new StringBuilder();
-            string urlLink = string.Empty;
-            string title = string.Empty;
+            string topLinkContent = "";
+            SPWeb currentSiteRoot = SPContext.Current.Web.Site.RootWeb;
+            SPList lstTopNavigation = currentSiteRoot.Lists["WETTopNavigation"];            
 
-            //TODO - Replace by static top nav.
-            if (aLang == "eng")
+            int tabIndex = 0;
+            foreach(SPListItem item in lstTopNavigation.Items)
             {
-                sb.Append("<li><div><a href=\"/eng/pages/mega-menu.aspx?lvl=1\">Acquisition</a></div></li>");
-                sb.Append("<li><div><a href=\"/eng/pages/mega-menu.aspx?lvl=2\">Stewardship</a></div></li>");
-                sb.Append("<li><div><a href=\"/eng/pages/mega-menu.aspx?lvl=3\">Services for the public</a></div></li>");
-                sb.Append("<li><div><a href=\"/eng/pages/mega-menu.aspx?lvl=4\">Services for LAC</a></div></li>");
+                if(!item["Order" + langWeb].ToString().Contains('.'))
+                {
+                    topLinkContent += "<li><a tabindex=\"" + tabIndex.ToString() + "\" class=\"item\" role=\"menuitem\" aria-haspopup=\"true\" aria-posinset=\"1\" aria-setsize=\"3\" href=\"" + item["Url" + langWeb].ToString() + "\">";
+                    topLinkContent += item["Title" + langWeb].ToString();
+                    topLinkContent += "<span class=\"expicon glyphicon glyphicon-chevron-down\"></span></a>";
+                    topLinkContent += renderSubLevelLinks(item["Order" + langWeb].ToString());
+                    topLinkContent += "</li>";
+                    tabIndex++;
+                }                
             }
-
-            return sb.ToString();
+            return topLinkContent;
         }
-    }//end class
+
+        private string renderSubLevelLinks(string topLevelItemID)
+        {
+            string subLinkContent = "";
+            SPWeb currentSiteRoot = SPContext.Current.Web.Site.RootWeb;
+            SPList lstTopNavigation = currentSiteRoot.Lists["WETTopNavigation"];
+            bool oneFound = false;
+
+            int posinset = 1;
+            foreach (SPListItem item in lstTopNavigation.Items)
+            {
+                if(item["Order" + langWeb].ToString().StartsWith(topLevelItemID + "."))
+                {
+                    if(!oneFound)
+                    {
+                        subLinkContent += "<ul class=\"sm list-unstyled\" id=\"project\" role=\"menu\" aria-expanded=\"false\" aria-hidden=\"true\">";
+                        oneFound = true;
+                    }
+                    subLinkContent += "<li><a tabindex=\"-1\" role=\"menuitem\" aria-posinset=\"" + posinset.ToString() + "\" aria-setsize=\"9\" href=\"" + item["Url" + langWeb].ToString() + "\">" + item["Title" + langWeb].ToString() + "</a></li>";
+                    posinset++;
+                }                
+            }
+            if (oneFound)
+                subLinkContent += "</ul>";
+
+            return subLinkContent;
+        }
+    }
 }
