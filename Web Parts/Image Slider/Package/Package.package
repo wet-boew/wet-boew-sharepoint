@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="06f95686-3bc0-4042-8e03-fd1ae8cbee26" solutionId="06f95686-3bc0-4042-8e03-fd1ae8cbee26" resetWebServer="false" name="LAC.SharePoint.Slider" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
-  <features>
-    <featureReference itemId="1ba1284e-699e-4d28-a3e9-3311d4ce7286" />
-  </features>
-  <projectItems>
-    <projectItemReference itemId="4a0a4d15-2abd-40a3-98d1-9e3390b23cab" />
-  </projectItems>
-</package>

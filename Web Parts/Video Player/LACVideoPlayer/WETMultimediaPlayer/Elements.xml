@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
-  <Module Name="WETMultimediaPlayer" List="113" Url="_catalogs/wp">
-    <File Path="WETMultimediaPlayer\WETMultimediaPlayer.webpart" Url="LACVideoPlayer_WETMultimediaPlayer.webpart" Type="GhostableInLibrary">
-      <Property Name="Group" Value="WCAG" />
-      
-    </File>
-  </Module>
-</Elements>

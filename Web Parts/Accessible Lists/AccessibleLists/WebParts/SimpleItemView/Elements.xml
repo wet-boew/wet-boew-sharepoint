@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
-  <Module Name="Accessible - Simple Item View" List="113" Url="_catalogs/wp">
-    <File Path="SimpleItemView\SimpleItemView.webpart" Url="AccessibleLists_SimpleItemView.webpart" Type="GhostableInLibrary">
-      <Property Name="Group" Value="WCAG" />
-      <Property Name="QuickAddGroups" Value="WCAG" />
-    </File>
-  </Module>
-</Elements>
