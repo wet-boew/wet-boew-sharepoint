@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPWET4", "SPWET4\SPWET4.csproj", "{8A7B6BDD-4812-4770-904E-97D31B15B680}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCWU-SP2016", "GCWU-SP2016.csproj", "{8A7B6BDD-4812-4770-904E-97D31B15B680}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
