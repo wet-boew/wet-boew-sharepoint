@@ -4,13 +4,19 @@ This repository includes the latest version of the SharePoint 2010 Master Pages 
 
 Help Wanted
 ===================
-Interested in helping with the Variant? Send me an email at Nikolas.Charlebois-Laprade@BAC-LAC.gc.ca
+Interested in helping with the Variant? Send me an email at Nik.Charlebois@Microsoft.com
 
 Documentation
 ===================
 https://github.com/wet-boew/wet-boew-sharepoint/wiki
 
 Change Log
+===================
+December 7th, 2016
+--------------------
+[Nik]
+- Revamped files' structure to prepare for SharePoint 2016 support;
+
 ===================
 Februray 22nd, 2013
 --------------------
