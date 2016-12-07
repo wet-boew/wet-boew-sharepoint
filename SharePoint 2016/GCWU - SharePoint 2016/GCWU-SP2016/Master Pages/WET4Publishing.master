@@ -1,0 +1,641 @@
+﻿<!DOCTYPE html>
+<%@ Master Language="C#" Inherits="SPWET4.Master_Pages.WET4PublishingMaster, SPWET4, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e515e573c8cc4469" %>
+<%@ Import Namespace="Microsoft.SharePoint" %>
+<%@ Register TagPrefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="wssuc" TagName="Welcome" Src="~/_controltemplates/Welcome.ascx" %>
+<%@ Register TagPrefix="wssuc" TagName="DesignModeConsole" Src="~/_controltemplates/DesignModeConsole.ascx" %>
+<%@ Register TagPrefix="wssuc" TagName="MUISelector" Src="~/_controltemplates/MUISelector.ascx" %>
+<%@ Register TagPrefix="PublishingWebControls" Namespace="Microsoft.SharePoint.Publishing.WebControls" Assembly="Microsoft.SharePoint.Publishing, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="PublishingNavigation" Namespace="Microsoft.SharePoint.Publishing.Navigation" Assembly="Microsoft.SharePoint.Publishing, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Assembly Name="Microsoft.SharePoint.Portal, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="MSSWC" Namespace="Microsoft.SharePoint.Portal.WebControls" Assembly="Microsoft.Office.Server.Search, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="CLFCustomControls" Namespace="SPWET4.WebControls" Assembly="SPWET4, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e515e573c8cc4469" %>
+<CLFCustomControls:HtmlControl runat="server">
+    <head runat="server">
+        <meta charset="utf-8">
+        <title>
+            <asp:ContentPlaceHolder ID="PlaceHolderPageTitle" runat="server" />
+            <asp:Literal ID="litPageTitleSuffix" runat="server" />
+        </title>
+
+        <meta http-equiv="x-ua-compatible" content="IE=9">
+
+        <SharePoint:RobotsMetaTag runat="server" />
+        <SharePoint:CssLink runat="server" Version="4" />
+        <SharePoint:ULSClientConfig runat="server" />
+        <script type="text/javascript">
+            var _fV4UI = true;
+        </script>
+        <SharePoint:ScriptLink Name="init.js" runat="server" />
+        <SharePoint:CustomJSUrl runat="server" />
+        <SharePoint:SoapDiscoveryLink runat="server" />
+        <asp:ContentPlaceHolder ID="PlaceHolderAdditionalPageHead" runat="server" />
+        <SharePoint:SPPageManager runat="server" />
+        <SharePoint:SPHelpPageComponent Visible="false" runat="server" />
+        <SharePoint:CssRegistration Name="<% $SPUrl:~sitecollection/Style Library/~language/Themable/Core Styles/controls.css %>" runat="server" />
+        <SharePoint:DelegateControl runat="server" ControlId="AdditionalPageHead" AllowMultipleControls="true"/>
+
+        <!--[if gte IE 9 | !IE ]><!-->
+        <SharePoint:SPShortcutIcon runat="server" IconUrl="/_layouts/SPWET4/theme-gcwu-fegc/assets/favicon.ico" />
+        <link rel="stylesheet" href="/_layouts/SPWET4/theme-gcwu-fegc/css/wet-boew.min.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!--<![endif]-->
+        <link rel="stylesheet" href="/_layouts/SPWET4/theme-gcwu-fegc/css/theme.min.css">
+        <!--[if lt IE 9]>
+        <link href="/_layouts/SPWET4/theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
+        <link rel="stylesheet" href="/_layouts/SPWET4/theme-gcwu-fegc/css/ie8-wet-boew.min.css" />
+        <link rel="stylesheet" href="/_layouts/SPWET4/theme-gcwu-fegc/css/ie8-theme.min.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="/_layouts/SPWET4/theme-gcwu-fegc/js/ie8-wet-boew.min.js"></script>
+        <![endif]-->
+        <!--[if gte IE 9 | !IE ]><!-->
+        <script src="/_layouts/SPWET4/GC-SharePoint/JS/jquery-2.1.1.min.js"></script>
+        <!--<![endif]-->
+
+        <link rel="stylesheet" href="/_layouts/SPWET4/GC-SharePoint/CSS/SharePoint.css">
+        <link rel="stylesheet" href="/_layouts/SPWET4/Fancybox/jquery.fancybox.css">
+
+        <noscript>
+            <link rel="stylesheet" href="/_layouts/SPWET4/theme-gcwu-fegc/css/noscript.min.css" />
+        </noscript>
+    </head>
+    <body scroll="no" onload="if (typeof(_spBodyOnLoadWrapper) != 'undefined') _spBodyOnLoadWrapper();" vocab="http://schema.org/" typeof="WebPage">
+        <form runat="server" onsubmit="if (typeof(_spFormOnSubmitWrapper) != 'undefined') {return _spFormOnSubmitWrapper();} else {return true;}">
+            <asp:ScriptManager id="ScriptManager" runat="server" EnablePageMethods="false" EnablePartialRendering="true" EnableScriptGlobalization="true" EnableScriptLocalization="true" />
+            <WebPartPages:SPWebPartManager runat="server" />
+
+            <ul id="wb-tphp">
+                <li class="wb-slc">
+                    <a class="wb-sl" href="#wb-cont">Skip to main content</a>
+                </li>
+                <li class="wb-slc visible-sm visible-md visible-lg">
+                    <a class="wb-sl" href="#wb-info">Skip to "About this site"</a>
+                </li>
+                <li class="wb-slc visible-md visible-lg">
+                    <a class="wb-sl" href="#wb-sec">Skip to section menu</a>
+                </li>
+            </ul>
+
+            <SharePoint:SPSecurityTrimmedControl ID="SPRibbon" runat="server" PermissionsString="ManageWeb">
+                <style type="text/css">
+                    body {
+                        background-image: none !important;
+                        background-repeat: inherit;
+                        background-position: inherit;
+                    }
+
+                    html.xsmallview .body-wrapper,
+                    html.smallview .body-wrapper {
+                        background: #fff;
+                    }
+
+                    html.mediumview .body-wrapper,
+                    html.largeview .body-wrapper,
+                    html.xlargeview .body-wrapper {
+                        background-image: url('/_layouts/SPWET4/theme-gcwu-fegc/assets/header-bg-ie.jpg');
+                        background-repeat: repeat-x;
+                        background-position: center 2.7em;
+                    }
+
+                    html.xsmallview #wmms,
+                    html.smallview #wmms {
+                        margin-top: 7.7em;
+                    }
+
+                    #s4-titlerow {
+                        height: 91px;
+                        background: url('/_layouts/images/bgximg.png') repeat-x -0px -1023px;
+                        background-color: #f9f9f9;
+                    }
+
+                    #s4-ribbonrow *, #s4-ribbonrow :after, #s4-ribbonrow :before,
+                    .ms-dlgContent *, .ms-dlgContent :after, .ms-dlgContent :before,
+                    .ms-MenuUI *, .ms-MenuUI :after, .ms-MenuUI :before {
+                        -webkit-box-sizing: content-box;
+                        -moz-box-sizing: content-box;
+                        box-sizing: content-box;
+                    }
+
+                    .ms-dlgContent .ms-dlgTitleText {
+                        font-size: 1em;
+                    }
+                    .ms-dlgContent input,
+                    .ms-ToolPaneOuter input {
+                        height: auto;
+                    }
+                    .ms-dlgContent #checkincomments {
+                        height: 70px;
+                    }
+
+                    .ms-ToolPaneOuter .UserSectionTitle a {
+                        text-decoration: none;
+                    }
+                    .ms-ToolPaneOuter label {
+                        font-weight: inherit;
+                    }
+
+                    #s4-ribbonrow a:hover {
+                        text-decoration: none;
+                    }
+
+                    #s4-statusbarcontainer {
+                        font-size: 12px;
+                    }
+
+                    .ms-cui-tt-a:hover {
+                        border-bottom: none !important;
+                    }
+
+                    .ms-cui-topBar2 {
+                        border-bottom: none;
+                    }
+
+                    .s4-breadcrumb-menu {
+                        background: #fff;
+                    }
+
+                    .ms-cui-tts {
+                        height: 45px;
+                    }
+
+                    .ms-MenuUI .ms-MenuUIIcon .ms-MenuUIULImg {
+                        display: block;
+                    }
+                </style>
+
+                <div class="ribbonbackground">
+                    <div id="s4-ribbonrow" class="s4-pr s4-ribbonrowhidetitle">
+                        <SharePoint:SPRibbon runat="server"
+                            PlaceholderElementId="RibbonContainer"
+                            CssFile="">
+                            <SharePoint:SPRibbonPeripheralContent
+                                runat="server"
+                                Location="TabRowLeft"
+                                CssClass="ms-siteactionscontainer s4-notdlg">
+                                <span class="ms-siteactionsmenu" id="siteactiontd">
+                                    <SharePoint:SiteActions runat="server" AccessKey="<%$Resources:wss,tb_SiteActions_AK%>" ID="SiteActionsMenuMain"
+                                        PrefixHtml=""
+                                        SuffixHtml=""
+                                        MenuNotVisibleHtml="&amp;nbsp;">
+                                        <CustomTemplate>
+                                            <SharePoint:FeatureMenuTemplate runat="server"
+                                                FeatureScope="Site"
+                                                Location="Microsoft.SharePoint.StandardMenu"
+                                                GroupId="SiteActions"
+                                                UseShortId="true">
+                                                <SharePoint:MenuItemTemplate runat="server" ID="MenuItem_EditPage"
+                                                    Text="<%$Resources:wss,siteactions_editpage%>"
+                                                    Description="<%$Resources:wss,siteactions_editpagedescriptionv4%>"
+                                                    ImageUrl="/_layouts/images/ActionsEditPage.png"
+                                                    MenuGroupId="100"
+                                                    Sequence="110"
+                                                    ClientOnClickNavigateUrl="javascript:ChangeLayoutMode(false);" />
+                                                <SharePoint:MenuItemTemplate runat="server" ID="MenuItem_TakeOffline"
+                                                    Text="<%$Resources:wss,siteactions_takeoffline%>"
+                                                    Description="<%$Resources:wss,siteactions_takeofflinedescription%>"
+                                                    ImageUrl="/_layouts/images/connecttospworkspace32.png"
+                                                    MenuGroupId="100"
+                                                    Sequence="120" />
+                                                <SharePoint:MenuItemTemplate runat="server" ID="MenuItem_CreatePage"
+                                                    Text="<%$Resources:wss,siteactions_createpage%>"
+                                                    Description="<%$Resources:wss,siteactions_createpagedesc%>"
+                                                    ImageUrl="/_layouts/images/NewContentPageHH.png"
+                                                    MenuGroupId="200"
+                                                    Sequence="210"
+                                                    UseShortId="true"
+                                                    ClientOnClickScriptContainingPrefixedUrl="if (LaunchCreateHandler('Page')) { OpenCreateWebPageDialog('~site/_layouts/createwebpage.aspx') }"
+                                                    PermissionsString="AddListItems, EditListItems"
+                                                    PermissionMode="All" />
+                                                <SharePoint:MenuItemTemplate runat="server" ID="MenuItem_CreateDocLib"
+                                                    Text="<%$Resources:wss,siteactions_createdoclib%>"
+                                                    Description="<%$Resources:wss,siteactions_createdoclibdesc%>"
+                                                    ImageUrl="/_layouts/images/NewDocLibHH.png"
+                                                    MenuGroupId="200"
+                                                    Sequence="220"
+                                                    UseShortId="true"
+                                                    ClientOnClickScriptContainingPrefixedUrl="if (LaunchCreateHandler('DocLib')) { GoToPage('~site/_layouts/new.aspx?FeatureId={00bfea71-e717-4e80-aa17-d0c71b360101}&amp;ListTemplate=101') }"
+                                                    PermissionsString="ManageLists"
+                                                    PermissionMode="Any"
+                                                    VisibilityFeatureId="00BFEA71-E717-4E80-AA17-D0C71B360101" />
+                                                <SharePoint:MenuItemTemplate runat="server" ID="MenuItem_CreateSite"
+                                                    Text="<%$Resources:wss,siteactions_createsite%>"
+                                                    Description="<%$Resources:wss,siteactions_createsitedesc%>"
+                                                    ImageUrl="/_layouts/images/newweb32.png"
+                                                    MenuGroupId="200"
+                                                    Sequence="230"
+                                                    UseShortId="true"
+                                                    ClientOnClickScriptContainingPrefixedUrl="if (LaunchCreateHandler('Site')) { STSNavigate('~site/_layouts/newsbweb.aspx') }"
+                                                    PermissionsString="ManageSubwebs,ViewFormPages"
+                                                    PermissionMode="All" />
+                                                <SharePoint:MenuItemTemplate runat="server" ID="MenuItem_Create"
+                                                    Text="<%$Resources:wss,siteactions_create%>"
+                                                    Description="<%$Resources:wss,siteactions_createdesc%>"
+                                                    MenuGroupId="200"
+                                                    Sequence="240"
+                                                    UseShortId="true"
+                                                    ClientOnClickScriptContainingPrefixedUrl="if (LaunchCreateHandler('All')) { STSNavigate('~site/_layouts/create.aspx') }"
+                                                    PermissionsString="ManageLists, ManageSubwebs"
+                                                    PermissionMode="Any" />
+                                                <SharePoint:MenuItemTemplate runat="server" ID="MenuItem_ViewAllSiteContents"
+                                                    Text="<%$Resources:wss,quiklnch_allcontent%>"
+                                                    Description="<%$Resources:wss,siteactions_allcontentdescription%>"
+                                                    ImageUrl="/_layouts/images/allcontent32.png"
+                                                    MenuGroupId="300"
+                                                    Sequence="302"
+                                                    UseShortId="true"
+                                                    ClientOnClickNavigateUrl="~site/_layouts/viewlsts.aspx"
+                                                    PermissionsString="ViewFormPages"
+                                                    PermissionMode="Any" />
+                                                <SharePoint:MenuItemTemplate runat="server" ID="MenuItem_EditSite"
+                                                    Text="<%$Resources:wss,siteactions_editsite%>"
+                                                    Description="<%$Resources:wss,siteactions_editsitedescription%>"
+                                                    ImageUrl="/_layouts/images/SharePointDesigner32.png"
+                                                    MenuGroupId="300"
+                                                    Sequence="304"
+                                                    UseShortId="true"
+                                                    ClientOnClickScriptContainingPrefixedUrl="EditInSPD('~site/',true);"
+                                                    PermissionsString="AddAndCustomizePages"
+                                                    PermissionMode="Any" />
+                                                <SharePoint:MenuItemTemplate runat="server" ID="MenuItem_SitePermissions"
+                                                    Text="<%$Resources:wss,people_sitepermissions%>"
+                                                    Description="<%$Resources:wss,siteactions_sitepermissiondescriptionv4%>"
+                                                    ImageUrl="/_layouts/images/Permissions32.png"
+                                                    MenuGroupId="300"
+                                                    Sequence="310"
+                                                    UseShortId="true"
+                                                    ClientOnClickNavigateUrl="~site/_layouts/user.aspx"
+                                                    PermissionsString="EnumeratePermissions"
+                                                    PermissionMode="Any" />
+                                                <SharePoint:MenuItemTemplate runat="server" ID="MenuItem_Settings"
+                                                    Text="<%$Resources:wss,settings_pagetitle%>"
+                                                    Description="<%$Resources:wss,siteactions_sitesettingsdescriptionv4%>"
+                                                    ImageUrl="/_layouts/images/settingsIcon.png"
+                                                    MenuGroupId="300"
+                                                    Sequence="320"
+                                                    UseShortId="true"
+                                                    ClientOnClickNavigateUrl="~site/_layouts/settings.aspx"
+                                                    PermissionsString="EnumeratePermissions,ManageWeb,ManageSubwebs,AddAndCustomizePages,ApplyThemeAndBorder,ManageAlerts,ManageLists,ViewUsageData"
+                                                    PermissionMode="Any" />
+                                                <SharePoint:MenuItemTemplate runat="server" ID="MenuItem_CommitNewUI"
+                                                    Text="<%$Resources:wss,siteactions_commitnewui%>"
+                                                    Description="<%$Resources:wss,siteactions_commitnewuidescription%>"
+                                                    ImageUrl="/_layouts/images/visualupgradehh.png"
+                                                    MenuGroupId="300"
+                                                    Sequence="330"
+                                                    UseShortId="true"
+                                                    ClientOnClickScriptContainingPrefixedUrl="GoToPage('~site/_layouts/prjsetng.aspx')"
+                                                    PermissionsString="ManageWeb"
+                                                    PermissionMode="Any"
+                                                    ShowOnlyIfUIVersionConfigurationEnabled="true" />
+                                            </SharePoint:FeatureMenuTemplate>
+                                        </CustomTemplate>
+                                    </SharePoint:SiteActions>
+                                </span>
+                                <SharePoint:PopoutMenu
+                                    runat="server"
+                                    ID="GlobalBreadCrumbNavPopout"
+                                    IconUrl="/_layouts/images/fgimg.png"
+                                    IconAlt="<%$Resources:wss,master_breadcrumbIconAlt%>"
+                                    IconOffsetX="0"
+                                    IconOffsetY="112"
+                                    IconWidth="16"
+                                    IconHeight="16"
+                                    AnchorCss="s4-breadcrumb-anchor"
+                                    AnchorOpenCss="s4-breadcrumb-anchor-open"
+                                    MenuCss="s4-breadcrumb-menu">
+                                    <div class="s4-breadcrumb-top">
+                                        <asp:Label ID="Label1" runat="server" CssClass="s4-breadcrumb-header" Text="<%$Resources:wss,master_breadcrumbHeader%>" />
+                                    </div>
+                                    <asp:ContentPlaceHolder ID="PlaceHolderTitleBreadcrumb" runat="server">
+                                        <SharePoint:ListSiteMapPath
+                                            runat="server"
+                                            SiteMapProviders="CurrentNavigation"
+                                            RenderCurrentNodeAsLink="false"
+                                            PathSeparator=""
+                                            CssClass="s4-breadcrumb"
+                                            NodeStyle-CssClass="s4-breadcrumbNode"
+                                            CurrentNodeStyle-CssClass="s4-breadcrumbCurrentNode"
+                                            RootNodeStyle-CssClass="s4-breadcrumbRootNode"
+                                            NodeImageOffsetX="0"
+                                            NodeImageOffsetY="353"
+                                            NodeImageWidth="16"
+                                            NodeImageHeight="16"
+                                            NodeImageUrl="/_layouts/images/fgimg.png"
+                                            HideInteriorRootNodes="true"
+                                            SkipLinkText="" />
+                                    </asp:ContentPlaceHolder>
+                                </SharePoint:PopoutMenu>
+                                <SharePoint:PageStateActionButton ID="PageStateActionButton" runat="server" Visible="false" />
+                            </SharePoint:SPRibbonPeripheralContent>
+                        </SharePoint:SPRibbon>
+                        <div id="notificationArea" class="s4-noti"></div>
+                        <asp:ContentPlaceHolder ID="SPNavigation" runat="server">
+                            <SharePoint:DelegateControl runat="server" ControlId="PublishingConsole" ID="PublishingConsoleDelegate" />
+                        </asp:ContentPlaceHolder>
+                        <div id="WebPartAdderUpdatePanelContainer">
+                            <asp:UpdatePanel
+                                ID="WebPartAdderUpdatePanel"
+                                UpdateMode="Conditional"
+                                ChildrenAsTriggers="false"
+                                runat="server">
+                                <contenttemplate>
+						<WebPartPages:WebPartAdder ID="WebPartAdder" runat="server"/>
+					</contenttemplate>
+                                <triggers>
+						<asp:PostBackTrigger ControlID="WebPartAdder" />
+					</triggers>
+                            </asp:UpdatePanel>
+                        </div>
+                    </div>
+                </div>
+            </SharePoint:SPSecurityTrimmedControl>
+
+
+            <div id="s4-workspace">
+                <div id="s4-bodyContainer">
+
+                    <SharePoint:SPSecurityTrimmedControl ID="SPTitleRow" runat="server" PermissionsString="ManageWeb">
+                        <div id="s4-titlerow" class="s4-pr s4-notdlg s4-titlerowhidetitle">
+                            <div class="s4-title-inner" style="margin: 0 20px;">
+                                <table class="s4-titletable" cellspacing="0" style="height: 91px;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width:50px;">
+                                                <a href="/">
+                                                    <img src="/_layouts/images/siteIcon.png" alt="Publishing Site" style="border-width: 0px;">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <asp:HyperLink ID="hlkPageTitle" runat="server" style="color:#444; font-size:16px;" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div id="s4-statusbarcontainer">
+                            <div id="pageStatusBar" class="s4-status-s1"></div>
+                        </div>
+                    </SharePoint:SPSecurityTrimmedControl>
+
+                    <!--Begin Nav|Content Area-->
+                    <div id="MSO_ContentDiv" runat="server" class="body-wrapper">
+
+                        <header role="banner">
+                            <div id="wb-bnr">
+                                <div id="wb-bar">
+                                    <div class="container">
+                                        <div class="row">
+                                            <asp:Literal ID="litSignature" runat="server" />
+                                            <ul id="gc-bar" class="list-inline">
+                                                <li>
+                                                    <asp:HyperLink ID="lnkHeaderCanada" runat="server" Text="Canada.ca" />
+							                    </li>
+							                    <li>
+                                                    <asp:HyperLink ID="lnkHeaderServiceCanada" runat="server" />
+							                    </li>
+							                    <li>
+                                                    <asp:HyperLink ID="lnkHeaderDepartment" runat="server" />
+							                    </li>
+                                                <li id="wb-lng">
+                                                    <h2><asp:Literal ID="litLanguageSelection" runat="server" /></h2>
+                                                    <ul class="list-inline">
+                                                        <li><CLFCustomControls:Language runat="server"></CLFCustomControls:Language></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <section class="wb-mb-links col-xs-12 visible-sm visible-xs" id="wb-glb-mn">
+                                                <h2><asp:Literal ID="litSearchMenus" runat="server" /></h2>
+                                                <ul class="pnl-btn list-inline text-right">
+                                                    <li>
+                                                        <asp:Literal ID="litSearchMenuLink" runat="server" />
+                                                    </li>
+                                                </ul>
+                                                <div id="mb-pnl"></div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div id="wb-sttl" class="col-md-5">
+                                            <CLFCustomControls:HomeLink runat="server"></CLFCustomControls:HomeLink>
+                                        </div>
+                                        <asp:Literal ID="litWmms" runat="server" />
+                                        <section id="wb-srch" class="visible-md visible-lg">
+                                            <h2><asp:Literal ID="litSearch" runat="server" /></h2>
+                                            <div class="form-inline">
+                                                <CLFCustomControls:SearchBox ID="SearchBox" runat="server" />
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                            <CLFCustomControls:WETTopNavigation ID="mnuTopNavigation" runat="server" />
+                            <nav role="navigation" id="wb-bc" property="breadcrumb">
+                                <h2><asp:Literal ID="litYouAreHere" runat="server" /></h2>
+                                <div class="container">
+                                    <div class="row">
+                                        <CLFCustomControls:WETSiteMap runat="server"></CLFCustomControls:WETSiteMap>
+                                     </div>
+                                </div>
+                            </nav>
+                        </header>
+
+                        <div class="container">
+                            <div class="row">
+
+                                <main ID="main" runat="server" role="main" property="mainContentOfPage" class="container">
+					                <h1 id="wb-cont" property="name"><asp:ContentPlaceHolder id="PlaceHolderPageTitleInTitleArea" runat="server" /></h1>
+				
+				                    <asp:ContentPlaceHolder id="PlaceHolderMain" runat="server" />
+	
+					                <div id="DeveloperDashboard" class="ms-developerdashboard">
+						                <SharePoint:DeveloperDashboard runat="server"/>
+					                </div>
+					
+					                <dl id="wb-dtmd">
+						                <dt><asp:Literal ID="litDateModified" runat="server" /></dt>
+						                <dd><time property="dateModified"><asp:ContentPlaceHolder id="PlaceHolderLastModifiedDate" runat="server"/></time></dd>
+					                </dl>
+				                </main>
+
+                                <asp:ContentPlaceHolder ID="PlaceHolderLeftNavBar" runat="server" />
+
+                            </div>
+                        </div>
+
+                        <footer role="contentinfo" id="wb-info" class="visible-sm visible-md visible-lg wb-navcurr">
+                            <div class="container">
+                                <nav role="navigation">
+                                    <h2><asp:Literal ID="litAboutThisSite" runat="server" /></h2>
+                                    <CLFCustomControls:WETFooterNavigation runat="server"></CLFCustomControls:WETFooterNavigation>
+                                </nav>
+                            </div>
+                            <div id="gc-info">
+                                <div class="container">
+                                    <nav role="navigation">
+                                        <h2><asp:Literal ID="litGovCanadaFooter" runat="server" /></h2>
+                                        <ul class="list-inline">
+                                            <li>
+                                                <asp:HyperLink ID="lnkFooterHealthy" runat="server" />
+                                            </li>
+                                            <li>
+                                                <asp:HyperLink ID="lnkFooterTravel" runat="server" />
+                                            </li>
+                                            <li>
+                                                <asp:HyperLink ID="lnkFooterservicecanada" runat="server" />
+                                            </li>
+                                            <li>
+                                                <asp:HyperLink ID="lnkFooterJobBank" runat="server" />
+                                            </li>
+                                            <li>
+                                                <asp:HyperLink ID="lnkFooterEconomy" runat="server" />                                                    
+                                            </li>
+                                            <li id="canada-ca"><asp:Hyperlink ID="lnkFooterCanada" runat="server" Text="Canada.ca" /></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </footer>
+
+                    </div>
+                    <!--End Nav|Content Area-->
+
+                </div>
+            </div>
+            <asp:Panel Visible="false" runat="server">
+                <asp:ContentPlaceHolder id="PlaceHolderCLFCSS1" runat="server"/> <!-- TO BE REMOVED -->
+                <asp:ContentPlaceHolder ID="PlaceHolderGlobalNavigation" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderGlobalNavigationSiteMap" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderLeftNavBarDataSource" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderCalendarNavigator" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderWikiNavigator" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderLeftNavBarTop" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderSiteName" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderTopNavBar" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderHorizontalNav" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderPageImage" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderBodyLeftBorder" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderTitleLeftBorder" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderTitleAreaSeparator" runat="server" />
+                <asp:ContentPlaceHolder ID="OSSConsole" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderTitleRightMargin" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderBodyAreaClass" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderTitleAreaClass" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderBodyRightMargin" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderLeftNavBorder" runat="server" />
+                <asp:ContentPlaceHolder ID="WSSDesignConsole" runat="server" />
+                <asp:ContentPlaceHolder ID="PlaceHolderMiniConsole" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderSearchArea" runat="server" />
+            </asp:Panel>
+            <asp:ContentPlaceHolder ID="PlaceHolderFormDigest" runat="server">
+                <SharePoint:FormDigest runat="server" />
+            </asp:ContentPlaceHolder>
+        </form>
+        <asp:ContentPlaceHolder ID="PlaceHolderUtilityContent" runat="server" />
+
+        <!--[if gte IE 9 | !IE ]><!-->
+        
+        <script src="/_layouts/SPWET4/theme-gcwu-fegc/js/wet-boew.min.js"></script>
+        <!--<![endif]-->
+        <!--[if lt IE 9]>
+	<script src="/_layouts/SPWET4/theme-gcwu-fegc/js/ie8-wet-boew2.min.js"></script>
+	<![endif]-->
+    </body>
+</CLFCustomControls:HtmlControl>
+<script runat="server">
+    protected override void OnPreRender(EventArgs e)
+    {
+        base.OnPreRender(e);
+
+        Literal litPageTitleSuffix = (Literal)this.FindChildControlRecursive("litPageTitleSuffix", this.Page);
+        if (litPageTitleSuffix != null)
+            litPageTitleSuffix.Text = HttpContext.GetGlobalResourceObject("WET4", "PageTitleTextSuffix", SPContext.Current.Web.Locale).ToString();
+        Literal litSignature = (Literal)this.FindChildControlRecursive("litSignature", this.Page);
+        if (litSignature != null)
+            litSignature.Text = "<object id=\"gcwu-sig\" type=\"image/svg+xml\" tabindex=\"-1\" role=\"img\" data=\"" + HttpContext.GetGlobalResourceObject("WET4", "SigImage", SPContext.Current.Web.Locale).ToString() + "\" aria-label=\"" + HttpContext.GetGlobalResourceObject("WET4", "GovOfCanada", SPContext.Current.Web.Locale).ToString() + "\"></object>";
+        Literal litLanguageSelection = (Literal)this.FindChildControlRecursive("litLanguageSelection", this.Page);
+        if (litLanguageSelection != null)
+            litLanguageSelection.Text = HttpContext.GetGlobalResourceObject("WET4", "LanguageSelection", SPContext.Current.Web.Locale).ToString();
+        Literal litSearchMenus = (Literal)this.FindChildControlRecursive("litSearchMenus", this.Page);
+        if (litSearchMenus != null)
+            litSearchMenus.Text = HttpContext.GetGlobalResourceObject("WET4", "SearchAndMenus", SPContext.Current.Web.Locale).ToString();
+        Literal litWmms = (Literal)this.FindChildControlRecursive("litWmms", this.Page);
+        if (litWmms != null)
+            litWmms.Text = "<object id=\"wmms\" type=\"image/svg+xml\" tabindex=\"-1\" role=\"img\" data=\"" + HttpContext.GetGlobalResourceObject("WET4", "Wmms", SPContext.Current.Web.Locale).ToString() + "\" aria-label=\"" + HttpContext.GetGlobalResourceObject("WET4", "wmmsText", SPContext.Current.Web.Locale).ToString() + "\"></object>";
+        Literal litSearchMenuLink = (Literal)this.FindChildControlRecursive("litSearchMenuLink", this.Page);
+        if (litSearchMenuLink != null)
+            litSearchMenuLink.Text = "<a href=\"#mb-pnl\" title=\"" + HttpContext.GetGlobalResourceObject("WET4", "SearchAndMenus", SPContext.Current.Web.Locale).ToString() + "\" aria-controls=\"mb-pnl\" class=\"overlay-lnk btn btn-sm btn-default\" role=\"button\"><span class=\"glyphicon glyphicon-search\"><span class=\"glyphicon glyphicon-th-list\"><span class=\"wb-inv\">" + HttpContext.GetGlobalResourceObject("WET4", "SearchAndMenus", SPContext.Current.Web.Locale).ToString() + "</span></span></span></a>";
+        Literal litSearch = (Literal)this.FindChildControlRecursive("litSearch", this.Page);
+        if (litSearch != null)
+            litSearch.Text = HttpContext.GetGlobalResourceObject("WET4", "SearchHeaderText", SPContext.Current.Web.Locale).ToString();
+        Literal litTopicsMenu = (Literal)this.FindChildControlRecursive("litTopicsMenu", this.Page);
+        if (litTopicsMenu != null)
+            litTopicsMenu.Text = HttpContext.GetGlobalResourceObject("WET4", "SearchHeaderText", SPContext.Current.Web.Locale).ToString();
+        Literal litYouAreHere = (Literal)this.FindChildControlRecursive("litYouAreHere", this.Page);
+        if (litYouAreHere != null)
+            litYouAreHere.Text = HttpContext.GetGlobalResourceObject("WET4", "YouAreHere", SPContext.Current.Web.Locale).ToString();
+        Literal litDateModified = (Literal)this.FindChildControlRecursive("litDateModified", this.Page);
+        if (litDateModified != null)
+            litDateModified.Text = HttpContext.GetGlobalResourceObject("WET4", "DateModifiedText", SPContext.Current.Web.Locale).ToString();
+        Literal litAboutThisSite = (Literal)this.FindChildControlRecursive("litAboutThisSite", this.Page);
+        if (litAboutThisSite != null)
+            litAboutThisSite.Text = HttpContext.GetGlobalResourceObject("WET4", "AboutThisSite", SPContext.Current.Web.Locale).ToString();
+        Literal litGovCanadaFooter = (Literal)this.FindChildControlRecursive("litGovCanadaFooter", this.Page);
+        if (litGovCanadaFooter != null)
+            litGovCanadaFooter.Text = HttpContext.GetGlobalResourceObject("WET4", "GovOfCanadaFooter", SPContext.Current.Web.Locale).ToString();
+
+        HyperLink lnkFooterCanada = (HyperLink)this.FindChildControlRecursive("lnkFooterCanada", this.Page);
+        if (lnkFooterCanada != null)
+            lnkFooterCanada.NavigateUrl = HttpContext.GetGlobalResourceObject("WET4", "CanadaSiteLink", SPContext.Current.Web.Locale).ToString();
+
+        HyperLink lnkFooterEconomy = (HyperLink)this.FindChildControlRecursive("lnkFooterEconomy", this.Page);
+        if (lnkFooterEconomy != null)
+        {
+            lnkFooterEconomy.NavigateUrl = HttpContext.GetGlobalResourceObject("WET4", "GOCFooterEconomySiteLink", SPContext.Current.Web.Locale).ToString();
+            lnkFooterEconomy.Text = HttpContext.GetGlobalResourceObject("WET4", "GOCFooterEconomySiteTitle", SPContext.Current.Web.Locale).ToString();
+        }
+
+        HyperLink lnkFooterJobBank = (HyperLink)this.FindChildControlRecursive("lnkFooterJobBank", this.Page);
+        if (lnkFooterJobBank != null)
+        {
+            lnkFooterJobBank.NavigateUrl = HttpContext.GetGlobalResourceObject("WET4", "GOCFooterJobBankSiteLink", SPContext.Current.Web.Locale).ToString();
+            lnkFooterJobBank.Text = HttpContext.GetGlobalResourceObject("WET4", "GOCFooterJobBankSiteTitle", SPContext.Current.Web.Locale).ToString();
+        }
+
+        HyperLink lnkFooterservicecanada = (HyperLink)this.FindChildControlRecursive("lnkFooterservicecanada", this.Page);
+        if (lnkFooterservicecanada != null)
+        {
+            lnkFooterservicecanada.NavigateUrl = HttpContext.GetGlobalResourceObject("WET4", "ServiceCanadaSiteLink", SPContext.Current.Web.Locale).ToString();
+            lnkFooterservicecanada.Text = HttpContext.GetGlobalResourceObject("WET4", "GOCFooterServiceCanadaSiteTitle", SPContext.Current.Web.Locale).ToString();
+        }
+
+        HyperLink lnkFooterTravel = (HyperLink)this.FindChildControlRecursive("lnkFooterTravel", this.Page);
+        if (lnkFooterTravel != null)
+        {
+            lnkFooterTravel.NavigateUrl = HttpContext.GetGlobalResourceObject("WET4", "GOCFooterTravelSiteLink", SPContext.Current.Web.Locale).ToString();
+            lnkFooterTravel.Text = HttpContext.GetGlobalResourceObject("WET4", "GOCFooterTravelSiteTitle", SPContext.Current.Web.Locale).ToString();
+        }
+
+        HyperLink lnkFooterHealthy = (HyperLink)this.FindChildControlRecursive("lnkFooterHealthy", this.Page);
+        if (lnkFooterHealthy != null)
+        {
+            lnkFooterHealthy.NavigateUrl = HttpContext.GetGlobalResourceObject("WET4", "GOCFooterHealthyCanadiansSiteLink", SPContext.Current.Web.Locale).ToString();
+            lnkFooterHealthy.Text = HttpContext.GetGlobalResourceObject("WET4", "GOCFooterHealthyCanadiansSiteTitle", SPContext.Current.Web.Locale).ToString();
+        }
+
+        lnkHeaderCanada.NavigateUrl = HttpContext.GetGlobalResourceObject("WET4", "CanadaSiteLink", SPContext.Current.Web.Locale).ToString();
+        lnkHeaderCanada.Attributes.Add("rel", "external");
+
+        lnkHeaderServiceCanada.NavigateUrl = HttpContext.GetGlobalResourceObject("WET4", "ServiceCanadaSiteLink", SPContext.Current.Web.Locale).ToString();
+        lnkHeaderServiceCanada.Text = HttpContext.GetGlobalResourceObject("WET4", "ServiceCanadaSiteTitle", SPContext.Current.Web.Locale).ToString();
+        lnkHeaderServiceCanada.Attributes.Add("rel", "external");
+
+        lnkHeaderDepartment.NavigateUrl = HttpContext.GetGlobalResourceObject("WET4", "DepartmentsSiteLink", SPContext.Current.Web.Locale).ToString();
+        lnkHeaderDepartment.Text = HttpContext.GetGlobalResourceObject("WET4", "DepartmentsSiteTitle", SPContext.Current.Web.Locale).ToString();
+        lnkHeaderDepartment.Attributes.Add("rel", "external");
+    }
+</script>

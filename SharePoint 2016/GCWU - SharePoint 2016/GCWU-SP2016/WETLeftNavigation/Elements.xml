@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+ <!--
+ <WET4Changes>
+   2014-11-24 This Web Control does not need to be adjusted for WET4 - BARIBF
+ </WET4Changes>
+ -->
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <Module Name="WETLeftNavigation" List="113" Url="_catalogs/wp">
+    <File Path="WETLeftNavigation\WETLeftNavigation.webpart" Url="WETLeftNavigation.webpart" Type="GhostableInLibrary" >
+      <Property Name="Group" Value="WET 4 Group" />
+    </File>
+  </Module>
+</Elements>
+
+

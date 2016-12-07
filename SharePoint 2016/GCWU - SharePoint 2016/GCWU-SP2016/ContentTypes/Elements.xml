@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ContentType ID="0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF3900242457EFB8B24247815D688C526CD44D04"
+     Name="CLF3PageLayout"
+     Group="CLF"
+     Description="Custom Content Type for CLF3"
+     Inherits="TRUE" BaseType="Article Page"
+     Version="0">
+    <FieldRefs>
+      <FieldRef ID="{FDCAE6F4-FE5A-4FA3-85C7-D57C578A8696}" Name="dc.description"/>
+      <FieldRef ID="{ABB93CC1-556A-48A0-A815-FC3A9BE12855}" Name="meta_keywords"/>
+      <FieldRef ID="{F761E494-42B9-45E9-8E97-0FE2FF1801D1}" Name="dc.subject"/>
+      <FieldRef ID="{C741876B-5516-4923-84B9-89E4ED1838D8}" Name="Content"/>
+      <FieldRef ID="{C2DD6CB3-1FDF-449B-B518-D9035E7460F0}" Name="ContentRight"/>
+    </FieldRefs>
+  </ContentType>
+</Elements>

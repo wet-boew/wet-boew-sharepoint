@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="Core" Url="Style Library/CSS Style Sheets">
+    <File Path="Core\SPWET4.css" Url="Core/SPWET4.css" Type="GhostableInLibrary" />
+  </Module>
+</Elements>

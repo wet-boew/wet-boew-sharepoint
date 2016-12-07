@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Field ID="{F5919F15-DCD5-4CC3-91CD-00A1400EF3CB}"
+        SourceID="http://schemas.microsoft.com/sharepoint/v3"
+        Name="dc.description"
+        DisplayName="dc.description"
+        StaticName ="dc.description"
+        Group="META"
+        Type="Note" />
+  <Field ID="{A57878FE-BEB8-4895-B844-301FBD2C8591}"
+      SourceID="http://schemas.microsoft.com/sharepoint/v3"
+      Name="meta_keywords"
+      DisplayName="meta_keywords"
+      StaticName ="meta_keywords"
+      Group="META"
+      Type="Note" />
+  <Field ID="{EBA31771-BF18-44B2-9858-B7DDF59FBB1D}"
+      SourceID="http://schemas.microsoft.com/sharepoint/v3"
+      Name="dc.subject"
+      DisplayName="dc.subject"
+      StaticName ="dc.subject"
+      Group="META"
+      Type="Note" />
+  <Field ID="{0924C995-5449-4026-935F-0453E5041416}"
+      SourceID="http://schemas.microsoft.com/sharepoint/v3"
+      Name="Content"
+      DisplayName="Content"
+      StaticName ="Content"
+      Group="WET 4.0"
+      Type="HTML" RichText="TRUE" RichTextMode="FullHtml" />
+  <Field ID="{2B3FD07B-FCB5-42A2-B8C1-89C46E9A62A4}"
+      SourceID="http://schemas.microsoft.com/sharepoint/v3"
+      Name="ContentRight"
+      DisplayName="ContentRight"
+      StaticName ="ContentRight"
+      Group="WET 4.0"
+      Type="HTML" RichText="TRUE" RichTextMode="FullHtml" />
+</Elements>

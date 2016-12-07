@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="52362b94-9918-428b-8879-f3396080522f" solutionId="52362b94-9918-428b-8879-f3396080522f" resetWebServer="false" name="SPWET4" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="f52937cd-c684-4504-a45d-454737499197" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="a642fa90-86f2-4cc1-be7f-1f481a04c52b" />
+    <projectItemReference itemId="03a32243-0b39-4bc3-b800-08858879036a" />
+    <projectItemReference itemId="824b6c27-85a6-488f-98bc-29b759a5ef77" />
+  </projectItems>
+</package>

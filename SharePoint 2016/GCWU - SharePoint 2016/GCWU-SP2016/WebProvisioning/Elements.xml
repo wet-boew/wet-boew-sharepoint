@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+ <!--
+ <WET4Changes>
+       2014-11-24 This file does not need to be adjusted for WET4 - BARIBF
+ </WET4Changes>
+ -->
+
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Receivers >
+      <Receiver>
+        <Name>WebProvisioningWebProvisioned</Name>
+        <Type>WebProvisioned</Type>
+        <Assembly>$SharePoint.Project.AssemblyFullName$</Assembly>
+        <Class>SPWET4.WebProvisioning.WebProvisioning</Class>
+        <SequenceNumber>10000</SequenceNumber>
+        <Synchronization>Synchronous</Synchronization>
+      </Receiver>
+  </Receivers>
+</Elements>

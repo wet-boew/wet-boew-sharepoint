@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="TopNavigationFiles">
+    <File Path="TopNavigationFiles\menu-include-en.html" Url="TopNavigationFiles/menu-include-en.html" />
+    <File Path="TopNavigationFiles\menu-include-fr.html" Url="TopNavigationFiles/menu-include-fr.html" />
+  </Module>
+</Elements>

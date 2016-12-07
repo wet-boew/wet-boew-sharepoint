@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8A7B6BDD-4812-4770-904E-97D31B15B680}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPWET4</RootNamespace>
+    <AssemblyName>SPWET4</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <ActiveDeploymentConfiguration>No Activation</ActiveDeploymentConfiguration>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint.Publishing, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.Security, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapters\RichHtmlFieldAdapter.cs" />
+    <Compile Include="Adapters\WebPartZoneAdapter.cs" />
+    <Compile Include="Features\WET4\WET4.EventReceiver.cs">
+      <DependentUpon>WET4.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Layout Pages\LeftNavigationBaseLayout.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogEngine.cs" />
+    <Compile Include="Master Pages\WET4PublishingMaster.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master Pages\WET4Splash.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Objects\Logger.cs" />
+    <Compile Include="Objects\MetaTag.cs" />
+    <Compile Include="Objects\MetaTagAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebControls\ScriptManager.cs" />
+    <Compile Include="WebControls\TopBanner.cs" />
+    <Compile Include="WebControls\SearchBox.cs" />
+    <Compile Include="WebControls\WETFooterNavigation.cs" />
+    <Compile Include="WebControls\WETLeftNavigation.cs" />
+    <Compile Include="WebControls\WETSiteMap.cs" />
+    <Compile Include="WebControls\HomeLink.cs" />
+    <Compile Include="WebControls\HtmlControl.cs" />
+    <Compile Include="WebControls\Language.cs" />
+    <Compile Include="WebControls\LastModifiedDate.cs" />
+    <Compile Include="WebControls\PageMetadata.cs" />
+    <Compile Include="WebControls\PageTitle.cs" />
+    <Compile Include="WebControls\SuppressJSForAnonymous.cs" />
+    <Compile Include="WebControls\WebAnalytics.cs" />
+    <Compile Include="WebControls\WETTopNavigation.cs" />
+    <Compile Include="WebProvisioning\WebProvisioning.cs" />
+    <Compile Include="WETLeftNavigation\WETLeftNavigation.ascx.cs">
+      <DependentUpon>WETLeftNavigation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WETLeftNavigation\WETLeftNavigation.ascx.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WETLeftNavigation.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ContentTypes\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{753a3b95-b18d-4d96-b2e9-83f32ccc2a71}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\WET4\WET4.feature">
+      <FeatureId>{f52937cd-c684-4504-a45d-454737499197}</FeatureId>
+    </None>
+    <None Include="Fields\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bcd5d809-d6ef-48bc-bfb1-216977b3486b}</SharePointProjectItemId>
+    </None>
+    <None Include="Images\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{03a32243-0b39-4bc3-b800-08858879036a}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layout Pages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{f0947017-78f3-4cbc-9b1e-625b1d149def}</SharePointProjectItemId>
+    </None>
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a642fa90-86f2-4cc1-be7f-1f481a04c52b}</SharePointProjectItemId>
+    </None>
+    <None Include="Layouts\SPWET4\theme-gcwu-fegc\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Layouts\SPWET4\theme-gcwu-fegc\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Layouts\SPWET4\theme-gcwu-fegc\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Master Pages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{fd652936-480a-4335-aff7-3bfc6805619c}</SharePointProjectItemId>
+    </None>
+    <None Include="Master Pages\WET4Splash.master" />
+    <None Include="Package\Package.package">
+      <PackageId>{52362b94-9918-428b-8879-f3396080522f}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="ResourcesAppGlobal\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{07462ad1-5101-41a5-a89f-0fa71bf79c5b}</SharePointProjectItemId>
+    </None>
+    <None Include="Resources\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{824b6c27-85a6-488f-98bc-29b759a5ef77}</SharePointProjectItemId>
+    </None>
+    <None Include="TopNavigationFiles\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{43b5958d-a1c5-4c4b-82f1-049014c95ba3}</SharePointProjectItemId>
+    </None>
+    <None Include="TopNavigationFiles\TopNavigationList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4e181035-8e50-49d0-83ba-bcdfcdee944a}</SharePointProjectItemId>
+    </None>
+    <None Include="TopNavigationFiles\TopNavigationList\TopNavigationListInstance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{76e126bc-14a2-41cb-b7bb-a7096c8eb053}</SharePointProjectItemId>
+    </None>
+    <None Include="StyleSheets\Core\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{35c79f6d-d645-4a8a-b8c9-14a16b7bb8ab}</SharePointProjectItemId>
+    </None>
+    <None Include="WebProvisioning\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8dd777e4-39a3-4254-8c12-f0834feefbcf}</SharePointProjectItemId>
+    </None>
+    <None Include="WETLeftNavigation\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{4f3e7ba3-66f5-471a-a4ed-9b74c84cb0a1}</SharePointProjectItemId>
+    </None>
+    <None Include="WETLeftNavigation\WETLeftNavigation.webpart" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ContentTypes\Elements.xml" />
+    <Content Include="Features\WET4\WET4.Template.xml">
+      <DependentUpon>WET4.feature</DependentUpon>
+    </Content>
+    <Content Include="Fields\Elements.xml" />
+    <Content Include="Images\SPWET4\search.png" />
+    <Content Include="Images\SPWET4\SearchActive.png" />
+    <Content Include="Images\SPWET4\SearchActiveFR.png" />
+    <Content Include="Images\SPWET4\searchFR.png" />
+    <Content Include="Layout Pages\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Layout Pages\ItemViewer2Col.aspx" />
+    <Content Include="Layout Pages\Layout1-2-1.aspx" />
+    <Content Include="Layout Pages\Layout1Col.aspx" />
+    <Content Include="Layout Pages\Layout2Col.aspx" />
+    <Content Include="Layout Pages\LayoutCollectionItemDisplay.aspx" />
+    <Content Include="Layout Pages\LayoutCollectionLandingPage.aspx" />
+    <Content Include="Layout Pages\LayoutFloatingRight.aspx" />
+    <Content Include="Layout Pages\LayoutLeftSidebar.aspx" />
+    <Content Include="Layout Pages\LayoutSearchResults.aspx" />
+    <Content Include="Layout Pages\LayoutSiteLandingPage.aspx" />
+    <Content Include="Layout Pages\LayoutSplash.aspx" />
+    <Content Include="Layout Pages\LayoutTwoMiddleZones.aspx" />
+    <Content Include="Layouts\SPWET4\Fancybox\blank.gif" />
+    <Content Include="Layouts\SPWET4\Fancybox\fancybox_loading2x.gif" />
+    <Content Include="Layouts\SPWET4\Fancybox\fancybox_loading.gif" />
+    <Content Include="Layouts\SPWET4\Fancybox\fancybox_overlay.png" />
+    <Content Include="Layouts\SPWET4\Fancybox\fancybox_sprite2x.png" />
+    <Content Include="Layouts\SPWET4\Fancybox\fancybox_sprite.png" />
+    <Content Include="Layouts\SPWET4\Fancybox\helpers\fancybox_buttons.png" />
+    <Content Include="Layouts\SPWET4\Fancybox\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Layouts\SPWET4\Fancybox\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Layouts\SPWET4\Fancybox\helpers\jquery.fancybox-media.js" />
+    <Content Include="Layouts\SPWET4\Fancybox\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Layouts\SPWET4\Fancybox\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Layouts\SPWET4\Fancybox\jquery.fancybox.css" />
+    <Content Include="Layouts\SPWET4\Fancybox\jquery.fancybox.js" />
+    <Content Include="Layouts\SPWET4\Fancybox\jquery.fancybox.pack.js" />
+    <Content Include="Layouts\SPWET4\GC-SharePoint\CSS\SharePoint.css" />
+    <Content Include="Layouts\SPWET4\GC-SharePoint\IMG\bullet.png" />
+    <Content Include="Layouts\SPWET4\GC-SharePoint\IMG\module.jpg" />
+    <Content Include="Layouts\SPWET4\GC-SharePoint\IMG\user-silhouette.png" />
+    <Content Include="Layouts\SPWET4\GC-SharePoint\JS\jquery-2.1.1.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\cloud-popup-relative.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\favicon-mobile.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\favicon.ico" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\fd-slider-sprite.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\header-bg-ie.jpg" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\header-bg.jpg" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\header-leaf.jpg" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\loading.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\mediacontrols.html" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\multimedia.swf" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sft-deco-leaf.gif" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sft-deco-side.gif" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sft-deco.gif" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sig-alt-en.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sig-alt-en.svg" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sig-alt-fr.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sig-alt-fr.svg" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sig-blk-en.svg" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sig-blk-fr.svg" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sig-en-alt.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sig-en-w.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sig-en.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sig-en.svg" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sig-fr-alt.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sig-fr-w.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sig-fr.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sig-fr.svg" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sl_feeds.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sl_twitter.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sl_youtube.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sp-pe-bg-ie.jpg" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sp-pe-bg.jpg" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sp-pe-leaf.jpg" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sprites_geomap.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\sprites_share.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\wmms-alt.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\wmms-alt.svg" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\wmms-blk.svg" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\wmms.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\wmms.svg" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\zoom-minus-mini.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\zoom-plus-mini.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\assets\zoom-world-mini.png" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\css\ie8-theme.min.css" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\css\ie8-wet-boew.min.css" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\css\noscript.min.css" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\css\polyfills\datalist.min.css" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\css\polyfills\datepicker.min.css" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\css\polyfills\details.min.css" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\css\polyfills\meter.min.css" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\css\polyfills\progress.min.css" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\css\polyfills\slider.min.css" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\css\theme-coa.min.css" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\css\theme-sp-pe-coa.min.css" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\css\theme-sp-pe.min.css" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\css\theme-srv-coa.min.css" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\css\theme-srv.min.css" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\css\theme.min.css" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\css\wet-boew.min.css" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\additional-methods.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\geomap-lib.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\jquery.dataTables.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\jquery.flot.canvas.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\jquery.flot.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\jquery.flot.orderBars.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\jquery.flot.pie.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\jquery.magnific-popup.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\jquery.pjax.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\jquery.validate.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-apollo.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-clj.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-css.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-dart.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-go.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-hs.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-lisp.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-lua.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-ml.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-n.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-proto.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-scala.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-sql.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-tex.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-vb.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-vhdl.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-wiki.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-xq.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\lang-yaml.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\OpenLayers.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\prettify.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\proj4.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\deps\tableparser.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\af.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\ar.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\bg.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\cs.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\de.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\el.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\en.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\es.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\et.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\fr.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\hi.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\hu.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\hy.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\id.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\is.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\it.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\ja.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\ko.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\lt.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\lv.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\nl.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\pl.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\pt-BR.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\pt.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\ru.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\sk.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\sq.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\th.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\tr.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\uk.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\vi.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\zh-Hans.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\i18n\zh.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\ie8-wet-boew.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\ie8-wet-boew2.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\polyfills\datalist.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\polyfills\datalist_dynamic.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\polyfills\datepicker.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\polyfills\details.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\polyfills\jawsariafixes.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\polyfills\meter.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\polyfills\mobile.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\polyfills\progress.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\polyfills\slider.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\polyfills\slider_wrapper.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\polyfills\svg.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\theme.min.js" />
+    <Content Include="Layouts\SPWET4\theme-gcwu-fegc\js\wet-boew.min.js" />
+    <Content Include="Layouts\SPWET4\Webtrends\js\webtrends.js" />
+    <Content Include="Master Pages\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Master Pages\WET4System.master" />
+    <None Include="Master Pages\WET4Publishing.master" />
+    <Content Include="ResourcesAppGlobal\Elements.xml" />
+    <Content Include="StyleSheets\Core\Elements.xml" />
+    <Content Include="StyleSheets\Core\SPWET4.css" />
+    <Content Include="TopNavigationFiles\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="TopNavigationFiles\menu-include-en.html" />
+    <Content Include="TopNavigationFiles\menu-include-fr.html" />
+    <Content Include="TopNavigationFiles\TopNavigationList\EditDlg.htm" />
+    <Content Include="TopNavigationFiles\TopNavigationList\Elements.xml" />
+    <Content Include="TopNavigationFiles\TopNavigationList\FileDlg.htm" />
+    <Content Include="TopNavigationFiles\TopNavigationList\Repair.aspx" />
+    <Content Include="TopNavigationFiles\TopNavigationList\Schema.xml" />
+    <Content Include="TopNavigationFiles\TopNavigationList\TopNavigationListInstance\Elements.xml" />
+    <Content Include="TopNavigationFiles\TopNavigationList\Upload.aspx" />
+    <Content Include="WebProvisioning\Elements.xml" />
+    <Content Include="WETLeftNavigation\Elements.xml" />
+    <Content Include="WETLeftNavigation\WETLeftNavigation.ascx">
+      <Generator>SharePointWebPartCodeGenerator</Generator>
+      <LastGenOutput>WETLeftNavigation.ascx.g.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\WET4.fr-CA.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\WET4.fr-FR.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\WET4.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>
