@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="52362b94-9918-428b-8879-f3396080522f" solutionId="52362b94-9918-428b-8879-f3396080522f" resetWebServer="false" name="SPWET4" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="52362b94-9918-428b-8879-f3396080522f" solutionId="52362b94-9918-428b-8879-f3396080522f" resetWebServer="false" sharePointProductVersion="16.0" name="SPWET4" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
   <features>
     <featureReference itemId="f52937cd-c684-4504-a45d-454737499197" />
   </features>

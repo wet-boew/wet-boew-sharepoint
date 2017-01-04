@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE html>
 <%@ Master Language="C#" Inherits="SPWET4.Master_Pages.WET4PublishingMaster, SPWET4, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e515e573c8cc4469" %>
 <%@ Import Namespace="Microsoft.SharePoint" %>
-<%@ Register TagPrefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
-<%@ Register TagPrefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
-<%@ Register TagPrefix="wssuc" TagName="Welcome" Src="~/_controltemplates/Welcome.ascx" %>
+<%@ Import Namespace="Microsoft.SharePoint.ApplicationPages" %>
+<%@ Register Tagprefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %> <%@ Register Tagprefix="Utilities" Namespace="Microsoft.SharePoint.Utilities" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %> <%@ Import Namespace="Microsoft.SharePoint" %> <%@ Assembly Name="Microsoft.Web.CommandUI, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="wssuc" TagName="Welcome" src="~/_controltemplates/15/Welcome.ascx" %>
 <%@ Register TagPrefix="wssuc" TagName="DesignModeConsole" Src="~/_controltemplates/DesignModeConsole.ascx" %>
 <%@ Register TagPrefix="wssuc" TagName="MUISelector" Src="~/_controltemplates/MUISelector.ascx" %>
 <%@ Register TagPrefix="PublishingWebControls" Namespace="Microsoft.SharePoint.Publishing.WebControls" Assembly="Microsoft.SharePoint.Publishing, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
@@ -11,7 +12,9 @@
 <%@ Assembly Name="Microsoft.SharePoint.Portal, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Register TagPrefix="MSSWC" Namespace="Microsoft.SharePoint.Portal.WebControls" Assembly="Microsoft.Office.Server.Search, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
 <%@ Register TagPrefix="CLFCustomControls" Namespace="SPWET4.WebControls" Assembly="SPWET4, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e515e573c8cc4469" %>
-<CLFCustomControls:HtmlControl runat="server">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<SharePoint:SPHtmlTag dir="<%$Resources:wss,multipages_direction_dir_value%>" ID="SPHtmlTag" runat="server" >
     <head runat="server">
         <meta charset="utf-8">
         <title>
@@ -37,27 +40,27 @@
         <SharePoint:DelegateControl runat="server" ControlId="AdditionalPageHead" AllowMultipleControls="true"/>
 
         <!--[if gte IE 9 | !IE ]><!-->
-        <SharePoint:SPShortcutIcon runat="server" IconUrl="/_layouts/SPWET4/theme-gcwu-fegc/assets/favicon.ico" />
-        <link rel="stylesheet" href="/_layouts/SPWET4/theme-gcwu-fegc/css/wet-boew.min.css">
+        <SharePoint:SPShortcutIcon runat="server" IconUrl="/_layouts/15/SPWET4/theme-gcwu-fegc/assets/favicon.ico" />
+        <link rel="stylesheet" href="/_layouts/15/SPWET4/theme-gcwu-fegc/css/wet-boew.min.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <!--<![endif]-->
-        <link rel="stylesheet" href="/_layouts/SPWET4/theme-gcwu-fegc/css/theme.min.css">
+        <link rel="stylesheet" href="/_layouts/15/SPWET4/theme-gcwu-fegc/css/theme.min.css">
         <!--[if lt IE 9]>
-        <link href="/_layouts/SPWET4/theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
-        <link rel="stylesheet" href="/_layouts/SPWET4/theme-gcwu-fegc/css/ie8-wet-boew.min.css" />
-        <link rel="stylesheet" href="/_layouts/SPWET4/theme-gcwu-fegc/css/ie8-theme.min.css" />
+        <link href="/_layouts/15/SPWET4/theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
+        <link rel="stylesheet" href="/_layouts/15/SPWET4/theme-gcwu-fegc/css/ie8-wet-boew.min.css" />
+        <link rel="stylesheet" href="/_layouts/15/SPWET4/theme-gcwu-fegc/css/ie8-theme.min.css" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="/_layouts/SPWET4/theme-gcwu-fegc/js/ie8-wet-boew.min.js"></script>
+        <script src="/_layouts/15/SPWET4/theme-gcwu-fegc/js/ie8-wet-boew.min.js"></script>
         <![endif]-->
         <!--[if gte IE 9 | !IE ]><!-->
-        <script src="/_layouts/SPWET4/GC-SharePoint/JS/jquery-2.1.1.min.js"></script>
+        <script src="/_layouts/15/SPWET4/GC-SharePoint/JS/jquery-2.1.1.min.js"></script>
         <!--<![endif]-->
 
-        <link rel="stylesheet" href="/_layouts/SPWET4/GC-SharePoint/CSS/SharePoint.css">
-        <link rel="stylesheet" href="/_layouts/SPWET4/Fancybox/jquery.fancybox.css">
+        <link rel="stylesheet" href="/_layouts/15/SPWET4/GC-SharePoint/CSS/SharePoint.css">
+        <link rel="stylesheet" href="/_layouts/15/SPWET4/Fancybox/jquery.fancybox.css">
 
         <noscript>
-            <link rel="stylesheet" href="/_layouts/SPWET4/theme-gcwu-fegc/css/noscript.min.css" />
+            <link rel="stylesheet" href="/_layouts/15/SPWET4/theme-gcwu-fegc/css/noscript.min.css" />
         </noscript>
     </head>
     <body scroll="no" onload="if (typeof(_spBodyOnLoadWrapper) != 'undefined') _spBodyOnLoadWrapper();" vocab="http://schema.org/" typeof="WebPage">
@@ -93,7 +96,7 @@
                     html.mediumview .body-wrapper,
                     html.largeview .body-wrapper,
                     html.xlargeview .body-wrapper {
-                        background-image: url('/_layouts/SPWET4/theme-gcwu-fegc/assets/header-bg-ie.jpg');
+                        background-image: url('/_layouts/15/SPWET4/theme-gcwu-fegc/assets/header-bg-ie.jpg');
                         background-repeat: repeat-x;
                         background-position: center 2.7em;
                     }
@@ -105,7 +108,7 @@
 
                     #s4-titlerow {
                         height: 91px;
-                        background: url('/_layouts/images/bgximg.png') repeat-x -0px -1023px;
+                        background: url('/_layouts/15/images/bgximg.png') repeat-x -0px -1023px;
                         background-color: #f9f9f9;
                     }
 
@@ -539,13 +542,13 @@
 
         <!--[if gte IE 9 | !IE ]><!-->
         
-        <script src="/_layouts/SPWET4/theme-gcwu-fegc/js/wet-boew.min.js"></script>
+        <script src="/_layouts/15/SPWET4/theme-gcwu-fegc/js/wet-boew.min.js"></script>
         <!--<![endif]-->
         <!--[if lt IE 9]>
-	<script src="/_layouts/SPWET4/theme-gcwu-fegc/js/ie8-wet-boew2.min.js"></script>
+	<script src="/_layouts/15/SPWET4/theme-gcwu-fegc/js/ie8-wet-boew2.min.js"></script>
 	<![endif]-->
     </body>
-</CLFCustomControls:HtmlControl>
+</SharePoint:SPHtmlTag>
 <script runat="server">
     protected override void OnPreRender(EventArgs e)
     {

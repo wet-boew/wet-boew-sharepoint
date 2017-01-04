@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{07107FF7-BB56-4571-97F9-DCCF09682F31}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPWET_Canada</RootNamespace>
+    <AssemblyName>SPWET-Canada</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>16.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <MinimumOfficeToolsVersion>14.5</MinimumOfficeToolsVersion>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\Feature1\Feature1.feature">
+      <FeatureId>{6d265a19-afbc-4b5d-a890-9e1cc095f8d2}</FeatureId>
+    </None>
+    <None Include="Images\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0f65e57b-cc66-4573-a660-c3b0b12c5c0b}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6fa483f5-6497-47c4-b6a4-f9d38d4d135c}</SharePointProjectItemId>
+    </None>
+    <None Include="Layouts\SPWET-Canada\wet-boew\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Layouts\SPWET-Canada\wet-boew\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Layouts\SPWET-Canada\wet-boew\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="MasterPages\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{58d037ac-3315-46e7-aca5-deaf2943e5cc}</SharePointProjectItemId>
+    </None>
+    <None Include="MasterPages\SPWET-Canada.master" />
+    <None Include="Package\Package.package">
+      <PackageId>{ec450ace-e77c-402b-806e-d844ca3ae004}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Features\Feature1\Feature1.Template.xml">
+      <DependentUpon>Feature1.feature</DependentUpon>
+    </Content>
+    <Content Include="Images\SPWET-Canada\218x291.png" />
+    <Content Include="Images\SPWET-Canada\265x352.png" />
+    <Content Include="Images\SPWET-Canada\360x203.png" />
+    <Content Include="Images\SPWET-Canada\520x200.png" />
+    <Content Include="Images\SPWET-Canada\520x296.png" />
+    <Content Include="Images\SPWET-Canada\doc.png" />
+    <Content Include="Images\SPWET-Canada\features\355x113.png" />
+    <Content Include="Layouts\SPWET-Canada\ajax\sitemenu-en.html" />
+    <Content Include="Layouts\SPWET-Canada\ajax\sitemenu-fr.html" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\backdrop.png" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\favicon-mobile.png" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\favicon.ico" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\sig-blk-en.png" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\sig-blk-en.svg" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\sig-blk-fr.png" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\sig-blk-fr.svg" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\sig-en.png" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\sig-en.svg" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\sig-fr.png" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\sig-fr.svg" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\sig-spl.png" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\sig-spl.svg" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\sp-bg-2.jpg" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\tuwyt.jpg" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\wmms-alt.png" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\wmms-blk.png" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\wmms-blk.svg" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\wmms-spl.png" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\wmms-spl.svg" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\wmms.png" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\assets\wmms.svg" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\css\ie8-theme-srv.css" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\css\ie8-theme-srv.min.css" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\css\ie8-theme.css" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\css\ie8-theme.min.css" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\css\ie8-wet-boew.css" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\css\ie8-wet-boew.min.css" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\css\messages-ie.css" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\css\messages-ie.min.css" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\css\messages.css" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\css\messages.min.css" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\css\theme-srv.css" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\css\theme-srv.min.css" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\css\theme.css" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\css\theme.min.css" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\css\wet-boew.css" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\css\wet-boew.min.css" />
+    <Content Include="Layouts\SPWET-Canada\GCWeb\js\theme.min.js" />
+    <Content Include="Layouts\SPWET-Canada\libs\js\jquery.js" />
+    <Content Include="Layouts\SPWET-Canada\libs\js\jquery.min.js" />
+    <Content Include="Layouts\SPWET-Canada\RMC\css\SPWET-Canada-RMC.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\ie8-theme-srv.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\ie8-theme-srv.min.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\ie8-theme.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\ie8-theme.min.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\ie8-wet-boew.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\ie8-wet-boew.min.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\messages-ie.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\messages-ie.min.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\messages.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\messages.min.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\noscript.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\noscript.min.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\polyfills\datalist.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\polyfills\datalist.min.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\polyfills\datepicker.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\polyfills\datepicker.min.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\polyfills\details.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\polyfills\details.min.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\polyfills\meter.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\polyfills\meter.min.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\polyfills\progress.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\polyfills\progress.min.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\polyfills\slider.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\polyfills\slider.min.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\theme-srv.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\theme-srv.min.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\theme.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\theme.min.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\wet-boew.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\css\wet-boew.min.css" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\js\ie8-wet-boew2.min.js" />
+    <Content Include="Layouts\SPWET-Canada\wet-boew\js\wet-boew.js" />
+    <Content Include="MasterPages\Elements.xml" />
+    <Content Include="MasterPages\Sample.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

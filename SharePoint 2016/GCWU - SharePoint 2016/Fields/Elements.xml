@@ -21,13 +21,6 @@
       StaticName ="dc.subject"
       Group="META"
       Type="Note" />
-  <Field ID="{0924C995-5449-4026-935F-0453E5041416}"
-      SourceID="http://schemas.microsoft.com/sharepoint/v3"
-      Name="Content"
-      DisplayName="Content"
-      StaticName ="Content"
-      Group="WET 4.0"
-      Type="HTML" RichText="TRUE" RichTextMode="FullHtml" />
   <Field ID="{2B3FD07B-FCB5-42A2-B8C1-89C46E9A62A4}"
       SourceID="http://schemas.microsoft.com/sharepoint/v3"
       Name="ContentRight"

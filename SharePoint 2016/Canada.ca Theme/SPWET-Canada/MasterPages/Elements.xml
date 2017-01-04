@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="MasterPages" Url ="_catalogs/masterpage" RootWebOnly ="TRUE">
+    <File Path="MasterPages\SPWET-Canada.master" Url="SPWET-Canada.master" Type="GhostableInLibrary" />
+  </Module>
+</Elements>

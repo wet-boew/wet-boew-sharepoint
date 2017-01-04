@@ -208,7 +208,7 @@
     <value>Programmes</value>
   </data>
   <data name="SigImage" xml:space="preserve">
-    <value>/_layouts/SPWET4/theme-gcwu-fegc/assets/sig-fr.svg</value>
+    <value>/_layouts/15/SPWET4/theme-gcwu-fegc/assets/sig-fr.svg</value>
   </data>
   <data name="SiteFooterHeaderText" xml:space="preserve">
     <value>Pied de page du site</value>
@@ -259,7 +259,7 @@
     <value>/eng/Pages/terms-and-conditions.aspx</value>
   </data>
   <data name="SplashSigImage" xml:space="preserve">
-    <value>/_layouts/SPWET4/theme-gcwu-fegc/assets/sig-fr.png</value>
+    <value>/_layouts/15/SPWET4/theme-gcwu-fegc/assets/sig-fr.png</value>
   </data>
   <data name="SplashTitle1" xml:space="preserve">
     <value>Bibliothèque et Archives Canada</value>
@@ -295,7 +295,7 @@
     <value>Menu des sujets</value>
   </data>
   <data name="Wmms" xml:space="preserve">
-    <value>/_layouts/SPWET4/theme-gcwu-fegc/assets/wmms.svg</value>
+    <value>/_layouts/15/SPWET4/theme-gcwu-fegc/assets/wmms.svg</value>
   </data>
   <data name="YouAreHere" xml:space="preserve">
     <value>Vous êtes ici :</value>
