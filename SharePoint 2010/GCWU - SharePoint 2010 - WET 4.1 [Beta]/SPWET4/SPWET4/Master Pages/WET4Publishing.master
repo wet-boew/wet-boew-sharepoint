@@ -498,7 +498,8 @@
                                         </ul>
                                     </nav>
                                 </div>
-                            </div>
+
+</div>
                         </footer>
 
                     </div>
@@ -530,6 +531,8 @@
                 <asp:ContentPlaceHolder ID="WSSDesignConsole" runat="server" />
                 <asp:ContentPlaceHolder ID="PlaceHolderMiniConsole" runat="server" />
                 <asp:ContentPlaceHolder id="PlaceHolderSearchArea" runat="server" />
+		<asp:ContentPlaceHolder id="PlaceHolderLeftActions" runat="server"/>
+                <asp:ContentPlaceHolder id="PlaceHolderPageDescription" runat="server" />
             </asp:Panel>
             <asp:ContentPlaceHolder ID="PlaceHolderFormDigest" runat="server">
                 <SharePoint:FormDigest runat="server" />
